@@ -1,0 +1,7 @@
+hidl_package_root {
+    name: "motorola",
+    path: "hardware/motorola/interfaces",
+}
+
+subdirs = [ "interfaces" ]
+

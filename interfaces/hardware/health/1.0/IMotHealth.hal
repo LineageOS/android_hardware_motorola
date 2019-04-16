@@ -1,0 +1,9 @@
+package motorola.hardware.health@1.0;
+
+import motorola.hardware.health@1.0::types;
+
+interface IMotHealth {
+	getModChargeFull() generates (int32_t value);
+	getBatteryChargeFull() generates (int32_t value);
+	getModBatteryProperties()  generates (BatteryProperties props);
+};

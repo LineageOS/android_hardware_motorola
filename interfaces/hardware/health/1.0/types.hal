@@ -1,0 +1,19 @@
+package motorola.hardware.health@1.0;
+
+struct BatteryProperties {
+    int32_t modLevel;
+    int32_t modStatus;
+    int32_t modFlag;
+    int32_t modType;
+    int32_t modPowerSource;
+    int32_t batteryLevel;
+};
+
+@export(name="", value_prefix="POWER_SUPPLY_MOD_TYPE_")
+enum PowerSupplyModType : int32_t {
+    POWER_SUPPLY_MOD_TYPE_UNKNOWN = 0,
+    POWER_SUPPLY_MOD_TYPE_REMOTE = 1,
+    POWER_SUPPLY_MOD_TYPE_SUPPLEMENTAL = 2,
+    POWER_SUPPLY_MOD_TYPE_EMERGENCY = 3,
+};
+
