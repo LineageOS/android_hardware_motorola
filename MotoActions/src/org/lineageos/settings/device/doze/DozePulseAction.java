@@ -19,6 +19,7 @@ package org.lineageos.settings.device.doze;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.UserHandle;
 import android.util.Log;
 
 import org.lineageos.settings.device.SensorAction;
@@ -48,7 +49,8 @@ public class DozePulseAction implements SensorAction, ScreenStateNotifier {
     public void action() {
          if (mayDoze()) {
             Log.d(TAG, "Sending doze.pulse intent");
-            mContext.sendBroadcast(new Intent("com.android.systemui.doze.pulse"));
+            Intent pulseIntent = new Intent("com.android.systemui.doze.pulse");
+            mContext.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT);
         }
     }
 
