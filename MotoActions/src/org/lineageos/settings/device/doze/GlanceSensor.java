@@ -34,6 +34,7 @@ public class GlanceSensor implements ScreenStateNotifier {
     
     private final Sensor mSensor;
     private final Sensor mApproachSensor;
+    private final Sensor mCapsenseSensor;
 
     private boolean mEnabled;
 
@@ -45,6 +46,7 @@ public class GlanceSensor implements ScreenStateNotifier {
 
         mSensor = sensorHelper.getGlanceSensor();
         mApproachSensor = sensorHelper.getApproachGlanceSensor();
+        mCapsenseSensor = sensorHelper.getCapsenseSensor();
     }
 
     @Override
@@ -53,6 +55,7 @@ public class GlanceSensor implements ScreenStateNotifier {
             Log.d(TAG, "Disabling");
             mSensorHelper.unregisterListener(mGlanceListener);
             mSensorHelper.unregisterListener(mApproachGlanceListener);
+            mSensorHelper.unregisterListener(mCapsenseListener);
             mEnabled = false;
         }
     }
@@ -63,6 +66,7 @@ public class GlanceSensor implements ScreenStateNotifier {
             Log.d(TAG, "Enabling");
             mSensorHelper.registerListener(mSensor, mGlanceListener);
             mSensorHelper.registerListener(mApproachSensor, mApproachGlanceListener);
+            mSensorHelper.registerListener(mCapsenseSensor, mCapsenseListener);
             mEnabled = true;
         }
     }
@@ -83,6 +87,18 @@ public class GlanceSensor implements ScreenStateNotifier {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             Log.d(TAG, "Approach: Changed");
+            mSensorAction.action();
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        }
+    };
+
+    private SensorEventListener mCapsenseListener = new SensorEventListener() {
+        @Override
+        public synchronized void onSensorChanged(SensorEvent event) {
+            Log.d(TAG, "Capsense: Changed");
             mSensorAction.action();
         }
 
