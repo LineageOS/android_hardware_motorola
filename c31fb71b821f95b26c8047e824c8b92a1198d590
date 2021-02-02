@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1eaa5f65_7810770c",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2021-02-02T00:01:01Z",
+      "side": 1,
+      "message": "probably makes sense to move this into the interfaces folder",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 1
+      },
+      "revId": "c31fb71b821f95b26c8047e824c8b92a1198d590",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58228824_33ece543",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 17401
+      },
+      "writtenOn": "2021-02-02T00:01:01Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 26
+      },
+      "revId": "c31fb71b821f95b26c8047e824c8b92a1198d590",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
