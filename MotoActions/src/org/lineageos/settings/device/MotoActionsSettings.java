@@ -43,6 +43,7 @@ public class MotoActionsSettings {
     static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
+    static final String DOZE_ENABLE = "doze_enable";
     static final String ALWAYS_ON_DISPLAY = "always_on_display";
 
     private final Context mContext;

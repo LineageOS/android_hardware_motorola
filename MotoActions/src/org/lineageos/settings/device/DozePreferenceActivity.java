@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017 The LineageOS Project
+ *               2017,2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,11 @@
 package org.lineageos.settings.device;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
 
-public class DozePreferenceActivity extends PreferenceActivity {
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.collapsingtoolbar.R;
+
+public class DozePreferenceActivity extends CollapsingToolbarBaseActivity {
 
     private static final String TAG_DOZE = "doze";
 
@@ -29,7 +31,7 @@ public class DozePreferenceActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         getFragmentManager()
                 .beginTransaction()
-                .replace(android.R.id.content, new DozePreferenceFragment(), TAG_DOZE)
+                .replace(R.id.content_frame, new DozePreferenceFragment(), TAG_DOZE)
                 .commit();
     }
 }
