@@ -18,14 +18,19 @@
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver android:name="org.lineageos.settings.device.BootCompletedReceiver">
+        <receiver
+            android:name="org.lineageos.settings.device.BootCompletedReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
-        <service android:name="ServiceWrapper" android:permission="ServiceWrapper">
+        <service
+            android:name="ServiceWrapper"
+            android:permission="ServiceWrapper"
+            android:exported="false">
             <intent-filter>
                 <action android:name="ServiceWrapper"/>
             </intent-filter>
@@ -33,6 +38,7 @@
 
         <activity
             android:name=".DozePreferenceActivity"
+            android:exported="false"
             android:label="@string/ambient_display_gestures_title"
             android:theme="@style/MotoActions">
             <intent-filter>
@@ -48,6 +54,7 @@
 
         <activity
             android:name=".ActionsPreferenceActivity"
+            android:exported="false"
             android:label="@string/moto_gestures_panel_title"
             android:theme="@style/MotoActions">
             <intent-filter>
