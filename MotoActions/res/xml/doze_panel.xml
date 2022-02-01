@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017-2022 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License"
      you may not use this file except in compliance with the License.
@@ -16,22 +16,30 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:key="always_on_display"
+        android:disableDependentsState="true"
+        android:title="@string/ambient_display_always_on_title"
+        android:summary="@string/ambient_display_always_on_summary"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="ambient_display_key"
         android:title="@string/ambient_display_title">
 
-       <SwitchPreference
-           android:key="gesture_pick_up"
-           android:defaultValue="true"
-           android:title="@string/pick_up_gesture_title"
-           android:summary="@string/pick_up_gesture_summary"
-           android:icon="@drawable/ic_pickup" />
+        <SwitchPreference
+            android:key="gesture_pick_up"
+            android:defaultValue="true"
+            android:title="@string/pick_up_gesture_title"
+            android:summary="@string/pick_up_gesture_summary"
+            android:icon="@drawable/ic_pickup" />
 
-       <SwitchPreference
-           android:key="gesture_hand_wave"
-           android:defaultValue="true"
-           android:title="@string/hand_wave_gesture_title"
-           android:summary="@string/hand_wave_gesture_summary"
-           android:icon="@drawable/ic_hand" />
+        <SwitchPreference
+            android:key="gesture_hand_wave"
+            android:defaultValue="true"
+            android:title="@string/hand_wave_gesture_title"
+            android:summary="@string/hand_wave_gesture_summary"
+            android:icon="@drawable/ic_hand" />
+
     </PreferenceCategory>
 </PreferenceScreen>
