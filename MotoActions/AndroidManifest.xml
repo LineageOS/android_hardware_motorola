@@ -40,7 +40,7 @@
             android:name=".DozePreferenceActivity"
             android:exported="false"
             android:label="@string/ambient_display_gestures_title"
-            android:theme="@style/MotoActions">
+            android:theme="@style/Theme.Main">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -56,7 +56,7 @@
             android:name=".ActionsPreferenceActivity"
             android:exported="false"
             android:label="@string/moto_gestures_panel_title"
-            android:theme="@style/MotoActions">
+            android:theme="@style/Theme.Main">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
