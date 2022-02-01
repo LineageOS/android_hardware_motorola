@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,11 @@ package org.lineageos.settings.device;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.display.AmbientDisplayConfiguration;
+import android.os.PowerManager;
 import android.os.UserHandle;
+import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.provider.Settings.Secure;
 
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationAction;
@@ -39,10 +42,12 @@ public class MotoActionsSettings {
     private static final String GESTURE_LIFT_TO_SILENCE_KEY = "gesture_lift_to_silence";
 
     private final Context mContext;
+    private final PowerManager mPowerManager;
     private final UpdatedStateNotifier mUpdatedStateNotifier;
 
     private boolean mCameraGestureEnabled;
     private boolean mChopChopEnabled;
+    private boolean mDoubleTapEnabled;
     private boolean mPickUpGestureEnabled;
     private boolean mIrWakeUpEnabled;
     private boolean mIrSilencerEnabled;
@@ -54,6 +59,7 @@ public class MotoActionsSettings {
         loadPreferences(sharedPrefs);
         sharedPrefs.registerOnSharedPreferenceChangeListener(mPrefListener);
         mContext = context;
+        mPowerManager = context.getSystemService(PowerManager.class);
         mUpdatedStateNotifier = updatedStateNotifier;
     }
 
@@ -63,6 +69,12 @@ public class MotoActionsSettings {
 
     public boolean isChopChopGestureEnabled() {
         return mChopChopEnabled;
+    }
+
+    public boolean isDoubleTapGestureEnabled() {
+        return mContext.getResources().getBoolean(R.bool.config_useDoubleTapToWakeSensor) &&
+            Secure.getIntForUser(mContext.getContentResolver(),
+                    Secure.DOUBLE_TAP_TO_WAKE, 0, UserHandle.USER_CURRENT) != 0;
     }
 
     public static boolean isAODEnabled(Context context) {
@@ -107,6 +119,11 @@ public class MotoActionsSettings {
 
     public void chopChopAction() {
         new TorchAction(mContext).action();
+    }
+
+    public void doubleTapAction() {
+        mPowerManager.wakeUpWithProximityCheck(SystemClock.uptimeMillis(),
+                PowerManager.WAKE_REASON_GESTURE, TAG);
     }
 
     private void loadPreferences(SharedPreferences sharedPreferences) {

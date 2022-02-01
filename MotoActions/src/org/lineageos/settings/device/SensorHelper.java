@@ -34,6 +34,7 @@ public class SensorHelper {
 
     private static final int SENSOR_TYPE_MMI_CAMERA_ACTIVATION = 65540;
     private static final int SENSOR_TYPE_MMI_CHOP_CHOP = 65546;
+    private static final int SENSOR_TYPE_MMI_DOUBLE_TAP = 65566;
     private static final int SENSOR_TYPE_MMI_FLAT_UP = 65537;
     private static final int SENSOR_TYPE_MMI_FLAT_DOWN = 65538;
     private static final int SENSOR_TYPE_MMI_STOW = 65539;
@@ -75,6 +76,10 @@ public class SensorHelper {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CHOP_CHOP, true);
     }
 
+    public Sensor getDoubleTapSensor() {
+        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_DOUBLE_TAP, true);
+    }
+
     public Sensor getFlatUpSensor() {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_UP, true);
     }
@@ -86,7 +91,7 @@ public class SensorHelper {
     public Sensor getGlanceSensor() {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_GLANCE, true);
     }
-    
+
     public Sensor getApproachGlanceSensor() {
         return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_GLANCE_APPROACH, true);
     }

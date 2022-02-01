@@ -30,6 +30,7 @@ import java.util.LinkedList;
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 import org.lineageos.settings.device.actions.CameraActivationSensor;
 import org.lineageos.settings.device.actions.ChopChopSensor;
+import org.lineageos.settings.device.actions.DoubleTapSensor;
 import org.lineageos.settings.device.actions.FlipToMute;
 import org.lineageos.settings.device.actions.LiftToSilence;
 import org.lineageos.settings.device.actions.ProximitySilencer;
@@ -80,6 +81,7 @@ public class MotoActionsService extends IntentService implements ScreenStateNoti
         // Other actions that are always enabled
         mUpdatedStateNotifiers.add(new CameraActivationSensor(MotoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ChopChopSensor(MotoActionsSettings, mSensorHelper));
+        mUpdatedStateNotifiers.add(new DoubleTapSensor(MotoActionsSettings, mSensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(MotoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(MotoActionsSettings, context, mSensorHelper));
         mUpdatedStateNotifiers.add(new LiftToSilence(MotoActionsSettings, context, mSensorHelper));
