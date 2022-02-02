@@ -34,6 +34,24 @@
       "parentUuid": "96eac79c_c4a8c52b",
       "revId": "58580d20dde8728468e47058cf6bb6a31adb9017",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21aac943_1b690c1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-02T10:00:24Z",
+      "side": 1,
+      "message": "Ahh, ok. If you also implement Lineage gestures, then ignore my comment.",
+      "parentUuid": "1f93a45a_017b3ed8",
+      "revId": "58580d20dde8728468e47058cf6bb6a31adb9017",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
