@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96eac79c_c4a8c52b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-02T09:32:40Z",
+      "side": 1,
+      "message": "Make use of https://review.lineageos.org/q/Iae4ca9fc686e3dc82411524688841211e0cceb7b and do something like this instead: https://github.com/LineageOS/android_device_htc_msm8974-common/commit/0ba22329050336815690e33010acc6e563dfb833",
+      "revId": "58580d20dde8728468e47058cf6bb6a31adb9017",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
