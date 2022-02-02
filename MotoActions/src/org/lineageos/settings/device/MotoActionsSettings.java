@@ -42,6 +42,7 @@ public class MotoActionsSettings {
 
     static final String GESTURE_IR_WAKEUP_KEY = "gesture_hand_wave";
     static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
+    static final String GESTURE_POCKET_KEY = "gesture_pocket";
 
     static final String ALWAYS_ON_DISPLAY = "always_on_display";
 
@@ -51,6 +52,7 @@ public class MotoActionsSettings {
     private boolean mCameraGestureEnabled;
     private boolean mChopChopEnabled;
     private boolean mPickUpGestureEnabled;
+    private boolean mPocketGestureEnabled;
     private boolean mIrWakeUpEnabled;
     private boolean mIrSilencerEnabled;
     private boolean mFlipToMuteEnabled;
@@ -112,6 +114,10 @@ public class MotoActionsSettings {
         return isDozeEnabled() && !isAlwaysOnEnabled() && mPickUpGestureEnabled;
     }
 
+    public boolean isPocketGestureEnabled() {
+        return isDozeEnabled() && !isAlwaysOnEnabled() && mPocketGestureEnabled;
+    }
+
     public boolean isIrSilencerEnabled() {
         return mIrSilencerEnabled;
     }
@@ -137,6 +143,7 @@ public class MotoActionsSettings {
         mChopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true);
         mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
         mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true);
+        mPocketGestureEnabled = sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true);
         mIrSilencerEnabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false);
         mFlipToMuteEnabled = sharedPreferences.getBoolean(GESTURE_FLIP_TO_MUTE_KEY, false);
         mLiftToSilenceEnabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
@@ -156,6 +163,8 @@ public class MotoActionsSettings {
                 mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
             } else if (GESTURE_PICK_UP_KEY.equals(key)) {
                 mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true);
+            } else if (GESTURE_POCKET_KEY.equals(key)) {
+                mPocketGestureEnabled = sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true);
             } else if (GESTURE_IR_SILENCER_KEY.equals(key)) {
                 mIrSilencerEnabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false);
             } else if (GESTURE_FLIP_TO_MUTE_KEY.equals(key)) {

@@ -61,8 +61,7 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
 
     @Override
     public void screenTurnedOff() {
-        if (!mMotoActionsSettings.isIrWakeupEnabled() &&
-            mMotoActionsSettings.isPickUpEnabled() && !mEnabled) {
+        if (mMotoActionsSettings.isPocketGestureEnabled() && !mEnabled) {
             Log.d(TAG, "Enabling");
             mSensorHelper.registerListener(mSensor, this);
             mEnabled = true;

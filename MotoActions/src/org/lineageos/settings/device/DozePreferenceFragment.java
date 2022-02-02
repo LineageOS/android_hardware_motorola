@@ -50,6 +50,7 @@ public class DozePreferenceFragment extends PreferenceFragment implements OnPref
 
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPickUpPreference;
+    private SwitchPreference mPocketPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -83,6 +84,11 @@ public class DozePreferenceFragment extends PreferenceFragment implements OnPref
                 MotoActionsSettings.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
         mPickUpPreference.setOnPreferenceChangeListener(this);
+
+        mPocketPreference = (SwitchPreference) findPreference(
+                MotoActionsSettings.GESTURE_POCKET_KEY);
+        mPocketPreference.setEnabled(dozeEnabled);
+        mPocketPreference.setOnPreferenceChangeListener(this);
 
         // Hide AOD if not supported and set all its dependents otherwise
         if (!MotoActionsSettings.alwaysOnDisplayAvailable(getActivity())) {
@@ -145,6 +151,7 @@ public class DozePreferenceFragment extends PreferenceFragment implements OnPref
 
         mHandwavePreference.setEnabled(isChecked);
         mPickUpPreference.setEnabled(isChecked);
+        mPocketPreference.setEnabled(isChecked);
     }
 
     @Override
