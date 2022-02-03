@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2844f0e3_d1b39cd8",
+        "filename": "MotoActions/src/org/lineageos/settings/device/DozePreferenceFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-02-03T16:48:06Z",
+      "side": 0,
+      "message": "Several lines with more than 100 chars.",
+      "revId": "74b178d7d86a02a18c1b2282dab94e9af8437672",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
