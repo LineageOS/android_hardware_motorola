@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41691205_cc97af53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-04T11:30:44Z",
+      "side": 1,
+      "message": "formatted w/ google-java-format -i -a DozePreferenceFragment.java, should be fine now",
+      "revId": "062d240861bf2347c264d9ff3298df92592cea38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
