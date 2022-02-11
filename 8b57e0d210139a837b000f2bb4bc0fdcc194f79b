@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "841e5ca2_d994a7ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22728
+      },
+      "writtenOn": "2022-02-11T18:16:09Z",
+      "side": 1,
+      "message": "Hum, ambient display now shows up again but does nothing",
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
