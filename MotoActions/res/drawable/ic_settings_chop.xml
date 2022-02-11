@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:height="46.0dip" android:width="46.0dip" android:autoMirrored="true" android:viewportWidth="46.0" android:viewportHeight="46.0" xmlns:aapt="http://schemas.android.com/aapt"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="46.0dip"
+    android:height="46.0dip"
+    android:autoMirrored="true"
+    android:viewportWidth="46.0"
+    android:viewportHeight="46.0">
     <path android:fillColor="?android:attr/colorAccent" android:pathData="M20,20m-19.5,0a19.5,19.5 0,1 1,39 0a19.5,19.5 0,1 1,-39 0" />
     <path android:fillColor="#00000000" android:pathData="M20.0003,20.0038m-16.3277,6.4349a17.55,17.55 113.49,1 1,32.6554 -12.8699a17.55,17.55 113.49,1 1,-32.6554 12.8699" android:strokeColor="#ff0bbbef" android:strokeWidth="0.28" android:strokeAlpha="0.0" android:fillAlpha="0.0" />
     <path android:fillColor="#ffffffff" android:pathData="M10.7614,17.0817L16.1565,11.2698A2,2 64.8053,0 1,18.983 11.1647L32.7688,23.9618A2,2 93.8141,0 1,32.874 26.7883L27.4789,32.6002A2,2 85.2688,0 1,24.6524 32.7053L10.8666,19.9082A2,2 68.6013,0 1,10.7614 17.0817z" />

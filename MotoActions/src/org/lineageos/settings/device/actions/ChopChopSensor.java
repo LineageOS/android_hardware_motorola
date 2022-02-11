@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015-2016 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,9 @@
 
 package org.lineageos.settings.device.actions;
 
-import java.util.List;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.util.Log;
 
 import org.lineageos.settings.device.MotoActionsSettings;
@@ -30,8 +27,6 @@ import org.lineageos.settings.device.SensorHelper;
 
 public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ChopChopSensor";
-
-    private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
 
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
@@ -41,8 +36,8 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     private boolean mIsEnabled;
     private boolean mProxIsCovered;
 
-    public ChopChopSensor(MotoActionsSettings MotoActionsSettings, SensorHelper sensorHelper) {
-        mMotoActionsSettings = MotoActionsSettings;
+    public ChopChopSensor(MotoActionsSettings motoActionsSettings, SensorHelper sensorHelper) {
+        mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getChopChopSensor();
         mProx = sensorHelper.getProximitySensor();
@@ -55,7 +50,7 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
             mSensorHelper.registerListener(mSensor, this);
             mSensorHelper.registerListener(mProx, mProxListener);
             mIsEnabled = true;
-        } else if (! mMotoActionsSettings.isChopChopGestureEnabled() && mIsEnabled) {
+        } else if (!mMotoActionsSettings.isChopChopGestureEnabled() && mIsEnabled) {
             Log.d(TAG, "Disabling");
             mSensorHelper.unregisterListener(this);
             mSensorHelper.unregisterListener(mProxListener);
@@ -77,7 +72,7 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
-    private SensorEventListener mProxListener = new SensorEventListener() {
+    private final SensorEventListener mProxListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mProxIsCovered = event.values[0] < mProx.getMaximumRange();
@@ -87,5 +82,4 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
         public void onAccuracyChanged(Sensor mSensor, int accuracy) {
         }
     };
-
 }

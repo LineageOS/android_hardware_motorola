@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,21 +17,22 @@
 
 package org.lineageos.settings.device.actions;
 
+import static android.telephony.TelephonyManager.CALL_STATE_RINGING;
+
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.telephony.PhoneStateListener;
 import android.telecom.TelecomManager;
+import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-import static android.telephony.TelephonyManager.*;
-
-public class ProximitySilencer extends PhoneStateListener implements SensorEventListener, UpdatedStateNotifier {
+public class ProximitySilencer extends PhoneStateListener implements SensorEventListener,
+        UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ProximitySilencer";
 
     private static final int SILENCE_DELAY_MS = 500;
@@ -45,12 +46,12 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
     private long mRingStartedMs;
     private boolean mCoveredRinging;
 
-    public ProximitySilencer(MotoActionsSettings MotoActionsSettings, Context context,
-                SensorHelper sensorHelper) {
+    public ProximitySilencer(MotoActionsSettings motoActionsSettings, Context context,
+                             SensorHelper sensorHelper) {
         mTelecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
-        mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        mTelephonyManager = context.getSystemService(TelephonyManager.class);
 
-        mMotoActionsSettings = MotoActionsSettings;
+        mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getProximitySensor();
         mCoveredRinging = false;
@@ -71,23 +72,19 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
         long now = System.currentTimeMillis();
 
-        if (isNear){
-            if (mIsRinging && (now - mRingStartedMs >= SILENCE_DELAY_MS)){
-                mCoveredRinging = true;
-            } else {
-                mCoveredRinging = false;
-            }
+        if (isNear) {
+            mCoveredRinging = mIsRinging && (now - mRingStartedMs >= SILENCE_DELAY_MS);
             return;
         }
 
-        if (!isNear && mIsRinging) {
-            Log.d(TAG, "event: " + event.values[0] + ", " + " covered " + Boolean.toString(mCoveredRinging));
+        if (mIsRinging) {
+            Log.d(TAG, "event: " + event.values[0] + ", " + " covered " + mCoveredRinging);
             if (mCoveredRinging) {
                 Log.d(TAG, "Silencing ringer");
                 mTelecomManager.silenceRinger();
             } else {
                 Log.d(TAG, "Ignoring silence gesture: " + now + " is too close to " +
-                        mRingStartedMs + ", delay=" + SILENCE_DELAY_MS + " or covered " + Boolean.toString(mCoveredRinging));
+                        mRingStartedMs + ", delay=" + SILENCE_DELAY_MS);
             }
             mCoveredRinging = false;
         }
