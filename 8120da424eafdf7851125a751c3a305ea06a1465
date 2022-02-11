@@ -16,6 +16,24 @@
       "message": "line length, maybe make it\nIntent pulseIntent \u003d new Intent(\"com.android.systemui.doze.pulse\");\nmContext.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT);",
       "revId": "8120da424eafdf7851125a751c3a305ea06a1465",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0231d74d_1f1e21d5",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/DozePulseAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 22728
+      },
+      "writtenOn": "2022-02-11T18:00:48Z",
+      "side": 1,
+      "message": "Works",
+      "parentUuid": "be65abef_d0ecd95b",
+      "revId": "8120da424eafdf7851125a751c3a305ea06a1465",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
