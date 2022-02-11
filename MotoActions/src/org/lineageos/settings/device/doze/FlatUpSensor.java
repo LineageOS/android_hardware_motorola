@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public class FlatUpSensor implements ScreenStateNotifier {
         }
     }
 
-    private SensorEventListener mFlatUpListener = new SensorEventListener() {
+    private final SensorEventListener mFlatUpListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             boolean thisFlatUp = (event.values[0] != 0);
@@ -88,7 +88,7 @@ public class FlatUpSensor implements ScreenStateNotifier {
         }
     };
 
-    private SensorEventListener mStowListener = new SensorEventListener() {
+    private final SensorEventListener mStowListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mIsStowed = (event.values[0] != 0);

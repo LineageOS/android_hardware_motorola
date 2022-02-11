@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,6 @@
 
 package org.lineageos.settings.device.actions;
 
-import java.util.List;
-
 import android.app.KeyguardManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -27,12 +25,13 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.MediaStore;
-import android.util.Log;
 
 import org.lineageos.settings.device.SensorAction;
+
+import java.util.List;
 
 public class CameraActivationAction implements SensorAction {
     private static final String TAG = "MotoActions";
@@ -64,7 +63,7 @@ public class CameraActivationAction implements SensorAction {
 
     private void vibrate() {
         Vibrator v = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
     private void turnScreenOn() {

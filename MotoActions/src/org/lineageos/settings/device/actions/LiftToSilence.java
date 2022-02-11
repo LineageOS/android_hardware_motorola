@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ import android.util.Log;
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-public class LiftToSilence extends PhoneStateListener implements SensorEventListener, UpdatedStateNotifier {
+public class LiftToSilence extends PhoneStateListener implements SensorEventListener,
+        UpdatedStateNotifier {
     private static final String TAG = "MotoActions-LiftToSilence";
 
     private final MotoActionsSettings mMotoActionsSettings;
@@ -44,14 +45,14 @@ public class LiftToSilence extends PhoneStateListener implements SensorEventList
     private boolean mIsStowed;
     private boolean mLastFlatUp;
 
-    public LiftToSilence(MotoActionsSettings MotoActionsSettings, Context context,
+    public LiftToSilence(MotoActionsSettings motoActionsSettings, Context context,
                 SensorHelper sensorHelper) {
-        mMotoActionsSettings = MotoActionsSettings;
+        mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
         mFlatUpSensor = sensorHelper.getFlatUpSensor();
         mStowSensor = sensorHelper.getStowSensor();
         mTelecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
-        mTelephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        mTelephonyManager = context.getSystemService(TelephonyManager.class);
     }
 
     @Override
@@ -96,7 +97,7 @@ public class LiftToSilence extends PhoneStateListener implements SensorEventList
     public void onAccuracyChanged(Sensor mSensor, int accuracy) {
     }
 
-    private SensorEventListener mStowListener = new SensorEventListener() {
+    private final SensorEventListener mStowListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mIsStowed = (event.values[0] != 0);

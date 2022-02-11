@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2022 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,27 +65,20 @@ public class DozePreferenceFragment extends PreferenceFragment
 
         boolean dozeEnabled = MotoActionsSettings.isDozeEnabled(getActivity());
 
-        mAlwaysOnDisplayPreference =
-                (SwitchPreference) findPreference(MotoActionsSettings.ALWAYS_ON_DISPLAY);
+        mAlwaysOnDisplayPreference = findPreference(MotoActionsSettings.ALWAYS_ON_DISPLAY);
         mAlwaysOnDisplayPreference.setEnabled(dozeEnabled);
         mAlwaysOnDisplayPreference.setChecked(MotoActionsSettings.isAlwaysOnEnabled(getActivity()));
         mAlwaysOnDisplayPreference.setOnPreferenceChangeListener(this);
 
-        PreferenceCategory ambientDisplayCategory =
-                (PreferenceCategory) findPreference("ambient_display_key");
-
-        mHandwavePreference =
-                (SwitchPreference) findPreference(MotoActionsSettings.GESTURE_IR_WAKEUP_KEY);
+        mHandwavePreference = findPreference(MotoActionsSettings.GESTURE_IR_WAKEUP_KEY);
         mHandwavePreference.setEnabled(dozeEnabled);
         mHandwavePreference.setOnPreferenceChangeListener(this);
 
-        mPickUpPreference =
-                (SwitchPreference) findPreference(MotoActionsSettings.GESTURE_PICK_UP_KEY);
+        mPickUpPreference = findPreference(MotoActionsSettings.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
         mPickUpPreference.setOnPreferenceChangeListener(this);
 
-        mPocketPreference = (SwitchPreference) findPreference(
-                MotoActionsSettings.GESTURE_POCKET_KEY);
+        mPocketPreference = findPreference(MotoActionsSettings.GESTURE_POCKET_KEY);
         mPocketPreference.setEnabled(dozeEnabled);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
@@ -93,6 +86,7 @@ public class DozePreferenceFragment extends PreferenceFragment
         if (!MotoActionsSettings.alwaysOnDisplayAvailable(getActivity())) {
             getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
         } else {
+            PreferenceCategory ambientDisplayCategory = findPreference("ambient_display_key");
             ambientDisplayCategory.setDependency(MotoActionsSettings.ALWAYS_ON_DISPLAY);
         }
     }
@@ -180,7 +174,7 @@ public class DozePreferenceFragment extends PreferenceFragment
                     .getSharedPreferences("doze_panel", Activity.MODE_PRIVATE)
                     .edit()
                     .putBoolean("first_help_shown", true)
-                    .commit();
+                    .apply();
         }
     }
 
