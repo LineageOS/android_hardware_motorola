@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "834c17f5_ee4c620e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-11T15:07:55Z",
+      "side": 1,
+      "message": "When looking at the other patches I saw that the code wanted some general maintenance. So I did this, but I can\u0027t test it. Leaving that to you guys :)",
+      "revId": "7bcb55a850dc692bc17a799c1ec0e5ad4d485046",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
