@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,28 +18,13 @@
 package org.lineageos.settings.device;
 
 import android.content.Intent;
-import android.os.Binder;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 
 public class ServiceWrapper extends android.app.Service {
-    static final String TAG = "MotoActions-ServiceWrapper";
+    private static final String TAG = "MotoActions-ServiceWrapper";
 
-    private final IBinder mBinder = new LocalBinder();
     private MotoActionsService mMotoActionsService;
-
-    public interface ServiceCallback {
-        void sendResults(int resultCode, Bundle b);
-    }
-
-    public class LocalBinder extends Binder {
-        ServiceWrapper getService() {
-            // Return this instance of the service so clients can call public
-            // methods
-            return ServiceWrapper.this;
-        }
-    }
 
     @Override
     public void onCreate() {
@@ -52,15 +37,5 @@ public class ServiceWrapper extends android.app.Service {
     public IBinder onBind(Intent intent) {
         Log.i(TAG, "onBind");
         return null;
-    }
-
-    public void setCallback(ServiceCallback callback) {
-    }
-
-    public void start() {
-        Log.i(TAG, "start");
-    }
-
-    public void stop() {
     }
 }

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,6 @@
 
 package org.lineageos.settings.device.actions;
 
-import java.util.List;
-
 import android.app.KeyguardManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -27,12 +25,13 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.MediaStore;
-import android.util.Log;
 
 import org.lineageos.settings.device.SensorAction;
+
+import java.util.List;
 
 public class CameraActivationAction implements SensorAction {
     private static final String TAG = "MotoActions";
@@ -64,12 +63,14 @@ public class CameraActivationAction implements SensorAction {
 
     private void vibrate() {
         Vibrator v = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(500);
+        v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
     private void turnScreenOn() {
-        PowerManager.WakeLock wl = mPowerManager.newWakeLock(
-            PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, TAG);
+        PowerManager.WakeLock wl =
+                mPowerManager.newWakeLock(
+                        PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
+                        TAG);
         wl.acquire(TURN_SCREEN_ON_WAKE_LOCK_MS);
     }
 
@@ -112,13 +113,13 @@ public class CameraActivationAction implements SensorAction {
     }
 
     private ActivityInfo getBestActivityInfo(Intent intent, ActivityInfo match) {
-        List <ResolveInfo> activities = mPackageManager.queryIntentActivities(intent, 0);
+        List<ResolveInfo> activities = mPackageManager.queryIntentActivities(intent, 0);
         ActivityInfo best = null;
         if (activities.size() > 0) {
             best = activities.get(0).activityInfo;
             if (match != null) {
                 String packageName = match.applicationInfo.packageName;
-                for (int i = activities.size()-1; i >= 0; i--) {
+                for (int i = activities.size() - 1; i >= 0; i--) {
                     ActivityInfo activityInfo = activities.get(i).activityInfo;
                     if (packageName.equals(activityInfo.applicationInfo.packageName)) {
                         best = activityInfo;

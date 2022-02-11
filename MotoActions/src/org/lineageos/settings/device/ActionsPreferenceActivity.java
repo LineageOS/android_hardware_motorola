@@ -25,7 +25,9 @@ public class ActionsPreferenceActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction()
-            .replace(android.R.id.content, new ActionsPreferenceFragment()).commit();
+        getFragmentManager()
+                .beginTransaction()
+                .replace(android.R.id.content, new ActionsPreferenceFragment())
+                .commit();
     }
 }

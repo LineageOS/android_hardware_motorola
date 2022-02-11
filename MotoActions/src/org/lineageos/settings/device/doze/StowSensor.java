@@ -33,7 +33,7 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
     private static final int HANDWAVE_MAX_DELTA_NS = 1000 * 1000 * 1000;
 
     // Minimum time until the device is considered to have been in the pocket: 5s
-    private static final int POCKET_MIN_DELTA_NS = 5000 * 1000 * 1000;
+    private static final long POCKET_MIN_DELTA_NS = 5000L * 1000 * 1000;
 
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
@@ -44,8 +44,10 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
     private boolean mLastStowed;
     private long mLastStowedTime;
 
-    public StowSensor(MotoActionsSettings MotoActionsSettings, SensorHelper sensorHelper,
-                SensorAction action) {
+    public StowSensor(
+            MotoActionsSettings MotoActionsSettings,
+            SensorHelper sensorHelper,
+            SensorAction action) {
         mMotoActionsSettings = MotoActionsSettings;
         mSensorHelper = sensorHelper;
         mSensorAction = action;
@@ -64,8 +66,9 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
 
     @Override
     public void screenTurnedOff() {
-        if ((mMotoActionsSettings.isPocketGestureEnabled() ||
-                    mMotoActionsSettings.isIrWakeupEnabled()) && !mEnabled) {
+        if ((mMotoActionsSettings.isPocketGestureEnabled()
+                        || mMotoActionsSettings.isIrWakeupEnabled())
+                && !mEnabled) {
             Log.d(TAG, "Enabling");
             mSensorHelper.registerListener(mSensor, this);
             mEnabled = true;
@@ -77,7 +80,7 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
         boolean thisStowed = (event.values[0] != 0);
         if (thisStowed) {
             mLastStowedTime = event.timestamp;
-        } else if (mLastStowed && !thisStowed) {
+        } else if (mLastStowed) {
             if (shouldPulse(event.timestamp)) {
                 mSensorAction.action();
             }
@@ -103,6 +106,5 @@ public class StowSensor implements ScreenStateNotifier, SensorEventListener {
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    }
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 }
