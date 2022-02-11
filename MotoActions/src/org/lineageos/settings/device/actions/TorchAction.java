@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,20 +21,20 @@ import android.content.Context;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraAccessException;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 
 import org.lineageos.settings.device.SensorAction;
 
 public class TorchAction implements SensorAction {
     private static final String TAG = "MotoActions";
 
-    private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
-
-    private CameraManager mCameraManager;
-    private final Vibrator mVibrator;
-    private String mRearCameraId;
     private static boolean mTorchEnabled;
+
+    private final CameraManager mCameraManager;
+    private final Vibrator mVibrator;
+
+    private String mRearCameraId;
 
     public TorchAction(Context mContext) {
         mCameraManager = (CameraManager) mContext.getSystemService(Context.CAMERA_SERVICE);
@@ -50,18 +50,18 @@ public class TorchAction implements SensorAction {
                     break;
                 }
             }
-        } catch (CameraAccessException e) {
+        } catch (CameraAccessException ignored) {
         }
     }
 
     @Override
     public void action() {
-        mVibrator.vibrate(250);
+        mVibrator.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
         if (mRearCameraId != null) {
             try {
                 mCameraManager.setTorchMode(mRearCameraId, !mTorchEnabled);
                 mTorchEnabled = !mTorchEnabled;
-            } catch (CameraAccessException e) {
+            } catch (CameraAccessException ignored) {
             }
         }
     }

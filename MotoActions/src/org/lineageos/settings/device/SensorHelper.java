@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017-2020 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,7 +57,8 @@ public class SensorHelper {
             List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
             for (Sensor sensor : sensorList) {
                 writer.write("sensor " + sensor.getType() + " = " + sensor.getName()
-                    + " max batch: " + sensor.getFifoMaxEventCount() + " isWakeUp: " + sensor.isWakeUpSensor() + "\n");
+                        + " max batch: " + sensor.getFifoMaxEventCount() + " isWakeUp: "
+                        + sensor.isWakeUpSensor() + "\n");
             }
             writer.close();
         } catch (IOException e) {

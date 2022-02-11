@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,13 +38,13 @@ public class FlipToMute implements UpdatedStateNotifier {
     private final SensorHelper mSensorHelper;
     private final Sensor mFlatDown;
     private final Sensor mStow;
+    private final Receiver mReceiver;
 
     private boolean mIsEnabled;
     private boolean mIsFlatDown;
     private boolean mIsStowed;
     private int mFilter;
-    private Context mContext;
-    private Receiver mReceiver;
+    private final Context mContext;
 
     public FlipToMute(MotoActionsSettings MotoActionsSettings, Context context,
                 SensorHelper sensorHelper) {
@@ -53,8 +53,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         mSensorHelper = sensorHelper;
         mFlatDown = sensorHelper.getFlatDownSensor();
         mStow = sensorHelper.getStowSensor();
-        mNotificationManager =
-            (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = context.getSystemService(NotificationManager.class);
         mFilter = mNotificationManager.getCurrentInterruptionFilter();
         mReceiver = new Receiver();
     }
@@ -77,7 +76,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         }
     }
 
-    private SensorEventListener mFlatDownListener = new SensorEventListener() {
+    private final SensorEventListener mFlatDownListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mIsFlatDown = (event.values[0] != 0);
@@ -89,7 +88,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         }
     };
 
-    private SensorEventListener mStowListener = new SensorEventListener() {
+    private final SensorEventListener mStowListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mIsStowed = (event.values[0] != 0);
@@ -102,11 +101,11 @@ public class FlipToMute implements UpdatedStateNotifier {
     };
 
     private void sensorChange() {
-
         Log.d(TAG, "event: " + mIsFlatDown + " mIsStowed=" + mIsStowed);
 
         if (mIsFlatDown && mIsStowed) {
-            mNotificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY);
+            mNotificationManager.setInterruptionFilter(
+                    NotificationManager.INTERRUPTION_FILTER_PRIORITY);
             Log.d(TAG, "Interrupt filter: Allow priority");
         } else if (!mIsFlatDown) {
             mNotificationManager.setInterruptionFilter(mFilter);
@@ -115,7 +114,6 @@ public class FlipToMute implements UpdatedStateNotifier {
     }
 
     public class Receiver extends BroadcastReceiver {
-
         @Override
         public void onReceive(Context context, Intent intent) {
             if (!mIsFlatDown && !mIsStowed) {

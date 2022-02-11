@@ -31,8 +31,6 @@ import org.lineageos.settings.device.SensorHelper;
 public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ChopChopSensor";
 
-    private static final int TURN_SCREEN_ON_WAKE_LOCK_MS = 500;
-
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
     private final Sensor mSensor;
@@ -77,7 +75,7 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
-    private SensorEventListener mProxListener = new SensorEventListener() {
+    private final SensorEventListener mProxListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
             mProxIsCovered = event.values[0] < mProx.getMaximumRange();
