@@ -17,23 +17,22 @@
 
 package org.lineageos.settings.device;
 
+import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
+import static android.provider.Settings.Secure.DOZE_ENABLED;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
 
-import org.lineageos.settings.device.actions.UpdatedStateNotifier;
+import androidx.preference.PreferenceManager;
+
 import org.lineageos.settings.device.actions.CameraActivationAction;
 import org.lineageos.settings.device.actions.TorchAction;
-
-import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
-import static android.provider.Settings.Secure.DOZE_ENABLED;
+import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 
 public class MotoActionsSettings {
-    private static final String TAG = "MotoActions";
-
     private static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";
     private static final String GESTURE_CHOP_CHOP_KEY = "gesture_chop_chop";
     private static final String GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer";
@@ -149,35 +148,35 @@ public class MotoActionsSettings {
         mLiftToSilenceEnabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
     }
 
-    private SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
+    private final SharedPreferences.OnSharedPreferenceChangeListener mPrefListener =
             new SharedPreferences.OnSharedPreferenceChangeListener() {
-        @Override
-        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            boolean updated = true;
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPrefs, String key) {
+                    boolean updated = true;
 
-            if (GESTURE_CAMERA_ACTION_KEY.equals(key)) {
-                mCameraGestureEnabled = sharedPreferences.getBoolean(GESTURE_CAMERA_ACTION_KEY, true);
-            } else if (GESTURE_CHOP_CHOP_KEY.equals(key)) {
-                mChopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true);
-            } else if (GESTURE_IR_WAKEUP_KEY.equals(key)) {
-                mIrWakeUpEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
-            } else if (GESTURE_PICK_UP_KEY.equals(key)) {
-                mPickUpGestureEnabled = sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true);
-            } else if (GESTURE_POCKET_KEY.equals(key)) {
-                mPocketGestureEnabled = sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true);
-            } else if (GESTURE_IR_SILENCER_KEY.equals(key)) {
-                mIrSilencerEnabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false);
-            } else if (GESTURE_FLIP_TO_MUTE_KEY.equals(key)) {
-                mFlipToMuteEnabled = sharedPreferences.getBoolean(GESTURE_FLIP_TO_MUTE_KEY, false);
-            } else if (GESTURE_LIFT_TO_SILENCE_KEY.equals(key)) {
-                mLiftToSilenceEnabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
-            } else {
-                updated = false;
-            }
+                    if (GESTURE_CAMERA_ACTION_KEY.equals(key)) {
+                        mCameraGestureEnabled = sharedPrefs.getBoolean(GESTURE_CAMERA_ACTION_KEY, true);
+                    } else if (GESTURE_CHOP_CHOP_KEY.equals(key)) {
+                        mChopChopEnabled = sharedPrefs.getBoolean(GESTURE_CHOP_CHOP_KEY, true);
+                    } else if (GESTURE_IR_WAKEUP_KEY.equals(key)) {
+                        mIrWakeUpEnabled = sharedPrefs.getBoolean(GESTURE_IR_WAKEUP_KEY, true);
+                    } else if (GESTURE_PICK_UP_KEY.equals(key)) {
+                        mPickUpGestureEnabled = sharedPrefs.getBoolean(GESTURE_PICK_UP_KEY, true);
+                    } else if (GESTURE_POCKET_KEY.equals(key)) {
+                        mPocketGestureEnabled = sharedPrefs.getBoolean(GESTURE_POCKET_KEY, true);
+                    } else if (GESTURE_IR_SILENCER_KEY.equals(key)) {
+                        mIrSilencerEnabled = sharedPrefs.getBoolean(GESTURE_IR_SILENCER_KEY, false);
+                    } else if (GESTURE_FLIP_TO_MUTE_KEY.equals(key)) {
+                        mFlipToMuteEnabled = sharedPrefs.getBoolean(GESTURE_FLIP_TO_MUTE_KEY, false);
+                    } else if (GESTURE_LIFT_TO_SILENCE_KEY.equals(key)) {
+                        mLiftToSilenceEnabled = sharedPrefs.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false);
+                    } else {
+                        updated = false;
+                    }
 
-            if (updated) {
-                mUpdatedStateNotifier.updateState();
-            }
-        }
-    };
+                    if (updated) {
+                        mUpdatedStateNotifier.updateState();
+                    }
+                }
+            };
 }

@@ -7,6 +7,7 @@
     <original-package android:name="com.cyanogenmod.settings.device" />
 
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -25,10 +26,8 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="ServiceWrapper" android:permission="ServiceWrapper">
-            <intent-filter>
-                <action android:name="ServiceWrapper"/>
-            </intent-filter>
+        <service android:name="org.lineageos.settings.device.MotoActionsService"
+            android:permission="MotoActionsService">
         </service>
 
         <activity

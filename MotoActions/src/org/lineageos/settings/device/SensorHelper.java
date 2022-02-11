@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017-2020 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +17,16 @@
 
 package org.lineageos.settings.device;
 
-import java.util.List;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.hardware.TriggerEventListener;
 import android.util.Log;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.List;
 
 public class SensorHelper {
     private static final String TAG = "MotoActions";
@@ -45,7 +44,7 @@ public class SensorHelper {
 
     public SensorHelper(Context context) {
         mContext = context;
-        mSensorManager = (SensorManager) mContext .getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         dumpSensorsList();
     }
 
@@ -57,7 +56,8 @@ public class SensorHelper {
             List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
             for (Sensor sensor : sensorList) {
                 writer.write("sensor " + sensor.getType() + " = " + sensor.getName()
-                    + " max batch: " + sensor.getFifoMaxEventCount() + " isWakeUp: " + sensor.isWakeUpSensor() + "\n");
+                        + " max batch: " + sensor.getFifoMaxEventCount() + " isWakeUp: "
+                        + sensor.isWakeUpSensor() + "\n");
             }
             writer.close();
         } catch (IOException e) {
@@ -98,16 +98,5 @@ public class SensorHelper {
 
     public void unregisterListener(SensorEventListener listener) {
         mSensorManager.unregisterListener(listener);
-    }
-
-    /* TriggerSensor */
-    public void requestTriggerSensor(Sensor sensor, TriggerEventListener listener) {
-        if (!mSensorManager.requestTriggerSensor(listener, sensor)) {
-            Log.e(TAG, "Failed to requestTriggerSensor for sensor " + sensor);
-        }
-    }
-
-    public void cancelTriggerSensor(Sensor sensor, TriggerEventListener listener) {
-        mSensorManager.cancelTriggerSensor(listener, sensor);
     }
 }
