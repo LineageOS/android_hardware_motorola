@@ -33,6 +33,24 @@
       "message": "Hitting this on ambient display:\n\nE AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{org.lineageos.settings.device/org.lineageos.settings.device.DozePreferenceActivity}: java.lang.IllegalStateException: You need to use a Theme.AppCompat theme (or descendant) with this activity\n\n",
       "revId": "7bcb55a850dc692bc17a799c1ec0e5ad4d485046",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d46ff344_6685246f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-11T17:55:53Z",
+      "side": 1,
+      "message": "Reverted that file back to PreferenceActivity, should work again",
+      "parentUuid": "a808a3d5_733a664d",
+      "revId": "7bcb55a850dc692bc17a799c1ec0e5ad4d485046",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
