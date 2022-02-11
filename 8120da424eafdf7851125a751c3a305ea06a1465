@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be65abef_d0ecd95b",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/DozePulseAction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-11T13:02:50Z",
+      "side": 1,
+      "message": "line length, maybe make it\nIntent pulseIntent \u003d new Intent(\"com.android.systemui.doze.pulse\");\nmContext.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT);",
+      "revId": "8120da424eafdf7851125a751c3a305ea06a1465",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
