@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- * Copyright (c) 2017 The LineageOS Project
+ * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,36 +18,18 @@
 package org.lineageos.settings.device;
 
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.IBinder;
+import android.os.UserHandle;
 import android.util.Log;
 
-import org.lineageos.settings.device.ServiceWrapper.LocalBinder;
-
 public class BootCompletedReceiver extends BroadcastReceiver {
-    static final String TAG = "MotoActions";
-    private ServiceWrapper mServiceWrapper;
+    private static final String TAG = "MotoActions";
 
     @Override
     public void onReceive(final Context context, Intent intent) {
         Log.i(TAG, "Booting");
-        context.startService(new Intent(context, ServiceWrapper.class));
+        context.startServiceAsUser(new Intent(context, MotoActionsService.class),
+                UserHandle.CURRENT);
     }
-
-    private ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            LocalBinder binder = (LocalBinder) service;
-            mServiceWrapper = binder.getService();
-            mServiceWrapper.start();
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName className) {
-            mServiceWrapper = null;
-        }
-    };
 }
