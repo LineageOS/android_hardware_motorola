@@ -16,6 +16,92 @@
       "message": "Hum, ambient display now shows up again but does nothing",
       "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fbf9c6e_083b1765",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T04:06:52Z",
+      "side": 1,
+      "message": "btw is it possible to nuke the ServiceWrapper?",
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6e4e9c6_fae77858",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/StowSensor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T04:06:52Z",
+      "side": 1,
+      "message": "long for this as well for consistency and avoid implicit casting on comparison below?",
+      "range": {
+        "startLine": 33,
+        "startChar": 25,
+        "endLine": 33,
+        "endChar": 29
+      },
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c2ba33_63b1234e",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/StowSensor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T04:06:52Z",
+      "side": 1,
+      "message": "nice catch, move to https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/323006 ?",
+      "range": {
+        "startLine": 36,
+        "startChar": 25,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "164c5634_13665293",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/StowSensor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T04:06:52Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 80,
+        "startChar": 18,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
