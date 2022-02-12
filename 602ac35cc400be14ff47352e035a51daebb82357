@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3594d6a9_e8ab8593",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T04:08:31Z",
+      "side": 1,
+      "message": "ps4 added back ScreenReceiver to fix doze and applied `fd -g \"**/*.java\" -x google-java-format -i -a`",
+      "revId": "602ac35cc400be14ff47352e035a51daebb82357",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
