@@ -25,6 +25,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.PowerManager;
+import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.MediaStore;
@@ -78,7 +79,7 @@ public class CameraActivationAction implements SensorAction {
         Intent intent = createIntent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
         if (getBestActivityInfo(intent) != null) {
             // Only launch if we can succeed, but let the user pick the action
-            mContext.startActivity(intent);
+            mContext.startActivityAsUser(intent, UserHandle.CURRENT);
         }
     }
 
@@ -91,7 +92,7 @@ public class CameraActivationAction implements SensorAction {
         ActivityInfo secureActivity = getBestActivityInfo(secureIntent, normalActivity);
         if (secureActivity != null) {
             secureIntent.setComponent(componentName(secureActivity));
-            mContext.startActivity(secureIntent);
+            mContext.startActivityAsUser(secureIntent, UserHandle.CURRENT);
         }
     }
 
