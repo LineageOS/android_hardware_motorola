@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bb8c4bd_bf98ad43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-12T09:02:45Z",
+      "side": 1,
+      "message": "should be, will look into it",
+      "parentUuid": "3fbf9c6e_083b1765",
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6e4e9c6_fae77858",
@@ -48,6 +66,30 @@
       "writtenOn": "2022-02-12T04:06:52Z",
       "side": 1,
       "message": "long for this as well for consistency and avoid implicit casting on comparison below?",
+      "range": {
+        "startLine": 33,
+        "startChar": 25,
+        "endLine": 33,
+        "endChar": 29
+      },
+      "revId": "8b57e0d210139a837b000f2bb4bc0fdcc194f79b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d45a8d4_c8ff7b6e",
+        "filename": "MotoActions/src/org/lineageos/settings/device/doze/StowSensor.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-12T09:02:45Z",
+      "side": 1,
+      "message": "i thought of it. will do",
+      "parentUuid": "e6e4e9c6_fae77858",
       "range": {
         "startLine": 33,
         "startChar": 25,

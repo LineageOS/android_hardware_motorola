@@ -22,6 +22,30 @@
       },
       "revId": "c8aa3cd5381e7d89b064d27840a603bdfa4575ee",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c42b26c_59fc6d54",
+        "filename": "MotoActions/src/org/lineageos/settings/device/MotoActionsService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-12T09:02:45Z",
+      "side": 0,
+      "message": "agree on the last part. will see if I can improve that",
+      "parentUuid": "b1657a59_7968b550",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 60
+      },
+      "revId": "c8aa3cd5381e7d89b064d27840a603bdfa4575ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
