@@ -34,6 +34,24 @@
       "parentUuid": "3594d6a9_e8ab8593",
       "revId": "602ac35cc400be14ff47352e035a51daebb82357",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "002c1b20_dc9dbae4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-02-12T10:12:29Z",
+      "side": 1,
+      "message": "it\u0027s fine imo, just like we trust clang-format rather than handcraft the style for c/c++ code",
+      "parentUuid": "ebb60533_5a7aa606",
+      "revId": "602ac35cc400be14ff47352e035a51daebb82357",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
