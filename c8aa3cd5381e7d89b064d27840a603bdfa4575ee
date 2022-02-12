@@ -70,6 +70,30 @@
       },
       "revId": "c8aa3cd5381e7d89b064d27840a603bdfa4575ee",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c1e62dd_90c8e810",
+        "filename": "MotoActions/src/org/lineageos/settings/device/MotoActionsService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-12T11:13:50Z",
+      "side": 0,
+      "message": "removed ScreenReceiver in PS6",
+      "parentUuid": "ef0c0367_8169b0ab",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 60
+      },
+      "revId": "c8aa3cd5381e7d89b064d27840a603bdfa4575ee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

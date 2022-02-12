@@ -52,6 +52,24 @@
       "parentUuid": "ebb60533_5a7aa606",
       "revId": "602ac35cc400be14ff47352e035a51daebb82357",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b6cc606_9dade5a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-02-12T11:13:50Z",
+      "side": 1,
+      "message": "Don\u0027t agree there. For our own apps we usually trust the android studio formatting, which I now applied in PS5",
+      "parentUuid": "002c1b20_dc9dbae4",
+      "revId": "602ac35cc400be14ff47352e035a51daebb82357",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
