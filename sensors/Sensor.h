@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2019 The Android Open Source Project
+ * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -66,6 +67,15 @@ class Sensor {
     ISensorsEventCallback* mCallback;
 
     OperationMode mMode;
+};
+
+class OneShotSensor : public Sensor {
+  public:
+    OneShotSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
+
+    virtual void batch(int32_t /* samplingPeriodNs */) override {}
+
+    virtual Result flush() override { return Result::BAD_VALUE; }
 };
 
 }  // namespace implementation
