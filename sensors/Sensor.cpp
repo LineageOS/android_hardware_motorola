@@ -73,8 +73,8 @@ void Sensor::batch(int32_t samplingPeriodNs) {
 }
 
 void Sensor::activate(bool enable) {
+    std::lock_guard<std::mutex> lock(mRunMutex);
     if (mIsEnabled != enable) {
-        std::unique_lock<std::mutex> lock(mRunMutex);
         mIsEnabled = enable;
         mWaitCV.notify_all();
     }
@@ -148,8 +148,8 @@ std::vector<Event> Sensor::readEvents() {
 }
 
 void Sensor::setOperationMode(OperationMode mode) {
+    std::lock_guard<std::mutex> lock(mRunMutex);
     if (mMode != mode) {
-        std::unique_lock<std::mutex> lock(mRunMutex);
         mMode = mode;
         mWaitCV.notify_all();
     }
