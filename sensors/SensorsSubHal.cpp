@@ -37,6 +37,9 @@ SensorsSubHal::SensorsSubHal() : mCallback(nullptr), mNextHandle(1) {
     if (property_get_bool("ro.vendor.sensors.motorola.double_tap", false)) {
         AddSensor<DoubleTapSensor>();
     }
+    if (property_get_bool("ro.vendor.sensors.motorola.udfps", false)) {
+        AddSensor<UdfpsSensor>();
+    }
 }
 
 Return<void> SensorsSubHal::getSensorsList_2_1(ISensors::getSensorsList_2_1_cb _hidl_cb) {
