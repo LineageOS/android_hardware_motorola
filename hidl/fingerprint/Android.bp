@@ -8,10 +8,10 @@ package {
 }
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service",
+    name: "android.hardware.biometrics.fingerprint@2.1-service.moto",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.moto.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.moto.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [
