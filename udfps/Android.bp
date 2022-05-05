@@ -1,0 +1,20 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library {
+    name: "libudfpshandler_moto",
+    vendor: true,
+    srcs: ["UdfpsHandlerMoto.cpp"],
+    shared_libs: [
+        "com.motorola.hardware.biometric.fingerprint@1.0",
+        "libbase",
+        "libhidlbase",
+        "libutils",
+    ],
+    header_libs: [
+        "motofingerprint_headers",
+    ],
+}
