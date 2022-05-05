@@ -24,6 +24,24 @@ namespace implementation {
 
 BiometricsFingerprint::BiometricsFingerprint() {
     mService = V2_1::IBiometricsFingerprint::getService();
+
+    mUdfpsHandlerFactory = getUdfpsHandlerFactory();
+    if (!mUdfpsHandlerFactory) {
+        ALOGE("Can't get UdfpsHandlerFactory");
+    } else {
+        mUdfpsHandler = mUdfpsHandlerFactory->create();
+        if (!mUdfpsHandler) {
+            ALOGE("Can't create UdfpsHandler");
+        } else {
+            mUdfpsHandler->init(nullptr);
+        }
+    }
+}
+
+BiometricsFingerprint::~BiometricsFingerprint() {
+    if (mUdfpsHandler) {
+        mUdfpsHandlerFactory->destroy(mUdfpsHandler);
+    }
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
@@ -71,15 +89,20 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, 
 }
 
 Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
-    return false;
+    return mUdfpsHandler != nullptr;
 }
 
-Return<void> BiometricsFingerprint::onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/,
-                                                 float /*major*/) {
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
+    if (mUdfpsHandler) {
+        mUdfpsHandler->onFingerDown(x, y, minor, major);
+    }
     return Void();
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
+    if (mUdfpsHandler) {
+        mUdfpsHandler->onFingerUp();
+    }
     return Void();
 }
 
