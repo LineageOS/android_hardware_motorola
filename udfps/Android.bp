@@ -4,6 +4,19 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+// udfps extension
+cc_library_static {
+    name: "libudfps_extension.moto",
+    srcs: ["UdfpsExtension.cpp"],
+    include_dirs: [
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+    ],
+    header_libs: [
+        "generated_kernel_headers",
+    ],
+}
+
+// udfps handler
 cc_defaults {
     name: "libudfpshandler_moto_defaults",
     shared_libs: [
