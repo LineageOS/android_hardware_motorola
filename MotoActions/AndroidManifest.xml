@@ -57,7 +57,7 @@
                 android:value="com.android.settings.category.ia.gestures" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/screen_gestures_panel_summary" />
+                android:resource="@string/device_gestures_panel_summary" />
         </activity>
 
     </application>
