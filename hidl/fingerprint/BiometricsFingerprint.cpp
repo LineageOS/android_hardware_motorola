@@ -68,6 +68,9 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    if (mUdfpsHandler) {
+        mUdfpsHandler->cancel();
+    }
     return mService->cancel();
 }
 
@@ -114,6 +117,9 @@ Return<void> BiometricsFingerprint::onEnrollResult(uint64_t deviceId, uint32_t f
 Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId,
                                                V2_1::FingerprintAcquiredInfo acquiredInfo,
                                                int32_t vendorCode) {
+    if (mUdfpsHandler) {
+        mUdfpsHandler->onAcquired(static_cast<int32_t>(acquiredInfo), vendorCode);
+    }
     return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
 }
 
@@ -141,6 +147,9 @@ Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fing
 Return<void> BiometricsFingerprint::onAcquired_2_2(uint64_t deviceId,
                                                    FingerprintAcquiredInfo acquiredInfo,
                                                    int32_t vendorCode) {
+    if (mUdfpsHandler) {
+        mUdfpsHandler->onAcquired(static_cast<int32_t>(acquiredInfo), vendorCode);
+    }
     return reinterpret_cast<V2_2::IBiometricsFingerprintClientCallback*>(mClientCallback.get())
             ->onAcquired_2_2(deviceId, acquiredInfo, vendorCode);
 }
