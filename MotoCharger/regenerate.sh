@@ -12,9 +12,9 @@ for RESOLUTION in 540x960 720x1280 720x1440 720x1512 720x1570 876x2142 1080x1920
     rm -rf $RESOLUTION
     mkdir $RESOLUTION
 
-    for SVG in svg/*.svg; do
-        PNG="$RESOLUTION/$(basename $SVG | cut -f1 -d '.').png"
-        convert -resize ${WIDTH}x${HEIGHT}! $SVG $PNG
+    for IMG in images/*.*; do
+        PNG="$RESOLUTION/$(basename $IMG | cut -f1 -d '.').png"
+        convert -resize ${WIDTH}x${HEIGHT}! $IMG $PNG
     done
 
     SCALEFILE="$RESOLUTION/battery_scale.png"
