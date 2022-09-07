@@ -16,23 +16,15 @@
 
 LOCAL_PATH := $(call my-dir)
 
-# Set MotoCharger_density to the density bucket of the device.
-MotoCharger_density := mdpi
-ifneq (,$(TARGET_SCREEN_DENSITY))
-MotoCharger_density := $(strip \
-  $(or $(if $(filter $(shell echo $$(($(TARGET_SCREEN_DENSITY) >= 560))),1),xxxhdpi),\
-       $(if $(filter $(shell echo $$(($(TARGET_SCREEN_DENSITY) >= 400))),1),xxhdpi),\
-       $(if $(filter $(shell echo $$(($(TARGET_SCREEN_DENSITY) >= 280))),1),xhdpi),\
-       $(if $(filter $(shell echo $$(($(TARGET_SCREEN_DENSITY) >= 200))),1),hdpi,mdpi)))
-else ifneq (,$(filter mdpi hdpi xhdpi xxhdpi xxxhdpi,$(PRODUCT_AAPT_PREF_CONFIG)))
-# If PRODUCT_AAPT_PREF_CONFIG includes a dpi bucket, then use that value.
-MotoCharger_density := $(PRODUCT_AAPT_PREF_CONFIG)
+# Set MotoCharger_Resolution to the resolution of the device.
+ifneq (,$(filter 540x960 720x1280 720x1440 720x1512 720x1520 720x1570 876x2142 1080x1920 1080x2160 1080x2246 1080x2270 1080x2340 1080x2360 1080x2400 1080x2520 1440x2560,$(MOTO_CHARGER_RES)))
+MotoCharger_Resolution := $(MOTO_CHARGER_RES)
 endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := MotoCharger_battery_scale
 LOCAL_MODULE_STEM := battery_scale.png
-LOCAL_SRC_FILES := $(MotoCharger_density)/battery_scale.png
+LOCAL_SRC_FILES := $(MotoCharger_Resolution)/battery_scale.png
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/res/images/charger
@@ -41,7 +33,7 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := MotoCharger_battery_fail
 LOCAL_MODULE_STEM := battery_fail.png
-LOCAL_SRC_FILES := $(MotoCharger_density)/battery_fail.png
+LOCAL_SRC_FILES := $(MotoCharger_Resolution)/battery_fail.png
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/res/images/charger

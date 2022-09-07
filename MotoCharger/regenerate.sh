@@ -5,22 +5,22 @@ if [ -z "$(which convert)" ] || [ -z "$(which pngcrush)" ]; then
     exit 1
 fi
 
-for DENSITY in mdpi:160 hdpi:240 xhdpi:320 xxhdpi:480 xxxhdpi:640; do
-    DPI=$(echo $DENSITY | cut -f1 -d ':')
-    WIDTH=$(echo $DENSITY | cut -f2 -d ':')
+for RESOLUTION in 540x960 720x1280 720x1440 720x1512 720x1520 720x1570 876x2142 1080x1920 1080x2160 1080x2246 1080x2270 1080x2340 1080x2360 1080x2400 1080x2520 1440x2560; do
+    WIDTH=$(echo $RESOLUTION | cut -f1 -d 'x')
+    HEIGHT=$(echo $RESOLUTION | cut -f2 -d 'x')
 
-    rm -rf $DPI
-    mkdir $DPI
+    rm -rf $RESOLUTION
+    mkdir $RESOLUTION
 
     for SVG in svg/*.svg; do
-        PNG="$DPI/$(basename $SVG | cut -f1 -d '.').png"
-        convert -density $WIDTH -resize ${WIDTH}x${WIDTH} $SVG $PNG
+        PNG="$RESOLUTION/$(basename $SVG | cut -f1 -d '.').png"
+        convert -resize ${WIDTH}x${HEIGHT}! $SVG $PNG
     done
 
-    SCALEFILE="$DPI/battery_scale.png"
-    SCALEFILES="$(ls $DPI/battery_scale_*.png)"
+    SCALEFILE="$RESOLUTION/battery_scale.png"
+    SCALEFILES="$(ls $RESOLUTION/battery_scale_*.png)"
     FRAMES="$(ls -l $SCALEFILES | wc -l)"
-    SCALEHEIGHT=$(($WIDTH * $FRAMES))
+    SCALEHEIGHT=$(($HEIGHT * $FRAMES))
 
     convert -size ${WIDTH}x${SCALEHEIGHT} canvas:black $SCALEFILES -fx "u[j%$FRAMES+1].p{i,int(j/$FRAMES)}" png24:$SCALEFILE.tmp
     pngcrush -text b "Frames" "$FRAMES" $SCALEFILE.tmp $SCALEFILE
