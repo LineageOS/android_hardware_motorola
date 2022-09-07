@@ -22,6 +22,15 @@ MotoCharger_Resolution := $(MOTO_CHARGER_RES)
 endif
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := MotoCharger_font
+LOCAL_MODULE_STEM := font_charger.png
+LOCAL_SRC_FILES := fonts/font_charger.png
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/res/images/charger
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := MotoCharger_battery_scale
 LOCAL_MODULE_STEM := battery_scale.png
 LOCAL_SRC_FILES := $(MotoCharger_Resolution)/battery_scale.png
@@ -46,5 +55,5 @@ LOCAL_SRC_FILES := animation.txt
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/res/values/charger
-LOCAL_REQUIRED_MODULES := MotoCharger_battery_scale MotoCharger_battery_fail
+LOCAL_REQUIRED_MODULES := MotoCharger_battery_scale MotoCharger_font MotoCharger_battery_fail
 include $(BUILD_PREBUILT)
