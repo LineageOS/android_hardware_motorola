@@ -19,7 +19,6 @@ LOCAL_PATH := $(call my-dir)
 # Set MotoCharger_Resolution to the resolution of the device.
 ifneq (,$(filter 540x960 720x1280 720x1440 720x1512 720x1570 876x2142 1080x1920 1080x2160 1080x2246 1080x2270 1080x2340 1080x2400 1080x2520 1440x2560,$(MOTO_CHARGER_RES)))
 MotoCharger_Resolution := $(MOTO_CHARGER_RES)
-endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := MotoCharger_font
@@ -57,3 +56,5 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/res/values/charger
 LOCAL_REQUIRED_MODULES := MotoCharger_battery_scale MotoCharger_font MotoCharger_battery_fail
 include $(BUILD_PREBUILT)
+
+endif
