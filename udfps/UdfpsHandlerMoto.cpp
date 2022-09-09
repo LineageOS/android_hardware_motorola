@@ -91,6 +91,14 @@ class MotoUdfpsHandler : public UdfpsHandler {
         // nothing
     }
 
+    void onAcquired(int32_t /*result*/, int32_t /*vendorCode*/) {
+        // nothing
+    }
+
+    void cancel() {
+        // nothing
+    }
+
   private:
     sp<IMotoFingerPrint> mMotoFingerprint;
 };
