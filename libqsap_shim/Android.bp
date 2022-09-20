@@ -1,0 +1,18 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "libqsapshim",
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libqsap_sdk",
+        "libutils",
+    ],
+    srcs: ["libqsap/libqsap_shim.c"],
+    include_dirs: ["system/qcom/softap/sdk"],
+    vendor: true,
+}
