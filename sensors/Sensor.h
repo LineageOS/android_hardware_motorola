@@ -120,6 +120,20 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
     int mPollFd;
 };
 
+const std::string kTsPath = "/sys/class/touchscreen/primary/";
+
+const std::string kTsDoubleTapPressedPath = kTsPath + "double_tap_pressed";
+const std::string kTsDoubleTapEnabledPath = kTsPath + "double_tap_enabled";
+
+class DoubleTapSensor : public SysfsPollingOneShotSensor {
+  public:
+    DoubleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : SysfsPollingOneShotSensor(
+              sensorHandle, callback, kTsDoubleTapPressedPath, kTsDoubleTapEnabledPath,
+              "Double Tap Sensor", "org.lineageos.sensor.double_tap",
+              static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1)) {}
+};
+
 }  // namespace implementation
 }  // namespace subhal
 }  // namespace V2_1
