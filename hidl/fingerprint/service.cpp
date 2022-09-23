@@ -21,7 +21,7 @@ using android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_3::implementation::BiometricsFingerprint;
 
 int main() {
-    android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
+    android::sp<IBiometricsFingerprint> bio = new BiometricsFingerprint();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
