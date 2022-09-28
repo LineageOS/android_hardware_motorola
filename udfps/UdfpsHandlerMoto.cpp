@@ -50,7 +50,7 @@ static bool readBool(int fd) {
     return c != '0';
 }
 
-class MotoUdfpsHander : public UdfpsHandler {
+class MotoUdfpsHandler : public UdfpsHandler {
   public:
     void init(fingerprint_device_t* /*device*/) {
         mMotoFingerprint = IMotoFingerPrint::getService();
@@ -96,7 +96,7 @@ class MotoUdfpsHander : public UdfpsHandler {
 };
 
 static UdfpsHandler* create() {
-    return new MotoUdfpsHander();
+    return new MotoUdfpsHandler();
 }
 
 static void destroy(UdfpsHandler* handler) {
