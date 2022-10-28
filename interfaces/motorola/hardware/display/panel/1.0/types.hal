@@ -1,0 +1,39 @@
+/*
+ * Copyright (C) 2022 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.motorola.hardware.display.panel@1.0;
+
+enum PanelColor : int32_t {
+  PANEL_SRE_MODE_VIBRANT = 0,
+  PANEL_SRE_MODE_STANDARD = 1,
+  PANEL_SRE_MODE_GAME = 2,
+  PANEL_SRE_MODE_NONE = 3,
+};
+
+enum PanelMode : int32_t {
+  PANEL_MODE_NORMAL = 0,
+  PANEL_MODE_POWER_SAVING = 1,
+  PANEL_MODE_NATIVE = 2,
+  PANEL_MODE_HIGH_BRIGHT = 3,
+  PANEL_MODE_HIGH_BRIGHT_FOD = 4,
+};
+
+enum VideoState : int32_t {
+  UNKNOWN1 = 0,
+  UNKNOWN2 = 1,
+  UNKNOWN3 = 2,
+  UNKNOWN4 = 3,
+};
