@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49ca51f6_fb3bc95d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-10-28T11:22:13Z",
+      "side": 1,
+      "message": "pick https://review.lineageos.org/c/LineageOS/android_device_motorola_sm8250-common/+/342877 to enable the AOSP equivalent",
+      "revId": "2e86ad1f91473600d87929d64f2701d387292503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
