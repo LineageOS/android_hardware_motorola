@@ -23,21 +23,13 @@ import android.view.MenuItem;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
 
-import org.lineageos.settings.device.actions.CameraActivationSensor;
-
 public class ActionsPreferenceFragment extends PreferenceFragment {
 
     private static final String KEY_ACTIONS_CATEGORY = "actions_key";
-    private static final String KEY_GESTURE_CAMERA_ACTION = "gesture_camera_action";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.actions_panel);
-
-        if (!CameraActivationSensor.hasSensor(getContext())) {
-            PreferenceCategory category = findPreference(KEY_ACTIONS_CATEGORY);
-            category.removePreferenceRecursively(KEY_GESTURE_CAMERA_ACTION);
-        }
     }
 
     @Override

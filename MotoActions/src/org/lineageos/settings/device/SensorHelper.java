@@ -31,7 +31,6 @@ import java.util.List;
 public class SensorHelper {
     private static final String TAG = "MotoActions";
 
-    private static final int SENSOR_TYPE_MMI_CAMERA_ACTIVATION = 65540;
     private static final int SENSOR_TYPE_MMI_CHOP_CHOP = 65546;
     private static final int SENSOR_TYPE_MMI_FLAT_UP = 65537;
     private static final int SENSOR_TYPE_MMI_FLAT_DOWN = 65538;
@@ -63,10 +62,6 @@ public class SensorHelper {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public Sensor getCameraActivationSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CAMERA_ACTIVATION, true);
     }
 
     public Sensor getChopChopSensor() {

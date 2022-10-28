@@ -23,13 +23,6 @@
         android:key="actions_key">
 
         <SwitchPreference
-            android:key="gesture_camera_action"
-            android:defaultValue="true"
-            android:title="@string/camera_gesture_title"
-            android:summary="@string/camera_gesture_summary"
-            android:icon="@drawable/ic_settings_twist" />
-
-        <SwitchPreference
             android:key="gesture_chop_chop"
             android:defaultValue="true"
             android:title="@string/chop_chop_gesture_title"
