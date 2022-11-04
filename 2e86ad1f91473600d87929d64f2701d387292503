@@ -50,6 +50,24 @@
       "message": "I need to adapt this to my tree\u0027s and test early next week, but once I do, yeah, this seems fine. Will merge pending test goes well.",
       "revId": "2e86ad1f91473600d87929d64f2701d387292503",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8db382d0_5384b3df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2022-11-04T13:16:27Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_device_motorola_sm8250-common/+/343729\n\nbuild rro overlay package instead",
+      "parentUuid": "49ca51f6_fb3bc95d",
+      "revId": "2e86ad1f91473600d87929d64f2701d387292503",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
