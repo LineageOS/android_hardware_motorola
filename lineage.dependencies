@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_system_qcom",
+    "target_path": "system/qcom"
+  }
+]
