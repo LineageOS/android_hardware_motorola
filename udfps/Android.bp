@@ -10,8 +10,6 @@ cc_library {
     srcs: ["UdfpsHandlerMoto.cpp"],
     shared_libs: [
         "com.motorola.hardware.biometric.fingerprint@1.0",
-        "com.motorola.hardware.display.panel@1.0",
-        "com.motorola.hardware.display.panel@1.1",
         "libbase",
         "libhidlbase",
         "libutils",
