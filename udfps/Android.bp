@@ -11,8 +11,6 @@ cc_library {
     shared_libs: [
         "android.hardware.biometrics.fingerprint@2.1",
         "com.motorola.hardware.biometric.fingerprint@1.0",
-        "com.motorola.hardware.display.panel@1.0",
-        "com.motorola.hardware.display.panel@1.1",
         "libbase",
         "libhidlbase",
         "libutils",

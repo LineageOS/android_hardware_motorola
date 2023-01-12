@@ -7,9 +7,9 @@
 #define LOG_TAG "UdfpsHandler.moto"
 
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
+#include <android-base/file.h>
 #include <android-base/logging.h>
 #include <com/motorola/hardware/biometric/fingerprint/1.0/IMotoFingerPrint.h>
-#include <com/motorola/hardware/display/panel/1.1/IDisplayPanel.h>
 
 #include <fcntl.h>
 #include <poll.h>
@@ -17,21 +17,19 @@
 
 #include "UdfpsHandler.h"
 
+#define FOD_HBM_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_hbm"
+
 using ::android::sp;
 using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo;
 using ::android::hardware::hidl_vec;
 using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventResult;
 using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventType;
 using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotoFingerPrint;
-using ::com::motorola::hardware::display::panel::V1_0::PanelColor;
-using ::com::motorola::hardware::display::panel::V1_0::PanelMode;
-using ::com::motorola::hardware::display::panel::V1_1::IDisplayPanel;
 
 class MotoUdfpsHandler : public UdfpsHandler {
   public:
     void init(void* /*device*/) {
         mMotoFingerprint = IMotoFingerPrint::getService();
-        mDisplayPanelService = IDisplayPanel::getService();
         mHbmFodEnabled = false;
     }
 
@@ -60,10 +58,9 @@ class MotoUdfpsHandler : public UdfpsHandler {
             return;
         }
 
-        // this is no mistake, setColor sets the PanelMode, while setMode sets the panel color
-        mDisplayPanelService->setColor((PanelColor)PanelMode::PANEL_MODE_NORMAL);
         mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_UP, {},
                                        [](IMotFodEventResult, const hidl_vec<signed char>&) {});
+        android::base::WriteStringToFile("0", FOD_HBM_PATH);
 
         mHbmFodEnabled = false;
     }
@@ -75,8 +72,7 @@ class MotoUdfpsHandler : public UdfpsHandler {
             return;
         }
 
-        // this is no mistake, setColor sets the PanelMode, while setMode sets the panel color
-        mDisplayPanelService->setColor((PanelColor)PanelMode::PANEL_MODE_HIGH_BRIGHT_FOD);
+        android::base::WriteStringToFile("1", FOD_HBM_PATH);
         mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_DOWN, {},
                                        [](IMotFodEventResult, const hidl_vec<signed char>&) {});
 
@@ -87,7 +83,6 @@ class MotoUdfpsHandler : public UdfpsHandler {
     std::mutex mSetHbmFodMutex;
 
     sp<IMotoFingerPrint> mMotoFingerprint;
-    sp<IDisplayPanel> mDisplayPanelService;
 };
 
 static UdfpsHandler* create() {
