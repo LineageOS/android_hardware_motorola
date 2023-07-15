@@ -6,13 +6,16 @@
 SEPOLICY_PLATFORM := $(subst device/qcom/sepolicy_vndr/,,$(SEPOLICY_PATH))
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    hardware/motorola/sepolicy/qti/vendor
+    hardware/motorola/sepolicy/qti/vendor \
+    hardware/motorola/sepolicy/qti/vendor/$(SEPOLICY_PLATFORM)
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    hardware/motorola/sepolicy/qti/private
+    hardware/motorola/sepolicy/qti/private \
+    hardware/motorola/sepolicy/qti/private/$(SEPOLICY_PLATFORM)
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    hardware/motorola/sepolicy/qti/public
+    hardware/motorola/sepolicy/qti/public \
+    hardware/motorola/sepolicy/qti/public/$(SEPOLICY_PLATFORM)
 
 ifneq ($(SEPOLICY_PLATFORM), legacy-um)
 BOARD_VENDOR_SEPOLICY_DIRS += \
