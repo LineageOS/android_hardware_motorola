@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
- * Copyright (c) 2017-2022 The LineageOS Project
+ * Copyright (c) 2017-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ package org.lineageos.settings.device;
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
-import com.android.settingslib.widget.R;
 
 public class ActionsPreferenceActivity extends CollapsingToolbarBaseActivity {
 
@@ -29,7 +28,8 @@ public class ActionsPreferenceActivity extends CollapsingToolbarBaseActivity {
         super.onCreate(savedInstanceState);
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, new ActionsPreferenceFragment())
+                .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
+                        new ActionsPreferenceFragment())
                 .commit();
     }
 }
