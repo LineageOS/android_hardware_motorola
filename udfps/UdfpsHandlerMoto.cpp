@@ -7,17 +7,9 @@
 #define LOG_TAG "UdfpsHandler.moto"
 
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
-#include <android-base/file.h>
-#include <android-base/logging.h>
 #include <com/motorola/hardware/biometric/fingerprint/1.0/IMotoFingerPrint.h>
 
-#include <fcntl.h>
-#include <poll.h>
-#include <fstream>
-
-#include "UdfpsHandler.h"
-
-#define FOD_HBM_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_hbm"
+#include "UdfpsHandlerMoto.h"
 
 using ::android::sp;
 using ::android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo;
@@ -60,7 +52,7 @@ class MotoUdfpsHandler : public UdfpsHandler {
 
         mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_UP, {},
                                        [](IMotFodEventResult, const hidl_vec<signed char>&) {});
-        android::base::WriteStringToFile("0", FOD_HBM_PATH);
+        setHbmState(OFF);
 
         mHbmFodEnabled = false;
     }
@@ -72,7 +64,7 @@ class MotoUdfpsHandler : public UdfpsHandler {
             return;
         }
 
-        android::base::WriteStringToFile("1", FOD_HBM_PATH);
+        setHbmState(ON);
         mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_DOWN, {},
                                        [](IMotFodEventResult, const hidl_vec<signed char>&) {});
 
