@@ -1,0 +1,18 @@
+//
+// SPDX-FileCopyrightText: 2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "MotoNrEnabler",
+
+    srcs: [
+        "src/**/*.aidl",
+        "src/**/*.kt",
+    ],
+    libs: ["telephony-common"],
+
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+}
