@@ -18,12 +18,12 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
-public class DozePreferenceFragment extends PreferenceFragment
+public class DozePreferenceFragment extends PreferenceFragmentCompat
         implements Preference.OnPreferenceChangeListener, OnCheckedChangeListener {
 
     private MainSwitchPreference mSwitchBar;
@@ -36,7 +36,7 @@ public class DozePreferenceFragment extends PreferenceFragment
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.doze_panel);
+        setPreferencesFromResource(R.xml.doze_panel, rootKey);
 
         SharedPreferences prefs =
                 getActivity().getSharedPreferences("doze_panel", Activity.MODE_PRIVATE);
@@ -124,6 +124,6 @@ public class DozePreferenceFragment extends PreferenceFragment
 
     private void showHelp() {
         HelpDialogFragment fragment = new HelpDialogFragment();
-        fragment.show(getFragmentManager(), "help_dialog");
+        fragment.show(getSupportFragmentManager(), "help_dialog");
     }
 }

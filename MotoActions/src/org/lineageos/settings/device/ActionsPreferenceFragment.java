@@ -10,15 +10,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 
-public class ActionsPreferenceFragment extends PreferenceFragment {
+public class ActionsPreferenceFragment extends PreferenceFragmentCompat {
 
     private static final String KEY_ACTIONS_CATEGORY = "actions_key";
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.actions_panel);
+        setPreferencesFromResource(R.xml.actions_panel, rootKey);
     }
 
     @Override
