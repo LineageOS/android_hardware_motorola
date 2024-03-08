@@ -30,7 +30,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settingslib.widget.MainSwitchPreference;
 
@@ -39,11 +39,11 @@ public class DozePreferenceFragment extends PreferenceFragment
 
     private MainSwitchPreference mSwitchBar;
 
-    private SwitchPreference mAlwaysOnDisplayPreference;
+    private SwitchPreferenceCompat mAlwaysOnDisplayPreference;
 
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPickUpPreference;
-    private SwitchPreference mPocketPreference;
+    private SwitchPreferenceCompat mHandwavePreference;
+    private SwitchPreferenceCompat mPickUpPreference;
+    private SwitchPreferenceCompat mPocketPreference;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
