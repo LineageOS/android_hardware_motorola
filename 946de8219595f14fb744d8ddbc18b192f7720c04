@@ -87,6 +87,30 @@
       },
       "revId": "946de8219595f14fb744d8ddbc18b192f7720c04",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "720bf295_fd7bbbf4",
+        "filename": "MotoNrEnabler/src/org/lineageos/motorola/nrenabler/NrEnablerService.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-03-21T14:40:38Z",
+      "side": 1,
+      "message": "ktfmt also formats it like this in my experience",
+      "parentUuid": "d0f3d706_0fa36349",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 12
+      },
+      "revId": "946de8219595f14fb744d8ddbc18b192f7720c04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
