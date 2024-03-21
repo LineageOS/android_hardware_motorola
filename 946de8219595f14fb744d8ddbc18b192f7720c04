@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02167f8f_4b91df94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-03-21T12:20:20Z",
+      "side": 1,
+      "message": "Ignore then...",
+      "revId": "946de8219595f14fb744d8ddbc18b192f7720c04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "89892668_4d7a3957",
@@ -38,6 +55,30 @@
       "side": 1,
       "message": "formatted by android studio, any config need to be tuned there?",
       "parentUuid": "89892668_4d7a3957",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 12
+      },
+      "revId": "946de8219595f14fb744d8ddbc18b192f7720c04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f3d706_0fa36349",
+        "filename": "MotoNrEnabler/src/org/lineageos/motorola/nrenabler/NrEnablerService.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-03-21T12:20:20Z",
+      "side": 1,
+      "message": "I don\u0027t know. Luk told me the same the other day, also in a kotlin file.",
+      "parentUuid": "04458339_8c6616a2",
       "range": {
         "startLine": 85,
         "startChar": 8,
