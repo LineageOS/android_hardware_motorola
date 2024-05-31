@@ -35,6 +35,9 @@ cc_library_shared {
     }) + select(soong_config_variable("moto_sensors", "double_tap"), {
         false: [],
         default: ["-DENABLE_DOUBLE_TAP"],
+    }) + select(soong_config_variable("moto_sensors", "single_tap"), {
+        true: ["-DENABLE_SINGLE_TAP"],
+        default: [],
     }),
     vendor: true,
 }

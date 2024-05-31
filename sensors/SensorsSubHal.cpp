@@ -30,6 +30,9 @@ SensorsSubHal::SensorsSubHal() : mCallback(nullptr), mNextHandle(1) {
 #ifdef ENABLE_UDFPS
     AddSensor<UdfpsSensor>();
 #endif
+#ifdef ENABLE_SINGLE_TAP
+    AddSensor<SingleTapSensor>();
+#endif
 }
 
 Return<void> SensorsSubHal::getSensorsList_2_1(ISensors::getSensorsList_2_1_cb _hidl_cb) {

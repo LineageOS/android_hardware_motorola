@@ -150,6 +150,20 @@ const std::string kTsPath = getTouchscreenBasePath();
 
 constexpr int32_t SENSOR_TYPE_BASE = static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 100;
 
+#ifdef ENABLE_SINGLE_TAP
+const std::string kTsSingleTapPressedPath = kTsPath + "single_tap_pressed";
+const std::string kTsSingleTapEnabledPath = kTsPath + "single_tap_enabled";
+
+class SingleTapSensor : public SysfsPollingOneShotSensor {
+  public:
+    SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
+        : SysfsPollingOneShotSensor(sensorHandle, callback, kTsSingleTapPressedPath,
+                                    kTsSingleTapEnabledPath, "Single Tap Sensor",
+                                    "org.lineageos.sensor.single_tap",
+                                    static_cast<SensorType>(SENSOR_TYPE_BASE + 3)) {}
+};
+#endif
+
 #ifdef ENABLE_DOUBLE_TAP
 const std::string kTsDoubleTapPressedPath = kTsPath + "double_tap_pressed";
 const std::string kTsDoubleTapEnabledPath = kTsPath + "double_tap_enabled";
