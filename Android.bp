@@ -6,6 +6,13 @@
 soong_namespace {
 }
 
+install_symlink {
+    name: "rfs_msm_mpss_readonly_vendor_fsg_symlink",
+    vendor: true,
+    installed_location: "rfs/msm/mpss/readonly/vendor/fsg",
+    symlink_target: "/vendor/fsg",
+}
+
 mkdir {
     name: "vendor_fsg_mountpoint",
     dir: "fsg",
