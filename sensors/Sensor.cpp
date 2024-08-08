@@ -227,6 +227,10 @@ SysfsPollingOneShotSensor::SysfsPollingOneShotSensor(
     mSensorInfo.flags |= SensorFlagBits::WAKE_UP;
 
     mEnableStream.open(enablePath);
+    if (!mEnableStream) {
+        ALOGE("failed to open enable path %s", enablePath.c_str());
+        return;
+    }
 
     int rc;
 
@@ -235,15 +239,12 @@ SysfsPollingOneShotSensor::SysfsPollingOneShotSensor(
         mWaitPipeFd[0] = -1;
         mWaitPipeFd[1] = -1;
         ALOGE("failed to open wait pipe: %d", rc);
+        return;
     }
 
     mPollFd = open(pollPath.c_str(), O_RDONLY);
     if (mPollFd < 0) {
-        ALOGE("failed to open poll fd: %d", mPollFd);
-    }
-
-    if (mWaitPipeFd[0] < 0 || mWaitPipeFd[1] < 0 || mPollFd < 0) {
-        mStopThread = true;
+        ALOGE("failed to open poll path %s: %d", pollPath.c_str(), mPollFd);
         return;
     }
 
@@ -256,6 +257,10 @@ SysfsPollingOneShotSensor::SysfsPollingOneShotSensor(
         .fd = mPollFd,
         .events = POLLERR | POLLPRI,
     };
+}
+
+bool SysfsPollingOneShotSensor::opened() {
+    return mEnableStream && mWaitPipeFd[0] >= 0 && mWaitPipeFd[1] >= 0 && mPollFd >= 0;
 }
 
 SysfsPollingOneShotSensor::~SysfsPollingOneShotSensor() {
