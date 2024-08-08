@@ -7,6 +7,7 @@
 cc_library_shared {
     name: "sensors.moto_ext",
     defaults: ["hidl_defaults"],
+    init_rc: ["sensors.moto_ext.rc"],
     srcs: [
         "Sensor.cpp",
         "SensorsSubHal.cpp",
