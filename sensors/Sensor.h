@@ -50,6 +50,7 @@ class ISensorsEventCallback {
 class Sensor {
   public:
     Sensor(int32_t sensorHandle, ISensorsEventCallback* callback);
+    virtual bool opened() { return true; }
     virtual ~Sensor();
 
     const SensorInfo& getSensorInfo() const;
@@ -98,6 +99,7 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
                               const std::string& pollPath, const std::string& enablePath,
                               const std::string& name, const std::string& typeAsString,
                               SensorType type);
+    virtual bool opened();
     virtual ~SysfsPollingOneShotSensor() override;
 
     virtual void activate(bool enable) override;
