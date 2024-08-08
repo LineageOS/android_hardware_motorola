@@ -1,0 +1,8 @@
+on post-fs
+    chown system system /sys/class/touchscreen/primary/double_tap_enabled
+    chown system system /sys/class/touchscreen/primary/double_tap_pressed
+    chown system system /sys/class/touchscreen/primary/udfps_enabled
+    chown system system /sys/class/touchscreen/primary/udfps_pressed
+
+    chown system system /sys/class/touchscreen/secondary/double_tap_enabled
+    chown system system /sys/class/touchscreen/secondary/double_tap_pressed
