@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2019 The Android Open Source Project
+ * SPDX-FileCopyrightText: The LineageOS Project
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -61,8 +62,12 @@ class SensorsSubHal : public ISensorsSubHal, public ISensorsEventCallback {
     template <class SensorType>
     void AddSensor() {
         std::shared_ptr<SensorType> sensor =
-            std::make_shared<SensorType>(mNextHandle++ /* sensorHandle */, this /* callback */);
+            std::make_shared<SensorType>(mNextHandle /* sensorHandle */, this /* callback */);
+        if (!sensor->opened()) {
+          return;
+        }
         mSensors[sensor->getSensorInfo().sensorHandle] = sensor;
+        mNextHandle++;
     }
 
     std::map<int32_t, std::shared_ptr<Sensor>> mSensors;
