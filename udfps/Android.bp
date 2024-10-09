@@ -35,6 +35,21 @@ cc_defaults {
     vendor: true,
 }
 
+cc_library_static {
+    name: "libudfpshandler",
+    srcs: ["UdfpsHandler.cpp"],
+    vendor: true,
+    header_libs: ["motofingerprint_headers"],
+}
+
+cc_library_headers {
+    name: "motofingerprint_headers",
+    export_include_dirs: ["include"],
+    vendor: true,
+    header_libs: ["libhardware_headers"],
+    export_header_lib_headers: ["libhardware_headers"],
+}
+
 cc_library {
     name: "libudfpshandler_moto",
     defaults: ["libudfpshandler_moto_defaults"],

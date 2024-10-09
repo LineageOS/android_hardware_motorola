@@ -20,7 +20,6 @@ cc_binary {
     }),
     srcs: [
         "BiometricsFingerprint.cpp",
-        "UdfpsHandler.cpp",
         "service.cpp",
     ],
 
@@ -37,13 +36,9 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.3",
     ],
 
-    header_libs: ["motofingerprint_headers"],
-}
+    static_libs: [
+        "libudfpshandler",
+    ],
 
-cc_library_headers {
-    name: "motofingerprint_headers",
-    export_include_dirs: ["include"],
-    vendor: true,
-    header_libs: ["libhardware_headers"],
-    export_header_lib_headers: ["libhardware_headers"],
+    header_libs: ["motofingerprint_headers"],
 }
