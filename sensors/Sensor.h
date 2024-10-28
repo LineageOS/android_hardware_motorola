@@ -12,6 +12,7 @@
 #include <unistd.h>
 
 #include <condition_variable>
+#include <filesystem>
 #include <fstream>
 #include <memory>
 #include <mutex>
@@ -113,7 +114,34 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
     int mPollFd;
 };
 
-const std::string kTsPath = "/sys/class/touchscreen/primary/";
+inline std::string getTouchscreenBasePath() {
+    static constexpr std::string_view socs[] = {
+        "4a80000.spi", "998000.spi", "a8c000.spi", "a94000.spi", "a94000.i2c"
+    };
+    static constexpr std::string_view spis[] = { "spi0.0", "spi0.1" };
+    static constexpr std::string_view displays[] = { "NVT-ts", "primary", "secondary" };
+
+    for (auto soc : socs) {
+        for (auto spi : spis) {
+            for (auto display : displays) {
+                std::string path = "/sys/devices/platform/soc/" + std::string(soc);
+                if (soc.find(".i2c") != std::string_view::npos) {
+                    path += "/i2c-2/2-0049";
+                } else {
+                    path += "/spi_master/spi0/" + std::string(spi);
+                }
+                path += "/touchscreen/" + std::string(display) + "/";
+
+                if (std::filesystem::exists(path))
+                    return path;
+            }
+        }
+    }
+
+    return "/sys/class/touchscreen/primary/";
+}
+
+const std::string kTsPath = getTouchscreenBasePath();
 
 constexpr int32_t SENSOR_TYPE_BASE = static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 100;
 
