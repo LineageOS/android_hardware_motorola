@@ -20,6 +20,7 @@
 #include <fcntl.h>
 #include <poll.h>
 #include <unistd.h>
+#include <filesystem>
 
 #include <condition_variable>
 #include <fstream>
@@ -122,7 +123,24 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
     int mPollFd;
 };
 
-const std::string kTsPath = "/sys/class/touchscreen/primary/";
+inline std::string getTouchscreenBasePath() {
+    const std::vector<std::string> possiblePaths = {
+        "/sys/devices/platform/soc/4a80000.spi/spi_master/spi0/spi0.1/touchscreen/primary/",
+        "/sys/devices/platform/soc/4a80000.spi/spi_master/spi0/spi0.0/touchscreen/primary/",
+        "/sys/devices/platform/soc/998000.spi/spi_master/spi0/spi0.0/touchscreen/primary/",
+        "/sys/devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen/primary/"
+    };
+
+    for (const auto& path : possiblePaths) {
+        if (access(path.c_str(), F_OK) == 0) {
+            return path;
+        }
+    }
+
+    return "/sys/class/touchscreen/primary/";
+}
+
+const std::string kTsPath = getTouchscreenBasePath();
 
 const std::string kTsDoubleTapPressedPath = kTsPath + "double_tap_pressed";
 const std::string kTsDoubleTapEnabledPath = kTsPath + "double_tap_enabled";
