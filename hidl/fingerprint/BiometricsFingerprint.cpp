@@ -120,7 +120,13 @@ Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId,
     if (mUdfpsHandler) {
         mUdfpsHandler->onAcquired(static_cast<int32_t>(acquiredInfo), vendorCode);
     }
-    return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
+    // don't process vendor messages further since frameworks try to disable
+    // udfps display mode on vendor acquired messages but our sensors send a
+    // vendor message during processing...
+    if (acquiredInfo != V2_1::FingerprintAcquiredInfo::ACQUIRED_VENDOR) {
+        return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
+    }
+    return Void();
 }
 
 Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t fingerId,
