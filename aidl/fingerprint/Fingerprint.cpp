@@ -143,32 +143,38 @@ fingerprint_device_t* Fingerprint::openFingerprintHal(const char* class_name) {
     return fp_device;
 }
 
-SensorLocation Fingerprint::getSensorLocation() {
-    SensorLocation location;
+std::vector<SensorLocation> Fingerprint::getSensorLocations() {
+    std::vector<SensorLocation> locations;
 
     auto loc = mConfig->get<std::string>("sensor_location");
-    auto isValidStr = false;
-    auto dim = ::android::base::Split(loc, "|");
+    auto entries = ::android::base::Split(loc, ",");
 
-    if (dim.size() != 3 and dim.size() != 4) {
-        if (!loc.empty()) {
-            ALOGE("Invalid sensor location input (x|y|radius) or (x|y|radius|display): %s",
-                  loc.c_str());
+    for (const auto& entry : entries) {
+        auto isValidStr = false;
+        auto dim = ::android::base::Split(entry, "|");
+
+        if (dim.size() != 3 and dim.size() != 4) {
+            if (!loc.empty()) {
+                ALOGE("Invalid sensor location input (x|y|radius) or (x|y|radius|display): %s",
+                      loc.c_str());
+            }
+        } else {
+            int32_t x, y, r;
+            std::string d;
+            isValidStr = ParseInt(dim[0], &x) && ParseInt(dim[1], &y) && ParseInt(dim[2], &r);
+            if (dim.size() == 4) {
+                d = dim[3];
+                isValidStr = isValidStr && !d.empty();
+            }
+            if (isValidStr)
+                locations.push_back({.sensorLocationX = x,
+                                     .sensorLocationY = y,
+                                     .sensorRadius = r,
+                                     .display = d});
         }
-    } else {
-        int32_t x, y, r;
-        std::string d;
-        isValidStr = ParseInt(dim[0], &x) && ParseInt(dim[1], &y) && ParseInt(dim[2], &r);
-        if (dim.size() == 4) {
-            d = dim[3];
-            isValidStr = isValidStr && !d.empty();
-        }
-        if (isValidStr)
-            location = {
-                    .sensorLocationX = x, .sensorLocationY = y, .sensorRadius = r, .display = d};
     }
 
-    return location;
+    return locations;
 }
 
 void Fingerprint::notify(const fingerprint_msg_t* msg) {
@@ -195,19 +201,18 @@ ndk::ScopedAStatus Fingerprint::getSensorProps(std::vector<SensorProps>* out) {
     common::CommonProps commonProps = {sensorId, (common::SensorStrength)sensorStrength,
                                        MAX_ENROLLMENTS_PER_USER, componentInfo};
 
-    SensorLocation sensorLocation = getSensorLocation();
+    std::vector<SensorLocation> sensorLocations = getSensorLocations();
+
+    std::vector<std::string> sensorLocationStrings;
+    std::transform(sensorLocations.begin(), sensorLocations.end(),
+                   std::back_inserter(sensorLocationStrings),
+                   [](const SensorLocation& obj) { return obj.toString(); });
 
     ALOGI("sensor type: %s, location: %s", ::android::internal::ToString(mSensorType).c_str(),
-          sensorLocation.toString().c_str());
+          ::android::base::Join(sensorLocationStrings, ", ").c_str());
 
-    *out = {{commonProps,
-             mSensorType,
-             {sensorLocation},
-             navigationGuesture,
-             detectInteraction,
-             displayTouch,
-             controlIllumination,
-             std::nullopt}};
+    *out = {{commonProps, mSensorType, sensorLocations, navigationGuesture, detectInteraction,
+             displayTouch, controlIllumination, std::nullopt}};
     return ndk::ScopedAStatus::ok();
 }
 
