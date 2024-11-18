@@ -32,7 +32,7 @@ class Fingerprint : public BnFingerprint {
                                      std::shared_ptr<ISession>* out) override;
 
   private:
-    fingerprint_device_t* openFingerprintHal(const char* class_name);
+    fingerprint_device_t* openFingerprintHal(const char* class_name, const char* module_id);
     std::vector<SensorLocation> getSensorLocations();
     static void notify(const fingerprint_msg_t* msg);
 

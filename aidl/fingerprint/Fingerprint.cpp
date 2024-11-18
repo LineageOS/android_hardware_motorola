@@ -30,7 +30,7 @@ typedef struct fingerprint_hal {
 } fingerprint_hal_t;
 
 static const fingerprint_hal_t kModules[] = {
-        {"fortsense"},  {"fpc"},         {"fpc_fod"}, {"goodix"},
+        {"fortsense"},  {"fpc"},         {"fpc_fod"}, {"goodix"}, {"goodix:gf_fingerprint"},
         {"goodix_fod"}, {"goodix_fod6"}, {"silead"},  {"syna"},
 };
 
@@ -45,13 +45,28 @@ Fingerprint::Fingerprint(std::shared_ptr<FingerprintConfig> config) : mConfig(st
     if (mDevice) {
         ALOGI("fingerprint HAL already opened");
     } else {
-        for (auto& [class_name] : kModules) {
-            mDevice = openFingerprintHal(class_name);
+        for (auto& [module] : kModules) {
+            std::string class_name;
+            std::string class_module_id;
+
+            auto parts = ::android::base::Split(module, ":");
+
+            if (parts.size() == 2) {
+                class_name = parts[0];
+                class_module_id = parts[1];
+            } else {
+                class_name = module;
+                class_module_id = FINGERPRINT_HARDWARE_MODULE_ID;
+            }
+
+            mDevice = openFingerprintHal(class_name.c_str(), class_module_id.c_str());
             if (!mDevice) {
-                ALOGE("Can't open HAL module, class %s", class_name);
+                ALOGE("Can't open HAL module, class: %s, module_id: %s", class_name.c_str(),
+                      class_module_id.c_str());
                 continue;
             }
-            ALOGI("Opened fingerprint HAL, class %s", class_name);
+            ALOGI("Opened fingerprint HAL, class: %s, module_id: %s", class_name.c_str(),
+                  class_module_id.c_str());
             break;
         }
         if (!mDevice) {
@@ -108,11 +123,12 @@ Fingerprint::~Fingerprint() {
     mDevice = nullptr;
 }
 
-fingerprint_device_t* Fingerprint::openFingerprintHal(const char* class_name) {
+fingerprint_device_t* Fingerprint::openFingerprintHal(const char* class_name,
+                                                      const char* module_id) {
     const hw_module_t* hw_mdl = nullptr;
 
     ALOGD("Opening fingerprint hal library...");
-    if (hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, class_name, &hw_mdl) != 0) {
+    if (hw_get_module_by_class(module_id, class_name, &hw_mdl) != 0) {
         ALOGE("Can't open fingerprint HW Module");
         return nullptr;
     }
