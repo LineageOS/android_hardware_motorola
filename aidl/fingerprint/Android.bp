@@ -5,8 +5,32 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+soong_config_module_type {
+    name: "motorola_hardware_biometrics_config_default",
+    module_type: "cc_defaults",
+    config_namespace: "motorola_hardware_biometrics",
+    bool_variables: [
+        "run_32bit",
+    ],
+    properties: ["compile_multilib"],
+}
+
+motorola_hardware_biometrics_config_default {
+    name: "motorola_hardware_biometrics_config_default",
+
+    soong_config_variables: {
+        run_32bit: {
+            conditions_default: {
+                compile_multilib: "64",
+            },
+            compile_multilib: "prefer32",
+        },
+    },
+}
+
 cc_binary {
     name: "android.hardware.biometrics.fingerprint-service.moto",
+    defaults: ["motorola_hardware_biometrics_config_default"],
     relative_install_path: "hw",
     init_rc: ["android.hardware.biometrics.fingerprint-service.moto.rc"],
     vintf_fragments: ["android.hardware.biometrics.fingerprint-service.moto.xml"],
