@@ -1,0 +1,14 @@
+/*
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.egistec.hardware.fingerprint@4.0;
+
+import vendor.egistec.hardware.fingerprint@4.0::IBiometricsFingerprintRbsCallback;
+
+interface IBiometricsFingerprintRbs {
+    extra_api(int32_t pid, vec<uint8_t> in_buffer) generates (vec<uint8_t> out_buffer);
+    set_on_callback_proc(IBiometricsFingerprintRbsCallback clientCallback) generates (int32_t ret);
+    cancel() generates (int32_t ret);
+};
