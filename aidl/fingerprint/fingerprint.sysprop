@@ -14,7 +14,7 @@ prop {
 }
 
 # sensor location
-#    <x>|<y>|<radius> in pixel
+#    <x>|<y>|<radius>|<display> in pixel, can have multiple values separated by comma
 prop {
     prop_name: "persist.vendor.fingerprint.sensor_location"
     type: String
