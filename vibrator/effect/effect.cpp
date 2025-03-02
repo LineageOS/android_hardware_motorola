@@ -75,39 +75,39 @@ static const int8_t primitive_2[] = {
 static const struct effect_stream effects[] = {
     {
         .effect_id = 0,
-        .data = effect_0,
         .length = ARRAY_SIZE(effect_0),
         .play_rate_hz = 8000,
+        .data = effect_0,
     },
 
     {
         .effect_id = 1,
-        .data = effect_1,
         .length = ARRAY_SIZE(effect_1),
         .play_rate_hz = 8000,
+        .data = effect_1,
     },
 };
 
 static const struct effect_stream primitives[] = {
     {
         .effect_id = 0,
-        .data = primitive_0,
         .length = ARRAY_SIZE(primitive_0),
         .play_rate_hz = 8000,
+        .data = primitive_0,
     },
 
     {
         .effect_id = 1,
-        .data = primitive_1,
         .length = ARRAY_SIZE(primitive_1),
         .play_rate_hz = 8000,
+        .data = primitive_1,
     },
 
     {
         .effect_id = 2,
-        .data = primitive_2,
         .length = ARRAY_SIZE(primitive_2),
         .play_rate_hz = 8000,
+        .data = primitive_2,
     },
 };
 
