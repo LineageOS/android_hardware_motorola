@@ -16,6 +16,24 @@
       "message": "nuke sy",
       "revId": "44741790864303ed1f18ee867e1dc4b77e6406d0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2a72814_9e6bbb3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-03-11T15:18:53Z",
+      "side": 1,
+      "message": "this was supposed to be \"nuke lineage deps\" but you did that in PS2",
+      "parentUuid": "0d332de3_4751f640",
+      "revId": "44741790864303ed1f18ee867e1dc4b77e6406d0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
