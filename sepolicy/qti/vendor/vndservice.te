@@ -1,0 +1,2 @@
+# Fingerprint
+type hal_fingerprint_vndservice, vndservice_manager_type;
