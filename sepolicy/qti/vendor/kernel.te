@@ -1,0 +1,9 @@
+allow kernel block_device:dir search;
+# FIXME: restrict this
+allow kernel block_device:blk_file { open read write };
+
+allow kernel kernel:capability kill;
+allow kernel {
+    vendor_hw_block_device
+    vendor_utags_block_device
+}:blk_file rw_file_perms;
