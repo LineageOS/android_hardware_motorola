@@ -1,0 +1,6 @@
+r_dir_file(vendor_hal_fingerprint_fpc, vendor_sysfs_fingerprint)
+
+get_prop(vendor_hal_fingerprint_fpc, build_bootimage_prop)
+set_prop(vendor_hal_fingerprint_fpc, vendor_mot_fingerprint_prop)
+
+allow vendor_hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
