@@ -1,0 +1,2 @@
+add_service(radio, mot_radio_service)
+add_service(radio, mot_system_service)

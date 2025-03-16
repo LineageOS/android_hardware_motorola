@@ -1,0 +1,6 @@
+type vendor_mmi_usb, domain;
+type vendor_mmi_usb_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_mmi_usb)
+
+allow vendor_mmi_usb vendor_sysfs_usb:dir r_dir_perms;
+allow vendor_mmi_usb vendor_sysfs_usb:file { setattr rw_file_perms };

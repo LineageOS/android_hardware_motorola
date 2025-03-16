@@ -1,0 +1,5 @@
+# MotCamera3
+get_prop(platform_app, audio_config_prop)
+
+allow platform_app audio_config_prop:file { map };
+allow platform_app vendor_default_prop:file { map };
