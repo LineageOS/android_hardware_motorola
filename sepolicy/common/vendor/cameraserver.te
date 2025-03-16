@@ -1,0 +1,2 @@
+#get_prop(cameraserver, vendor_default_prop)
+# neverallow - avc:  denied  { read } for  name="u:object_r:vendor_default_prop:s0" dev="tmpfs" ino=10729 scontext=u:r:cameraserver:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=file permissive=0
