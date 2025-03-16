@@ -1,0 +1,2 @@
+add_hwservice(nxpese_hwservice, hwservice_manager)
+add_hwservice(nxpnfc_hwservice, hwservice_manager)
