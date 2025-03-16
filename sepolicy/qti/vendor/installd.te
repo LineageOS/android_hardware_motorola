@@ -1,0 +1,3 @@
+dontaudit installd bt_firmware_file:filesystem quotaget;
+dontaudit installd firmware_file:filesystem quotaget;
+dontaudit installd fsg_file:filesystem quotaget;

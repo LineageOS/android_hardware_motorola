@@ -1,0 +1,3 @@
+allow vendor_qti_init_shell proc_page_cluster:file w_file_perms;
+
+allow vendor_qti_init_shell vendor_sysfs_sensors:file setattr;

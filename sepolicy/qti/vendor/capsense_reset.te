@@ -1,0 +1,12 @@
+type capsense_reset, domain;
+type capsense_reset_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(capsense_reset)
+
+allow capsense_reset kmsg_device:chr_file rw_file_perms;
+
+allow capsense_reset self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+allow capsense_reset input_device:dir r_dir_perms;
+allow capsense_reset input_device:chr_file r_file_perms;
+
+rw_dir_file(capsense_reset, vendor_sysfs_capsense)

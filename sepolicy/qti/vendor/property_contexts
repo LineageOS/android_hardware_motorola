@@ -1,0 +1,37 @@
+# Camera
+persist.vendor.media.recorder.flip    u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.res.fmq.size         u:object_r:vendor_camera_prop:s0
+ro.vendor.camera.req.fmq.size         u:object_r:vendor_camera_prop:s0
+vendor.camera.coming.cts              u:object_r:vendor_camera_prop:s0
+
+# Radio
+vendor.net.qmi.rev_ip_info    u:object_r:vendor_radio_prop:s0
+vendor.ril.                   u:object_r:vendor_radio_prop:s0
+
+# Motorola
+ro.vendor.hw.                             u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.cust_md5                    u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.gki.                        u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.iccid                       u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.bootreason                      u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.manufacturedate                 u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.device                  u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.display                 u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.hardware.sku.variant    u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.model                   u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.name                    u:object_r:vendor_mot_hw_prop:s0
+
+# Motorola fingerprint
+persist.vendor.hardware.fingerprint    u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fps.ident                    u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fingerprint.status           u:object_r:vendor_mot_fingerprint_prop:s0
+
+# Motorola touch
+vendor.hw.touch.                   u:object_r:vendor_mot_touch_prop:s0
+ro.vendor.touch.fw_version         u:object_r:vendor_mot_touch_prop:s0
+ro.vendor.touch.supplier_vendor    u:object_r:vendor_mot_touch_prop:s0
+
+# NFC
+persist.vendor.nfc.     u:object_r:vendor_nfc_prop:s0
+ro.vendor.nfc.          u:object_r:vendor_nfc_prop:s0
+vendor.nfc.fw_status    u:object_r:vendor_nfc_prop:s0
