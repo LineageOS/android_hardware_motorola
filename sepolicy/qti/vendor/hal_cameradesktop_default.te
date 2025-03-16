@@ -1,0 +1,13 @@
+type hal_cameradesktop_default, domain;
+type hal_cameradesktop_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_cameradesktop_default)
+
+hal_server_domain(hal_cameradesktop_default, hal_cameradesktop)
+add_hwservice(hal_cameradesktop_server, hal_cameradesktop_hwservice)
+binder_call(hal_cameradesktop_client, hal_cameradesktop_server)
+allow hal_cameradesktop_client hal_cameradesktop_hwservice:hwservice_manager find;
+
+allow hal_cameradesktop_server self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+allow hal_cameradesktop_server vendor_sysfs_graphics:file r_file_perms;
+allow hal_cameradesktop_server video_device:chr_file rw_file_perms;

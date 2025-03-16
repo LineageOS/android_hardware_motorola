@@ -1,0 +1,6 @@
+rw_dir_file(hal_sensors_default, vendor_sysfs_capsense)
+rw_dir_file(hal_sensors_default, vendor_sysfs_input)
+rw_dir_file(hal_sensors_default, vendor_sysfs_touchpanel)
+
+rw_dir_file(hal_sensors_default, vendor_sysfs_laser)
+allow hal_sensors_default vendor_sysfs_laser:file setattr;
