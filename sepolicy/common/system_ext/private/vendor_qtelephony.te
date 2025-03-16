@@ -1,0 +1,2 @@
+add_service(vendor_qtelephony, mot_radio_service)
+add_service(vendor_qtelephony, mot_system_service)
