@@ -1,0 +1,4 @@
+# MotCamera3
+get_prop(platform_app, audio_config_prop)
+# FIXME: restrict this, neverallow
+#get_prop(platform_app, vendor_default_prop)

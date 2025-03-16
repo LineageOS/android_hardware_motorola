@@ -1,0 +1,10 @@
+# DMA Latency
+allow hal_power_default vendor_latency_device:file rw_file_perms;
+allow hal_power_default vendor_latency_device:chr_file rw_file_perms;
+
+# Touchpanel
+rw_dir_file(hal_power_default, vendor_sysfs_touchpanel)
+
+# Sensors
+allow hal_power_default vendor_sysfs_sensors:dir search;
+rw_dir_file(hal_power_default, vendor_sysfs_input)
