@@ -1,0 +1,5 @@
+# power_supply
+#allow system_app vendor_sysfs_battery_supply:dir search;
+#allow system_app vendor_sysfs_battery_supply:file { read getattr open };
+
+#allow system_app zygote:unix_stream_socket { getopt };

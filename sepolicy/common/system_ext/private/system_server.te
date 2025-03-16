@@ -1,0 +1,2 @@
+get_prop(system_server, vendor_persist_camera_prop)
+allow system_server mot_system_service:service_manager add;

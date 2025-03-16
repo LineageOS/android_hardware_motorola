@@ -1,0 +1,71 @@
+# AOV
+vendor.hw.aov.             u:object_r:vendor_aov_prop:s0
+
+# Camera
+vendor.camera.coming.cts   u:object_r:vendor_camera_prop:s0
+
+# Radio
+vendor.ril.                u:object_r:vendor_radio_prop:s0
+
+# Motorola
+ro.boot.adb_early          u:object_r:moto_boot_prop:s0
+ro.boot.secure_hardware    u:object_r:moto_boot_prop:s0
+ro.boot.radio.             u:object_r:moto_boot_prop:s0
+ro.boot.device             u:object_r:moto_boot_prop:s0
+ro.boot.dualsim            u:object_r:moto_boot_prop:s0
+ro.boot.hardware.sku       u:object_r:moto_boot_prop:s0
+ro.boot.carrier            u:object_r:moto_boot_prop:s0
+ro.boot.cid                u:object_r:moto_boot_prop:s0
+ro.boot.fsg-id             u:object_r:moto_boot_prop:s0
+ro.boot.hwrev              u:object_r:moto_boot_prop:s0
+ro.boot.powerup_reason     u:object_r:moto_boot_prop:s0
+ro.boot.bl_state           u:object_r:moto_boot_prop:s0
+ro.boot.revision           u:object_r:moto_boot_prop:s0
+ro.vendor.hw.              u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.boot.radio       u:object_r:moto_boot_prop:s0
+ro.vendor.boot.hwrev       u:object_r:moto_boot_prop:s0
+ro.vendor.boot.powerup_reason   u:object_r:moto_boot_prop:s0
+ro.vendor.boot.bl_state    u:object_r:moto_boot_prop:s0
+ro.vendor.boot.serialno    u:object_r:moto_boot_prop:s0
+ro.vendor.mot.cust_md5     u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.gki.         u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.iccid        u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.bootreason       u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.manufacturedate  u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.device   u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.display  u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.hardware.sku.variant          u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.model    u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.product.name     u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.carrier          u:object_r:moto_boot_prop:s0
+ro.vendor.boot.cid         u:object_r:moto_boot_prop:s0
+ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
+ro.vendor.zygote           u:object_r:moto_boot_prop:s0
+vendor.boot_completed      u:object_r:moto_boot_prop:s0
+
+# Forced charger temp on T-mobile/MetroPCS
+ro.vendor.force_max_chrg_temp       u:object_r:moto_boot_prop:s0
+
+# Motorola fingerprint
+persist.vendor.hardware.fingerprint            u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fps.ident                            u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.hw.fingerprint.status                   u:object_r:vendor_mot_fingerprint_prop:s0
+
+# Motorola touch
+vendor.hw.touch.                  u:object_r:vendor_mot_touch_prop:s0
+ro.vendor.touch.fw_version        u:object_r:vendor_mot_touch_prop:s0
+ro.vendor.touch.supplier_vendor   u:object_r:vendor_mot_touch_prop:s0
+
+# NFC
+persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
+ro.vendor.nfc.             u:object_r:vendor_nfc_prop:s0
+vendor.nfc.fw_status       u:object_r:vendor_nfc_prop:s0
+
+# USB
+vendor.rmnet_vnd.rps_mask  u:object_r:vendor_usb_prop:s0
+
+# vhw.xml 
+ro.vendor.product.hardware.sku.variant   u:object_r:moto_boot_prop:s0
+ro.vendor.product.device                 u:object_r:moto_boot_prop:s0
+ro.vendor.product.name                   u:object_r:moto_boot_prop:s0
+ro.vendor.product.model                  u:object_r:moto_boot_prop:s0

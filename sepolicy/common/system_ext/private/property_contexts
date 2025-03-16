@@ -1,0 +1,10 @@
+# Camera
+#camera.mot.is.coming.cts                    u:object_r:moto_camera_config_prop:s0 exact bool
+ro.camera.req.fmq.size                       u:object_r:exported_camera_prop:s0
+ro.camera.res.fmq.size                       u:object_r:exported_camera_prop:s0
+
+# Motorola
+ro.mot.build.customerid                      u:object_r:build_prop:s0 exact string
+ro.opa.device_model_id                       u:object_r:build_prop:s0 exact string
+#persist.radio.multisim.config               u:object_r:moto_boot_prop:s0
+#persist.vendor.radio.multisim.config        u:object_r:moto_boot_prop:s0

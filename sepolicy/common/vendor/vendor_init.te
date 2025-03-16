@@ -1,0 +1,17 @@
+get_prop(vendor_init, moto_boot_prop)
+set_prop(vendor_init, moto_boot_prop)
+get_prop(vendor_init, vendor_aov_prop)
+set_prop(vendor_init, vendor_aov_prop)
+set_prop(vendor_init, vendor_persist_dpm_prop)
+set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_ims_prop)
+set_prop(vendor_init, vendor_mot_hw_prop)
+set_prop(vendor_init, vendor_nfc_prop)
+set_prop(vendor_init, vendor_time_service_prop)
+set_prop(vendor_init, vendor_fm_prop)
+
+allow vendor_init { proc_dirty proc proc_sched_lib_mask_cpuinfo }:file rw_file_perms;
+allow vendor_init self:perf_event cpu;
+allow vendor_init proc_sched_lib_mask_cpuinfo:file w_file_perms;
+#allow vendor_init persist_debug_prop:file read;
+#allow vendor_init rootfs:dir read;

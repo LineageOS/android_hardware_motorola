@@ -1,0 +1,5 @@
+# was used for /(vendor|system/vendor)/bin/hw/fpc_ident u:object_r:vendor_hal_fingerprint_fpc_exec:s0 for some reason
+#allow vendor_hal_fingerprint_fpc init:unix_stream_socket connectto;
+#allow vendor_hal_fingerprint_fpc property_socket:sock_file write;
+#allow vendor_hal_fingerprint_fpc uhid_device:chr_file { ioctl open write };
+#allow vendor_hal_fingerprint_fpc moto_fingerprint_prop:property_service set;
