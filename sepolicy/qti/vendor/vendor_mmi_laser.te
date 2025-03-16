@@ -1,0 +1,18 @@
+type vendor_mmi_laser, domain;
+type vendor_mmi_laser_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_mmi_laser)
+
+allow vendor_mmi_laser kmsg_device:chr_file w_file_perms;
+
+allow vendor_mmi_laser self:capability { chown fsetid };
+
+allow vendor_mmi_laser vendor_toolbox_exec:file rx_file_perms;
+
+rw_dir_file(vendor_mmi_laser, vendor_sysfs_laser)
+allow vendor_mmi_laser vendor_sysfs_laser:file setattr;
+
+allow vendor_mmi_laser vendor_sysfs_input:dir r_dir_perms;
+
+allow vendor_mmi_laser mnt_vendor_file:dir search;
+r_dir_file(vendor_mmi_laser, vendor_persist_camera_file)
+allow vendor_mmi_laser vendor_persist_camera_file:file setattr;

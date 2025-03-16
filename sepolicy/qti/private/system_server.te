@@ -1,0 +1,1 @@
+add_service(system_server, mot_system_service)
