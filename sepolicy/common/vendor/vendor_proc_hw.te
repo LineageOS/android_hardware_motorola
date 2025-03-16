@@ -1,0 +1,1 @@
+allow vendor_proc_hw proc:filesystem associate;
