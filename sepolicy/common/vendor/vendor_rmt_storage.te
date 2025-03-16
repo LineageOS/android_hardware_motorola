@@ -1,0 +1,7 @@
+r_dir_file(vendor_rmt_storage, fsg_file)
+r_dir_file(vendor_rmt_storage, vendor_persist_file)
+
+get_prop(vendor_rmt_storage, vendor_radio_prop)
+get_prop(vendor_rmt_storage, moto_boot_prop)
+
+allow vendor_rmt_storage vendor_modem_block_device:blk_file { open read write };

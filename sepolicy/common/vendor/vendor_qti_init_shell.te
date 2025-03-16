@@ -1,0 +1,21 @@
+allow vendor_qti_init_shell configfs:dir create_dir_perms;
+allow vendor_qti_init_shell configfs:file create_file_perms;
+allow vendor_qti_init_shell configfs:lnk_file create_file_perms;
+allow vendor_qti_init_shell proc_page_cluster:file w_file_perms;
+
+# focaltech loading https://github.com/motorola-sm7250-devs/android_device_motorola_kiev/commit/b5ae1d049352af29647c1ebb708f2c37cb8e58c2
+allow vendor_qti_init_shell sysfs:file write;
+
+get_prop(vendor_qti_init_shell, moto_boot_prop)
+set_prop(vendor_qti_init_shell, moto_boot_prop)
+set_prop(vendor_qti_init_shell, vendor_mot_hw_prop)
+set_prop(vendor_qti_init_shell, vendor_mot_touch_prop)
+allow vendor_qti_init_shell vendor_sysfs_laser:dir r_dir_perms;
+allow vendor_qti_init_shell vendor_sysfs_laser:file { setattr rw_file_perms };
+allow vendor_qti_init_shell sysfs_android_usb:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs_android_usb:file rw_file_perms;
+allow vendor_qti_init_shell kmsg_device:chr_file { open write };
+allow vendor_qti_init_shell vendor_file:file execute_no_trans;
+allow vendor_qti_init_shell vendor_file:system module_load;
+allow vendor_qti_init_shell vendor_sysfs_touch:dir r_dir_perms;
+allow vendor_qti_init_shell vendor_sysfs_touch:file { setattr rw_file_perms };

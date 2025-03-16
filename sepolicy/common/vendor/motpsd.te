@@ -1,0 +1,15 @@
+type motpsd, domain;
+type motpsd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(motpsd)
+
+# Write to /dev/kmsg
+allow motpsd kmsg_device:chr_file rw_file_perms;
+
+allow motpsd vendor_sysfs_sensors:dir r_dir_perms;
+allow motpsd vendor_sysfs_sensors:file rw_file_perms;
+r_dir_file(motpsd, sysfs_msm_subsys)
+r_dir_file(motpsd, vendor_sysfs_graphics)
+get_prop(motpsd, vendor_sensors_prop)
+
+allow motpsd self:netlink_kobject_uevent_socket { bind create getopt read setopt };
+allow motpsd self:qipcrtr_socket { create getattr read setopt write };

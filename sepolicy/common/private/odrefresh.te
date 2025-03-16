@@ -1,0 +1,2 @@
+dontaudit odrefresh property_type:file { getattr open read map };
+allow odrefresh self:capability kill;
