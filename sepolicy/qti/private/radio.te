@@ -1,0 +1,3 @@
+add_service(radio, mot_radio_service)
+
+allow radio mot_system_service:service_manager find;

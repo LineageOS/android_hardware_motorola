@@ -1,0 +1,9 @@
+# Camera
+camera.mot.apps.activity.value    u:object_r:exported_camera_prop:s0 exact string
+camera.mot.apps.value             u:object_r:exported_camera_prop:s0 exact string
+camera.mot.is.coming.cts          u:object_r:exported_camera_prop:s0 exact bool
+ro.camera.req.fmq.size            u:object_r:exported_camera_prop:s0
+ro.camera.res.fmq.size            u:object_r:exported_camera_prop:s0
+
+# Motorola
+ro.mot.build.customerid    u:object_r:build_prop:s0 exact string

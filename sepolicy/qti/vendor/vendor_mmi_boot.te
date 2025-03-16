@@ -1,0 +1,12 @@
+type vendor_mmi_boot, domain;
+type vendor_mmi_boot_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_mmi_boot)
+
+allow vendor_mmi_boot vendor_toolbox_exec:file rx_file_perms;
+
+r_dir_file(vendor_mmi_boot, mnt_vendor_file)
+r_dir_file(vendor_mmi_boot, vendor_proc_hw)
+
+allow vendor_mmi_boot vendor_proc_moto_boot:file r_file_perms;
+
+set_prop(vendor_mmi_boot, vendor_mot_hw_prop)
