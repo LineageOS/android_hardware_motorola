@@ -11,3 +11,9 @@ mkdir {
     dir: "fsg",
     vendor: true,
 }
+
+mkdir {
+    name: "vendor_super_fsg_mountpoint",
+    dir: "super_fsg",
+    vendor: true,
+}
