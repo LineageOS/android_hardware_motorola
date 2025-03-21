@@ -17,3 +17,9 @@ mkdir {
     dir: "super_fsg",
     vendor: true,
 }
+
+mkdir {
+    name: "vendor_super_modem_mountpoint",
+    dir: "super_modem",
+    vendor: true,
+}
