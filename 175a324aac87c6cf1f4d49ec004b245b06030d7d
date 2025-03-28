@@ -1,0 +1,260 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d61bc11_19dbfd89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "also remove unnecessary `;` when using macros + consider rw_dir_file() in some places",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a28ea91_5acdf60a",
+        "filename": "sepolicy/common/system_ext/private/linkerconfig.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "no",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66290d43_36afdcd9",
+        "filename": "sepolicy/common/system_ext/private/permissioncontroller_app.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "no",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9549a551_4b698fa4",
+        "filename": "sepolicy/common/vendor/cameraserver.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "don\u0027t forget to clean that up.",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "069a155e_3b400b0a",
+        "filename": "sepolicy/common/vendor/fsck.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "no",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2da700e5_adf0f85a",
+        "filename": "sepolicy/common/vendor/hal_fingerprint_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "some newlines pls",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef9fed3a_aea5b2c4",
+        "filename": "sepolicy/common/vendor/hal_light_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "{} with just one element?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cc0eef9_2fe565f0",
+        "filename": "sepolicy/common/vendor/kernel.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "spaces",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "717f2bd8_38af2482",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "nuke",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "283488d4_f8f56eb6",
+        "filename": "sepolicy/common/vendor/rild.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "some newlines pls",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e76c301_490bca13",
+        "filename": "sepolicy/common/vendor/toolbox.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "no",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eae36c2a_aed690d6",
+        "filename": "sepolicy/common/vendor/vdc.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "no",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fc494c7_1284e7f4",
+        "filename": "sepolicy/common/vendor/vendor_proc_hw.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "idk about that?",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0931c081_c6e81718",
+        "filename": "sepolicy/common/vendor/vendor_wcnss_service.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-28T07:20:15Z",
+      "side": 1,
+      "message": "what for",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
