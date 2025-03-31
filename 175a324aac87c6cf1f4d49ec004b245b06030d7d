@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "931b17c7_4135c198",
+        "filename": "sepolicy/common/system_ext/private/linkerconfig.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a28ea91_5acdf60a",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66290d43_36afdcd9",
@@ -48,6 +66,30 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "no",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0323955e_e8bbaf42",
+        "filename": "sepolicy/common/system_ext/private/permissioncontroller_app.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Grabbed it from https://github.com/LineageOS/android_device_motorola_sm8250-common/commit/204b941968f4c97aea1d1559e04fd1da39cd5122, do we just ignore it?",
+      "parentUuid": "66290d43_36afdcd9",
       "range": {
         "startLine": 1,
         "startChar": 23,
@@ -92,6 +134,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e42acf0d_b59088dd",
+        "filename": "sepolicy/common/vendor/fsck.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "069a155e_3b400b0a",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2da700e5_adf0f85a",
@@ -109,6 +169,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d94c6405_8a1b3355",
+        "filename": "sepolicy/common/vendor/hal_fingerprint_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2da700e5_adf0f85a",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef9fed3a_aea5b2c4",
@@ -122,6 +200,30 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "{} with just one element?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 21
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb39c1c0_57fe2b58",
+        "filename": "sepolicy/common/vendor/hal_light_default.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ef9fed3a_aea5b2c4",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -155,6 +257,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef2c53ec_9a29ee77",
+        "filename": "sepolicy/common/vendor/kernel.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cc0eef9_2fe565f0",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "717f2bd8_38af2482",
@@ -168,6 +294,24 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "nuke",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edbc0277_a1b44e48",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "717f2bd8_38af2482",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -189,6 +333,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ba791c9_4e2fd4b8",
+        "filename": "sepolicy/common/vendor/rild.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "283488d4_f8f56eb6",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e76c301_490bca13",
@@ -206,6 +368,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9a96efb_824c3192",
+        "filename": "sepolicy/common/vendor/toolbox.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e76c301_490bca13",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eae36c2a_aed690d6",
@@ -219,6 +399,24 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "no",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d8afca1_ffeff990",
+        "filename": "sepolicy/common/vendor/vdc.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eae36c2a_aed690d6",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -242,6 +440,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ae8d918_1ce0dd7b",
+        "filename": "sepolicy/common/vendor/vendor_proc_hw.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "I can drop it I guess, I\u0027m not sure. I saw the denial in my logcat and also saw https://github.com/moto-common/android_device_motorola_common/blob/15/sepolicy/vendor/vendor_proc_hw.te",
+      "parentUuid": "5fc494c7_1284e7f4",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0931c081_c6e81718",
         "filename": "sepolicy/common/vendor/vendor_wcnss_service.te",
         "patchSetId": 4
@@ -253,6 +469,24 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "what for",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ecbbbaa_e5b08cc6",
+        "filename": "sepolicy/common/vendor/vendor_wcnss_service.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-03-31T14:20:39Z",
+      "side": 1,
+      "message": "dianlujitao added it here - https://github.com/LineageOS/android_device_motorola_sm8250-common/commit/4a73fa2f772b1cf2e60b09058f996541073339e5",
+      "parentUuid": "0931c081_c6e81718",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
