@@ -489,6 +489,24 @@
       "parentUuid": "0931c081_c6e81718",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "839dbe17_fca43bdc",
+        "filename": "sepolicy/common/vendor/vendor_wcnss_service.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2025-03-31T14:39:31Z",
+      "side": 1,
+      "message": "I don\u0027t remember the reason behind this. It\u0027s a good idea to drop from common, and address in device in case necessary.",
+      "parentUuid": "0ecbbbaa_e5b08cc6",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
