@@ -16,6 +16,24 @@
       "message": "Fixed in qcom sepolicy, drop this",
       "revId": "90dd7b0505f26e25e667151f07be2836d71db8f7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ddf2019_9f4e42b2",
+        "filename": "sepolicy/common/vendor/vendor_dataservice_app.te",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-04-14T17:01:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "999d1185_8c7d2332",
+      "revId": "90dd7b0505f26e25e667151f07be2836d71db8f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

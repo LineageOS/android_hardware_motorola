@@ -100,6 +100,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92720fbf_f5b9c90d",
+        "filename": "sepolicy/common/system_ext/private/permissioncontroller_app.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-04-14T17:01:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0323955e_e8bbaf42",
+      "range": {
+        "startLine": 1,
+        "startChar": 23,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9549a551_4b698fa4",
@@ -113,6 +137,24 @@
       "writtenOn": "2025-03-28T07:20:15Z",
       "side": 1,
       "message": "don\u0027t forget to clean that up.",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aae77382_01a23f45",
+        "filename": "sepolicy/common/vendor/cameraserver.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-04-14T17:01:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9549a551_4b698fa4",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -505,6 +547,24 @@
       "side": 1,
       "message": "I don\u0027t remember the reason behind this. It\u0027s a good idea to drop from common, and address in device in case necessary.",
       "parentUuid": "0ecbbbaa_e5b08cc6",
+      "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36a6b35f_2764b4f8",
+        "filename": "sepolicy/common/vendor/vendor_wcnss_service.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-04-14T17:01:29Z",
+      "side": 1,
+      "message": "Dropping it for now, if you still need it we can always add it back here",
+      "parentUuid": "839dbe17_fca43bdc",
       "revId": "175a324aac87c6cf1f4d49ec004b245b06030d7d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
