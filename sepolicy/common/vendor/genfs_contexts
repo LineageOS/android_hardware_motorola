@@ -131,5 +131,6 @@ genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/usb/
 genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/wakeup                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                         u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/input/input2/wakeup                                                              u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/virtual/input/input5/wakeup65                                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/input/input5/wakeup66                                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/focaltech_fp/wakeup                                                         u:object_r:sysfs_wakeup:s0
