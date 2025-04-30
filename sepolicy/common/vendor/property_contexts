@@ -31,3 +31,6 @@ ro.vendor.touch.supplier_vendor   u:object_r:vendor_mot_touch_prop:s0
 persist.vendor.nfc.        u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.             u:object_r:vendor_nfc_prop:s0
 vendor.nfc.fw_status       u:object_r:vendor_nfc_prop:s0
+
+# Time
+persist.vendor.timeadjust  u:object_r:vendor_timekeep_prop:s0
