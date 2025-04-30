@@ -1,0 +1,13 @@
+type vendor_timekeep, domain;
+type vendor_timekeep_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_timekeep)
+
+allow vendor_timekeep self:capability sys_time;
+
+allow vendor_timekeep vendor_time_data_file:dir rw_dir_perms;
+allow vendor_timekeep vendor_time_data_file:file create_file_perms;
+
+r_dir_file(vendor_timekeep, sysfs_rtc)
+
+set_prop(vendor_timekeep, vendor_timekeep_prop)
