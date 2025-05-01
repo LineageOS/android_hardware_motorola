@@ -88,6 +88,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7ef12ef7_d9a5f380",
+        "filename": "sepolicy/common/system_ext/private/vendor_qtelephony.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-05-01T17:15:29Z",
+      "side": 1,
+      "message": "Would that be applicable here? I thought it should be add_service",
+      "parentUuid": "f29e83f6_2fa94872",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "2ef8e751_4fed217b",
         "filename": "sepolicy/common/vendor/hal_audio_default.te",
         "patchSetId": 10
@@ -99,6 +117,24 @@
       "writtenOn": "2025-05-01T16:21:22Z",
       "side": 1,
       "message": "hal_client_domain?",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf42d9ac_4b420321",
+        "filename": "sepolicy/common/vendor/hal_audio_default.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-05-01T17:15:29Z",
+      "side": 1,
+      "message": "Same thing but add_hwservice?",
+      "parentUuid": "2ef8e751_4fed217b",
       "revId": "541d633062b4f96a868433421f2434378afae379",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
