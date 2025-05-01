@@ -16,6 +16,91 @@
       "message": "Verified and tested on Motorola sm7250",
       "revId": "541d633062b4f96a868433421f2434378afae379",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09a405b_54e5b0ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T16:21:22Z",
+      "side": 1,
+      "message": "Not flagging all of them, but usually stuff involving `hwservice_manager` has an appropriate macro",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7ba273e_19d91128",
+        "filename": "sepolicy/common/system_ext/private/radio.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T16:21:22Z",
+      "side": 1,
+      "message": "I\u0027m sure there\u0027s a macro for this",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bf07f5c_de01f08e",
+        "filename": "sepolicy/common/system_ext/private/system_server.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T16:21:22Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f29e83f6_2fa94872",
+        "filename": "sepolicy/common/system_ext/private/vendor_qtelephony.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T16:21:22Z",
+      "side": 1,
+      "message": "hal_client_domain?",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ef8e751_4fed217b",
+        "filename": "sepolicy/common/vendor/hal_audio_default.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T16:21:22Z",
+      "side": 1,
+      "message": "hal_client_domain?",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
