@@ -16,6 +16,24 @@
       "message": "Should we move this to timekeep repo itself?",
       "revId": "97dcfcd9f53c2ab1dcc458014c801d00313514b9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b32cfe4f_03b0ca47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-05-01T18:01:58Z",
+      "side": 1,
+      "message": "Uhm probably, it\u0027s 1:1 with Xiaomi SM6250 anyway.",
+      "parentUuid": "3e4a4a24_18f5a173",
+      "revId": "97dcfcd9f53c2ab1dcc458014c801d00313514b9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
