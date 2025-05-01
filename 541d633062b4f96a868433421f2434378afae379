@@ -106,6 +106,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d543ab90_f834c35b",
+        "filename": "sepolicy/common/system_ext/private/vendor_qtelephony.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T17:32:39Z",
+      "side": 1,
+      "message": "Maybe, but doesn\u0027t `add_` imply registering the service? These rules are there because qtelephony is a client of Moto radio services",
+      "parentUuid": "7ef12ef7_d9a5f380",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "2ef8e751_4fed217b",
         "filename": "sepolicy/common/vendor/hal_audio_default.te",
         "patchSetId": 10
@@ -135,6 +153,24 @@
       "side": 1,
       "message": "Same thing but add_hwservice?",
       "parentUuid": "2ef8e751_4fed217b",
+      "revId": "541d633062b4f96a868433421f2434378afae379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08ded94c_64c4bfda",
+        "filename": "sepolicy/common/vendor/hal_audio_default.te",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2025-05-01T17:32:39Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "cf42d9ac_4b420321",
       "revId": "541d633062b4f96a868433421f2434378afae379",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
