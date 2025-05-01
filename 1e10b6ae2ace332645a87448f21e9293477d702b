@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84a7a9ca_3e8ad45a",
+        "filename": "sepolicy/common/vendor/stflashtool.te",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-05-01T21:40:48Z",
+      "side": 1,
+      "message": "This file can be dropped along with any relevant policies/labels, given stflashtool does nothing on moto (it references a non existent config file)",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
