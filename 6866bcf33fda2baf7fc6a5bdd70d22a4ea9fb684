@@ -16,6 +16,24 @@
       "message": "Also heads up, sepolicy/common/vendor/cameraserver.te is empty",
       "revId": "6866bcf33fda2baf7fc6a5bdd70d22a4ea9fb684",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdb0cffc_e0012d3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-05-01T19:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3903c5e0_66376377",
+      "revId": "6866bcf33fda2baf7fc6a5bdd70d22a4ea9fb684",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
