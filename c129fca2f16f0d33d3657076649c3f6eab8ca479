@@ -1,0 +1,238 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b56df16_79df7c09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "would be nice if code style was bit more uniform, e.g. in genfs/file_contexts (the amount of spaces after longest line in the group)",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9efb19ae_053778e0",
+        "filename": "sepolicy/common/vendor/capsense_reset.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "redundant comment",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ac88e62_c8c92ed4",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "by-name?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 107
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40bae5d6_b1536c32",
+        "filename": "sepolicy/common/vendor/hal_fingerprint_default.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "`: chr_file` -\u003e `:chr_file`",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b06ed150_c478d76d",
+        "filename": "sepolicy/common/vendor/hal_fingerprint_default.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "vndservice_use()?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 55
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29ed5f1f_3ec1ebc4",
+        "filename": "sepolicy/common/vendor/installd.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "no",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 44
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c5912fb_66383c5b",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "sketchy",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a00a688e_8593512b",
+        "filename": "sepolicy/common/vendor/vendor_hal_fingerprint_fpc.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "not needed, get_prop/set_prop grants these",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 65
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdf75b13_92abfce4",
+        "filename": "sepolicy/common/vendor/vendor_init_fingerprint.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8c44c49_458a4a0d",
+        "filename": "sepolicy/common/vendor/vendor_init_hw.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38409246_9ac1d3c0",
+        "filename": "sepolicy/common/vendor/vendor_init_touch.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6a169bb_b41ffd64",
+        "filename": "sepolicy/common/vendor/vendor_mmi_laser.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-05-02T10:57:40Z",
+      "side": 1,
+      "message": "redundant",
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
