@@ -118,6 +118,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1cc75e9_d4c7993a",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T17:45:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure which of the family this was, I think it was Beckham? But I don\u0027t want to hold this for someone who probably won\u0027t respond.\n\nLets leave it as is rn, and I\u0027ll come back and clean it up later.",
+      "parentUuid": "20ee5048_f5d16c05",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 107
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40bae5d6_b1536c32",
