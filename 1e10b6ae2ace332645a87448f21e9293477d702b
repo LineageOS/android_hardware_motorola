@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2b74e82_5119c674",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-05-02T14:42:36Z",
+      "side": 1,
+      "message": "I agree with Gio ^^",
+      "parentUuid": "c16c9b20_646aaddd",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fa8551d5_8c676332",
         "filename": "sepolicy/common/vendor/file_contexts",
         "patchSetId": 13
