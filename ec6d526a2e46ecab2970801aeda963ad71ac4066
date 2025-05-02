@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02edb449_49b2ae26",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 17
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-05-02T23:31:19Z",
+      "side": 1,
+      "message": "It can\u0027t, because it\u0027s too broad and it hits a neverallow. The properties that moto camera tries to access should be labeled instead.",
+      "parentUuid": "741ff60d_8de587f9",
+      "revId": "ec6d526a2e46ecab2970801aeda963ad71ac4066",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e298ff52_ebbee513",
         "filename": "sepolicy/common/vendor/vendor_init.te",
         "patchSetId": 17
