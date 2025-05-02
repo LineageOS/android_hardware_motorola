@@ -342,6 +342,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65f72ab1_e1ab399a",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-05-02T18:23:35Z",
+      "side": 1,
+      "message": "get_prop is not enough?",
+      "parentUuid": "1268b10f_23dceb4d",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a00a688e_8593512b",
