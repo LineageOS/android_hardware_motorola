@@ -3,6 +3,74 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "11e787c4_0f33f4eb",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T03:57:39Z",
+      "side": 1,
+      "message": "c0c4000.sdhci is used on moto sdm660 emmc, so duplicate all for that? See motorola 8998-common",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4bd2916_82af8253",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T03:57:39Z",
+      "side": 1,
+      "message": "wildcard like other persist folders?\n\nAlso, move to an audio header w/ \n\n/(vendor|system/vendor)/bin/hw/motorola\\.hardware\\.audio@2\\.0-service            u:object_r:hal_audio_default_exec:s0\n/(vendor|system/vendor)/bin/hw/motorola\\.hardware\\.audio\\.adspd@1\\.0-service    u:object_r:hal_audio_default_exec:s0\n\n?\n\nAlso, look at persist labels on moto 632 and moto 8998 trees, I think you missed some?",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0140ba16_01d74e7c",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T03:57:39Z",
+      "side": 1,
+      "message": "somewhere in here\n\n/(mnt/vendor/persist|persist)/chargeonly(/.*)?           u:object_r:persist_chargeonly_file:s0 - correct regardless\n\nAnd (bonus point, up to the group): /(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0\n\n/data/vendor/chargeonly(/.*)?                            u:object_r:chargeonly_vendor_data_file:s0\n\n\n\nIn case someone does ship that as many do.",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa8551d5_8c676332",
+        "filename": "sepolicy/common/vendor/file_contexts",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T03:57:39Z",
+      "side": 1,
+      "message": "/(vendor|system/vendor)/bin/init\\.mmi\\.usb\\.sh as well",
+      "revId": "1e10b6ae2ace332645a87448f21e9293477d702b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "84a7a9ca_3e8ad45a",
         "filename": "sepolicy/common/vendor/stflashtool.te",
         "patchSetId": 13
