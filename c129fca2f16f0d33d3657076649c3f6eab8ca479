@@ -318,6 +318,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1268b10f_23dceb4d",
+        "filename": "sepolicy/common/vendor/platform_app.te",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-05-02T17:53:36Z",
+      "side": 1,
+      "message": "Confirmed, it MotCamera BUTTTTT - this is for platform_app - and we (because LFS is a thing) are mostly presigned priv-app now...\n\nI suppose because some still unpack it like Dubai, we have to have this.",
+      "parentUuid": "1f385df1_93729ca0",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "c129fca2f16f0d33d3657076649c3f6eab8ca479",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a00a688e_8593512b",
