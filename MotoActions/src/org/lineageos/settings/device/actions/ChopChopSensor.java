@@ -28,6 +28,8 @@ import org.lineageos.settings.device.SensorHelper;
 public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ChopChopSensor";
 
+    private static final float TYPICAL_PROXIMITY_THRESHOLD = 5.0f;
+
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
     private final Sensor mSensor;
@@ -35,12 +37,14 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
 
     private boolean mIsEnabled;
     private boolean mProxIsCovered;
+    private float mProximityThreshold;
 
     public ChopChopSensor(MotoActionsSettings motoActionsSettings, SensorHelper sensorHelper) {
         mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
         mSensor = sensorHelper.getChopChopSensor();
         mProx = sensorHelper.getProximitySensor();
+        mProximityThreshold = Math.min(mProx.getMaximumRange(), TYPICAL_PROXIMITY_THRESHOLD);
     }
 
     @Override
@@ -75,7 +79,8 @@ public class ChopChopSensor implements SensorEventListener, UpdatedStateNotifier
     private final SensorEventListener mProxListener = new SensorEventListener() {
         @Override
         public synchronized void onSensorChanged(SensorEvent event) {
-            mProxIsCovered = event.values[0] < mProx.getMaximumRange();
+            final float distance = event.values[0];
+            mProxIsCovered = distance >= 0.0f && distance < mProximityThreshold;
         }
 
         @Override
