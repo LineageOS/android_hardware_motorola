@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "139e850d_cd131ac3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30793
+      },
+      "writtenOn": "2025-05-03T19:19:50Z",
+      "side": 1,
+      "message": "Hey, I\u0027d like a review for this. I\u0027m not sure if the comments in the code are necessary. Thanks a lot :)\n\nI\u0027ve looked into how the system turns off the screen when a call is in progress and used that to fix the chop chop gesture",
+      "revId": "0c40a64ffe35d9d02a688d59eabf96acbc07d27e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
