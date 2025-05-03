@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50f300d2_b0c29c3b",
+        "filename": "sepolicy/qti/private/property_contexts",
+        "patchSetId": 21
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2025-05-03T11:40:35Z",
+      "side": 1,
+      "message": "they are not moto or even qcom props, so I don\u0027t think they should reside here",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 68
+      },
+      "revId": "a7a0c26cbd6df8b11509974b494cc05bcd35d366",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
