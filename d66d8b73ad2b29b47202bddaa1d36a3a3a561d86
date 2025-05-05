@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e01c4825_0c9aa7eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19966
+      },
+      "writtenOn": "2025-05-05T16:33:51Z",
+      "side": 1,
+      "message": "I had done this  https://github.com/Evervolv/android_hardware_motorola/commit/925f8debee54439d6edcdd095edeaacdeafb0de5 If you go your route you may want to fix up the other instance as well.",
+      "revId": "d66d8b73ad2b29b47202bddaa1d36a3a3a561d86",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
