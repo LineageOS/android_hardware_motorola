@@ -33,6 +33,24 @@
       "message": "Yeah\n\nPlease either address the same issue in MotoActions/src/org/lineageos/settings/device/actions/ProximitySilencer.java\n\nOr just pick William\u0027s commit and push.\n\nHappy to merge when it is addressed.",
       "revId": "d66d8b73ad2b29b47202bddaa1d36a3a3a561d86",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12b680d7_e0c4f9b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30793
+      },
+      "writtenOn": "2025-05-06T12:18:51Z",
+      "side": 1,
+      "message": "Honestly, I feel like rounding (as you did it) is the better approach. Though it feels a little strange to me that there\u0027s no high level proximity sensor class, provided by Android, that handles this use case consistently. Currently, deciding if the sensor is covered depends on how far the sensor reaches which feels off to me. \n\nMaybe a combination of rounding and caping the max distance is better?",
+      "parentUuid": "e01c4825_0c9aa7eb",
+      "revId": "d66d8b73ad2b29b47202bddaa1d36a3a3a561d86",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
