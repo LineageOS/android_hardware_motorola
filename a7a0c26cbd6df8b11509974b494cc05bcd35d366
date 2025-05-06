@@ -22,6 +22,30 @@
       },
       "revId": "a7a0c26cbd6df8b11509974b494cc05bcd35d366",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c64cc777_7a86762e",
+        "filename": "sepolicy/qti/private/property_contexts",
+        "patchSetId": 21
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-05-06T01:09:09Z",
+      "side": 1,
+      "message": "Acknowledged, however these props are currently labeled in ~15 shipping device trees, which will take a while to migrate to a common place. I\u0027ll move it out in a separate commit in order to not block this change.",
+      "parentUuid": "50f300d2_b0c29c3b",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 68
+      },
+      "revId": "a7a0c26cbd6df8b11509974b494cc05bcd35d366",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
