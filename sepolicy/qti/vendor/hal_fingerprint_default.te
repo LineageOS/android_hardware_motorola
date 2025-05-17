@@ -13,10 +13,10 @@ allow hal_fingerprint_default self:netlink_kobject_uevent_socket create_socket_p
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 
 r_dir_file(hal_fingerprint_default, firmware_file)
+r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply)
 rw_dir_file(hal_fingerprint_default, vendor_sysfs_fingerprint)
 
 allow hal_fingerprint_default sysfs_devices_system_cpu:file rw_file_perms;
-allow hal_fingerprint_default vendor_sysfs_battery_supply:dir r_dir_perms;
 allow hal_fingerprint_default vendor_sysfs_devicetree_mmi:file r_file_perms;
 
 allow hal_fingerprint_default vendor_data_tzstorage_file:dir rw_dir_perms;
