@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1aaba62_21dac332",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-05-22T09:31:40Z",
+      "side": 1,
+      "message": "This is how the rules were in sm6225 and sm6375 trees previously",
+      "revId": "2f103ad4e50c560f2d851d4109fd2092a2a861f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
