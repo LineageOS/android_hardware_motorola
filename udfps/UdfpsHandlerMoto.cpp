@@ -66,8 +66,11 @@ class MotoUdfpsHandler : public UdfpsHandler {
 
     void onFingerUp() { disableHighBrightFod(); }
 
-    void onAcquired(int32_t /*result*/, int32_t /*vendorCode*/) {
-        // nothing
+    void onAcquired(int32_t result, int32_t /*vendorCode*/) {
+        if (result == FINGERPRINT_ACQUIRED_GOOD) {
+            // Set finger as up to disable HBM already, even if the finger is still pressed
+            onFingerUp();
+        }
     }
 
     void cancel() {
