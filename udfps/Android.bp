@@ -14,6 +14,9 @@ cc_library {
         "libhidlbase",
         "libutils",
     ],
+    static_libs: [
+        "android.hardware.biometrics.fingerprint-V4-ndk",
+    ],
     header_libs: [
         "generated_kernel_headers",
         "motofingerprint_headers",
