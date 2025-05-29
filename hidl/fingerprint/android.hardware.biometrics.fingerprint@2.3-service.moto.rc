@@ -5,3 +5,4 @@ service vendor.fps_hal.moto /vendor/bin/hw/android.hardware.biometrics.fingerpri
     class late_start
     user system
     group system input uhid
+    capabilities SYS_NICE
