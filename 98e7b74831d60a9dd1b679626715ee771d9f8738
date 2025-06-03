@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fcaf987_cf99d52c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20370
+      },
+      "writtenOn": "2025-06-03T17:46:14Z",
+      "side": 1,
+      "message": "Added a new entry for property_contexts:\nvendor.fingerprint                     u:object_r:vendor_mot_fingerprint_prop:s0\n\nto solve the last remaining denial for focaltech fps:\n\n06-03 19:21:40.828     1     1 I auditd  : type\u003d1107 audit(0.0:42): uid\u003d0 auid\u003d4294967295 ses\u003d4294967295 subj\u003du:r:init:s0 msg\u003d\u0027avc:  denied  { set } for property\u003dvendor.fingerprint pid\u003d1745 uid\u003d1000 gid\u003d1000 scontext\u003du:r:hal_fingerprint_default:s0 tcontext\u003du:object_r:vendor_default_prop:s0 tclass\u003dproperty_service permissive\u003d0\u0027\n06-03 19:21:40.832     0     0 E init    : Unable to set property \u0027vendor.fingerprint\u0027 from uid:1000 gid:1000 pid:1745: SELinux permission check failed\n\nmost likely caused by vendor/lib64/hw/fingerprint.focaltech.default.so\n\nout/target/product/rhodep/vendor/lib64/hw$ strings fingerprint.focaltech.default.so | grep \"vendor\\.finger\"\nvendor.fingerprint\n\nrhodep:/ # getprop vendor.fingerprint                                                                                  \nfocaltech",
+      "revId": "98e7b74831d60a9dd1b679626715ee771d9f8738",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
