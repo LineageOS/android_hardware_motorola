@@ -27,7 +27,7 @@ int main() {
     CHECK_EQ(status, STATUS_OK) << "Failed to add service " << htpr_instance << " " << status;
 #endif
 
-#ifdef KD_CONTROL_PATH
+#ifdef KD_CONTROL_ENABLED
     std::shared_ptr<KeyDisabler> kd = ndk::SharedRefBase::make<KeyDisabler>();
     const std::string kd_instance = std::string(KeyDisabler::descriptor) + "/default";
     status = AServiceManager_addService(kd->asBinder().get(), kd_instance.c_str());
