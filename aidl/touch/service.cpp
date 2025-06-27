@@ -6,12 +6,18 @@
 #define LOG_TAG "vendor.lineage.touch-service.motorola"
 
 #include "HighTouchPollingRate.h"
+#ifdef KD_CONTROL_ENABLED
+#include "KeyDisabler.h"
+#endif
 
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 
 using aidl::vendor::lineage::touch::HighTouchPollingRate;
+#ifdef KD_CONTROL_ENABLED
+using aidl::vendor::lineage::touch::KeyDisabler;
+#endif
 
 int main() {
     binder_status_t status = STATUS_OK;
@@ -23,6 +29,13 @@ int main() {
     const std::string htpr_instance = std::string(HighTouchPollingRate::descriptor) + "/default";
     status = AServiceManager_addService(htpr->asBinder().get(), htpr_instance.c_str());
     CHECK_EQ(status, STATUS_OK) << "Failed to add service " << htpr_instance << " " << status;
+#endif
+
+#ifdef KD_CONTROL_ENABLED
+    std::shared_ptr<KeyDisabler> kd = ndk::SharedRefBase::make<KeyDisabler>();
+    const std::string kd_instance = std::string(KeyDisabler::descriptor) + "/default";
+    status = AServiceManager_addService(kd->asBinder().get(), kd_instance.c_str());
+    CHECK_EQ(status, STATUS_OK) << "Failed to add service " << kd_instance << " " << status;
 #endif
 
     ABinderProcess_joinThreadPool();
