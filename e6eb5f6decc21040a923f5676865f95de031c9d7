@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f81a8ce1_052f5546",
+        "filename": "aidl/touch/KeyDisabler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-06-27T20:41:26Z",
+      "side": 1,
+      "message": "This is Xiaomi specific. Did you really test this?",
+      "range": {
+        "startLine": 35,
+        "startChar": 27,
+        "endLine": 35,
+        "endChar": 63
+      },
+      "revId": "e6eb5f6decc21040a923f5676865f95de031c9d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
