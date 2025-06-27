@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b2bae8f_ad64375b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-27T20:49:15Z",
+      "side": 1,
+      "message": "I just said I only verified HTP.\n\nI am looking at moto 8998 now - I assumed KD was more generic than it is.\n\nAs for KeySwapper, sure, I\u0027ll kill it.",
+      "parentUuid": "194d6364_e4164275",
+      "revId": "e6eb5f6decc21040a923f5676865f95de031c9d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f81a8ce1_052f5546",
         "filename": "aidl/touch/KeyDisabler.cpp",
         "patchSetId": 2
