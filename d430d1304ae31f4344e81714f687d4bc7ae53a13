@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "282310a0_4b7beee5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-06-27T23:40:16Z",
+      "side": 1,
+      "message": "There is no point importing like this to adapt it completely. If you\u0027re already taking the authorship at least do it properly in a single change.",
+      "revId": "d430d1304ae31f4344e81714f687d4bc7ae53a13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
