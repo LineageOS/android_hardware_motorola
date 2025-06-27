@@ -1,0 +1,30 @@
+//
+// SPDX-FileCopyrightText: 2025 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "vendor.lineage.touch-service.motorola",
+    init_rc: ["vendor.lineage.touch-service.motorola.rc"],
+    vintf_fragments: select(soong_config_variable("MOTOROLA_TOUCH", "HIGH_TOUCH_POLLING_PATH"), {
+        any: ["vendor.lineage.touch-service.motorola-htpr.xml"],
+        default: [],
+    }),
+    relative_install_path: "hw",
+    proprietary: true,
+    cppflags: select(soong_config_variable("MOTOROLA_TOUCH", "HIGH_TOUCH_POLLING_PATH"), {
+        any @ flag_val: ["-DHTPR_CONTROL_PATH=\"" + flag_val + "\""],
+        default: [],
+    }),
+    srcs: select(soong_config_variable("MOTOROLA_TOUCH", "HIGH_TOUCH_POLLING_PATH"), {
+        any: ["HighTouchPollingRate.cpp"],
+        default: [],
+    }) + ["service.cpp"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "libutils",
+        "vendor.lineage.touch-V1-ndk",
+    ],
+}
