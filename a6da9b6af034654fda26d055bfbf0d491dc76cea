@@ -22,6 +22,30 @@
       },
       "revId": "a6da9b6af034654fda26d055bfbf0d491dc76cea",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3112d89f_4236d04e",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-27T23:32:16Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3dbea86c_f6ae5f64",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 126
+      },
+      "revId": "a6da9b6af034654fda26d055bfbf0d491dc76cea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
