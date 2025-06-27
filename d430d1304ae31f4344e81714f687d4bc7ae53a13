@@ -59,6 +59,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "735ef995_0d7191b7",
+        "filename": "aidl/touch/KeyDisabler.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-27T23:49:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "477a0eb2_55ceca98",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "d430d1304ae31f4344e81714f687d4bc7ae53a13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7e62796_f0e85694",
@@ -72,6 +96,30 @@
       "writtenOn": "2025-06-27T23:41:14Z",
       "side": 1,
       "message": "same here",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 36
+      },
+      "revId": "d430d1304ae31f4344e81714f687d4bc7ae53a13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbb97631_2d929e39",
+        "filename": "aidl/touch/KeyDisabler.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-27T23:49:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7e62796_f0e85694",
       "range": {
         "startLine": 35,
         "startChar": 0,
