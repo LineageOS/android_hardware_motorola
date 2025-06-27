@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bea10c71_e09ae7cc",
+        "filename": "aidl/touch/KeyDisabler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-06-27T23:35:02Z",
+      "side": 1,
+      "message": "for real?",
+      "range": {
+        "startLine": 34,
+        "startChar": 26,
+        "endLine": 34,
+        "endChar": 44
+      },
+      "revId": "5b06bc82feef8c8d7c4e5e128e4ff9357d6ab967",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
