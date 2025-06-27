@@ -20,11 +20,31 @@ namespace vendor {
 namespace lineage {
 namespace touch {
 
+
+KeyDisabler::KeyDisabler() {
+    mHasKeyDisabler = false;
+    mFingerprintNavigation = IFingerprintNavigation::getService();
+    if (mFingerprintNavigation != nullptr) {
+        mHasKeyDisabler = true;
+    }
+}
+
 ndk::ScopedAStatus KeyDisabler::getEnabled(bool* _aidl_return) {
     std::string buf;
     if (!ReadFileToString(KD_CONTROL_PATH, &buf)) {
         LOG(ERROR) << "Failed to read current KeyDisabler state";
         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+
+    if (mHasKeyDisabler) {
+        auto ret = mFingerprintNavigation->isEnabled();
+        if (ret.isOk()) {
+            *_aidl_return = ret;
+            return ndk::ScopedAStatus::ok();
+        } else {
+            LOG(ERROR) << "Failed to call isEnabled on FingerprintNavigation";
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+        }
     }
 
     *_aidl_return = Trim(buf) == "0";
@@ -35,6 +55,14 @@ ndk::ScopedAStatus KeyDisabler::setEnabled(bool enabled) {
     if (!WriteStringToFile(enabled ? "0" : "1", KD_CONTROL_PATH, true)) {
         LOG(ERROR) << "Failed to write KeyDisabler state";
         return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+    }
+
+    if (mHasKeyDisabler) {
+        auto status = mFingerprintNavigation->setNavigation(!enabled);
+        if (!status.isOk()) {
+            LOG(ERROR) << "Failed to call setNavigation on FingerprintNavigation";
+            return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
+        }
     }
 
     return ndk::ScopedAStatus::ok();
