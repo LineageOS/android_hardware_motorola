@@ -128,6 +128,30 @@
       },
       "revId": "e6eb5f6decc21040a923f5676865f95de031c9d7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d174fc8_1a95ba82",
+        "filename": "aidl/touch/KeyDisabler.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-27T23:32:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f81a8ce1_052f5546",
+      "range": {
+        "startLine": 35,
+        "startChar": 27,
+        "endLine": 35,
+        "endChar": 63
+      },
+      "revId": "e6eb5f6decc21040a923f5676865f95de031c9d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
