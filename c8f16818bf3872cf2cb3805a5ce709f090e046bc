@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d55a4e1_07184290",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T19:45:49Z",
+      "side": 1,
+      "message": "isn\u0027t present on my sm7325 of sm8350 either... So kill it?",
+      "revId": "c8f16818bf3872cf2cb3805a5ce709f090e046bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
