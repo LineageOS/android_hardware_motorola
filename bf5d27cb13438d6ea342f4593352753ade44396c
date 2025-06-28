@@ -81,6 +81,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9291e071_60b18e4e",
+        "filename": "sepolicy/qti/vendor/vendor_hal_usb_qti.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T17:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26a259ae_65df5108",
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abc81ac3_4879b162",
@@ -94,6 +112,30 @@
       "writtenOn": "2025-06-28T05:58:44Z",
       "side": 1,
       "message": "This is a 16 specific policy",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 55
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75111066_2c8eec12",
+        "filename": "sepolicy/qti/vendor/vendor_qti_init_shell.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T17:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abc81ac3_4879b162",
       "range": {
         "startLine": 3,
         "startChar": 0,
