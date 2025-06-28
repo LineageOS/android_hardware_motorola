@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fa868ab_257a499b",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-28T05:58:44Z",
+      "side": 1,
+      "message": "Only leave 4 spaces here and below",
+      "range": {
+        "startLine": 102,
+        "startChar": 63,
+        "endLine": 102,
+        "endChar": 95
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee5a7a01_590355ea",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-28T05:58:44Z",
+      "side": 1,
+      "message": "```suggestion\ngenfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/force_charger_suspend                                u:object_r:vendor_sysfs_battery_supply:s0\n```",
+      "range": {
+        "startLine": 36,
+        "startChar": 162,
+        "endLine": 36,
+        "endChar": 182
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcc7a478_e829f273",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-28T05:58:44Z",
+      "side": 1,
+      "message": "This doesn\u0027t belong here, it should go to qcom/sepolicy_vndr",
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26a259ae_65df5108",
+        "filename": "sepolicy/qti/vendor/vendor_hal_usb_qti.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-28T05:58:44Z",
+      "side": 1,
+      "message": "This doesn\u0027t work on 22.2 and it doesn\u0027t belong here",
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abc81ac3_4879b162",
+        "filename": "sepolicy/qti/vendor/vendor_qti_init_shell.te",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-28T05:58:44Z",
+      "side": 1,
+      "message": "This is a 16 specific policy",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 55
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
