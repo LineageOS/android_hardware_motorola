@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb6c0b34_94d5666e",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T17:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa868ab_257a499b",
+      "range": {
+        "startLine": 102,
+        "startChar": 63,
+        "endLine": 102,
+        "endChar": 95
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee5a7a01_590355ea",
@@ -47,6 +71,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b47ac2be_eb4dd440",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T17:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee5a7a01_590355ea",
+      "range": {
+        "startLine": 36,
+        "startChar": 162,
+        "endLine": 36,
+        "endChar": 182
+      },
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcc7a478_e829f273",
@@ -60,6 +108,24 @@
       "writtenOn": "2025-06-28T05:58:44Z",
       "side": 1,
       "message": "This doesn\u0027t belong here, it should go to qcom/sepolicy_vndr",
+      "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00f62130_78d74aed",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-28T17:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fcc7a478_e829f273",
       "revId": "bf5d27cb13438d6ea342f4593352753ade44396c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
