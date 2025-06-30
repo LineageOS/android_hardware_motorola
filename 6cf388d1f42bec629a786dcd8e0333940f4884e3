@@ -1,0 +1,312 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "627ae930_4b523d0c",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be labeled in qcom sepolicy instead",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a13971c2_fd43bfcf",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "[0-33]\n```suggestion\n/sys/devices/platform/cam_sync/video4linux/video[0-33]/name                         u:object_r:vendor_sysfs_graphics:s0\n```",
+      "range": {
+        "startLine": 56,
+        "startChar": 48,
+        "endLine": 56,
+        "endChar": 49
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4795de64_f38565be",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "```suggestion\n/vendor/bin/vl53l1_daemon                                                      u:object_r:vendor_vl53l1_exec:s0\n```",
+      "range": {
+        "startLine": 60,
+        "startChar": 90,
+        "endLine": 60,
+        "endChar": 101
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65762a04_7f912374",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "4 spaces, then adjust the remaining section to match that, also sort alphabetically",
+      "range": {
+        "startLine": 124,
+        "startChar": 47,
+        "endLine": 124,
+        "endChar": 48
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe34a158_2456dbdd",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "These should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46ccce64_5a1a7105",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 184
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "209cc391_4da01e12",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "457864f9_1d579c13",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60138b9b_5306991d",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eec2e628_22118442",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c113582_f0e3cbd5",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a17d88df_c1472ef1",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cba8bca_2bcffce3",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Remove comment here and below",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ada5a997_54a3fd1f",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Drop extra newline",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d82e5e99_ccd8218a",
+        "filename": "sepolicy/qti/vendor/vl53l1.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Switch to vendor_vl53l1 everywhere, also make sure it\u0027s actually being used, on my motos it either wasn\u0027t present or it was disabled",
+      "range": {
+        "startLine": 1,
+        "startChar": 5,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f815b40b_937a43d9",
+        "filename": "sepolicy/qti/vendor/vl53l1.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-06-30T05:41:22Z",
+      "side": 1,
+      "message": "Use rw_dir_file",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
