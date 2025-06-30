@@ -486,6 +486,42 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58750ec4_b74b2343",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cba8bca_2bcffce3",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6427d2f_5245fb29",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cba8bca_2bcffce3",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ada5a997_54a3fd1f",
@@ -499,6 +535,42 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "Drop extra newline",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b4daffc_bf9ea1f9",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ada5a997_54a3fd1f",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47ec94f1_7173f9c7",
+        "filename": "sepolicy/qti/vendor/hal_ifaa.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ada5a997_54a3fd1f",
       "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -526,6 +598,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d795d25c_4fb908fe",
+        "filename": "sepolicy/qti/vendor/vl53l1.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "used, not disabled:\n\nservice vendor.vl53l1_daemon /vendor/bin/vl53l1_daemon\n    class late_start\n    user root\n    group root\n    socket vl53l1_daemon stream 660 root system",
+      "parentUuid": "d82e5e99_ccd8218a",
+      "range": {
+        "startLine": 1,
+        "startChar": 5,
+        "endLine": 1,
+        "endChar": 11
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f815b40b_937a43d9",
@@ -539,6 +635,30 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "Use rw_dir_file",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb288057_ecd5216c",
+        "filename": "sepolicy/qti/vendor/vl53l1.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:44:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f815b40b_937a43d9",
       "range": {
         "startLine": 8,
         "startChar": 0,
