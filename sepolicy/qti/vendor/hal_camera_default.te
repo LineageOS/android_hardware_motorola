@@ -23,4 +23,5 @@ hal_client_domain(hal_camera_default, vendor_hal_qspmhal)
 
 hal_client_domain(hal_camera_default, hal_cameradesktop)
 
+get_prop(hal_camera_default, aac_drc_prop)
 get_prop(hal_camera_default, exported_camera_prop)
