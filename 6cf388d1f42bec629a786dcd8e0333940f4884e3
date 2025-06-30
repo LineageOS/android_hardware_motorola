@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee1ddafb_da0144ea",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:29:48Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "a13971c2_fd43bfcf",
+      "range": {
+        "startLine": 56,
+        "startChar": 48,
+        "endLine": 56,
+        "endChar": 49
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4795de64_f38565be",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "```suggestion\n/vendor/bin/vl53l1_daemon                                                      u:object_r:vendor_vl53l1_exec:s0\n```",
+      "range": {
+        "startLine": 60,
+        "startChar": 90,
+        "endLine": 60,
+        "endChar": 101
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efa18a6c_882ae3b3",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:29:48Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "4795de64_f38565be",
       "range": {
         "startLine": 60,
         "startChar": 90,
