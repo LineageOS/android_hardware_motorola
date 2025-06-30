@@ -1,7 +1,9 @@
 # A/B partitions
 /dev/block/platform/soc/1d84000\.ufshc/by-name/fsg_[ab]         u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/logo_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/mdm1m9kefs3_[ab] u:object_r:vendor_efs_boot_dev:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/prov_[ab]        u:object_r:vendor_custom_ab_block_device:s0
+/dev/block/platform/soc/1d84000\.ufshc/by-name/spss_[ab]        u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/storsec_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/sd[df]                   u:object_r:vendor_gpt_block_device:s0
 /dev/block/platform/soc/4744000\.sdhci/by-name/fsg_[ab]         u:object_r:vendor_modem_efs_partition_device:s0
@@ -50,9 +52,11 @@
 /data/vendor/misc/imager                                                       u:object_r:vendor_camera_data_file:s0
 /data/vendor/misc/imager/metadata(/.*)?                                        u:object_r:vendor_imager_metadata_file:s0
 /mnt/vendor/persist/camera(/.*)?                                               u:object_r:vendor_persist_camera_file:s0
+/sys/devices/platform/cam_sync/video4linux/video[0-33]/name                    u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/soc:qcom,cam-req-mgr/video4linux/video[0-33]/name    u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/soc:qcom,cam-sync/video4linux/video[0-33]/name       u:object_r:vendor_sysfs_graphics:s0
 /vendor/bin/hw/motorola\.hardware\.camera\.desktop@2\.0-service                u:object_r:hal_cameradesktop_default_exec:s0
+/vendor/bin/vl53l1_daemon                                                      u:object_r:vendor_vl53l1_exec:s0
 /vendor/lib64/libipebpsstriping\.so                                            u:object_r:same_process_hal_file:s0
 
 # Capsense
@@ -81,6 +85,9 @@
 /vendor/bin/hw/fpc_ident                                                          u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/goodix_ident                                                       u:object_r:hal_fingerprint_default_exec:s0
 
+# IFAA
+/(vendor|system/vendor)/bin/hw/vendor\.zui\.hardware\.ifaa@1\.0-service    u:object_r:hal_ifaa_default_exec:s0
+
 # Motobox
 /vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
 
@@ -89,6 +96,9 @@
 /dev/st21nfc                                                   u:object_r:nfc_device:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.samsung    u:object_r:hal_nfc_default_exec:s0
 /vendor/bin/hw/android\.hardware\.nfc@1\.2-service\.st         u:object_r:hal_nfc_default_exec:s0
+
+# NFC (Secure Element)
+/vendor/bin/hw/android\.hardware\.secure_element@1\.2-service\.st    u:object_r:hal_secure_element_default_exec:s0
 
 # Radio
 /data/vendor/misc/cutback(/.*)?    u:object_r:vendor_cutback_data_file:s0
@@ -106,10 +116,11 @@
 /sys/devices/platform/soc/a94000\.i2c/i2c-2/2-0049/single_click    u:object_r:vendor_sysfs_touchpanel:s0
 
 # Vendor init scripts
-/vendor/bin/init\.mmi\.acdb\.sh            u:object_r:vendor_init_hw_exec:s0
-/vendor/bin/init\.mmi\.boot\.sh            u:object_r:vendor_mmi_boot_exec:s0
-/vendor/bin/init\.mmi\.laser\.sh           u:object_r:vendor_mmi_laser_exec:s0
-/vendor/bin/init\.mmi\.touch\.sh           u:object_r:vendor_init_touch_exec:s0
-/vendor/bin/init\.oem\.fingerprint2\.sh    u:object_r:vendor_init_fingerprint_exec:s0
-/vendor/bin/init\.oem\.fingerprint\.sh     u:object_r:vendor_init_fingerprint_exec:s0
-/vendor/bin/init\.oem\.hw\.sh              u:object_r:vendor_init_hw_exec:s0
+/vendor/bin/init\.mmi\.acdb\.sh                    u:object_r:vendor_init_hw_exec:s0
+/vendor/bin/init\.mmi\.boot\.sh                    u:object_r:vendor_mmi_boot_exec:s0
+/vendor/bin/init\.mmi\.laser\.sh                   u:object_r:vendor_mmi_laser_exec:s0
+/vendor/bin/init\.mmi\.touch\.sh                   u:object_r:vendor_init_touch_exec:s0
+/vendor/bin/init\.oem\.fingerprint2\.sh            u:object_r:vendor_init_fingerprint_exec:s0
+/vendor/bin/init\.oem\.fingerprint\.overlay\.sh    u:object_r:vendor_init_fingerprint_exec:s0
+/vendor/bin/init\.oem\.fingerprint\.sh             u:object_r:vendor_init_fingerprint_exec:s0
+/vendor/bin/init\.oem\.hw\.sh                      u:object_r:vendor_init_hw_exec:s0

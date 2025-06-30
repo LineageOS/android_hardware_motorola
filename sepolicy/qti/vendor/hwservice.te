@@ -1,6 +1,9 @@
 # Camera
 type hal_cameradesktop_hwservice, hwservice_manager_type;
 
+# IFAA
+type hal_ifaa_hwservice, hwservice_manager_type;
+
 # NFC
 type nxpese_hwservice, hwservice_manager_type;
 type nxpnfc_hwservice, hwservice_manager_type;
