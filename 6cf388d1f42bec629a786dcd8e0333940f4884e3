@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ddd2d52_50527aaa",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "627ae930_4b523d0c",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a13971c2_fd43bfcf",
@@ -135,6 +153,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a8d41ce_c52548d7",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65762a04_7f912374",
+      "range": {
+        "startLine": 124,
+        "startChar": 47,
+        "endLine": 124,
+        "endChar": 48
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe34a158_2456dbdd",
@@ -148,6 +190,24 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "These should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e3c8b4c_33458ee3",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe34a158_2456dbdd",
       "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -175,6 +235,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a0505c3_adaa4227",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46ccce64_5a1a7105",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 184
+      },
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "209cc391_4da01e12",
@@ -188,6 +272,24 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d423c33d_7d8f7d1e",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "209cc391_4da01e12",
       "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -209,6 +311,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd97ff8b_271c2719",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "457864f9_1d579c13",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "60138b9b_5306991d",
@@ -222,6 +342,24 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "869bb671_9582dde8",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60138b9b_5306991d",
       "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -243,6 +381,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f8d6847_b0068de8",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eec2e628_22118442",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c113582_f0e3cbd5",
@@ -260,6 +416,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b8424b1_a2e31ea9",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c113582_f0e3cbd5",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a17d88df_c1472ef1",
@@ -273,6 +447,24 @@
       "writtenOn": "2025-06-30T05:41:22Z",
       "side": 1,
       "message": "Should be in qcom sepolicy",
+      "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7319e2fa_639e7cf1",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-06-30T21:42:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a17d88df_c1472ef1",
       "revId": "6cf388d1f42bec629a786dcd8e0333940f4884e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
