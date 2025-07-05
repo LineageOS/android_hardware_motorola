@@ -16,6 +16,24 @@
       "message": "This will need to be handled like hardware/oplus does it",
       "revId": "77cada7500284f1758192a2f664a95b3421f8a3f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df050787_fb4d1bad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-07-05T20:04:56Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_hardware_oplus/tree/lineage-22.2/sepolicy/qti/vendor/legacy-um\nhttps://github.com/LineageOS/android_hardware_oplus/tree/lineage-22.2/sepolicy/qti/vendor/sm8450\nhttps://github.com/LineageOS/android_hardware_oplus/tree/lineage-22.2/sepolicy/qti/vendor/sm8550\n\nLike this, right?",
+      "parentUuid": "2ae5e562_8ec50838",
+      "revId": "77cada7500284f1758192a2f664a95b3421f8a3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
