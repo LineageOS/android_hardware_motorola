@@ -143,8 +143,6 @@ genfscon sysfs /devices/platform/soc/880000.spi/spi_master/spi0/spi0.0/wakeup   
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-1/1-005a/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-3/3-005a/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/888000.i2c/i2c-4/4-0065/power_supply/bq25960-standalone/wakeup                                                           u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/894000.qcom,qup_uart/wakeup                                                                                              u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-0008/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-0028/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-005a/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/984000.spi/spi_master/spi0/spi0.0/wakeup                                                                                 u:object_r:sysfs_wakeup:s0
