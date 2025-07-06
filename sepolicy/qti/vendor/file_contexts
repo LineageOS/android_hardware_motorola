@@ -112,8 +112,10 @@
 /vendor/bin/hw/vendor\.lineage\.touch-service\.motorola    u:object_r:hal_lineage_touch_default_exec:s0
 
 # Touchscreen
-/sys/devices/platform/soc/a94000\.i2c/i2c-2/2-0049/double_click    u:object_r:vendor_sysfs_touchpanel:s0
-/sys/devices/platform/soc/a94000\.i2c/i2c-2/2-0049/single_click    u:object_r:vendor_sysfs_touchpanel:s0
+/sys/devices/platform/soc/a94000\.i2c/i2c-2/2-0049/double_click                                     u:object_r:vendor_sysfs_touchpanel:s0
+/sys/devices/platform/soc/a94000\.i2c/i2c-2/2-0049/single_click                                     u:object_r:vendor_sysfs_touchpanel:s0
+/sys/devices/platform/soc/a94000\.spi/spi_master/spi0/spi0\.0/touchscreen/(primary|NVT-ts)(/.*)?    u:object_r:vendor_sysfs_touchpanel:s0
+/sys/devices/platform/soc/998000\.spi/spi_master/spi0/spi0\.0/touchscreen/(primary|NVT-ts)(/.*)?    u:object_r:vendor_sysfs_touchpanel:s0
 
 # Vendor init scripts
 /vendor/bin/init\.mmi\.acdb\.sh                    u:object_r:vendor_init_hw_exec:s0
