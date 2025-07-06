@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31ff8476_7570b5c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 23878
+      },
+      "writtenOn": "2025-07-06T23:34:43Z",
+      "side": 1,
+      "message": "pnangn can now properly set battery LED settings",
+      "revId": "774d8c69bc2610e237ebbbed9cbfc6538f4576a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
