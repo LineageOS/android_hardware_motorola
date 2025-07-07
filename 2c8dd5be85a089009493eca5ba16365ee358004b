@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6ef5693_f026b666",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-07-07T04:16:24Z",
+      "side": 1,
+      "message": "This doesn\u0027t make sense, rw_dir_file above already gives rw_file_perms",
+      "revId": "2c8dd5be85a089009493eca5ba16365ee358004b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
