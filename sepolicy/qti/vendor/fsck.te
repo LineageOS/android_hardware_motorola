@@ -1,4 +1,5 @@
 allow fsck {
     vendor_modem_efs_partition_device
+    vendor_modem_block_device
     vendor_prodpersist_block_device
 }:blk_file rw_file_perms;
