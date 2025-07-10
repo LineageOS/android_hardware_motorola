@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4f10608_d6b60c9a",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-07-10T00:31:57Z",
+      "side": 1,
+      "message": "meh, backlight in charging section, but looking at qcom/sepolicy it\u0027s not treated all that diff.",
+      "revId": "210f534ac85b7d098636c396ed0941f00b348e32",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
