@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dcd4ce5_43136703",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-07-10T04:27:55Z",
+      "side": 1,
+      "message": "We need to refactor hw/motorola to have SoC. subdirs like hw/oneplus in the future, for now this fixes sm8250 issues.",
+      "revId": "de079042f31a0352e69a9ec99f9cc55fa642dbe4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
