@@ -16,6 +16,23 @@
       "message": "We need to refactor hw/motorola to have SoC. subdirs like hw/oneplus in the future, for now this fixes sm8250 issues.",
       "revId": "de079042f31a0352e69a9ec99f9cc55fa642dbe4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55f791ee_7425ac2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-07-10T05:00:12Z",
+      "side": 1,
+      "message": "This was already done here https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/436005 you just overrode it in https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/436598 so please be more careful, this is a shared repo with multiple devices depending on it now",
+      "revId": "de079042f31a0352e69a9ec99f9cc55fa642dbe4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
