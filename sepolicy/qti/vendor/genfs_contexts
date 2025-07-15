@@ -7,6 +7,7 @@ genfscon sysfs /devices/platform/soc/soc:rt-pd-manager/extcon            u:objec
 
 # Fingerprint
 genfscon sysfs /devices/platform/egis_input            u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary   u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/0.et320                    u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/virtual/fingerprint/fpc1020    u:object_r:vendor_sysfs_fingerprint:s0
 
