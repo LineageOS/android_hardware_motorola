@@ -33,6 +33,40 @@
       "message": "aight mark, you have merge on all those trees I think, so go for it!",
       "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ec4791f_c2315f69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-07-16T07:26:52Z",
+      "side": 1,
+      "message": "Changes in common repositories should remain open for more than 40 minutes so we can actually review them and not have to make additional fixup commits every single time.",
+      "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78795b71_58e1724f",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-07-16T07:26:52Z",
+      "side": 1,
+      "message": "You did not adapt the spacing in the whole category",
+      "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
