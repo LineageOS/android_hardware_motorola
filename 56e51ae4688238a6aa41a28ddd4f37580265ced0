@@ -67,6 +67,24 @@
       "message": "You did not adapt the spacing in the whole category",
       "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b411864c_09f29a17",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-07-16T17:18:38Z",
+      "side": 1,
+      "message": "Ack. I\u0027ll set 48 hours timer from CR",
+      "parentUuid": "78795b71_58e1724f",
+      "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
