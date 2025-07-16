@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "662f803a_00e87aea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-07-16T03:05:24Z",
+      "side": 1,
+      "message": "fod_hbm fixes UDFPS on tundra (broken as this was missed on sm7325-common inhert sepolicy commit) and moto sm8475-common and sm8550-common uses this path\n\nfod_ui is used by racer (maybe others but tbh I didn\u0027t check), so if that common tree adapts they\u0027ll need it",
+      "revId": "56e51ae4688238a6aa41a28ddd4f37580265ced0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
