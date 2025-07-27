@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e50fc2b_35d0f54a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-07-27T15:53:17Z",
+      "side": 1,
+      "message": "48 hour clock set for merge. Shouldn\u0027t pose any issues",
+      "revId": "240d69f39780690cf5791a30bf4b10318dd537f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
