@@ -52,6 +52,24 @@
       "parentUuid": "6311d753_0dc1fad6",
       "revId": "b78bfc66140d00d9aeb559fbbcd659f7ec7427ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd7a3d9_ee249b45",
+        "filename": "sepolicy/qti/vendor/hal_fingerprint_default.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-16T17:42:11Z",
+      "side": 1,
+      "message": "Nvm, checked oplus sepolicy - will kang idea from it.",
+      "parentUuid": "6311d753_0dc1fad6",
+      "revId": "b78bfc66140d00d9aeb559fbbcd659f7ec7427ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
