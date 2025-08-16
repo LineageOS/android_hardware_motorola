@@ -1,5 +1,8 @@
 # Fingerprint
+type egis_device, dev_type;
+type etsd_device, dev_type;
 type fps_device, dev_type;
+type goodix_device, dev_type;
 
 # Moto partitions
 type vendor_hw_block_device, dev_type;

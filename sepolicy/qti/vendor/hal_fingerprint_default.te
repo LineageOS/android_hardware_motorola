@@ -3,7 +3,10 @@ binder_call(hal_fingerprint_default, hal_fingerprint_default)
 vndbinder_use(hal_fingerprint_default)
 
 allow hal_fingerprint_default {
+    etsd_device
+    egis_device
     fps_device
+    goodix_device
     graphics_device
     tee_device
     uhid_device
