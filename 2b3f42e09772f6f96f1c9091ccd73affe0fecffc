@@ -52,6 +52,23 @@
       "parentUuid": "42c2389a_688bd4d7",
       "revId": "2b3f42e09772f6f96f1c9091ccd73affe0fecffc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dbe00e9_9be984ae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-16T19:09:26Z",
+      "side": 1,
+      "message": "nvm, all these devices just are fps_device as i seen in file_contexts",
+      "revId": "2b3f42e09772f6f96f1c9091ccd73affe0fecffc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
