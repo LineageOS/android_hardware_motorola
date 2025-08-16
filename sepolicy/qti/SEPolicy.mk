@@ -11,3 +11,14 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
     hardware/motorola/sepolicy/qti/public
+
+ifneq ($(SEPOLICY_PLATFORM), legacy-um)
+BOARD_VENDOR_SEPOLICY_DIRS += \
+    hardware/motorola/sepolicy/qti/vendor/common-um
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    hardware/motorola/sepolicy/qti/private/common-um
+
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    hardware/motorola/sepolicy/qti/public/common-um
+endif
