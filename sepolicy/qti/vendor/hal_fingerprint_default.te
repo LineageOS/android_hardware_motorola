@@ -27,6 +27,9 @@ allow hal_fingerprint_default vendor_sysfs_devicetree_mmi:file r_file_perms;
 allow hal_fingerprint_default vendor_data_tzstorage_file:dir rw_dir_perms;
 allow hal_fingerprint_default vendor_data_tzstorage_file:file create_file_perms;
 
+allow hal_fingerprint_default vendor_dmabuf_qseecom_heap_device:chr_file r_file_perms;
+allow hal_fingerprint_default vendor_dmabuf_qseecom_ta_heap_device:chr_file r_file_perms;
+
 binder_call(hal_fingerprint_default, vendor_hal_perf_default)
 hal_client_domain(hal_fingerprint_default, vendor_hal_perf)
 
