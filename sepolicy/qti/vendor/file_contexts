@@ -73,6 +73,7 @@
 /dev/focaltech_fp                                                                 u:object_r:fps_device:s0
 /dev/fpsensor                                                                     u:object_r:fps_device:s0
 /dev/goodix_fp                                                                    u:object_r:fps_device:s0
+/dev/silead_fp                                                                    u:object_r:fps_device:s0
 /mnt/vendor/persist/egis(/.*)?                                                    u:object_r:vendor_persist_fps_file:s0
 /mnt/vendor/persist/fps(/.*)?                                                     u:object_r:vendor_persist_fps_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                                  u:object_r:vendor_persist_fps_file:s0
@@ -81,6 +82,7 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-chipone    u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets        u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc        u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-silead     u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/egis_ident                                                         u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/fpc_ident                                                          u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/goodix_ident                                                       u:object_r:hal_fingerprint_default_exec:s0
