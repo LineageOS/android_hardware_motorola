@@ -25,6 +25,8 @@ genfscon sysfs /devices/platform/soc/4a84000.i2c/i2c-1/1-0066/power_supply/cp-st
 genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-0/0-0030/power_supply/wireless                                                                    u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-0/0-0066/power_supply/bq25960-master                                                              u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-1/1-0064/power_supply/bms                                                                         u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-003b/power_supply/charger                                                                     u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-0064/power_supply/bms                                                                         u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-003b/power_supply/charger                                                                     u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-0055/power_supply/bms                                                                         u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-0067/power_supply/bq25960-slave                                                               u:object_r:vendor_sysfs_battery_supply:s0
@@ -138,6 +140,10 @@ genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-1/1-0064/power_supply/bms/w
 genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-2/2-0038/wakeup                                                                                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4a88000.spi/spi_master/spi0/spi0.0/wakeup                                                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4c84000.i2c/i2c-0/0-0028/wakeup                                                                                                            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-003b/power_supply/charger/wakeup                                                                                       u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-0047/tcpc/type_c_port0/wakeup                                                                                          u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-0047/wakeup                                                                                                            u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-1/1-0064/power_supply/bms/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-003b/power_supply/charger/wakeup                                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-0055/power_supply/bms/wakeup                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/4c88000.i2c/i2c-2/2-0067/power_supply/bq25960-slave/wakeup                                                                                 u:object_r:sysfs_wakeup:s0
@@ -185,6 +191,7 @@ genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/usb/
 genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/wakeup                                                                                                           u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/mmi_chrg_manager/wakeup                                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager_qc3p/power_supply/mmi_chrg_manager_qc3p/wakeup                                                                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:pen_detect/wakeup                                                                                                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                                                                                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/wakeup                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power/wakeup                                                                  u:object_r:sysfs_wakeup:s0
