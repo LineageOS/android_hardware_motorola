@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfd90e6e_740616e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-17T11:50:08Z",
+      "side": 1,
+      "message": "New patchset\n\n\n```\nabuild@abuild:~/LineageOS/hardware/motorola$ get_build_var SEPOLICY_PATH                                        \n\u003d\u003e device/qcom/sepolicy_vndr/sm8450                          abuild@abuild:~/LineageOS/hardware/motorola$ get_build_var SEPOLICY_PLATFORM                                                \u003d\u003e sm8450\n```\n\nI hope it\u0027s fine now.",
+      "revId": "573de47e64a1846a396c85d973b4ebcbf039311e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
