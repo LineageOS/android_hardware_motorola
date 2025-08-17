@@ -33,6 +33,24 @@
       "message": "seems reasonable compared to oplus change",
       "revId": "573de47e64a1846a396c85d973b4ebcbf039311e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d97d0a8_24f30e9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-17T22:36:11Z",
+      "side": 1,
+      "message": "Moto SM8475 (officially shipped in LineageOS but doesn\u0027t use common moto sepolicy rn) and parrot devices need these policies.",
+      "parentUuid": "a0df7bee_b70025f8",
+      "revId": "573de47e64a1846a396c85d973b4ebcbf039311e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
