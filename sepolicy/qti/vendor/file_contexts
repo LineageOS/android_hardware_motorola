@@ -73,6 +73,7 @@
 /dev/focaltech_fp                                                                 u:object_r:fps_device:s0
 /dev/fpsensor                                                                     u:object_r:fps_device:s0
 /dev/goodix_fp                                                                    u:object_r:fps_device:s0
+/dev/silead_fp                                                                    u:object_r:fps_device:s0
 /mnt/vendor/persist/egis(/.*)?                                                    u:object_r:vendor_persist_fps_file:s0
 /mnt/vendor/persist/fps(/.*)?                                                     u:object_r:vendor_persist_fps_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                                  u:object_r:vendor_persist_fps_file:s0
