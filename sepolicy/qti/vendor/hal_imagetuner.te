@@ -1,0 +1,12 @@
+type hal_imagetuner_default, domain;
+hal_server_domain(hal_imagetuner_default, hal_imagetuner)
+
+type hal_imagetuner_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_imagetuner_default)
+
+allow hal_imagetuner_default hal_imagetuner_aidl_service:service_manager { add find };
+
+binder_call(hal_imagetuner_default, servicemanager)
+
+allow hal_imagetuner_default mnt_vendor_file:dir r_dir_perms;
+allow hal_imagetuner_default mnt_vendor_file:file r_file_perms;

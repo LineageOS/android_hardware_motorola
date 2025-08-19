@@ -1,0 +1,2 @@
+allow priv_app hal_imagetuner_aidl_service:service_manager find;
+binder_call(priv_app, hal_imagetuner_default)
