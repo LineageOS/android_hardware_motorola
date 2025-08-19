@@ -1,0 +1,4 @@
+allow priv_app hal_imagetuner_aidl_service:service_manager find;
+binder_call(priv_app, hal_imagetuner_default)
+
+allow priv_app vendor_camera_data_file:dir r_dir_perms;
