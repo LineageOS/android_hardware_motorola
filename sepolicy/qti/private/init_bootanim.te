@@ -1,0 +1,12 @@
+type init_bootanim, domain, coredomain;
+type init_bootanim_exec, system_file_type, exec_type, file_type;
+
+init_daemon_domain(init_bootanim)
+
+allow init_bootanim init:unix_stream_socket connectto;
+allow init_bootanim property_socket:sock_file write;
+allow init_bootanim shell_exec:file { execute getattr map read };
+allow init_bootanim toolbox_exec:file { execute execute_no_trans getattr map open read };
+
+set_prop(init_bootanim, ctl_start_prop)
+set_prop(init_bootanim, ctl_stop_prop)

@@ -1,3 +1,10 @@
+# Display
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelBLExponent        u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelDC                u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelDeclare           u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelName              u:object_r:vendor_sysfs_graphics:s0
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/panelRegDA             u:object_r:vendor_sysfs_graphics:s0
+
 # Capsense
 genfscon sysfs /class/capsense    u:object_r:vendor_sysfs_capsense:s0
 
@@ -40,6 +47,7 @@ genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/batt
 genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/dc                                                                         u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/mmi_chrg_manager                                                                u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/force_charger_suspend                                u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/force_charging_disable                               u:object_r:vendor_sysfs_battery_supply:s0
 
 # IIO
 genfscon sysfs /bus/iio                                                                                                                  u:object_r:vendor_sysfs_sensors:s0
@@ -79,6 +87,12 @@ genfscon sysfs /firmware/devicetree/base/chosen/mmi    u:object_r:vendor_sysfs_d
 genfscon proc /sys/kernel/sched_lib_mask_force    u:object_r:proc_sched_lib_mask_cpuinfo:s0
 genfscon proc /sys/kernel/sched_lib_name          u:object_r:proc_sched_lib_mask_cpuinfo:s0
 
+# Powershare
+genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/tx_mode    u:object_r:vendor_sysfs_wlc:s0
+
+# RTC
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pmk8350@0:rtc/rtc/rtc0 u:object_r:sysfs_rtc:s0
+
 # Touchscreen
 genfscon sysfs /class/touchscreen                                                      u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/4a80000.spi/spi_master/spi0/spi0.0                u:object_r:vendor_sysfs_touchpanel:s0
@@ -87,8 +101,10 @@ genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-2/2-0038/touchscreen       
 genfscon sysfs /devices/platform/soc/4a88000.spi/spi_master/spi0/spi0.0/touchscreen    u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/880000.spi/spi_master/spi0/spi0.0/touchscreen     u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/998000.spi/spi_master/spi0/spi0.0/touchscreen     u:object_r:vendor_sysfs_touchpanel:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen               u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/a94000.i2c/i2c-2/2-0049/touchscreen               u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/a94000.spi/spi_master/spi0/spi0.0/touchscreen     u:object_r:vendor_sysfs_touchpanel:s0
+genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/touchscreen  u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/virtual/touchscreen                                            u:object_r:vendor_sysfs_touchpanel:s0
 
 # USB
@@ -107,6 +123,7 @@ genfscon sysfs /devices/platform/soc/soc:ldo_vib/leds/vibrator                 u
 genfscon sysfs /devices/platform/soc/0.EL721/wakeup                                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/0.et528/wakeup                                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/0.et536/wakeup                                                                                                                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/1e00000.qcom,ipa/wakeup/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/mmi_battery/wakeup                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/wakeup                                               u:object_r:sysfs_wakeup:s0
@@ -186,6 +203,7 @@ genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/mmi_chrg_
 genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager_qc3p/power_supply/mmi_chrg_manager_qc3p/wakeup                                                                        u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:pen_detect/wakeup                                                                                                                      u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/wakeup                                                                                                        u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:bolero-cdc/rx-macro/rx_swr_ctrl/wakeup/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:mmi,qti-glink-charger/wakeup                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power/wakeup                                                                  u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/power_supply/battery/power/wakeup                                             u:object_r:sysfs_wakeup:s0
