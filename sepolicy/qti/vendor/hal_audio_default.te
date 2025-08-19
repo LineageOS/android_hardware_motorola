@@ -1,1 +1,5 @@
+hal_client_domain(hal_audio_default, hal_health);
+
 allow hal_audio_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_audio_default cutback_socket:sock_file write;
+allow hal_audio_default rild:unix_stream_socket connectto;

@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+SEPOLICY_PLATFORM := $(subst device/qcom/sepolicy_vndr/,,$(SEPOLICY_PATH))
+
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/motorola/sepolicy/qti/vendor
 
