@@ -3,18 +3,23 @@ persist.vendor.media.recorder.flip    u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.res.fmq.size         u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.req.fmq.size         u:object_r:vendor_camera_prop:s0
 vendor.camera.coming.cts              u:object_r:vendor_camera_prop:s0
+vendor.camera.led.torchmode           u:object_r:vendor_camera_prop:s0
 
 # Radio
 vendor.net.qmi.rev_ip_info    u:object_r:vendor_radio_prop:s0
 vendor.ril.                   u:object_r:vendor_radio_prop:s0
 
 # Motorola
+persist.vendor.boot.bootseq.history       u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.boot_seq                        u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.bootreason                      u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.esimid                          u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.hw.                             u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.manufacturedate                 u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.mot.cust_md5                    u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.mot.gki.                        u:object_r:vendor_mot_hw_prop:s0
+ro.vendor.mot.hw.                         u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.mot.iccid                       u:object_r:vendor_mot_hw_prop:s0
-ro.vendor.bootreason                      u:object_r:vendor_mot_hw_prop:s0
-ro.vendor.manufacturedate                 u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.device                  u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.display                 u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.hardware.sku.variant    u:object_r:vendor_mot_hw_prop:s0
@@ -36,3 +41,10 @@ ro.vendor.touch.supplier_vendor    u:object_r:vendor_mot_touch_prop:s0
 persist.vendor.nfc.     u:object_r:vendor_nfc_prop:s0
 ro.vendor.nfc.          u:object_r:vendor_nfc_prop:s0
 vendor.nfc.fw_status    u:object_r:vendor_nfc_prop:s0
+
+# Secure Element
+persist.vendor.se.reset    u:object_r:vendor_secure_element_prop:s0
+vendor.ese.                u:object_r:vendor_secure_element_prop:s0
+
+# SPM
+vendor.spu.    u:object_r:vendor_spm_prop:s0
