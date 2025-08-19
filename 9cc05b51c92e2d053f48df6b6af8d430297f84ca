@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db43be9f_c5423eff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-19T21:08:14Z",
+      "side": 1,
+      "message": "Builds but didn\u0027t check it on real device yet.",
+      "revId": "9cc05b51c92e2d053f48df6b6af8d430297f84ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
