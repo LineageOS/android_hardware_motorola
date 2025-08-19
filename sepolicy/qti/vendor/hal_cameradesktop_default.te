@@ -5,6 +5,9 @@ init_daemon_domain(hal_cameradesktop_default)
 hal_server_domain(hal_cameradesktop_default, hal_cameradesktop)
 add_hwservice(hal_cameradesktop_server, hal_cameradesktop_hwservice)
 binder_call(hal_cameradesktop_client, hal_cameradesktop_server)
+
+allow hal_cameradesktop_default vendor_sysfs_v4l2_name:file r_file_perms;
+
 allow hal_cameradesktop_client hal_cameradesktop_hwservice:hwservice_manager find;
 
 allow hal_cameradesktop_server self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;

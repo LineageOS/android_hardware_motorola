@@ -1,0 +1,3 @@
+attribute hal_imagetuner;
+attribute hal_imagetuner_client;
+attribute hal_imagetuner_server;
