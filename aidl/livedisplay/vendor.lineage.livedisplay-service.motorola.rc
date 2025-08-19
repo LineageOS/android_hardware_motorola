@@ -1,0 +1,14 @@
+on early-boot
+    # LiveDisplay sysfs
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/cabc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_acl
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_cabc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_dc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+
+service vendor.livedisplay-hal-motorola /vendor/bin/hw/vendor.lineage.livedisplay-service.motorola
+    class late_start
+    user system
+    group system
