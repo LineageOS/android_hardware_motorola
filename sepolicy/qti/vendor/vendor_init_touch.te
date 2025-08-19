@@ -11,4 +11,7 @@ allow vendor_init_touch vendor_toolbox_exec:file rx_file_perms;
 rw_dir_file(vendor_init_touch, vendor_sysfs_touchpanel)
 allow vendor_init_touch vendor_sysfs_touchpanel:file setattr;
 
+r_dir_file(vendor_init_touch, vendor_sysfs_graphics)
+
 set_prop(vendor_init_touch, vendor_mot_touch_prop)
+set_prop(vendor_init_touch, vendor_mot_hw_prop)

@@ -1,0 +1,2 @@
+# Wakeup
+genfscon sysfs /devices/platform/soc/894000.qcom,qup_uart/wakeup                                                                                                                u:object_r:sysfs_wakeup:s0
