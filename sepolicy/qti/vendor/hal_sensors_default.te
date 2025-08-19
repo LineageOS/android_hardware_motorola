@@ -1,6 +1,13 @@
 rw_dir_file(hal_sensors_default, vendor_sysfs_capsense)
+rw_dir_file(hal_sensors_default, vendor_sysfs_graphics)
 rw_dir_file(hal_sensors_default, vendor_sysfs_input)
 rw_dir_file(hal_sensors_default, vendor_sysfs_touchpanel)
 
 rw_dir_file(hal_sensors_default, vendor_sysfs_laser)
 allow hal_sensors_default vendor_sysfs_laser:file setattr;
+
+binder_use(hal_sensors_default)
+hal_client_domain(hal_sensors_default, hal_display)
+
+binder_call(hal_sensors_default, hal_graphics_composer_default)
+allow hal_sensors_default hal_sensorext_service:service_manager { add find };

@@ -9,7 +9,8 @@ allow vendor_mmi_laser self:capability { chown fsetid };
 allow vendor_mmi_laser vendor_toolbox_exec:file rx_file_perms;
 
 rw_dir_file(vendor_mmi_laser, vendor_sysfs_laser)
-allow vendor_mmi_laser vendor_sysfs_laser:file setattr;
+allow vendor mm1_laser vendor_sysfs_laser_dir:dir rw_dir_perms;
+allow vendor mm1_laser vendor_sysfs_laser:file create_file_perms;
 
 allow vendor_mmi_laser vendor_sysfs_input:dir r_dir_perms;
 

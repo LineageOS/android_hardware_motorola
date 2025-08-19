@@ -8,3 +8,6 @@ type vendor_utags_block_device, dev_type;
 
 # Thermal
 type vendor_thermal_device, dev_type;
+
+# Vibrator
+type aac_richtap_dev_device, dev_type;
