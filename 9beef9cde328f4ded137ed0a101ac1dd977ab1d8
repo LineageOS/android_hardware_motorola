@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11f10daf_c51d67be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-19T21:21:05Z",
+      "side": 1,
+      "message": "Now realized, that I put msm-audio-apr to genfs_contexts, when it already labeled in file_contexts. Where should I stay it?",
+      "revId": "9beef9cde328f4ded137ed0a101ac1dd977ab1d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
