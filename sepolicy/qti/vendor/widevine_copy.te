@@ -1,0 +1,10 @@
+type widevinelicense_copy, domain;
+type widevinelicense_copy_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(widevinelicense_copy)
+
+allow widevinelicense_copy mnt_vendor_file:dir search;
+allow widevinelicense_copy kmsg_device:chr_file { open write };
+allow widevinelicense_copy vendor_toolbox_exec:file execute_no_trans;
+allow widevinelicense_copy vendor_persist_data_file:dir rw_dir_perms;
+allow widevinelicense_copy vendor_persist_data_file:file create_file_perms;
