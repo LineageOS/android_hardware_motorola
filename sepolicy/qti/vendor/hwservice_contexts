@@ -1,3 +1,6 @@
+# Audio
+motorola.hardware.audio.radar::IAudioRadar                              u:object_r:hal_audio_hwservice:s0
+
 # Camera
 motorola.hardware.camera.desktop::ICameraDesktop    u:object_r:hal_cameradesktop_hwservice:s0
 
@@ -9,6 +12,7 @@ vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                u:
 vendor.egistec.hardware.fingerprint::IBiometricsFingerprintRbs                u:object_r:hal_fingerprint_hwservice:s0
 vendor.egistecbix.hardware.fingerprint::IBiometricsFingerprintBix             u:object_r:hal_fingerprint_hwservice:s0
 vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                    u:object_r:hal_fingerprint_hwservice:s0
+vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon       u:object_r:hal_fingerprint_hwservice:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt    u:object_r:hal_fingerprint_hwservice:s0
 
 # IFAA
@@ -17,3 +21,6 @@ vendor.zui.hardware.ifaa::IIFAADevice    u:object_r:hal_ifaa_hwservice:s0
 # NFC
 vendor.nxp.nxpese::INxpEse    u:object_r:nxpese_hwservice:s0
 vendor.nxp.nxpnfc::INxpNfc    u:object_r:nxpnfc_hwservice:s0
+
+# Sensors
+motorola.hardware.sensors.ISensorExt                                    u:object_r:hal_sensors_hwservice:s0
