@@ -1,0 +1,2 @@
+# NFC
+/dev/st21nfc                                                   u:object_r:nfc_device:s0

@@ -1,0 +1,5 @@
+# Imgtuner
+motorola.hardware.camera.imgtuner.aidl.IImageTuning/default          u:object_r:hal_imagetuner_aidl_service:s0
+
+# Sensors
+motorola.hardware.sensors.ISensorExt/default                            u:object_r:hal_sensorext_service:s0
