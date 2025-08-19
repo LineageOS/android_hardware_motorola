@@ -1,0 +1,74 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+filegroup {
+    name: "vendor.lineage.livedisplay-motorola-ab",
+    srcs: [
+        "AdaptiveBacklight.cpp",
+    ],
+}
+
+filegroup {
+    name: "vendor.lineage.livedisplay-motorola-af",
+    srcs: [
+        "AntiFlicker.cpp",
+    ],
+}
+
+filegroup {
+    name: "vendor.lineage.livedisplay-motorola-se",
+    srcs: [
+        "SunlightEnhancement.cpp",
+    ],
+}
+
+cc_library_headers {
+    name: "vendor.lineage.livedisplay-motorola-headers",
+    vendor_available: true,
+    export_include_dirs: ["include"],
+}
+
+cc_binary {
+    name: "vendor.lineage.livedisplay-service.motorola",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["vendor.lineage.livedisplay-service.motorola.rc"],
+    vintf_fragments: select(soong_config_variable("livedisplay_motorola", "enable_ab"), {
+        "false": [],
+        default: ["vendor.lineage.livedisplay-service.motorola-ab.xml"],
+    }) + select(soong_config_variable("livedisplay_motorola", "enable_af"), {
+        "false": [],
+        default: ["vendor.lineage.livedisplay-service.motorola-af.xml"],
+    }) + select(soong_config_variable("livedisplay_motorola", "enable_se"), {
+        "false": [],
+        default: ["vendor.lineage.livedisplay-service.motorola-se.xml"],
+    }),
+    cflags: select(soong_config_variable("livedisplay_motorola", "enable_ab"), {
+        "false": ["-DENABLE_AB=false"],
+        default: ["-DENABLE_AB=true"],
+    }) + select(soong_config_variable("livedisplay_motorola", "enable_af"), {
+        "false": ["-DENABLE_AF=false"],
+        default: ["-DENABLE_AF=true"],
+    }) + select(soong_config_variable("livedisplay_motorola", "enable_se"), {
+        "false": ["-DENABLE_SE=false"],
+        default: ["-DENABLE_SE=true"],
+    }),
+    srcs: [
+        ":vendor.lineage.livedisplay-motorola-ab",
+        ":vendor.lineage.livedisplay-motorola-af",
+        ":vendor.lineage.livedisplay-motorola-se",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder",
+        "libbinder_ndk",
+        "libutils",
+        "vendor.lineage.livedisplay-V1-ndk",
+    ],
+    header_libs: [
+        "vendor.lineage.livedisplay-motorola-headers",
+    ],
+}
