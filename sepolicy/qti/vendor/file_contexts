@@ -88,6 +88,9 @@
 # IFAA
 /(vendor|system/vendor)/bin/hw/vendor\.zui\.hardware\.ifaa@1\.0-service    u:object_r:hal_ifaa_default_exec:s0
 
+# LiveDisplay
+/vendor/bin/hw/vendor\.lineage\.livedisplay-service\.motorola    u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
 # Motobox
 /vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
 
