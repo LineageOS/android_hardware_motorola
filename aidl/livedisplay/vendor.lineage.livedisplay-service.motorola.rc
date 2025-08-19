@@ -1,0 +1,15 @@
+on init
+    # LiveDisplay sysfs
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_acl
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_acl
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_cabc
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_cabc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_dc
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_dc
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_hbm
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_hbm
+
+service vendor.livedisplay-hal-motorola /vendor/bin/hw/vendor.lineage.livedisplay-service.motorola
+    class late_start
+    user system
+    group system

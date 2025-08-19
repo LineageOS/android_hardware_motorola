@@ -70,6 +70,7 @@ genfscon sysfs /devices/platform/soc/soc:indicator_led/leds/charging            
 # LiveDisplay
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_acl     u:object_r:sysfs_livedisplay_tuneable:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_cabc    u:object_r:sysfs_livedisplay_tuneable:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_dc      u:object_r:sysfs_livedisplay_tuneable:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_hbm     u:object_r:sysfs_livedisplay_tuneable:s0
 
 # Motorola
