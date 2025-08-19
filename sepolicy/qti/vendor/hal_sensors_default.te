@@ -1,6 +1,18 @@
 rw_dir_file(hal_sensors_default, vendor_sysfs_capsense)
+rw_dir_file(hal_sensors_default, vendor_sysfs_graphics)
 rw_dir_file(hal_sensors_default, vendor_sysfs_input)
 rw_dir_file(hal_sensors_default, vendor_sysfs_touchpanel)
 
 rw_dir_file(hal_sensors_default, vendor_sysfs_laser)
 allow hal_sensors_default vendor_sysfs_laser:file setattr;
+
+binder_call(hal_sensors_default, hal_graphics_composer_default)
+binder_call(hal_sensors_default, vndservicemanager)
+
+allow hal_sensors_default vndbinder_device:chr_file { rw_file_perms watch_reads };
+allow hal_sensors_default vendor_qdisplay_service:service_manager find;
+allow hal_sensors_default vendor_hal_display_config_hwservice:hwservice_manager find;
+
+allow hal_sensors_default uhid_device:chr_file { rw_file_perms ioctl };
+allow hal_sensors_default hal_sensorext_service:service_manager { add find };
+allow hal_sensors_default self:binder call;
