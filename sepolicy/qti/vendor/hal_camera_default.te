@@ -8,6 +8,8 @@ allow hal_camera_default vendor_sysfs_laser:file rw_file_perms;
 allow hal_camera_default mnt_vendor_file:dir search;
 r_dir_file(hal_camera_default, vendor_persist_camera_file)
 
+rw_dir_file(hal_camera_default, vendor_camera_data_file)
+
 r_dir_file(hal_camera_default, vendor_sysfs_battery_supply)
 r_dir_file(hal_camera_default, vendor_sysfs_devicetree_mmi)
 r_dir_file(hal_camera_default, vendor_sysfs_input)
@@ -25,3 +27,4 @@ hal_client_domain(hal_camera_default, hal_cameradesktop)
 
 get_prop(hal_camera_default, aac_drc_prop)
 get_prop(hal_camera_default, exported_camera_prop)
+get_prop(hal_camera_default, moto_camera_config_prop)
