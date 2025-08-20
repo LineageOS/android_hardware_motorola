@@ -33,6 +33,23 @@
       "message": "per mikes comment, and my second on it -\n\nThis feels really wrong.\n\nIf you\u0027re trying to use the common policy it\u0027s a good time to nuke the entire device folder and _see_ what\u0027s left.\n\npriv_app an platform app for ex, eh, this is _way_ more than other platforms pulled in.\n\nPlease see if this can be thinned down.",
       "revId": "9beef9cde328f4ded137ed0a101ac1dd977ab1d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da6b7328_05039968",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-08-20T07:36:12Z",
+      "side": 1,
+      "message": "DNM for now.",
+      "revId": "9beef9cde328f4ded137ed0a101ac1dd977ab1d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
