@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2025 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/stylus_panel_title">
+
+    <SwitchPreferenceCompat
+        android:key="vibrate"
+        android:title="@string/stylus_vibrate_title"
+        android:summary="@string/stylus_vibrate_summary"
+        android:defaultValue="true" />
+
+    <org.lineageos.settings.stylus.AppPickerPreference
+        android:key="launch_app"
+        android:title="@string/stylus_launch_app_title"
+        android:summary="@string/stylus_launch_app_none" />
+</PreferenceScreen>
