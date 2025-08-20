@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef21a8e_478d59f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-08-20T23:17:13Z",
+      "side": 1,
+      "message": "Add /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_dc to sepolicy?",
+      "revId": "bca7e4a0478455604e6d15284f0f6830c3a32c60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
