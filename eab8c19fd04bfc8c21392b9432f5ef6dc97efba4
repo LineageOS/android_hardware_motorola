@@ -41,6 +41,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3b18745_c87d9b89",
+        "filename": "aidl/livedisplay/AdaptiveBacklight.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-08-22T10:53:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b07fa40_ce66d9a1",
+      "range": {
+        "startLine": 60,
+        "startChar": 27,
+        "endLine": 60,
+        "endChar": 53
+      },
+      "revId": "eab8c19fd04bfc8c21392b9432f5ef6dc97efba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ceb667e_61e1cbf5",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-08-22T07:45:49Z",
       "side": 1,
       "message": "over-engineered if they are not intended to be further customized by downstream devices",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "eab8c19fd04bfc8c21392b9432f5ef6dc97efba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c22f71da_c561f94f",
+        "filename": "aidl/livedisplay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-08-22T10:53:01Z",
+      "side": 1,
+      "message": "Will keep it as in for now, in case we want to turn it into a common, configurable LiveDisplay sysfs service (unless the rust one will be approved).",
+      "parentUuid": "2ceb667e_61e1cbf5",
       "range": {
         "startLine": 6,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50516c2a_549abb4a",
+        "filename": "aidl/livedisplay/AntiFlicker.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-08-22T10:53:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35d242bd_27248530",
+      "range": {
+        "startLine": 59,
+        "startChar": 27,
+        "endLine": 59,
+        "endChar": 34
+      },
+      "revId": "eab8c19fd04bfc8c21392b9432f5ef6dc97efba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe616626_b66b4c04",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-08-22T07:45:49Z",
       "side": 1,
       "message": "```suggestion\n    if (!WriteStringToFile(std::to_string(enabled), file_, true)) {\n```",
+      "range": {
+        "startLine": 59,
+        "startChar": 27,
+        "endLine": 59,
+        "endChar": 46
+      },
+      "revId": "eab8c19fd04bfc8c21392b9432f5ef6dc97efba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f29bb7b_f920efff",
+        "filename": "aidl/livedisplay/SunlightEnhancement.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-08-22T10:53:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe616626_b66b4c04",
       "range": {
         "startLine": 59,
         "startChar": 27,
