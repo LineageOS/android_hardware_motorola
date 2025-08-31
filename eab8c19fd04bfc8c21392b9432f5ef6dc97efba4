@@ -112,6 +112,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7983e97_1b447c26",
+        "filename": "aidl/livedisplay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-08-31T01:08:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c22f71da_c561f94f",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "eab8c19fd04bfc8c21392b9432f5ef6dc97efba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35d242bd_27248530",
