@@ -33,6 +33,23 @@
       "message": "fine on kiev",
       "revId": "d743176b40063bfb92a286715089994c590f4cfa",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "660930d2_516bf147",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-09-02T15:14:23Z",
+      "side": 1,
+      "message": "```\nnairo:/ $ ls /sys/devices/platform/soc/894000.qcom,qup_uart/                                                                                                                              \ndriver  driver_override  loopback  modalias  of_node  power  subsystem  tty  uevent  ver_info  wakeup  xfer_mode\nnairo:/ $ ls /sys/devices/platform/soc/aae0000.qcom,venus\ndriver  driver_override  modalias  of_node  power  ramdump  subsys  subsys5  subsystem  uevent  wakeup\nnairo:/ $ ls /sys/devices/platform/soc/ae90000.qcom,dp_display\nls: /sys/devices/platform/soc/ae90000.qcom,dp_display: No such file or directory\n```\n\nlito will need the first 2 nodes labeled on the common qcom sepolicy",
+      "revId": "d743176b40063bfb92a286715089994c590f4cfa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
