@@ -16,6 +16,23 @@
       "message": "Seems fine on miami",
       "revId": "d743176b40063bfb92a286715089994c590f4cfa",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7832ba2f_cd16e04d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2025-09-02T14:04:31Z",
+      "side": 1,
+      "message": "fine on kiev",
+      "revId": "d743176b40063bfb92a286715089994c590f4cfa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
