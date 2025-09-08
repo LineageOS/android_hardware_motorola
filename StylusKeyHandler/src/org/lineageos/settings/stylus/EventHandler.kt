@@ -34,12 +34,16 @@ class EventHandler(private val packageContext: Context) {
         if (sharedPreferences.getBoolean(KEY_VIBRATE_WHEN_INSERTED, true)) {
             utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
         }
+        if (sharedPreferences.getBoolean(KEY_SCREEN_OFF_WHEN_INSERTED, false)) {
+            utils.turnScreenOff()
+        }
     }
 
     companion object {
         const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
         const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
         const val KEY_SCREEN_ON_WHEN_REMOVED = "screen_on_when_removed"
+        const val KEY_SCREEN_OFF_WHEN_INSERTED = "screen_off_when_inserted"
         const val KEY_LAUNCH_APP = "launch_app"
     }
 }
