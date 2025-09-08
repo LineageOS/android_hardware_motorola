@@ -28,6 +28,10 @@ class Utils(private val context: Context) {
         )
     }
 
+    fun turnScreenOff() {
+        powerManager.goToSleep(SystemClock.uptimeMillis())
+    }
+
     fun vibrateIfNeeded(effect: VibrationEffect) {
         vibrator.vibrate(
             effect,
