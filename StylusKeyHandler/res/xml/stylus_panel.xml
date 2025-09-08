@@ -8,14 +8,30 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/stylus_panel_title">
 
-    <SwitchPreferenceCompat
-        android:key="vibrate"
-        android:title="@string/stylus_vibrate_title"
-        android:summary="@string/stylus_vibrate_summary"
-        android:defaultValue="true" />
+    <PreferenceCategory
+        android:key="stylus_removed_category"
+        android:title="@string/stylus_removed_category_title">
 
-    <org.lineageos.settings.stylus.AppPickerPreference
-        android:key="launch_app"
-        android:title="@string/stylus_launch_app_title"
-        android:summary="@string/none" />
+        <SwitchPreferenceCompat
+            android:key="vibrate_when_removed"
+            android:title="@string/stylus_vibrate_title"
+            android:summary="@string/stylus_vibrate_when_removed_summary"
+            android:defaultValue="true" />
+
+        <org.lineageos.settings.stylus.AppPickerPreference
+            android:key="launch_app"
+            android:title="@string/stylus_launch_app_title"
+            android:summary="@string/none" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="stylus_inserted_category"
+        android:title="@string/stylus_inserted_category_title">
+
+        <SwitchPreferenceCompat
+            android:key="vibrate_when_inserted"
+            android:title="@string/stylus_vibrate_title"
+            android:summary="@string/stylus_vibrate_when_inserted_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>
