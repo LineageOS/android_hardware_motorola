@@ -41,6 +41,13 @@ class Utils(private val context: Context) {
         }
     }
 
+    fun turnScreenOff() {
+        val screenOffEnabled = sharedPreferences.getBoolean(KEY_SCREEN_OFF_WHEN_INSERTED, false)
+        if (screenOffEnabled) {
+            powerManager.goToSleep(SystemClock.uptimeMillis())
+        }
+    }
+
     fun vibrateIfNeeded(effect: VibrationEffect, isInsert: Boolean) {
         val vibrateKey = if (isInsert) KEY_VIBRATE_WHEN_INSERTED else KEY_VIBRATE_WHEN_REMOVED
         val vibrateEnabled = sharedPreferences.getBoolean(vibrateKey, true)
@@ -74,6 +81,7 @@ class Utils(private val context: Context) {
         const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
         const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
         const val KEY_SCREEN_ON_WHEN_REMOVED = "screen_on_when_removed"
+        const val KEY_SCREEN_OFF_WHEN_INSERTED = "screen_off_when_inserted"
         const val KEY_LAUNCH_APP = "launch_app"
 
         // Vibration attributes

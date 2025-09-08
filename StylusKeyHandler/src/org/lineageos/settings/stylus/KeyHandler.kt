@@ -30,6 +30,7 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
             PEN_INSERTED -> {
                 Log.d(TAG, "Stylus inserted: $scanCode")
                 utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK, true)
+                utils.turnScreenOff()
                 null
             }
             else -> event
