@@ -31,11 +31,14 @@ class Utils(private val context: Context) {
         )
 
     fun turnScreenOn() {
-        powerManager.wakeUp(
-            SystemClock.uptimeMillis(),
-            PowerManager.WAKE_REASON_GESTURE,
-            TAG
-        )
+        val screenOnEnabled = sharedPreferences.getBoolean(KEY_SCREEN_ON_WHEN_REMOVED, true)
+        if (screenOnEnabled) {
+            powerManager.wakeUp(
+                SystemClock.uptimeMillis(),
+                PowerManager.WAKE_REASON_GESTURE,
+                TAG
+            )
+        }
     }
 
     fun vibrateIfNeeded(effect: VibrationEffect, isInsert: Boolean) {
@@ -70,6 +73,7 @@ class Utils(private val context: Context) {
         // Preference keys
         const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
         const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
+        const val KEY_SCREEN_ON_WHEN_REMOVED = "screen_on_when_removed"
         const val KEY_LAUNCH_APP = "launch_app"
 
         // Vibration attributes

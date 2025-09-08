@@ -8,6 +8,8 @@
     <string name="stylus_panel_summary">Control stylus behavior</string>
     <string name="stylus_removed_category_title">Stylus removed</string>
     <string name="stylus_inserted_category_title">Stylus inserted</string>
+    <string name="stylus_screen_on_when_removed_title">Turn screen on</string>
+    <string name="stylus_screen_on_when_removed_summary">Turn the screen on when removing the stylus</string>
     <string name="stylus_vibrate_title">Vibrate</string>
     <string name="stylus_vibrate_when_removed_summary">Vibrate when removing the stylus</string>
     <string name="stylus_vibrate_when_inserted_summary">Vibrate when inserting the stylus</string>
