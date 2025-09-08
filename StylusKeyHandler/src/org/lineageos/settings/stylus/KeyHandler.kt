@@ -22,14 +22,14 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
         return when (scanCode) {
             PEN_REMOVED -> {
                 Log.d(TAG, "Stylus removed: $scanCode")
-                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
+                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK, false)
                 utils.turnScreenOn()
                 utils.launchApp()
                 null
             }
             PEN_INSERTED -> {
                 Log.d(TAG, "Stylus inserted: $scanCode")
-                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
+                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK, true)
                 null
             }
             else -> event

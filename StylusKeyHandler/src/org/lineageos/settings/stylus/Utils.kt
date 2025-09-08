@@ -38,8 +38,9 @@ class Utils(private val context: Context) {
         )
     }
 
-    fun vibrateIfNeeded(effect: VibrationEffect) {
-        val vibrateEnabled = sharedPreferences.getBoolean(KEY_VIBRATE, true)
+    fun vibrateIfNeeded(effect: VibrationEffect, isInsert: Boolean) {
+        val vibrateKey = if (isInsert) KEY_VIBRATE_WHEN_INSERTED else KEY_VIBRATE_WHEN_REMOVED
+        val vibrateEnabled = sharedPreferences.getBoolean(vibrateKey, true)
         if (vibrateEnabled) {
             vibrator.vibrate(
                 effect,
@@ -67,7 +68,8 @@ class Utils(private val context: Context) {
         private const val TAG = "Utils"
 
         // Preference keys
-        const val KEY_VIBRATE = "vibrate"
+        const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
+        const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
         const val KEY_LAUNCH_APP = "launch_app"
 
         // Vibration attributes
