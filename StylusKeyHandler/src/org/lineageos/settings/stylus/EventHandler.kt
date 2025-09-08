@@ -18,7 +18,7 @@ class EventHandler(private val packageContext: Context) {
         )
 
     fun handleRemoved() {
-        if (sharedPreferences.getBoolean(KEY_VIBRATE, true)) {
+        if (sharedPreferences.getBoolean(KEY_VIBRATE_WHEN_REMOVED, true)) {
             utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
         }
         utils.turnScreenOn()
@@ -29,13 +29,14 @@ class EventHandler(private val packageContext: Context) {
     }
 
     fun handleInserted() {
-        if (sharedPreferences.getBoolean(KEY_VIBRATE, true)) {
+        if (sharedPreferences.getBoolean(KEY_VIBRATE_WHEN_INSERTED, true)) {
             utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
         }
     }
 
     companion object {
-        const val KEY_VIBRATE = "vibrate"
+        const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
+        const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
         const val KEY_LAUNCH_APP = "launch_app"
     }
 }

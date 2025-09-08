@@ -6,8 +6,11 @@
 <resources>
     <string name="stylus_panel_title">Stylus</string>
     <string name="stylus_panel_summary">Control stylus behavior</string>
+    <string name="stylus_removed_category_title">Stylus removed</string>
+    <string name="stylus_inserted_category_title">Stylus inserted</string>
     <string name="stylus_vibrate_title">Vibrate</string>
-    <string name="stylus_vibrate_summary">Vibrate when removing or inserting the stylus</string>
+    <string name="stylus_vibrate_when_removed_summary">Vibrate when removing the stylus</string>
+    <string name="stylus_vibrate_when_inserted_summary">Vibrate when inserting the stylus</string>
     <string name="stylus_launch_app_title">Launch app when removed</string>
     <string name="stylus_launch_app_none">None</string>
 </resources>
