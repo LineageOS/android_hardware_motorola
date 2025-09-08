@@ -35,6 +35,12 @@
         android:title="@string/stylus_inserted_category_title">
 
         <SwitchPreferenceCompat
+            android:key="screen_off_when_inserted"
+            android:title="@string/stylus_screen_off_when_inserted_title"
+            android:summary="@string/stylus_screen_off_when_inserted_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
             android:key="vibrate_when_inserted"
             android:title="@string/stylus_vibrate_title"
             android:summary="@string/stylus_vibrate_when_inserted_summary"
