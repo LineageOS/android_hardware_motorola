@@ -13,6 +13,12 @@
         android:title="@string/stylus_removed_category_title">
 
         <SwitchPreferenceCompat
+            android:key="screen_on_when_removed"
+            android:title="@string/stylus_screen_on_when_removed_title"
+            android:summary="@string/stylus_screen_on_when_removed_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
             android:key="vibrate_when_removed"
             android:title="@string/stylus_vibrate_title"
             android:summary="@string/stylus_vibrate_when_removed_summary"
