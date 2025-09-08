@@ -14,8 +14,39 @@
         android:summary="@string/stylus_vibrate_summary"
         android:defaultValue="true" />
 
+<<<<<<< HEAD   (ba0a7e sepolicy: qti: Label DC dimming LiveDisplay sysfs node)
     <org.lineageos.settings.stylus.AppPickerPreference
         android:key="launch_app"
         android:title="@string/stylus_launch_app_title"
         android:summary="@string/stylus_launch_app_none" />
+=======
+        <SwitchPreferenceCompat
+            android:key="screen_on_when_removed"
+            android:title="@string/stylus_screen_on_when_removed_title"
+            android:summary="@string/stylus_screen_on_when_removed_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="vibrate_when_removed"
+            android:title="@string/stylus_vibrate_title"
+            android:summary="@string/stylus_vibrate_when_removed_summary"
+            android:defaultValue="true" />
+
+        <org.lineageos.settings.stylus.AppPickerPreference
+            android:key="launch_app"
+            android:title="@string/stylus_launch_app_title"
+            android:summary="@string/none" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="stylus_inserted_category"
+        android:title="@string/stylus_inserted_category_title">
+
+        <SwitchPreferenceCompat
+            android:key="vibrate_when_inserted"
+            android:title="@string/stylus_vibrate_title"
+            android:summary="@string/stylus_vibrate_when_inserted_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+>>>>>>> CHANGE (4e6537 StylusKeyHandler: Make turning screen on a preference)
 </PreferenceScreen>
