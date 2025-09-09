@@ -16,6 +16,24 @@
       "message": "I dunno what Mike thinks, but devicesettings is becoming a mess. You can just add this package to crowdin config, like we do on oplus.",
       "revId": "5592e85ebbde5f138f46caa6823785f43b2c60d7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "046d6e37_a0174fb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29242
+      },
+      "writtenOn": "2025-09-09T20:10:36Z",
+      "side": 1,
+      "message": "Mike mentioned something to me about moving them to devicesettings this morning. I\u0027m personally fine with either or so I guess we can wait for mikes response here.",
+      "parentUuid": "16343235_230e667f",
+      "revId": "5592e85ebbde5f138f46caa6823785f43b2c60d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
