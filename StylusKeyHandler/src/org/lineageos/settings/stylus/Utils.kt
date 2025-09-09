@@ -20,16 +20,6 @@ class Utils(private val context: Context) {
     private val vibrator = context.getSystemService(Vibrator::class.java)!!
     private val packageManager = context.packageManager
 
-    private val packageContext = context.createPackageContext(
-        KeyHandler::class.java.getPackage()!!.name, 0
-    )
-
-    private val sharedPreferences
-        get() = packageContext.getSharedPreferences(
-            packageContext.packageName + "_preferences",
-            Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
-        )
-
     fun turnScreenOn() {
         powerManager.wakeUp(
             SystemClock.uptimeMillis(),
@@ -39,36 +29,26 @@ class Utils(private val context: Context) {
     }
 
     fun vibrateIfNeeded(effect: VibrationEffect) {
-        val vibrateEnabled = sharedPreferences.getBoolean(KEY_VIBRATE, true)
-        if (vibrateEnabled) {
-            vibrator.vibrate(
-                effect,
-                HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
-            )
-        }
+        vibrator.vibrate(
+            effect,
+            HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
+        )
     }
 
-    fun launchApp() {
-        val packageName = sharedPreferences.getString(KEY_LAUNCH_APP, null)
-        if (!packageName.isNullOrEmpty()) {
-            val intent = packageManager.getLaunchIntentForPackage(packageName)
-            intent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            intent?.let {
-                try {
-                    packageContext.startActivity(it)
-                } catch (e: Exception) {
-                    Log.e(TAG, "Failed to launch $packageName", e)
-                }
-            } ?: Log.w(TAG, "No launch intent found for $packageName")
-        }
+    fun launchApp(packageName: String) {
+        val intent = packageManager.getLaunchIntentForPackage(packageName)
+        intent?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent?.let {
+            try {
+                context.startActivity(it)
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to launch $packageName", e)
+            }
+        } ?: Log.w(TAG, "No launch intent found for $packageName")
     }
 
     companion object {
         private const val TAG = "Utils"
-
-        // Preference keys
-        const val KEY_VIBRATE = "vibrate"
-        const val KEY_LAUNCH_APP = "launch_app"
 
         // Vibration attributes
         val HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES =
