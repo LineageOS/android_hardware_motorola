@@ -17,5 +17,5 @@
     <org.lineageos.settings.stylus.AppPickerPreference
         android:key="launch_app"
         android:title="@string/stylus_launch_app_title"
-        android:summary="@string/stylus_launch_app_none" />
+        android:summary="@string/none" />
 </PreferenceScreen>
