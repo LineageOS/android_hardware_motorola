@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16343235_230e667f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-09-09T19:26:53Z",
+      "side": 1,
+      "message": "I dunno what Mike thinks, but devicesettings is becoming a mess. You can just add this package to crowdin config, like we do on oplus.",
+      "revId": "5592e85ebbde5f138f46caa6823785f43b2c60d7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
