@@ -12,7 +12,11 @@ import com.android.internal.os.DeviceKeyHandler
 
 class KeyHandler(context: Context) : DeviceKeyHandler {
 
-    private val utils = Utils(context)
+    private val packageContext = context.createPackageContext(
+        KeyHandler::class.java.getPackage()!!.name, 0
+    )
+
+    private val eventHandler = EventHandler(packageContext)
 
     override fun handleKeyEvent(event: KeyEvent): KeyEvent? {
         if (event.action != KeyEvent.ACTION_DOWN) return event
@@ -22,14 +26,12 @@ class KeyHandler(context: Context) : DeviceKeyHandler {
         return when (scanCode) {
             PEN_REMOVED -> {
                 Log.d(TAG, "Stylus removed: $scanCode")
-                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
-                utils.turnScreenOn()
-                utils.launchApp()
+                eventHandler.handleRemoved()
                 null
             }
             PEN_INSERTED -> {
                 Log.d(TAG, "Stylus inserted: $scanCode")
-                utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
+                eventHandler.handleInserted()
                 null
             }
             else -> event
