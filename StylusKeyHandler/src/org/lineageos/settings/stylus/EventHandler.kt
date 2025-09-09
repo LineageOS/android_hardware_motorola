@@ -6,6 +6,7 @@
 package org.lineageos.settings.stylus
 
 import android.content.Context
+import android.content.Intent
 
 class EventHandler(private val packageContext: Context) {
 
@@ -18,6 +19,14 @@ class EventHandler(private val packageContext: Context) {
         )
 
     fun handleRemoved() {
+        if (!sharedPreferences.getBoolean(KEY_FIRST_REMOVAL, false)) {
+            Intent(packageContext, StylusSettingsActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }.also { intent ->
+                packageContext.startActivity(intent)
+                sharedPreferences.edit().putBoolean(KEY_FIRST_REMOVAL, true).apply()
+            }
+        }
         if (sharedPreferences.getBoolean(KEY_VIBRATE_WHEN_REMOVED, true)) {
             utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)
         }
@@ -40,6 +49,7 @@ class EventHandler(private val packageContext: Context) {
     }
 
     companion object {
+        const val KEY_FIRST_REMOVAL = "first_removal"
         const val KEY_VIBRATE_WHEN_REMOVED = "vibrate_when_removed"
         const val KEY_VIBRATE_WHEN_INSERTED = "vibrate_when_inserted"
         const val KEY_SCREEN_ON_WHEN_REMOVED = "screen_on_when_removed"
