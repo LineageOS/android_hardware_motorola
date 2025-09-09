@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.android.settingslib.widget.preference.app.R as settingslib_R
+import org.lineageos.settings.resources.R as devicesettings_R
 
 class AppPickerPreference(context: Context, attrs: AttributeSet) :
     DialogPreference(context, attrs) {
@@ -53,7 +54,7 @@ class AppPickerPreference(context: Context, attrs: AttributeSet) :
             .sortedBy { it.label }
             .toMutableList()
 
-        apps.add(0, AppInfo(context.getString(R.string.stylus_launch_app_none), "", null))
+        apps.add(0, AppInfo(context.getString(devicesettings_R.string.none), "", null))
         appEntries = apps
     }
 
@@ -65,7 +66,7 @@ class AppPickerPreference(context: Context, attrs: AttributeSet) :
 
     private fun updateSummaryAndIcon() {
         val selectedApp = appEntries.find { it.packageName == selectedPackageName }
-        summary = selectedApp?.label ?: context.getString(R.string.stylus_launch_app_none)
+        summary = selectedApp?.label ?: context.getString(devicesettings_R.string.none)
         icon = selectedApp?.icon
     }
 
