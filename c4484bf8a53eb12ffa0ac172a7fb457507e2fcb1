@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d32667ba_b41b954e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-09-10T07:14:38Z",
+      "side": 1,
+      "message": "The whole point of devicesettings common strings was to have things that can be reused in other devices and not make people translate them multiple times. AFAIK motorola is not the only OEM with devices having a stylus, so those strings could be reused on other devices as well.",
+      "revId": "c4484bf8a53eb12ffa0ac172a7fb457507e2fcb1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
