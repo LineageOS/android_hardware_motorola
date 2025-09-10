@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeb808af_9d5004f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-09-10T23:53:58Z",
+      "side": 1,
+      "message": "this one tbh I dunno, should it just be added to qcom common or something? Or here is fine?",
+      "revId": "4d538e527a3811a9eb4f3cfe0b77cdf2130d0aa3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
