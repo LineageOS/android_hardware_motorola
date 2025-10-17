@@ -44,7 +44,7 @@
 /vendor/super_modem    u:object_r:firmware_file:s0
 
 # Audio
-/mnt/vendor/persist/factory/audio/(/.*)?                        u:object_r:vendor_persist_audio_file:s0
+/mnt/vendor/persist/factory/audio(/.*)?                        u:object_r:vendor_persist_audio_file:s0
 /vendor/bin/hw/motorola\.hardware\.audio@2\.0-service           u:object_r:hal_audio_default_exec:s0
 /vendor/bin/hw/motorola\.hardware\.audio\.adspd@1\.0-service    u:object_r:hal_audio_default_exec:s0
 
