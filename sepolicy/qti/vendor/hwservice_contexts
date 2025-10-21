@@ -9,6 +9,7 @@ vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                u:
 vendor.egistec.hardware.fingerprint::IBiometricsFingerprintRbs                u:object_r:hal_fingerprint_hwservice:s0
 vendor.egistecbix.hardware.fingerprint::IBiometricsFingerprintBix             u:object_r:hal_fingerprint_hwservice:s0
 vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc                    u:object_r:hal_fingerprint_hwservice:s0
+vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon       u:object_r:hal_fingerprint_hwservice:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemonExt    u:object_r:hal_fingerprint_hwservice:s0
 
 # IFAA
