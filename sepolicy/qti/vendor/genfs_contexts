@@ -99,6 +99,7 @@ genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/usb 
 genfscon sysfs /devices/platform/soc/4c90000.i2c/i2c-3/3-005a/leds/vibrator    u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/984000.i2c/i2c-0/0-005a/leds/vibrator     u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-1/1-005a/leds/vibrator     u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-005a/leds/vibrator     u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-1/1-005a/leds/vibrator     u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/soc:ext_vib/leds/vibrator                 u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/soc:ldo_vib/leds/vibrator                 u:object_r:sysfs_leds:s0
