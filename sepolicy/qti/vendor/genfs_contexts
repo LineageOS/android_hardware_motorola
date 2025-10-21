@@ -103,6 +103,10 @@ genfscon sysfs /devices/platform/soc/990000.i2c/i2c-1/1-005a/leds/vibrator     u
 genfscon sysfs /devices/platform/soc/soc:ext_vib/leds/vibrator                 u:object_r:sysfs_leds:s0
 genfscon sysfs /devices/platform/soc/soc:ldo_vib/leds/vibrator                 u:object_r:sysfs_leds:s0
 
+# VL53L1
+genfscon sysfs /devices/virtual/laser/stmvl53l1    u:object_r:vendor_sysfs_laser:s0
+genfscon sysfs /module/stmvl53l1/                  u:object_r:vendor_sysfs_laser:s0
+
 # Wakeup
 genfscon sysfs /devices/platform/soc/0.EL721/wakeup                                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/0.et528/wakeup                                                                                                                             u:object_r:sysfs_wakeup:s0
