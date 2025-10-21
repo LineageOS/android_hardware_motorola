@@ -16,6 +16,23 @@
       "message": "I fixed the spacing and confirmed that on dubai the aw_cali.bin loading via kernel no longer has any selinux denials",
       "revId": "93022eaddc01acbf884729ef2d70509d6c64ecb7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04ea5277_b64dc537",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-21T04:04:48Z",
+      "side": 1,
+      "message": "confirmed fixed on dubai, if either of you could please review this",
+      "revId": "93022eaddc01acbf884729ef2d70509d6c64ecb7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
