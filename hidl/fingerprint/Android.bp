@@ -12,6 +12,9 @@ cc_binary {
     vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.moto.xml"],
     vendor: true,
     relative_install_path: "hw",
+    cflags: [
+        "-DLOG_TAG=\"android.hardware.biometrics.fingerprint@2.3-service.moto\"",
+    ],
     srcs: [
         "BiometricsFingerprint.cpp",
         "UdfpsHandler.cpp",
