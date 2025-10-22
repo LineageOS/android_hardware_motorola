@@ -16,6 +16,24 @@
       "message": "Sort it. You can use sort-blobs-list for these files as well fyi",
       "revId": "0a6b1b1c255ccc23b3420fd865aa5a292dccfb3f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bac5970_36bbd876",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-10-22T07:53:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52bf1cab_d7593250",
+      "revId": "0a6b1b1c255ccc23b3420fd865aa5a292dccfb3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
