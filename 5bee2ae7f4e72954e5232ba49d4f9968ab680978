@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "37df3a5c_ff0ceb34",
+        "filename": "sepolicy/qti/SEPolicy.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-24T23:26:05Z",
+      "side": 1,
+      "message": "ifneq ($(SEPOLICY_PLATFORM), sm8550)",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "41eeb1ad_adb0111e",
         "filename": "sepolicy/qti/vendor/genfs_contexts",
         "patchSetId": 2
