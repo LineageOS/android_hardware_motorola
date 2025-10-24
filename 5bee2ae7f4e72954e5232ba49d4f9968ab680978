@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41eeb1ad_adb0111e",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-24T21:18:34Z",
+      "side": 1,
+      "message": "We could always make this a different commit, otherwise any other motorola tree that defines this will get a duplicate policy failure such as sm7325-common",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57e98040_ac671e13",
+        "filename": "sepolicy/qti/vendor/widevine_copy.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-24T21:18:34Z",
+      "side": 1,
+      "message": "tbh, should we just drop this widevine license copy thing? I mean, Widevine L1 afaik doesn\u0027t work with bootloader unlocked on any Motorola devices since the DRM keys get wiped so I think it\u0027s pointless for this?\n\nI haven\u0027t tried building without it yet though and testing just in case it does cause video playback errors but I doubt it...",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
