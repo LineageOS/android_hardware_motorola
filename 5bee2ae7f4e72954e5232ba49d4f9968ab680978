@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fa59b53_4d1cfbe2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-24T23:20:10Z",
+      "side": 1,
+      "message": "Should update common-um-4.4-5.10 to match the folder structure in hardware/oplus/sepolicy/vendor",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41eeb1ad_adb0111e",
