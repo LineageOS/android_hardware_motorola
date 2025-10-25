@@ -91,6 +91,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9f696fbb_4e1bbe44",
+        "filename": "sepolicy/qti/SEPolicy.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-25T17:24:11Z",
+      "side": 1,
+      "message": "nvm, will revisit as i get free time",
+      "parentUuid": "cb5bdc42_8a35ec78",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "41eeb1ad_adb0111e",
         "filename": "sepolicy/qti/vendor/genfs_contexts",
         "patchSetId": 2
