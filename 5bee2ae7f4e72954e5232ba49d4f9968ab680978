@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd3e7955_6b9d646f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-25T05:20:04Z",
+      "side": 1,
+      "message": "tbh I haven\u0027t seen duplicate errors like esepowermanager or anything on sm8550 and such, just the nfc and that one wakeup genfs, so I think it\u0027s just how some stuff is different on oplus is I guess?",
+      "parentUuid": "7fa59b53_4d1cfbe2",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37df3a5c_ff0ceb34",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-10-24T23:26:05Z",
       "side": 1,
       "message": "ifneq ($(SEPOLICY_PLATFORM), sm8550)",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f536ce97_fbd2dce9",
+        "filename": "sepolicy/qti/SEPolicy.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-25T05:20:04Z",
+      "side": 1,
+      "message": "As I mentioned in the commit message, it\u0027s sm8550 and newer, so then we would need to keep updating that, whereas my current setup would be one-time",
+      "parentUuid": "37df3a5c_ff0ceb34",
       "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
