@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b45f751_c93f3527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-28T20:56:53Z",
+      "side": 1,
+      "message": "Requires, https://github.com/elginsk8r/android_hardware_motorola/commit/402b31ab202cc127bad91994f13a328dd1297cae in order for the policies to get included",
+      "revId": "79f09b0d2518839980a6318e8872d5aeea0b26cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
