@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bafaa095_06750751",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-10-28T10:49:30Z",
+      "side": 1,
+      "message": "If someone could please test this on sm8475, as it works well on sm8550",
+      "revId": "b84b6007a2354119ae9c90904b7faa4e0252a07b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
