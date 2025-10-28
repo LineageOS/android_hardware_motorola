@@ -36,6 +36,23 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "960afc96_2b1e4d27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-28T00:46:27Z",
+      "side": 1,
+      "message": "https://github.com/elginsk8r/android_hardware_motorola/commits/lineage-22.2/",
+      "revId": "5bee2ae7f4e72954e5232ba49d4f9968ab680978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37df3a5c_ff0ceb34",
