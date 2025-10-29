@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa50c816_0b76608d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-29T00:33:13Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/q/topic:%22qcom-st-nfc-sepolicy%22",
+      "revId": "03c7772e581dc3dfa4c5cf666743d7675cdc4281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
