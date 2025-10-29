@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e2d2bb9_d907eb55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-29T00:28:29Z",
+      "side": 1,
+      "message": "All good, I\u0027m working on sm7435 currently and starting with lineage-22.2. Thus the reason for my pick order being funky.",
+      "revId": "54d9bb0afd2dcd7b8e914bb8ad63314e106f8d2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
