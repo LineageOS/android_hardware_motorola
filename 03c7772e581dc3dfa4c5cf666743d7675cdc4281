@@ -16,6 +16,23 @@
       "message": "https://review.lineageos.org/q/topic:%22qcom-st-nfc-sepolicy%22",
       "revId": "03c7772e581dc3dfa4c5cf666743d7675cdc4281",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a509881_abf848db",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-10-30T12:24:47Z",
+      "side": 1,
+      "message": "fix alphabet order",
+      "revId": "03c7772e581dc3dfa4c5cf666743d7675cdc4281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
