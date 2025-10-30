@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92479d45_fc4039d5",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-10-30T16:44:42Z",
+      "side": 1,
+      "message": "Why are we relabeling vendor_boot? Is the default label in sepolicy_vndr mislabeled?",
+      "revId": "2628264c76b6f74531a75016ef7ffe4fad0f5a53",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
