@@ -33,6 +33,23 @@
       "message": "fix alphabet order",
       "revId": "03c7772e581dc3dfa4c5cf666743d7675cdc4281",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15399c81_f1d160fa",
+        "filename": "sepolicy/qti/vendor/sm8450/genfs_contexts",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-10-30T12:43:49Z",
+      "side": 1,
+      "message": "No. It is already labeled in SM8450 by mike.",
+      "revId": "03c7772e581dc3dfa4c5cf666743d7675cdc4281",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
