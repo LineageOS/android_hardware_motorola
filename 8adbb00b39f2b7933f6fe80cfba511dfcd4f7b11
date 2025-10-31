@@ -1,0 +1,390 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e85858e4_f6d70347",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "I left a lot of comments, you also need to properly sort everything alphabetically and also format the spacing in all *_contexts files: 4 spaces between the filename and label of the longest line in each category, then align all other lines in the category with the longest one (it\u0027s easy to understand if you look at existing lines before this commit)",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26ad75f1_0ae8d32a",
+        "filename": "sepolicy/qti/private/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Why is this script even needed? You shouldn\u0027t be putting things in /system partition",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38db6b52_bad8dac5",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Do you actually need these?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 111
+      },
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5aa0c099_6805f46b",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This should be in genfs_contexts and not just blanket label with all those regex",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aefb374_0cfee8c6",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This should be dropped probably",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d82b9824_cc8f9b04",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "What are those used for?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a89190a7_c10f30bc",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This should be in qcom sepolicy if you actually need it",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96acb2f4_fdc64a37",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This should be in qcom sepolicy if you actually need it",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "447d61ec_18ca13e5",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This should be in qcom sepolicy if you actually need it",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "896f7fd3_1a07e917",
+        "filename": "sepolicy/qti/vendor/hal_lineage_livedisplay_qti.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This is already present in lineage sepolicy",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99fd312c_dad6aaf4",
+        "filename": "sepolicy/qti/vendor/hal_lineage_powershare_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Dir perms before file perms",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b41e8a81_027c8195",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "g before i",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f97fc1c2_6809511c",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Isn\u0027t there a macro for this?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8d77ae7_cab23d14",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f10a462_40ad0345",
+        "filename": "sepolicy/qti/vendor/hwservice_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "What is this for?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2ff4bfb_2dbd82f7",
+        "filename": "sepolicy/qti/vendor/legacy-um/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "This has been already moved to qcom sepolicy",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac20e722_285921aa",
+        "filename": "sepolicy/qti/vendor/platform_app.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Sort alphabetically",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd79d944_bd1d3ea6",
+        "filename": "sepolicy/qti/vendor/priv_app.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "All these rules seem a bit too broad. Are they for moto camera?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67de4066_57b62c82",
+        "filename": "sepolicy/qti/vendor/property_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Sort alphabetically",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f20143b4_4ee316ab",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Move above line 11",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4680c56_7b50e99f",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "Sort alphabetically",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7abc580_9bb972ee",
+        "filename": "sepolicy/qti/vendor/vendor_mmi_laser.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-10-31T21:36:32Z",
+      "side": 1,
+      "message": "create_file_perms?",
+      "range": {
+        "startLine": 13,
+        "startChar": 47,
+        "endLine": 13,
+        "endChar": 73
+      },
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
