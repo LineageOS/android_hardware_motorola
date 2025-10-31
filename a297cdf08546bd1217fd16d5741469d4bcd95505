@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4acc8b58_b26f6e19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-10-31T19:07:08Z",
+      "side": 1,
+      "message": "Also removed duplicated v4l2 names and moved one v4l2 name to # camera block",
+      "revId": "a297cdf08546bd1217fd16d5741469d4bcd95505",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
