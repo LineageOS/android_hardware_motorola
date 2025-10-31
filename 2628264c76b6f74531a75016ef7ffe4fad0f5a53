@@ -16,6 +16,24 @@
       "message": "Why are we relabeling vendor_boot? Is the default label in sepolicy_vndr mislabeled?",
       "revId": "2628264c76b6f74531a75016ef7ffe4fad0f5a53",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6962326a_a9b047ee",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-10-31T19:02:41Z",
+      "side": 1,
+      "message": "Yes, it is labeled in sepolicy_vndr. Sovled in new patchset.",
+      "parentUuid": "92479d45_fc4039d5",
+      "revId": "2628264c76b6f74531a75016ef7ffe4fad0f5a53",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
