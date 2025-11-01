@@ -53,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5593dadf_3cfe9ca7",
+        "filename": "sepolicy/qti/private/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-01T13:39:37Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_device_motorola_sm8550-common/commit/5588fdecfb5cbef97f820846ccb0212e35c6c4d6\n\nbut if you don\u0027t want it in common motorola repo, I\u0027ll just keep it in sm8550 then",
+      "parentUuid": "b5b2c205_55eb01f5",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38db6b52_bad8dac5",
