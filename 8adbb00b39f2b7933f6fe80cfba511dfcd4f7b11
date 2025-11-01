@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b2c205_55eb01f5",
+        "filename": "sepolicy/qti/private/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26ad75f1_0ae8d32a",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38db6b52_bad8dac5",
@@ -77,6 +95,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "04963c05_57e502bf",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Maybe Done?",
+      "parentUuid": "5aa0c099_6805f46b",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2aefb374_0cfee8c6",
         "filename": "sepolicy/qti/vendor/file_contexts",
         "patchSetId": 8
@@ -88,6 +124,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "This should be dropped probably",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99390ee1_2d394c71",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "@themard85@gmail.com",
+      "parentUuid": "2aefb374_0cfee8c6",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -162,6 +216,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cd594826_7b96f430",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Needed on my parrot device.",
+      "parentUuid": "447d61ec_18ca13e5",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "896f7fd3_1a07e917",
         "filename": "sepolicy/qti/vendor/hal_lineage_livedisplay_qti.te",
         "patchSetId": 8
@@ -173,6 +245,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "This is already present in lineage sepolicy",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6327afc_98a8868c",
+        "filename": "sepolicy/qti/vendor/hal_lineage_livedisplay_qti.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "896f7fd3_1a07e917",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -194,6 +284,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4937416_243cbdd9",
+        "filename": "sepolicy/qti/vendor/hal_lineage_powershare_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99fd312c_dad6aaf4",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b41e8a81_027c8195",
@@ -207,6 +315,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "g before i",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa4c0f10_b9ee0910",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b41e8a81_027c8195",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -230,6 +356,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c9fca7b4_9ab5065f",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Maybe Done?",
+      "parentUuid": "f97fc1c2_6809511c",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8d77ae7_cab23d14",
         "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
         "patchSetId": 8
@@ -241,6 +385,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "Same as above",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73dd1c64_ac07582e",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Maybe Done?",
+      "parentUuid": "d8d77ae7_cab23d14",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -279,6 +441,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ce9babb_74d9b534",
+        "filename": "sepolicy/qti/vendor/legacy-um/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2ff4bfb_2dbd82f7",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac20e722_285921aa",
@@ -296,6 +476,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de7353ad_ac9d4a8a",
+        "filename": "sepolicy/qti/vendor/platform_app.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac20e722_285921aa",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd79d944_bd1d3ea6",
@@ -309,6 +507,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "All these rules seem a bit too broad. Are they for moto camera?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39b81ddd_c411d93a",
+        "filename": "sepolicy/qti/vendor/priv_app.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "@themard85@gmail.com you have device with imagetuner hal",
+      "parentUuid": "fd79d944_bd1d3ea6",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -349,6 +565,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ecee370_1693421b",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Maybe done, but maybe a rw is needed?",
+      "parentUuid": "f20143b4_4ee316ab",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d4680c56_7b50e99f",
         "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
         "patchSetId": 8
@@ -360,6 +594,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "Sort alphabetically",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d42f41d5_b96a3576",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4680c56_7b50e99f",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -377,6 +629,30 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "create_file_perms?",
+      "range": {
+        "startLine": 13,
+        "startChar": 47,
+        "endLine": 13,
+        "endChar": 73
+      },
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "959fb31f_fa4fb399",
+        "filename": "sepolicy/qti/vendor/vendor_mmi_laser.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-01T13:34:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7abc580_9bb972ee",
       "range": {
         "startLine": 13,
         "startChar": 47,
