@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b055afc_6e5a706c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-06T01:07:27Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we tbh just cherry-pick this to sm8450 since we are trying to do so with the ST AIDL HAL too?\n\nhttps://github.com/LineageOS/android_device_qcom_sepolicy_vndr/commit/e78e5373c472054a50b8711804900f6ebe1e99c9",
+      "revId": "81bf8de8928d97c8b2ddc48b2e21816184bfd3ab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
