@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45d76b30_46c332f6",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "This doesn\u0027t address self:binder call\n\nhttps://github.com/LineageOS/android_system_sepolicy/blob/lineage-23.0/public/te_macros#L418\n\nI auditd  : type\u003d1400 audit(0.0:26): avc:  denied  { call } for  comm\u003d\"android.hardwar\" scontext\u003du:r:hal_sensors_default:s0 tcontext\u003du:r:hal_sensors_default:s0 tclass\u003dbinder permissive\u003d0\n\nMy rtwo is crashing and won\u0027t boot and this denial pops up just before android.hardware.sensors crashes",
+      "revId": "88ae27b029e5acf1532ac0def83e1f89d773869f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe106bb0_72ce9e91",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "this gives error for undefined typeattr hal_display and the build fails",
+      "revId": "88ae27b029e5acf1532ac0def83e1f89d773869f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

@@ -112,6 +112,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0937623_0055ae35",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "leftover from sm8250-common, we can drop this",
+      "parentUuid": "38db6b52_bad8dac5",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 111
+      },
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5aa0c099_6805f46b",
@@ -182,6 +206,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eee988b_78421d36",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "yep I\u0027m gonna drop it on sm8550, sm8475 can drop it too when they\u0027re ready to commonize",
+      "parentUuid": "99390ee1_2d394c71",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d82b9824_cc8f9b04",
@@ -195,6 +237,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "What are those used for?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8512b51_c6abbab3",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "PanelDC is checked by sensor service\n\nI auditd  : type\u003d1400 audit(0.0:50): avc:  denied  { read } for  comm\u003d\"motorola.hardwa\" name\u003d\"panelDC\" dev\u003d\"sysfs\" ino\u003d137151 scontext\u003du:r:hal_sensors_default:s0 tcontext\u003du:object_r:sysfs:s0 tclass\u003dfile permissive\u003d0\n\nthe others can be dropped now though\nhttps://review.lineageos.org/c/LineageOS/android_device_motorola_sm8550-common/+/458611",
+      "parentUuid": "d82b9824_cc8f9b04",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -216,6 +276,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4987998d_5f25d598",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "I tried without it and so far it seems like we don\u0027t actually need it",
+      "parentUuid": "a89190a7_c10f30bc",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "96acb2f4_fdc64a37",
@@ -229,6 +307,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "This should be in qcom sepolicy if you actually need it",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe0fb1da_3d811e6e",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "This is sm8250-common leftover, I\u0027ll drop it",
+      "parentUuid": "96acb2f4_fdc64a37",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -264,6 +360,24 @@
       "side": 1,
       "message": "Needed on my parrot device.",
       "parentUuid": "447d61ec_18ca13e5",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "029c62f4_d139f922",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "This is also an sm8250-common leftover I can remove here then. I rand that SuspendSepolicyTest and without it this wasn\u0027t found",
+      "parentUuid": "cd594826_7b96f430",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -410,6 +524,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "41cccc2b_e7ee09e1",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "lines 10 and 11 must be find only. Trying to use (hw)service_add macro causes neverallows",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d8d77ae7_cab23d14",
         "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
         "patchSetId": 8
@@ -456,6 +587,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "What is this for?",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71e04e36_f6821683",
+        "filename": "sepolicy/qti/vendor/hwservice_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "It\u0027s a dependency of rtwo\u0027s audio.primary.kalama",
+      "parentUuid": "9f10a462_40ad0345",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -565,6 +714,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f59f40c_c4abe3ea",
+        "filename": "sepolicy/qti/vendor/priv_app.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "Users were requesting I add that imagetuner from stock and tbh it isn\u0027t working, I\u0027m not seeing any difference in picture quality so I\u0027ll be dropping it",
+      "parentUuid": "39b81ddd_c411d93a",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67de4066_57b62c82",
@@ -578,6 +745,24 @@
       "writtenOn": "2025-10-31T21:36:32Z",
       "side": 1,
       "message": "Sort alphabetically",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d4ff7a2_adf4ddbd",
+        "filename": "sepolicy/qti/vendor/property_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-10T04:49:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67de4066_57b62c82",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
