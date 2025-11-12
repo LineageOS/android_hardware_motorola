@@ -171,6 +171,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ee8335a_bfaf821b",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04963c05_57e502bf",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2aefb374_0cfee8c6",
@@ -522,6 +540,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e565b1b9_0d352e64",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9fca7b4_9ab5065f",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41cccc2b_e7ee09e1",
@@ -535,6 +571,24 @@
       "writtenOn": "2025-11-10T04:49:15Z",
       "side": 1,
       "message": "lines 10 and 11 must be find only. Trying to use (hw)service_add macro causes neverallows",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b2968c4_105c83ae",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41cccc2b_e7ee09e1",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -574,6 +628,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af75fa82_baad0333",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73dd1c64_ac07582e",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f10a462_40ad0345",
@@ -605,6 +677,24 @@
       "side": 1,
       "message": "It\u0027s a dependency of rtwo\u0027s audio.primary.kalama",
       "parentUuid": "9f10a462_40ad0345",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f25e12e7_ac1f724e",
+        "filename": "sepolicy/qti/vendor/hwservice_contexts",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71e04e36_f6821683",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -798,6 +888,24 @@
       "side": 1,
       "message": "Maybe done, but maybe a rw is needed?",
       "parentUuid": "f20143b4_4ee316ab",
+      "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a34b197_718d0231",
+        "filename": "sepolicy/qti/vendor/vendor_init_touch.te",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "not needed with dropping the panel read commit https://review.lineageos.org/c/LineageOS/android_device_motorola_sm8550-common/+/458611",
+      "parentUuid": "0ecee370_1693421b",
       "revId": "8adbb00b39f2b7933f6fe80cfba511dfcd4f7b11",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },

@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "08a07d54_5a942f4d",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45d76b30_46c332f6",
+      "revId": "88ae27b029e5acf1532ac0def83e1f89d773869f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe106bb0_72ce9e91",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-11-10T04:49:15Z",
       "side": 1,
       "message": "this gives error for undefined typeattr hal_display and the build fails",
+      "revId": "88ae27b029e5acf1532ac0def83e1f89d773869f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f6ab9f_a6fe029f",
+        "filename": "sepolicy/qti/vendor/hal_sensors_default.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe106bb0_72ce9e91",
       "revId": "88ae27b029e5acf1532ac0def83e1f89d773869f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }

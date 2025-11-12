@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a781eb16_a03c9d95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-12T20:49:49Z",
+      "side": 1,
+      "message": "I also dropped the commit for soc specific stuff as we don\u0027t need it with the sepolicy_vndr merges for NFC stuff",
+      "revId": "ded86669f613e7c08012519443e65c696d5b970d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
