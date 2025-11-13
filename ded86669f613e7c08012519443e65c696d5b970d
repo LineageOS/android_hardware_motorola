@@ -86,6 +86,24 @@
       "parentUuid": "6441f60a_9d96e667",
       "revId": "ded86669f613e7c08012519443e65c696d5b970d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72ab20e4_4195d0ae",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-13T21:56:36Z",
+      "side": 1,
+      "message": "Tbh, if this context entry doesn\u0027t work then we don\u0027t need it as I\u0027m not seeing a denial for it, so it\u0027s probably solved elsewhere and we can drop this\n\nCosmin labeled it like 3 years ago, but I\u0027m guessing sepolicy has changed since then",
+      "parentUuid": "fba66b7a_2d5367a9",
+      "revId": "ded86669f613e7c08012519443e65c696d5b970d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
