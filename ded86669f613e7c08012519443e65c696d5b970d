@@ -16,6 +16,40 @@
       "message": "I also dropped the commit for soc specific stuff as we don\u0027t need it with the sepolicy_vndr merges for NFC stuff",
       "revId": "ded86669f613e7c08012519443e65c696d5b970d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c835718_0e15f6dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-11-13T17:52:50Z",
+      "side": 1,
+      "message": "Please fix all the *_contexts file spacing style like I mentioned in my previous comment",
+      "revId": "ded86669f613e7c08012519443e65c696d5b970d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6441f60a_9d96e667",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-11-13T17:52:50Z",
+      "side": 1,
+      "message": "Don\u0027t use wildcards in genfs_contexts, just label what you need",
+      "revId": "ded86669f613e7c08012519443e65c696d5b970d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
