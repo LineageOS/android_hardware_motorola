@@ -33,6 +33,23 @@
       "message": "good on rtwo sm8550",
       "revId": "73c64cfb5765593d5ec8af69b5edb3e17e51f5da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcbd6470_e6e9e77d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-11-14T18:49:46Z",
+      "side": 1,
+      "message": "Good on parrot devices",
+      "revId": "73c64cfb5765593d5ec8af69b5edb3e17e51f5da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
