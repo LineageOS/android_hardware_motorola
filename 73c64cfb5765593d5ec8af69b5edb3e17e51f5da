@@ -16,6 +16,23 @@
       "message": "Verified it as working on latest PS on my parrot (sm7435) device, almost same as sm8475 on sepolicy side.",
       "revId": "73c64cfb5765593d5ec8af69b5edb3e17e51f5da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b97c2d8_0dc17cec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-14T18:42:39Z",
+      "side": 1,
+      "message": "good on rtwo sm8550",
+      "revId": "73c64cfb5765593d5ec8af69b5edb3e17e51f5da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
