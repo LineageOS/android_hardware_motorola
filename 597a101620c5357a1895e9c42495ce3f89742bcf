@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "234f4cf1_9518d59f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-11-20T02:39:32Z",
+      "side": 1,
+      "message": "Must merge this commit at the same time https://review.lineageos.org/c/LineageOS/android_device_motorola_sm7325-common/+/458213",
+      "revId": "597a101620c5357a1895e9c42495ce3f89742bcf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
