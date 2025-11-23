@@ -10,9 +10,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragmentCompat;
 
-public class ActionsPreferenceFragment extends PreferenceFragmentCompat {
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
+
+public class ActionsPreferenceFragment extends SettingsBasePreferenceFragment {
 
     private static final String KEY_ACTIONS_CATEGORY = "actions_key";
 
