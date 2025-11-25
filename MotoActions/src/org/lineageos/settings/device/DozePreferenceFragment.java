@@ -11,8 +11,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -22,9 +20,7 @@ import androidx.preference.SwitchPreferenceCompat;
 import com.android.settingslib.widget.MainSwitchPreference;
 
 public class DozePreferenceFragment extends PreferenceFragmentCompat
-        implements Preference.OnPreferenceChangeListener, OnCheckedChangeListener {
-
-    private MainSwitchPreference mSwitchBar;
+        implements Preference.OnPreferenceChangeListener {
 
     private SwitchPreferenceCompat mAlwaysOnDisplayPreference;
 
@@ -44,9 +40,9 @@ public class DozePreferenceFragment extends PreferenceFragmentCompat
 
         boolean dozeEnabled = MotoActionsSettings.isDozeEnabled(getActivity());
 
-        mSwitchBar = (MainSwitchPreference) findPreference(MotoActionsSettings.DOZE_ENABLE);
-        mSwitchBar.addOnSwitchChangeListener(this);
-        mSwitchBar.setChecked(dozeEnabled);
+        MainSwitchPreference switchBar = findPreference(MotoActionsSettings.DOZE_ENABLE);
+        switchBar.setOnPreferenceChangeListener(this);
+        switchBar.setChecked(dozeEnabled);
 
         mAlwaysOnDisplayPreference = findPreference(MotoActionsSettings.ALWAYS_ON_DISPLAY);
         mAlwaysOnDisplayPreference.setEnabled(dozeEnabled);
@@ -76,28 +72,24 @@ public class DozePreferenceFragment extends PreferenceFragmentCompat
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        boolean isChecked = (Boolean) newValue;
         if (MotoActionsSettings.ALWAYS_ON_DISPLAY.equals(preference.getKey())) {
             MotoActionsSettings.enableAlwaysOn(getActivity(), (Boolean) newValue);
+        } else if (MotoActionsSettings.DOZE_ENABLE.equals(preference.getKey())) {
+            MotoActionsSettings.enableDoze(getActivity(), isChecked);
+
+            if (!isChecked) {
+                MotoActionsSettings.enableAlwaysOn(getActivity(), false);
+                mAlwaysOnDisplayPreference.setChecked(false);
+            }
+            mAlwaysOnDisplayPreference.setEnabled(isChecked);
+
+            mHandwavePreference.setEnabled(isChecked);
+            mPickUpPreference.setEnabled(isChecked);
+            mPocketPreference.setEnabled(isChecked);
         }
 
         return true;
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        MotoActionsSettings.enableDoze(getActivity(), isChecked);
-
-        mSwitchBar.setChecked(isChecked);
-
-        if (!isChecked) {
-            MotoActionsSettings.enableAlwaysOn(getActivity(), false);
-            mAlwaysOnDisplayPreference.setChecked(false);
-        }
-        mAlwaysOnDisplayPreference.setEnabled(isChecked);
-
-        mHandwavePreference.setEnabled(isChecked);
-        mPickUpPreference.setEnabled(isChecked);
-        mPocketPreference.setEnabled(isChecked);
     }
 
     private void showHelp() {
