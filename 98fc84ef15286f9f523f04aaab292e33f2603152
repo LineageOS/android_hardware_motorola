@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20cc9f84_9307f462",
+        "filename": "MotoActions/src/org/lineageos/settings/device/DozePreferenceFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-11-29T09:26:44Z",
+      "side": 1,
+      "message": "Replace with isChecked",
+      "revId": "98fc84ef15286f9f523f04aaab292e33f2603152",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
