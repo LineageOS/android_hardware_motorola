@@ -6,9 +6,10 @@
 package org.lineageos.settings.stylus
 
 import android.os.Bundle
-import androidx.preference.*
+import androidx.preference.Preference
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
-class StylusSettingsFragment : PreferenceFragmentCompat(),
+class StylusSettingsFragment : SettingsBasePreferenceFragment(),
         Preference.OnPreferenceChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
