@@ -21,7 +21,8 @@
     <application
         android:allowBackup="true"
         android:label="@string/device_settings_app_name"
-        android:persistent="true">
+        android:persistent="true"
+        android:theme="@style/Theme.SubSettingsBase.Expressive">
 
         <receiver
             android:name="org.lineageos.settings.device.BootCompletedReceiver"
@@ -40,8 +41,7 @@
         <activity
             android:name=".DozePreferenceActivity"
             android:exported="false"
-            android:label="@string/ambient_display_gestures_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:label="@string/ambient_display_gestures_title">
             <intent-filter>
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -51,8 +51,7 @@
         <activity
             android:name=".ActionsPreferenceActivity"
             android:exported="false"
-            android:label="@string/moto_gestures_panel_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:label="@string/moto_gestures_panel_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
