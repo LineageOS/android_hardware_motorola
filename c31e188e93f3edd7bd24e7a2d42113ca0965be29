@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1d409af_c395c955",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-06T15:49:12Z",
+      "side": 1,
+      "message": "Bump, this is working on avatrn (sm7435). Unless sm8475 gets updated to 23, this should be good to ship.",
+      "revId": "c31e188e93f3edd7bd24e7a2d42113ca0965be29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
