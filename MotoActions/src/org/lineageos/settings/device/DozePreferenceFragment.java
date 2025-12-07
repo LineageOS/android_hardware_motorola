@@ -7,7 +7,6 @@
 package org.lineageos.settings.device;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
