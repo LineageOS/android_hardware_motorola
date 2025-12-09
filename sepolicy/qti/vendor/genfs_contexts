@@ -177,7 +177,6 @@ genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/wakeup                                                                                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a84000.i2c/i2c-1/1-0008/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a94000.i2c/i2c-2/2-0049/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/soc/ae90000.qcom,dp_display/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/wakeup                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery/wakeup                          u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/mmi_battery/wakeup                      u:object_r:sysfs_wakeup:s0
