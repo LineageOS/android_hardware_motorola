@@ -34,6 +34,24 @@
       "parentUuid": "c7865c0a_175ef487",
       "revId": "5fcb8e02a67d6f67542d80e6a38abc3c1a45aa92",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b6323e0_38a9682d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-12-11T22:29:50Z",
+      "side": 1,
+      "message": "bruno, by what thing luk formatted JSON mappings?",
+      "parentUuid": "cb221de7_64cce56c",
+      "revId": "5fcb8e02a67d6f67542d80e6a38abc3c1a45aa92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
