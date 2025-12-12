@@ -30,61 +30,81 @@
             ]
         }
     </string>
-
     <string name="sim_slot_mappings_json" translatable="false">
         {
-            \"sim-slot-mappings\": [
+            "sim-slot-mappings": [
                 {
-                    \"devices\": [
-                        \"felix\",
-                        \"oberon\",
-                        \"olson\",
-                        \"smith\"
+                    "devices": [
+                        "olson",
+                        "smith",
+                        "felix",
+                        "oberon"
                     ],
-                    \"esim-slot-ids\": [
+                    "esim-slot-ids": [
                         0
                     ],
-                    \"psim-slot-ids\": []
+                    "psim-slot-ids": []
                 },
                 {
-                    \"devices\": [
-                        \"aion\",
-                        \"aito\",
-                        \"arc\",
-                        \"arcf\",
-                        \"arcfox\",
-                        \"austin\",
-                        \"avatrn\",
-                        \"bangkk\",
-                        \"boston\",
-                        \"bronco\",
-                        \"cancunf\",
-                        \"cancunn\",
-                        \"ctwo\",
-                        \"ctwov\",
-                        \"cypfr\",
-                        \"cusco\",
-                        \"devonn\",
-                        \"eqe\",
-                        \"fogo\",
-                        \"fogor\",
-                        \"fogos\",
-                        \"fogona\",
-                        \"genevn\",
-                        \"gnevan\",
-                        \"lyriq\",
-                        \"lynkco\",
-                        \"manaus\",
-                        \"oneli\",
-                        \"penang\",
-                        \"pnangn\",
-                        \"rtwo\",
-                        \"zeekr\"
+                    "devices": [
+                        "aion",
+                        "aito",
+                        "arc",
+                        "arcf",
+                        "arcfox",
+                        "austin",
+                        "avatrn",
+                        "bangkk",
+                        "bogota",
+                        "boston",
+                        "bronco",
+                        "cancunf",
+                        "cancunn",
+                        "ctwo",
+                        "ctwov",
+                        "cusco",
+                        "cuscoi",
+                        "cybert",
+                        "cypfr",
+                        "devonn",
+                        "eqe",
+                        "F51F",
+                        "fogo",
+                        "fogona",
+                        "fogor",
+                        "fogos",
+                        "fuji",
+                        "genevn",
+                        "gnevan",
+                        "kansas",
+                        "leap",
+                        "lyriq",
+                        "lynkco",
+                        "M-51E",
+                        "malmo",
+                        "manaus",
+                        "mona",
+                        "monai",
+                        "nice",
+                        "oneli",
+                        "oulu",
+                        "paro",
+                        "paros",
+                        "penang",
+                        "pnangn",
+                        "rtwo",
+                        "scout",
+                        "sorap",
+                        "taipei",
+                        "tank",
+                        "vegas",
+                        "vienna",
+                        "zeekr"
                     ],
-                    \"esim-slot-ids\": [
+                    "esim-slot-ids": [
                         1
                     ],
-                    \"psim-slot-ids\": [
+                    "psim-slot-ids": [
                         0
                     ]
                 }
