@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="sim_slot_mappings_json" translatable="false">
+{
+    \"sim-slot-mappings\": [
+        {
+            \"devices\": [
+                \"felix\",
+                \"oberon\",
+                \"olson\",
+                \"smith\"
+            ],
+            \"esim-slot-ids\": [
+                0
+            ],
+            \"psim-slot-ids\": []
+        },
+        {
+            \"devices\": [
+                \"M-51E\",
+                \"aion\",
+                \"aito\",
+                \"arc\",
+                \"arcf\",
+                \"arcfox\",
+                \"austin\",
+                \"avatrn\",
+                \"bangkk\",
+                \"bogota\",
+                \"boston\",
+                \"bronco\",
+                \"cancunf\",
+                \"cancunn\",
+                \"ctwo\",
+                \"ctwov\",
+                \"cusco\",
+                \"cuscoi\",
+                \"cybert\",
+                \"cypfr\",
+                \"devonn\",
+                \"eqe\",
+                \"fogo\",
+                \"fogona\",
+                \"fogor\",
+                \"fogos\",
+                \"fuji\",
+                \"genevn\",
+                \"gnevan\",
+                \"kansas\",
+                \"leap\",
+                \"lynkco\",
+                \"lyriq\",
+                \"malmo\",
+                \"manaus\",
+                \"mona\",
+                \"monai\",
+                \"nice\",
+                \"oneli\",
+                \"oulu\",
+                \"paro\",
+                \"paros\",
+                \"penang\",
+                \"pnangn\",
+                \"rtwo\",
+                \"scout\",
+                \"sorap\",
+                \"taipei\",
+                \"tank\",
+                \"vegas\",
+                \"vienna\",
+                \"zeekr\"
+            ],
+            \"esim-slot-ids\": [
+                1
+            ],
+            \"psim-slot-ids\": [
+                0
+            ]
+        }
+    ]
+}
+    </string>
+
+</resources>
