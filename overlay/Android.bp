@@ -6,6 +6,7 @@
 phony {
     name: "MotoCommonOverlay",
     required: [
+        "EuiccPolicyMoto",
         "FrameworksResMotoCommon",
     ]
 }
