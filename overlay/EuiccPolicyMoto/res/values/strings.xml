@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="sim_slot_mappings_json" translatable="false">
+        {
+            \"sim-slot-mappings\": [
+                {
+                    \"devices\": [
+                        \"felix\",
+                        \"oberon\",
+                        \"olson\",
+                        \"smith\"
+                    ],
+                    \"esim-slot-ids\": [
+                        0
+                    ],
+                    \"psim-slot-ids\": []
+                },
+                {
+                    \"devices\": [
+                        \"M-51E\",
+                        \"aion\",
+                        \"aito\",
+                        \"arc\",
+                        \"arcf\",
+                        \"arcfox\",
+                        \"austin\",
+                        \"avatrn\",
+                        \"bangkk\",
+                        \"bogota\",
+                        \"boston\",
+                        \"bronco\",
+                        \"cancunf\",
+                        \"cancunn\",
+                        \"ctwo\",
+                        \"ctwov\",
+                        \"cusco\",
+                        \"cuscoi\",
+                        \"cybert\",
+                        \"cypfr\",
+                        \"devonn\",
+                        \"eqe\",
+                        \"fogo\",
+                        \"fogona\",
+                        \"fogor\",
+                        \"fogos\",
+                        \"fuji\",
+                        \"genevn\",
+                        \"gnevan\",
+                        \"kansas\",
+                        \"leap\",
+                        \"lynkco\",
+                        \"lyriq\",
+                        \"malmo\",
+                        \"manaus\",
+                        \"mona\",
+                        \"monai\",
+                        \"nice\",
+                        \"oneli\",
+                        \"oulu\",
+                        \"paro\",
+                        \"paros\",
+                        \"penang\",
+                        \"pnangn\",
+                        \"rtwo\",
+                        \"scout\",
+                        \"sorap\",
+                        \"taipei\",
+                        \"tank\",
+                        \"vegas\",
+                        \"vienna\",
+                        \"zeekr\"
+                    ],
+                    \"esim-slot-ids\": [
+                        1
+                    ],
+                    \"psim-slot-ids\": [
+                        0
+                    ]
+                }
+            ]
+        }
+    </string>
+    <string name="carrier_list_json" translatable="false">
+        {
+            \"carriers\": [
+                {
+                    \"carrierConfigName\": \"carrier_visible\",
+                    \"hideFromCarrierList\": true,
+                    \"app\": \"com.visiblemobile.flagship\",
+                    \"appCerts\": [
+                        \"D8EFE020E48AEC0A21E67EFC8FAFC2E674A05C74970381D99175E23C084B7BF0\"
+                    ],
+                    \"appHasOwnUi\": true,
+                    \"appNeedsEid\": false,
+                    \"id\": \"\",
+                    \"name\": \"Visible\",
+                    \"mCarrierPkgLoaded\": false,
+                    \"csTel\": \"\",
+                    \"type\": 3,
+                    \"urls\": {},
+                    \"types\": [
+                        3
+                    ],
+                    \"gaia\": false,
+                    \"icon\": \"\",
+                    \"spn\": \"Visible\",
+                    \"dataPlan\": false,
+                    \"multi\": true,
+                    \"transfer\": false,
+                    \"domains\": []
+                },
+                {
+                    \"carrierConfigName\": \"carrier_verizon\",
+                    \"hideFromCarrierList\": true,
+                    \"app\": \"com.vzw.hss.myverizon\",
+                    \"appCerts\": [
+                        \"AE23A03436DF07B0CD70FE881CDA2EC1D21215D7B7B0CC68E67B67F5DF89526A\"
+                    ],
+                    \"appHasOwnUi\": true,
+                    \"appNeedsEid\": false,
+                    \"id\": \"\",
+                    \"name\": \"Verizon\",
+                    \"mCarrierPkgLoaded\": false,
+                    \"csTel\": \"(800) 922-0204\",
+                    \"type\": 3,
+                    \"urls\": {},
+                    \"types\": [
+                        3
+                    ],
+                    \"gaia\": false,
+                    \"icon\": \"https://www.gstatic.com/esim/icons/verizon-logo.png\",
+                    \"spn\": \"Verizon\",
+                    \"dataPlan\": false,
+                    \"multi\": true,
+                    \"transfer\": false,
+                    \"domains\": []
+                }
+            ],
+            \"isDirect\": false,
+            \"isExclusive\": false
+        }
+    </string>
+    <string name="sim_illustration_lottie_mappings_json" translatable="false">
+        {
+            \"sim_illustration_lottie_mappings\": [
+                {
+                    \"devices\": [
+                        \"paros\",
+                        \"sorap\"
+                    ],
+                    \"illustration_lottie\": \"sim_illustration_lottie_bottom_left\"
+                }
+            ]
+        }
+    </string>
+</resources>
