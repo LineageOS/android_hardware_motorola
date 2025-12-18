@@ -34,3 +34,6 @@ hal_client_domain(hal_fingerprint_default, hal_health)
 
 get_prop(hal_fingerprint_default, build_bootimage_prop)
 set_prop(hal_fingerprint_default, vendor_mot_fingerprint_prop)
+
+allow hal_fingerprint_default sysfs_dt_chosen:dir r_dir_perms;
+allow hal_fingerprint_default sysfs_dt_chosen:file r_file_perms;
