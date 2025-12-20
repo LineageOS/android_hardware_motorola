@@ -13,7 +13,6 @@ import android.hardware.display.AmbientDisplayConfiguration
 import android.os.UserHandle
 import android.provider.Settings
 import androidx.preference.PreferenceManager
-import org.lineageos.settings.device.actions.TorchAction
 import org.lineageos.settings.device.actions.UpdatedStateNotifier
 
 class MotoActionsSettings(
@@ -79,10 +78,6 @@ class MotoActionsSettings(
     fun isFlipToMuteEnabled() = flipToMuteEnabled
 
     fun isLiftToSilenceEnabled() = liftToSilenceEnabled
-
-    fun chopChopAction() {
-        TorchAction(context).action()
-    }
 
     private fun loadPreferences(sharedPreferences: SharedPreferences) {
         chopChopEnabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true)

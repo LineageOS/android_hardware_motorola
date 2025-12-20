@@ -6,20 +6,21 @@
 
 package org.lineageos.settings.device.doze
 
+import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
-import org.lineageos.settings.device.SensorAction
 import org.lineageos.settings.device.SensorHelper
 
 class StowSensor(
     private val motoActionsSettings: MotoActionsSettings,
+    context: Context,
     private val sensorHelper: SensorHelper,
-    private val sensorAction: SensorAction,
 ) : ScreenStateNotifier {
 
+    private val dozePulseAction: DozePulseAction = DozePulseAction(context)
     private val stowSensor: Sensor = sensorHelper.getStowSensor()
 
     private var enabled = false
@@ -32,6 +33,7 @@ class StowSensor(
             sensorHelper.unregisterListener(stowListener)
             enabled = false
         }
+        dozePulseAction.onStateChanged(true)
     }
 
     override fun screenTurnedOff() {
@@ -43,6 +45,7 @@ class StowSensor(
             sensorHelper.registerListener(stowSensor, stowListener)
             enabled = true
         }
+        dozePulseAction.onStateChanged(false)
     }
 
     private val stowListener =
@@ -53,7 +56,7 @@ class StowSensor(
                 if (thisStowed) {
                     lastStowedTime = event.timestamp
                 } else if (lastStowed && shouldPulse(event.timestamp)) {
-                    sensorAction.action()
+                    dozePulseAction.onStartPulse()
                 }
                 lastStowed = thisStowed
                 Log.d(TAG, "event: $thisStowed")
