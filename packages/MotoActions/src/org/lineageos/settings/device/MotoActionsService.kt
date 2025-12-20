@@ -20,7 +20,6 @@ import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
 import org.lineageos.settings.device.actions.ProximitySilencer
 import org.lineageos.settings.device.actions.UpdatedStateNotifier
-import org.lineageos.settings.device.doze.DozePulseAction
 import org.lineageos.settings.device.doze.FlatUpSensor
 import org.lineageos.settings.device.doze.ScreenStateNotifier
 import org.lineageos.settings.device.doze.StowSensor
@@ -38,14 +37,11 @@ class MotoActionsService : Service(), ScreenStateNotifier, UpdatedStateNotifier 
 
         val actionsSettings = MotoActionsSettings(this, this)
         val sensorHelper = SensorHelper(this)
-        val dozePulseAction = DozePulseAction(this)
 
-        screenStateNotifiers.add(dozePulseAction)
+        screenStateNotifiers.add(StowSensor(actionsSettings, this, sensorHelper))
+        screenStateNotifiers.add(FlatUpSensor(actionsSettings, this, sensorHelper))
 
-        screenStateNotifiers.add(StowSensor(actionsSettings, sensorHelper, dozePulseAction))
-        screenStateNotifiers.add(FlatUpSensor(actionsSettings, sensorHelper, dozePulseAction))
-
-        updatedStateNotifiers.add(ChopChopSensor(actionsSettings, sensorHelper))
+        updatedStateNotifiers.add(ChopChopSensor(actionsSettings, this, sensorHelper))
         updatedStateNotifiers.add(ProximitySilencer(actionsSettings, this, sensorHelper))
         updatedStateNotifiers.add(FlipToMute(actionsSettings, this, sensorHelper))
         updatedStateNotifiers.add(LiftToSilence(actionsSettings, this, sensorHelper))

@@ -9,41 +9,30 @@ package org.lineageos.settings.device.doze
 import android.content.Context
 import android.content.Intent
 import android.os.UserHandle
-import android.util.Log
-import org.lineageos.settings.device.SensorAction
 
-class DozePulseAction(private val context: Context) : SensorAction, ScreenStateNotifier {
+class DozePulseAction(private val context: Context) {
 
-    override fun screenTurnedOn() {}
+    private var lastDoze: Long = 0
 
-    override fun screenTurnedOff() {
-        lastDoze = System.currentTimeMillis()
-    }
-
-    override fun action() {
-        if (mayDoze()) {
-            Log.d(TAG, "Sending doze.pulse intent")
-            val pulseIntent = Intent("com.android.systemui.doze.pulse")
-            context.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT)
+    fun onStateChanged(enabled: Boolean) {
+        if (!enabled) {
+            lastDoze = System.currentTimeMillis()
         }
     }
 
-    @Synchronized
-    fun mayDoze(): Boolean {
+    fun onStartPulse() {
         val now = System.currentTimeMillis()
-        return if (now - lastDoze > DELAY_BETWEEN_DOZES_IN_MS) {
-            Log.d(TAG, "Allowing doze")
+        if (now - lastDoze > DELAY_BETWEEN_DOZES_IN_MS) {
             lastDoze = now
-            true
-        } else {
-            Log.d(TAG, "Denying doze")
-            false
+            context.sendBroadcastAsUser(
+                Intent("com.android.systemui.doze.pulse"),
+                UserHandle.CURRENT,
+            )
         }
     }
 
     companion object {
         private const val TAG = "MotoActions"
         private const val DELAY_BETWEEN_DOZES_IN_MS = 1500
-        private var lastDoze: Long = 0
     }
 }
