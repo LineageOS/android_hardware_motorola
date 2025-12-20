@@ -43,16 +43,13 @@ public class MotoActionsService extends Service implements ScreenStateNotifier,
 
         MotoActionsSettings actionsSettings = new MotoActionsSettings(this, this);
         SensorHelper sensorHelper = new SensorHelper(this);
-        DozePulseAction dozePulseAction = new DozePulseAction(this);
-
-        mScreenStateNotifiers.add(dozePulseAction);
 
         // Actionable sensors get screen on/off notifications
-        mScreenStateNotifiers.add(new StowSensor(actionsSettings, sensorHelper, dozePulseAction));
-        mScreenStateNotifiers.add(new FlatUpSensor(actionsSettings, sensorHelper, dozePulseAction));
+        mScreenStateNotifiers.add(new StowSensor(actionsSettings, this, sensorHelper));
+        mScreenStateNotifiers.add(new FlatUpSensor(actionsSettings, this, sensorHelper));
 
         // Other actions that are always enabled
-        mUpdatedStateNotifiers.add(new ChopChopSensor(actionsSettings, sensorHelper));
+        mUpdatedStateNotifiers.add(new ChopChopSensor(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new LiftToSilence(actionsSettings, this, sensorHelper));

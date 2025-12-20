@@ -11,10 +11,8 @@ import android.content.Intent;
 import android.os.UserHandle;
 import android.util.Log;
 
-import org.lineageos.settings.device.SensorAction;
-
-public class DozePulseAction implements SensorAction, ScreenStateNotifier {
-    private static final String TAG = "MotoActions";
+public class DozePulseAction {
+    private static final String TAG = "DozePulseAction";
 
     private static final int DELAY_BETWEEN_DOZES_IN_MS = 1500;
 
@@ -26,32 +24,23 @@ public class DozePulseAction implements SensorAction, ScreenStateNotifier {
         mContext = context;
     }
 
-    @Override
-    public void screenTurnedOn() {
-    }
-
-    @Override
-    public void screenTurnedOff() {
-        mLastDoze = System.currentTimeMillis();
-    }
-
-    public void action() {
-        if (mayDoze()) {
-            Log.d(TAG, "Sending doze.pulse intent");
-            Intent pulseIntent = new Intent("com.android.systemui.doze.pulse");
-            mContext.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT);
+    public void onStateChanged(boolean enabled) {
+        if (!enabled) {
+            mLastDoze = System.currentTimeMillis();
         }
     }
 
-    public synchronized boolean mayDoze() {
+    public void onStartPulse(boolean canPulse) {
+        if (!canPulse) {
+            return;
+        }
+
         long now = System.currentTimeMillis();
         if (now - mLastDoze > DELAY_BETWEEN_DOZES_IN_MS) {
-            Log.d(TAG, "Allowing doze");
             mLastDoze = now;
-            return true;
-        } else {
-            Log.d(TAG, "Denying doze");
-            return false;
+            Log.d(TAG, "Launching doze pulse");
+            Intent pulseIntent = new Intent("com.android.systemui.doze.pulse");
+            mContext.sendBroadcastAsUser(pulseIntent, UserHandle.CURRENT);
         }
     }
 }

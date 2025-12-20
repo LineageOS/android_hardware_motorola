@@ -6,9 +6,15 @@
 
 package org.lineageos.settings.device.actions;
 
+import android.content.Context;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 
 import org.lineageos.settings.device.MotoActionsSettings;
@@ -17,19 +23,46 @@ import org.lineageos.settings.device.SensorHelper;
 public class ChopChopSensor implements UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ChopChopSensor";
 
+    private final CameraManager mCameraManager;
+    private final Vibrator mVibrator;
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
     private final Sensor mChopChopSensor;
     private final Sensor mProximitySensor;
 
+    private String mRearCameraId;
     private boolean mIsEnabled;
     private boolean mProxIsCovered;
+    private boolean mTorchEnabled;
 
-    public ChopChopSensor(MotoActionsSettings motoActionsSettings, SensorHelper sensorHelper) {
+    private CameraManager.TorchCallback mTorchCallback =
+            new CameraManager.TorchCallback() {
+        @Override
+        public void onTorchModeChanged(String cameraId, boolean enabled) {
+            if (!cameraId.equals(mRearCameraId)) {
+                return;
+            }
+            mTorchEnabled = enabled;
+        }
+
+        @Override
+        public void onTorchModeUnavailable(String cameraId) {
+            if (!cameraId.equals(mRearCameraId)) {
+                return;
+            }
+            mTorchEnabled = false;
+        }
+    };
+
+    public ChopChopSensor(MotoActionsSettings motoActionsSettings, Context context,
+                             SensorHelper sensorHelper) {
         mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
         mChopChopSensor = sensorHelper.getChopChopSensor();
         mProximitySensor = sensorHelper.getProximitySensor();
+        mCameraManager = context.getSystemService(CameraManager.class);
+        mCameraManager.registerTorchCallback(mTorchCallback, null);
+        mVibrator = context.getSystemService(Vibrator.class);
     }
 
     @Override
@@ -55,7 +88,17 @@ public class ChopChopSensor implements UpdatedStateNotifier {
                 Log.d(TAG, "proximity sensor covered, ignoring chop-chop");
                 return;
             }
-            mMotoActionsSettings.chopChopAction();
+
+            if (mRearCameraId != null) {
+                return;
+            }
+
+            try {
+                mCameraManager.setTorchMode(mRearCameraId, !mTorchEnabled);
+                mTorchEnabled = !mTorchEnabled;
+            } catch (CameraAccessException ignored) {
+            }
+            mVibrator.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE));
         }
 
         @Override

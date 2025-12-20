@@ -6,13 +6,13 @@
 
 package org.lineageos.settings.device.doze;
 
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.util.Log;
 
 import org.lineageos.settings.device.MotoActionsSettings;
-import org.lineageos.settings.device.SensorAction;
 import org.lineageos.settings.device.SensorHelper;
 
 public class StowSensor implements ScreenStateNotifier {
@@ -26,18 +26,18 @@ public class StowSensor implements ScreenStateNotifier {
 
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
-    private final SensorAction mSensorAction;
+    private final DozePulseAction mDozePulseAction;
     private final Sensor mStowSensor;
 
     private boolean mEnabled;
     private boolean mLastStowed;
     private long mLastStowedTime;
 
-    public StowSensor(MotoActionsSettings MotoActionsSettings, SensorHelper sensorHelper,
-                      SensorAction action) {
+    public StowSensor(MotoActionsSettings MotoActionsSettings, Context context,
+                        SensorHelper sensorHelper) {
         mMotoActionsSettings = MotoActionsSettings;
         mSensorHelper = sensorHelper;
-        mSensorAction = action;
+        mDozePulseAction = new DozePulseAction(context);
 
         mStowSensor = sensorHelper.getStowSensor();
     }
@@ -49,6 +49,7 @@ public class StowSensor implements ScreenStateNotifier {
             mSensorHelper.unregisterListener(mStowListener);
             mEnabled = false;
         }
+        mDozePulseAction.onStateChanged(false);
     }
 
     @Override
@@ -60,6 +61,7 @@ public class StowSensor implements ScreenStateNotifier {
             mSensorHelper.registerListener(mStowSensor, mStowListener);
             mEnabled = true;
         }
+        mDozePulseAction.onStateChanged(true);
     }
 
     private final SensorEventListener mStowListener = new SensorEventListener() {
@@ -69,9 +71,7 @@ public class StowSensor implements ScreenStateNotifier {
             if (thisStowed) {
                 mLastStowedTime = event.timestamp;
             } else if (mLastStowed) {
-                if (shouldPulse(event.timestamp)) {
-                    mSensorAction.action();
-                }
+                mDozePulseAction.onStartPulse(shouldPulse(event.timestamp));
             }
             mLastStowed = thisStowed;
             Log.d(TAG, "event: " + thisStowed);

@@ -17,7 +17,6 @@ import android.provider.Settings;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.settings.device.actions.TorchAction;
 import org.lineageos.settings.device.actions.UpdatedStateNotifier;
 
 public class MotoActionsSettings {
@@ -110,10 +109,6 @@ public class MotoActionsSettings {
 
     public boolean isLiftToSilenceEnabled() {
         return mLiftToSilenceEnabled;
-    }
-
-    public void chopChopAction() {
-        new TorchAction(mContext).action();
     }
 
     private void loadPreferences(SharedPreferences sharedPreferences) {
