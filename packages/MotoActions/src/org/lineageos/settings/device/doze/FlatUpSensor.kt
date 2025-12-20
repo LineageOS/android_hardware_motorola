@@ -6,20 +6,21 @@
 
 package org.lineageos.settings.device.doze
 
+import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
-import org.lineageos.settings.device.SensorAction
 import org.lineageos.settings.device.SensorHelper
 
 class FlatUpSensor(
     private val motoActionsSettings: MotoActionsSettings,
+    context: Context,
     private val sensorHelper: SensorHelper,
-    private val sensorAction: SensorAction,
 ) : ScreenStateNotifier {
 
+    private val dozePulseAction: DozePulseAction = DozePulseAction(context)
     private val flatUpSensor: Sensor = sensorHelper.getFlatUpSensor()
     private val stowSensor: Sensor = sensorHelper.getStowSensor()
 
@@ -34,6 +35,7 @@ class FlatUpSensor(
             sensorHelper.unregisterListener(stowListener)
             enabled = false
         }
+        dozePulseAction.onStateChanged(true)
     }
 
     override fun screenTurnedOff() {
@@ -43,6 +45,7 @@ class FlatUpSensor(
             sensorHelper.registerListener(stowSensor, stowListener)
             enabled = true
         }
+        dozePulseAction.onStateChanged(false)
     }
 
     private val flatUpListener =
@@ -54,7 +57,7 @@ class FlatUpSensor(
                 Log.d(TAG, "event: $thisFlatUp mLastFlatUp=$lastFlatUp mIsStowed=$isStowed")
 
                 if (lastFlatUp && !thisFlatUp && !isStowed) {
-                    sensorAction.action()
+                    dozePulseAction.onStartPulse()
                 }
                 lastFlatUp = thisFlatUp
             }
