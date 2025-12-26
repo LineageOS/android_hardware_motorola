@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecb9541b_90ac368e",
+        "filename": "sensors/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-26T22:20:32Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be referencing wrapper since its not really a wrapper. Maybe sensors.moto_ext, since sensors.moto is already used",
+      "revId": "c60268a42fa8482e5a8c65b568fc36fde949fe09",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
