@@ -52,6 +52,24 @@
       "parentUuid": "2520de4c_fb9383d5",
       "revId": "c37b0a4f66d11b1cf5edda373b0d9ec0b28599eb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82604310_52d06f7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2025-12-26T17:12:46Z",
+      "side": 1,
+      "message": "Fwiw I think Nikita is thinking the AOSP history as well - we just need OUR changes in history afaik.",
+      "parentUuid": "e267529a_40a90cbe",
+      "revId": "c37b0a4f66d11b1cf5edda373b0d9ec0b28599eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
