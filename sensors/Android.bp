@@ -29,6 +29,12 @@ cc_library_shared {
     ],
     cflags: [
         "-DLOG_TAG=\"sensors.moto_ext\"",
-    ],
+    ] + select(soong_config_variable("moto_sensors", "udfps"), {
+        false: [],
+        default: ["-DENABLE_UDFPS"],
+    }) + select(soong_config_variable("moto_sensors", "double_tap"), {
+        false: [],
+        default: ["-DENABLE_DOUBLE_TAP"],
+    }),
     vendor: true,
 }
