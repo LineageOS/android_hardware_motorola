@@ -117,6 +117,7 @@ const std::string kTsPath = "/sys/class/touchscreen/primary/";
 
 constexpr int32_t SENSOR_TYPE_BASE = static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 100;
 
+#ifdef ENABLE_DOUBLE_TAP
 const std::string kTsDoubleTapPressedPath = kTsPath + "double_tap_pressed";
 const std::string kTsDoubleTapEnabledPath = kTsPath + "double_tap_enabled";
 
@@ -128,7 +129,9 @@ class DoubleTapSensor : public SysfsPollingOneShotSensor {
               "Double Tap Sensor", "org.lineageos.sensor.double_tap",
               static_cast<SensorType>(SENSOR_TYPE_BASE + 1)) {}
 };
+#endif
 
+#ifdef ENABLE_UDFPS
 const std::string kTsUdfpsPressedPath = kTsPath + "udfps_pressed";
 const std::string kTsUdfpsEnabledPath = kTsPath + "udfps_enabled";
 
@@ -140,6 +143,7 @@ class UdfpsSensor : public SysfsPollingOneShotSensor {
               "UDFPS Sensor", "org.lineageos.sensor.udfps",
               static_cast<SensorType>(SENSOR_TYPE_BASE + 2)) {}
 };
+#endif
 
 }  // namespace implementation
 }  // namespace subhal
