@@ -16,6 +16,24 @@
       "message": "Should ifdef the sensors using soong select, so devices using power hal dt2w can still use the udfps sensor",
       "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5a798b1_cbebb996",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2025-12-26T23:52:53Z",
+      "side": 1,
+      "message": "Maybe a system property? https://github.com/LineageOS/android_hardware_xiaomi/blob/04c945f5b33f92af3ba541ccff28a58113a66e8d/sensors/v2/SensorsSubHal.cpp#L37",
+      "parentUuid": "937fea91_9b849f13",
+      "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
