@@ -34,6 +34,24 @@
       "parentUuid": "e028c8cc_f199e847",
       "revId": "c37b0a4f66d11b1cf5edda373b0d9ec0b28599eb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e267529a_40a90cbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-12-26T16:18:04Z",
+      "side": 1,
+      "message": "No, keep history. Just like other repositories did (example: hw/xiaomi and hw/oplus).",
+      "parentUuid": "2520de4c_fb9383d5",
+      "revId": "c37b0a4f66d11b1cf5edda373b0d9ec0b28599eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
