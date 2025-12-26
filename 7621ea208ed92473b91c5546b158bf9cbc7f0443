@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c50f2406_88321b33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-26T22:31:43Z",
+      "side": 1,
+      "message": "I\u0027m even open to having this be a udfps sensor only and migrate devices to the power hal for double tap support. @mkbestas@lineageos.org what do you think since I see a few of your devices use power hal",
+      "revId": "7621ea208ed92473b91c5546b158bf9cbc7f0443",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "277f1f9a_a5fc1133",
