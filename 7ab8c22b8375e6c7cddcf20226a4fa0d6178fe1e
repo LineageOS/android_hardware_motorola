@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "937fea91_9b849f13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-26T22:03:14Z",
+      "side": 1,
+      "message": "Should ifdef the sensors using soong select, so devices using power hal dt2w can still use the udfps sensor",
+      "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
