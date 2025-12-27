@@ -16,6 +16,24 @@
       "message": "This shouldn\u0027t be referencing wrapper since its not really a wrapper. Maybe sensors.moto_ext, since sensors.moto is already used",
       "revId": "c60268a42fa8482e5a8c65b568fc36fde949fe09",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4619fb41_e83f8c07",
+        "filename": "sensors/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-12-27T13:03:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecb9541b_90ac368e",
+      "revId": "c60268a42fa8482e5a8c65b568fc36fde949fe09",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
