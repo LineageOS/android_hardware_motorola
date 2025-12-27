@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0f97a2d_6cbce9b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-27T13:28:46Z",
+      "side": 1,
+      "message": "Opt in via ro.vendor.sensors.motorola.udfps\u003dtrue",
+      "revId": "722246a0379b8094143791428624b99986e2fd04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
