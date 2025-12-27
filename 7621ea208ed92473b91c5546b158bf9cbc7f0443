@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db8179d8_47e7a209",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-12-27T14:18:53Z",
+      "side": 1,
+      "message": "Migrating double tap to power hal is inferior in some cases so I\u0027d just let both options coexist",
+      "parentUuid": "c50f2406_88321b33",
+      "revId": "7621ea208ed92473b91c5546b158bf9cbc7f0443",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "277f1f9a_a5fc1133",
