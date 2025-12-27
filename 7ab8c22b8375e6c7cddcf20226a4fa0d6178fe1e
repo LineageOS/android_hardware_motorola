@@ -34,6 +34,24 @@
       "parentUuid": "937fea91_9b849f13",
       "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9e317ab_29fde4e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-12-27T13:11:34Z",
+      "side": 1,
+      "message": "If we want this HAL to live in this repository, the available sensors should be selectable and the paths should also be customizable. There are also moto devices with 2 different panels which use different sysfs, so that should be able to be handled somehow as well.",
+      "parentUuid": "d5a798b1_cbebb996",
+      "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
