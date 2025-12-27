@@ -52,6 +52,24 @@
       "parentUuid": "d5a798b1_cbebb996",
       "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d9bd26a_3c423cb7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-27T13:27:14Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/466376 Still need to go through and add every configuration.",
+      "parentUuid": "b9e317ab_29fde4e4",
+      "revId": "7ab8c22b8375e6c7cddcf20226a4fa0d6178fe1e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
