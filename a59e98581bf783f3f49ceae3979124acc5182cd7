@@ -71,6 +71,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4f6356f_daba86a5",
+        "filename": "overlay/EuiccPolicyMoto/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-12-27T14:31:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c74416a0_2ccd2f16",
+      "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38751414_e4d90098",
@@ -84,6 +102,24 @@
       "writtenOn": "2025-12-27T14:28:31Z",
       "side": 1,
       "message": "Missing copyright",
+      "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d4c1631_14cd36c1",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-12-27T14:31:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38751414_e4d90098",
       "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
