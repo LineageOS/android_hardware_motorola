@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0551b65_0f23cabd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-27T13:28:37Z",
+      "side": 1,
+      "message": "Opt in via ro.vendor.sensors.motorola.double_tap\u003dtrue",
+      "revId": "e437e18f69aac71880da0087afec52e63beab424",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
