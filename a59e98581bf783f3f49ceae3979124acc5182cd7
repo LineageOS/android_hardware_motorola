@@ -16,6 +16,24 @@
       "message": "For https://github.com/elginsk8r/android_packages_apps_EuiccPolicy",
       "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d5a834b_656bb68d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2025-12-27T14:25:13Z",
+      "side": 1,
+      "message": "This is really a good idea to make common euiccpolicy app and make overlays for it. But, where do you use euicc-devices.txt? It looks like unused",
+      "parentUuid": "73cde292_9336eb62",
+      "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
