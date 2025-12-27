@@ -54,6 +54,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44214884_969188f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2025-12-27T15:09:19Z",
+      "side": 1,
+      "message": "So run the script and update the overlay. it will only add new devices, devices found in previous extractions will be kept",
+      "parentUuid": "896508a2_55a1ffc5",
+      "revId": "a59e98581bf783f3f49ceae3979124acc5182cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c74416a0_2ccd2f16",
