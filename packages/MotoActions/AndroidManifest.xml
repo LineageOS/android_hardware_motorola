@@ -25,7 +25,7 @@
         android:theme="@style/Theme.SubSettingsBase.Expressive">
 
         <receiver
-            android:name="org.lineageos.settings.device.BootCompletedReceiver"
+            android:name=".BootCompletedReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -33,10 +33,10 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="org.lineageos.settings.device.MotoActionsService"
-            android:permission="MotoActionsService"
-            android:exported="false">
-        </service>
+        <service
+            android:name=".MotoActionsService"
+            android:exported="false"
+            android:permission="MotoActionsService" />
 
         <activity
             android:name=".DozePreferenceActivity"
