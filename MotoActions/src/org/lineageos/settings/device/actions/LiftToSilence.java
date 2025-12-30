@@ -11,14 +11,16 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.telecom.TelecomManager;
-import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-public class LiftToSilence extends PhoneStateListener implements UpdatedStateNotifier {
+import java.util.concurrent.Executor;
+
+public class LiftToSilence implements UpdatedStateNotifier {
     private static final String TAG = "MotoActions-LiftToSilence";
 
     private final MotoActionsSettings mMotoActionsSettings;
@@ -28,6 +30,8 @@ public class LiftToSilence extends PhoneStateListener implements UpdatedStateNot
 
     private final TelecomManager mTelecomManager;
     private final TelephonyManager mTelephonyManager;
+    private final PhoneTelephonyCallback mTelephonyCallback;
+    private final Executor mExecutor;
 
     private boolean mIsRinging;
     private boolean mIsStowed;
@@ -41,31 +45,36 @@ public class LiftToSilence extends PhoneStateListener implements UpdatedStateNot
         mStowSensor = sensorHelper.getStowSensor();
         mTelecomManager = (TelecomManager) context.getSystemService(Context.TELECOM_SERVICE);
         mTelephonyManager = context.getSystemService(TelephonyManager.class);
+        mTelephonyCallback = new PhoneTelephonyCallback();
+        mExecutor = context.getMainExecutor();
     }
 
     @Override
     public void updateState() {
         if (mMotoActionsSettings.isLiftToSilenceEnabled()) {
-            mTelephonyManager.listen(this, LISTEN_CALL_STATE);
+            mTelephonyManager.registerTelephonyCallback(mExecutor, mTelephonyCallback);
         } else {
-            mTelephonyManager.listen(this, 0);
+            mTelephonyManager.unregisterTelephonyCallback(mTelephonyCallback);
         }
     }
 
-    @Override
-    public synchronized void onCallStateChanged(int state, String incomingNumber) {
-        if (state == TelephonyManager.CALL_STATE_RINGING && !mIsRinging) {
-            Log.d(TAG, "Ringing started");
-            mSensorHelper.registerListener(mFlatUpSensor, mFlatUpListener);
-            mSensorHelper.registerListener(mStowSensor, mStowListener);
-            mIsRinging = true;
-        } else if (state != TelephonyManager.CALL_STATE_RINGING && mIsRinging) {
-            Log.d(TAG, "Ringing stopped");
-            mSensorHelper.unregisterListener(mFlatUpListener);
-            mSensorHelper.unregisterListener(mStowListener);
-            mIsRinging = false;
+    private class PhoneTelephonyCallback extends TelephonyCallback implements
+            TelephonyCallback.CallStateListener {
+        @Override
+        public synchronized void onCallStateChanged(int state) {
+            if (state == TelephonyManager.CALL_STATE_RINGING && !mIsRinging) {
+                Log.d(TAG, "Ringing started");
+                mSensorHelper.registerListener(mFlatUpSensor, mFlatUpListener);
+                mSensorHelper.registerListener(mStowSensor, mStowListener);
+                mIsRinging = true;
+            } else if (state != TelephonyManager.CALL_STATE_RINGING && mIsRinging) {
+                Log.d(TAG, "Ringing stopped");
+                mSensorHelper.unregisterListener(mFlatUpListener);
+                mSensorHelper.unregisterListener(mStowListener);
+                mIsRinging = false;
+            }
         }
-    }
+    };
 
     private final SensorEventListener mFlatUpListener = new SensorEventListener() {
         @Override
