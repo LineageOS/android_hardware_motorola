@@ -73,7 +73,7 @@ public class FlatUpSensor implements ScreenStateNotifier {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
 
@@ -84,7 +84,7 @@ public class FlatUpSensor implements ScreenStateNotifier {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
 }

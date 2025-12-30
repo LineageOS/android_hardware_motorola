@@ -18,8 +18,7 @@ import android.util.Log;
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-public class LiftToSilence extends PhoneStateListener implements SensorEventListener,
-        UpdatedStateNotifier {
+public class LiftToSilence extends PhoneStateListener implements UpdatedStateNotifier {
     private static final String TAG = "MotoActions-LiftToSilence";
 
     private final MotoActionsSettings mMotoActionsSettings;
@@ -57,34 +56,35 @@ public class LiftToSilence extends PhoneStateListener implements SensorEventList
     public synchronized void onCallStateChanged(int state, String incomingNumber) {
         if (state == TelephonyManager.CALL_STATE_RINGING && !mIsRinging) {
             Log.d(TAG, "Ringing started");
-            mSensorHelper.registerListener(mFlatUpSensor, this);
+            mSensorHelper.registerListener(mFlatUpSensor, mFlatUpListener);
             mSensorHelper.registerListener(mStowSensor, mStowListener);
             mIsRinging = true;
         } else if (state != TelephonyManager.CALL_STATE_RINGING && mIsRinging) {
             Log.d(TAG, "Ringing stopped");
-            mSensorHelper.unregisterListener(this);
+            mSensorHelper.unregisterListener(mFlatUpListener);
             mSensorHelper.unregisterListener(mStowListener);
             mIsRinging = false;
         }
     }
 
+    private final SensorEventListener mFlatUpListener = new SensorEventListener() {
+        @Override
+        public synchronized void onSensorChanged(SensorEvent event) {
+            boolean thisFlatUp = (event.values[0] != 0);
 
-    @Override
-    public synchronized void onSensorChanged(SensorEvent event) {
-        boolean thisFlatUp = (event.values[0] != 0);
+            Log.d(TAG, "event: " + thisFlatUp + " mLastFlatUp=" + mLastFlatUp + " mIsStowed=" +
+                    mIsStowed);
 
-        Log.d(TAG, "event: " + thisFlatUp + " mLastFlatUp=" + mLastFlatUp + " mIsStowed=" +
-                mIsStowed);
-
-        if (mLastFlatUp && !thisFlatUp && !mIsStowed) {
-            mTelecomManager.silenceRinger();
+            if (mLastFlatUp && !thisFlatUp && !mIsStowed) {
+                mTelecomManager.silenceRinger();
+            }
+            mLastFlatUp = thisFlatUp;
         }
-        mLastFlatUp = thisFlatUp;
-    }
 
-    @Override
-    public void onAccuracyChanged(Sensor mSensor, int accuracy) {
-    }
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
 
     private final SensorEventListener mStowListener = new SensorEventListener() {
         @Override
@@ -93,7 +93,7 @@ public class LiftToSilence extends PhoneStateListener implements SensorEventList
         }
 
         @Override
-        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
 }

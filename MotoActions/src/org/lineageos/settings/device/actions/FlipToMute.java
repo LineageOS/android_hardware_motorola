@@ -25,8 +25,8 @@ public class FlipToMute implements UpdatedStateNotifier {
     private final NotificationManager mNotificationManager;
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
-    private final Sensor mFlatDown;
-    private final Sensor mStow;
+    private final Sensor mFlatDownSensor;
+    private final Sensor mStowSensor;
 
     private boolean mIsEnabled;
     private boolean mIsFlatDown;
@@ -39,8 +39,8 @@ public class FlipToMute implements UpdatedStateNotifier {
         mMotoActionsSettings = motoActionsSettings;
         mContext = context;
         mSensorHelper = sensorHelper;
-        mFlatDown = sensorHelper.getFlatDownSensor();
-        mStow = sensorHelper.getStowSensor();
+        mFlatDownSensor = sensorHelper.getFlatDownSensor();
+        mStowSensor = sensorHelper.getStowSensor();
         mNotificationManager = context.getSystemService(NotificationManager.class);
         mFilter = mNotificationManager.getCurrentInterruptionFilter();
     }
@@ -49,8 +49,8 @@ public class FlipToMute implements UpdatedStateNotifier {
     public void updateState() {
         if (mMotoActionsSettings.isFlipToMuteEnabled() && !mIsEnabled) {
             Log.d(TAG, "Enabling");
-            mSensorHelper.registerListener(mFlatDown, mFlatDownListener);
-            mSensorHelper.registerListener(mStow, mStowListener);
+            mSensorHelper.registerListener(mFlatDownSensor, mFlatDownListener);
+            mSensorHelper.registerListener(mStowSensor, mStowListener);
             mContext.registerReceiver(mReceiver,
                     new IntentFilter(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED));
             mIsEnabled = true;
@@ -71,7 +71,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
 
@@ -83,7 +83,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         }
 
         @Override
-        public void onAccuracyChanged(Sensor mSensor, int accuracy) {
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
 

@@ -20,8 +20,7 @@ import android.util.Log;
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-public class ProximitySilencer extends PhoneStateListener implements SensorEventListener,
-        UpdatedStateNotifier {
+public class ProximitySilencer extends PhoneStateListener implements UpdatedStateNotifier {
     private static final String TAG = "MotoActions-ProximitySilencer";
 
     private static final int SILENCE_DELAY_MS = 500;
@@ -30,7 +29,7 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
     private final TelephonyManager mTelephonyManager;
     private final MotoActionsSettings mMotoActionsSettings;
     private final SensorHelper mSensorHelper;
-    private final Sensor mSensor;
+    private final Sensor mProximitySensor;
     private boolean mIsRinging;
     private long mRingStartedMs;
     private boolean mCoveredRinging;
@@ -42,7 +41,7 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
 
         mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
-        mSensor = sensorHelper.getProximitySensor();
+        mProximitySensor = sensorHelper.getProximitySensor();
         mCoveredRinging = false;
         mIsRinging = false;
     }
@@ -57,44 +56,46 @@ public class ProximitySilencer extends PhoneStateListener implements SensorEvent
     }
 
     @Override
-    public synchronized void onSensorChanged(SensorEvent event) {
-        float maxRange = Math.round(mSensor.getMaximumRange() * 10f) / 10f;
-        boolean isNear = event.values[0] < maxRange;
-        long now = System.currentTimeMillis();
-
-        if (isNear) {
-            mCoveredRinging = mIsRinging && (now - mRingStartedMs >= SILENCE_DELAY_MS);
-            return;
-        }
-
-        if (mIsRinging) {
-            Log.d(TAG, "event: " + event.values[0] + ", " + " covered " + mCoveredRinging);
-            if (mCoveredRinging) {
-                Log.d(TAG, "Silencing ringer");
-                mTelecomManager.silenceRinger();
-            } else {
-                Log.d(TAG, "Ignoring silence gesture: " + now + " is too close to " +
-                        mRingStartedMs + ", delay=" + SILENCE_DELAY_MS);
-            }
-            mCoveredRinging = false;
-        }
-    }
-
-    @Override
     public synchronized void onCallStateChanged(int state, String incomingNumber) {
         if (state == CALL_STATE_RINGING && !mIsRinging) {
             Log.d(TAG, "Ringing started");
-            mSensorHelper.registerListener(mSensor, this);
+            mSensorHelper.registerListener(mProximitySensor, mProximityListener);
             mIsRinging = true;
             mRingStartedMs = System.currentTimeMillis();
         } else if (state != CALL_STATE_RINGING && mIsRinging) {
             Log.d(TAG, "Ringing stopped");
-            mSensorHelper.unregisterListener(this);
+            mSensorHelper.unregisterListener(mProximityListener);
             mIsRinging = false;
         }
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor mSensor, int accuracy) {
-    }
+    private final SensorEventListener mProximityListener = new SensorEventListener() {
+        @Override
+        public synchronized void onSensorChanged(SensorEvent event) {
+            float maxRange = Math.round(mProximitySensor.getMaximumRange() * 10f) / 10f;
+            boolean isNear = event.values[0] < maxRange;
+            long now = System.currentTimeMillis();
+
+            if (isNear) {
+                mCoveredRinging = mIsRinging && (now - mRingStartedMs >= SILENCE_DELAY_MS);
+                return;
+            }
+
+            if (mIsRinging) {
+                Log.d(TAG, "event: " + event.values[0] + ", " + " covered " + mCoveredRinging);
+                if (mCoveredRinging) {
+                    Log.d(TAG, "Silencing ringer");
+                    mTelecomManager.silenceRinger();
+                } else {
+                    Log.d(TAG, "Ignoring silence gesture: " + now + " is too close to " +
+                            mRingStartedMs + ", delay=" + SILENCE_DELAY_MS);
+                }
+                mCoveredRinging = false;
+            }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
 }
