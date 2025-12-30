@@ -11,7 +11,7 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.telecom.TelecomManager
-import android.telephony.PhoneStateListener
+import android.telephony.TelephonyCallback
 import android.telephony.TelephonyManager
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
@@ -19,9 +19,9 @@ import org.lineageos.settings.device.SensorHelper
 
 class ProximitySilencer(
     private val motoActionsSettings: MotoActionsSettings,
-    context: Context,
+    private val context: Context,
     private val sensorHelper: SensorHelper,
-) : PhoneStateListener(), UpdatedStateNotifier {
+) : UpdatedStateNotifier {
 
     private val telecomManager = context.getSystemService(TelecomManager::class.java)
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
@@ -33,28 +33,31 @@ class ProximitySilencer(
 
     override fun updateState() {
         if (motoActionsSettings.isIrSilencerEnabled()) {
-            telephonyManager.listen(this, LISTEN_CALL_STATE)
+            telephonyManager.registerTelephonyCallback(context.mainExecutor, callStateListener)
         } else {
-            telephonyManager.listen(this, 0)
+            telephonyManager.unregisterTelephonyCallback(callStateListener)
         }
     }
 
-    @Synchronized
-    override fun onCallStateChanged(state: Int, incomingNumber: String?) {
-        when {
-            state == TelephonyManager.CALL_STATE_RINGING && !isRinging -> {
-                Log.d(TAG, "Ringing started")
-                sensorHelper.registerListener(proximitySensor, proximityListener)
-                isRinging = true
-                ringStartedMs = System.currentTimeMillis()
-            }
-            state != TelephonyManager.CALL_STATE_RINGING && isRinging -> {
-                Log.d(TAG, "Ringing stopped")
-                sensorHelper.unregisterListener(proximityListener)
-                isRinging = false
+    private val callStateListener =
+        object : TelephonyCallback(), TelephonyCallback.CallStateListener {
+            @Synchronized
+            override fun onCallStateChanged(state: Int) {
+                when {
+                    state == TelephonyManager.CALL_STATE_RINGING && !isRinging -> {
+                        Log.d(TAG, "Ringing started")
+                        sensorHelper.registerListener(proximitySensor, proximityListener)
+                        isRinging = true
+                        ringStartedMs = System.currentTimeMillis()
+                    }
+                    state != TelephonyManager.CALL_STATE_RINGING && isRinging -> {
+                        Log.d(TAG, "Ringing stopped")
+                        sensorHelper.unregisterListener(proximityListener)
+                        isRinging = false
+                    }
+                }
             }
         }
-    }
 
     private val proximityListener =
         object : SensorEventListener {
