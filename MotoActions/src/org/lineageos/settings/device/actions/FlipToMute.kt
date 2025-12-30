@@ -33,8 +33,6 @@ class FlipToMute(
     private var isStowed = false
     private var filter = notificationManager.currentInterruptionFilter
 
-    private val receiver = Receiver()
-
     override fun updateState() {
         when {
             motoActionsSettings.isFlipToMuteEnabled() && !isEnabled -> {
@@ -96,7 +94,7 @@ class FlipToMute(
         }
     }
 
-    inner class Receiver : BroadcastReceiver() {
+    private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             if (!isFlatDown && !isStowed) {
                 filter = notificationManager.currentInterruptionFilter
