@@ -27,7 +27,6 @@ public class FlipToMute implements UpdatedStateNotifier {
     private final SensorHelper mSensorHelper;
     private final Sensor mFlatDown;
     private final Sensor mStow;
-    private final Receiver mReceiver;
 
     private boolean mIsEnabled;
     private boolean mIsFlatDown;
@@ -44,7 +43,6 @@ public class FlipToMute implements UpdatedStateNotifier {
         mStow = sensorHelper.getStowSensor();
         mNotificationManager = context.getSystemService(NotificationManager.class);
         mFilter = mNotificationManager.getCurrentInterruptionFilter();
-        mReceiver = new Receiver();
     }
 
     @Override
@@ -102,7 +100,7 @@ public class FlipToMute implements UpdatedStateNotifier {
         }
     }
 
-    public class Receiver extends BroadcastReceiver {
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (!mIsFlatDown && !mIsStowed) {
@@ -110,5 +108,5 @@ public class FlipToMute implements UpdatedStateNotifier {
                 Log.d(TAG, "Interrupt filter: Backup");
             }
         }
-    }
+    };
 }
