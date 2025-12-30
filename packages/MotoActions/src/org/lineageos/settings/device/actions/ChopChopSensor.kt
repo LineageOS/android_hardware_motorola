@@ -16,10 +16,10 @@ import org.lineageos.settings.device.SensorHelper
 class ChopChopSensor(
     private val motoActionsSettings: MotoActionsSettings,
     private val sensorHelper: SensorHelper,
-) : SensorEventListener, UpdatedStateNotifier {
+) : UpdatedStateNotifier {
 
-    private val sensor: Sensor = sensorHelper.getChopChopSensor()
-    private val prox: Sensor = sensorHelper.getProximitySensor()
+    private val chopChopSensor: Sensor = sensorHelper.getChopChopSensor()
+    private val proximitySensor: Sensor = sensorHelper.getProximitySensor()
 
     private var isEnabled = false
     private var proxIsCovered = false
@@ -29,35 +29,39 @@ class ChopChopSensor(
         when {
             motoActionsSettings.isChopChopGestureEnabled() && !isEnabled -> {
                 Log.d(TAG, "Enabling")
-                sensorHelper.registerListener(sensor, this)
-                sensorHelper.registerListener(prox, proxListener)
+                sensorHelper.registerListener(chopChopSensor, chopChopListener)
+                sensorHelper.registerListener(proximitySensor, proximityListener)
                 isEnabled = true
             }
             !motoActionsSettings.isChopChopGestureEnabled() && isEnabled -> {
                 Log.d(TAG, "Disabling")
-                sensorHelper.unregisterListener(this)
-                sensorHelper.unregisterListener(proxListener)
+                sensorHelper.unregisterListener(chopChopListener)
+                sensorHelper.unregisterListener(proximityListener)
                 isEnabled = false
             }
         }
     }
 
-    override fun onSensorChanged(event: SensorEvent) {
-        Log.d(TAG, "chop chop triggered")
-        if (proxIsCovered) {
-            Log.d(TAG, "proximity sensor covered, ignoring chop-chop")
-            return
-        }
-        motoActionsSettings.chopChopAction()
-    }
-
-    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
-
-    private val proxListener =
+    private val chopChopListener =
         object : SensorEventListener {
             @Synchronized
             override fun onSensorChanged(event: SensorEvent) {
-                val maxRange = kotlin.math.round(prox.maximumRange * 10f) / 10f
+                Log.d(TAG, "chop chop triggered")
+                if (proxIsCovered) {
+                    Log.d(TAG, "proximity sensor covered, ignoring chop-chop")
+                    return
+                }
+                motoActionsSettings.chopChopAction()
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        }
+
+    private val proximityListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                val maxRange = kotlin.math.round(proximitySensor.maximumRange * 10f) / 10f
                 proxIsCovered = event.values[0] < maxRange
             }
 

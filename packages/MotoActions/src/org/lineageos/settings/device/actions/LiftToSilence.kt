@@ -21,7 +21,7 @@ class LiftToSilence(
     private val motoActionsSettings: MotoActionsSettings,
     context: Context,
     private val sensorHelper: SensorHelper,
-) : PhoneStateListener(), SensorEventListener, UpdatedStateNotifier {
+) : PhoneStateListener(), UpdatedStateNotifier {
 
     private val telecomManager = context.getSystemService(TelecomManager::class.java)
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
@@ -45,32 +45,35 @@ class LiftToSilence(
         when {
             state == TelephonyManager.CALL_STATE_RINGING && !isRinging -> {
                 Log.d(TAG, "Ringing started")
-                sensorHelper.registerListener(flatUpSensor, this)
+                sensorHelper.registerListener(flatUpSensor, flatUpListener)
                 sensorHelper.registerListener(stowSensor, stowListener)
                 isRinging = true
             }
             state != TelephonyManager.CALL_STATE_RINGING && isRinging -> {
                 Log.d(TAG, "Ringing stopped")
-                sensorHelper.unregisterListener(this)
+                sensorHelper.unregisterListener(flatUpListener)
                 sensorHelper.unregisterListener(stowListener)
                 isRinging = false
             }
         }
     }
 
-    @Synchronized
-    override fun onSensorChanged(event: SensorEvent) {
-        val thisFlatUp = event.values[0] != 0f
+    private val flatUpListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                val thisFlatUp = event.values[0] != 0f
 
-        Log.d(TAG, "event: $thisFlatUp mLastFlatUp=$lastFlatUp mIsStowed=$isStowed")
+                Log.d(TAG, "event: $thisFlatUp mLastFlatUp=$lastFlatUp mIsStowed=$isStowed")
 
-        if (lastFlatUp && !thisFlatUp && !isStowed) {
-            telecomManager.silenceRinger()
+                if (lastFlatUp && !thisFlatUp && !isStowed) {
+                    telecomManager.silenceRinger()
+                }
+                lastFlatUp = thisFlatUp
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
         }
-        lastFlatUp = thisFlatUp
-    }
-
-    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
 
     private val stowListener =
         object : SensorEventListener {

@@ -18,9 +18,9 @@ class StowSensor(
     private val motoActionsSettings: MotoActionsSettings,
     private val sensorHelper: SensorHelper,
     private val sensorAction: SensorAction,
-) : ScreenStateNotifier, SensorEventListener {
+) : ScreenStateNotifier {
 
-    private val sensor: Sensor = sensorHelper.getStowSensor()
+    private val stowSensor: Sensor = sensorHelper.getStowSensor()
 
     private var enabled = false
     private var lastStowed = false
@@ -29,7 +29,7 @@ class StowSensor(
     override fun screenTurnedOn() {
         if (enabled) {
             Log.d(TAG, "Disabling")
-            sensorHelper.unregisterListener(this)
+            sensorHelper.unregisterListener(stowListener)
             enabled = false
         }
     }
@@ -40,37 +40,41 @@ class StowSensor(
                 motoActionsSettings.isIrWakeupEnabled()) && !enabled
         ) {
             Log.d(TAG, "Enabling")
-            sensorHelper.registerListener(sensor, this)
+            sensorHelper.registerListener(stowSensor, stowListener)
             enabled = true
         }
     }
 
-    override fun onSensorChanged(event: SensorEvent) {
-        val thisStowed = event.values[0] != 0f
-        if (thisStowed) {
-            lastStowedTime = event.timestamp
-        } else if (lastStowed && shouldPulse(event.timestamp)) {
-            sensorAction.action()
+    private val stowListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                val thisStowed = event.values[0] != 0f
+                if (thisStowed) {
+                    lastStowedTime = event.timestamp
+                } else if (lastStowed && shouldPulse(event.timestamp)) {
+                    sensorAction.action()
+                }
+                lastStowed = thisStowed
+                Log.d(TAG, "event: $thisStowed")
+            }
+
+            private fun shouldPulse(timestamp: Long): Boolean {
+                val delta = timestamp - lastStowedTime
+
+                val irWakeupEnabled = motoActionsSettings.isIrWakeupEnabled()
+                val pocketGestureEnabled = motoActionsSettings.isPocketGestureEnabled()
+
+                return when {
+                    irWakeupEnabled && pocketGestureEnabled -> true
+                    irWakeupEnabled -> delta < HANDWAVE_MAX_DELTA_NS
+                    pocketGestureEnabled -> delta >= POCKET_MIN_DELTA_NS
+                    else -> false
+                }
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
         }
-        lastStowed = thisStowed
-        Log.d(TAG, "event: $thisStowed")
-    }
-
-    private fun shouldPulse(timestamp: Long): Boolean {
-        val delta = timestamp - lastStowedTime
-
-        val irWakeupEnabled = motoActionsSettings.isIrWakeupEnabled()
-        val pocketGestureEnabled = motoActionsSettings.isPocketGestureEnabled()
-
-        return when {
-            irWakeupEnabled && pocketGestureEnabled -> true
-            irWakeupEnabled -> delta < HANDWAVE_MAX_DELTA_NS
-            pocketGestureEnabled -> delta >= POCKET_MIN_DELTA_NS
-            else -> false
-        }
-    }
-
-    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
 
     companion object {
         private const val TAG = "MotoActions-StowSensor"

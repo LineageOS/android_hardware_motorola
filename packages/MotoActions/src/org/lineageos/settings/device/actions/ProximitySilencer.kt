@@ -21,11 +21,11 @@ class ProximitySilencer(
     private val motoActionsSettings: MotoActionsSettings,
     context: Context,
     private val sensorHelper: SensorHelper,
-) : PhoneStateListener(), SensorEventListener, UpdatedStateNotifier {
+) : PhoneStateListener(), UpdatedStateNotifier {
 
     private val telecomManager = context.getSystemService(TelecomManager::class.java)
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
-    private val sensor: Sensor = sensorHelper.getProximitySensor()
+    private val proximitySensor: Sensor = sensorHelper.getProximitySensor()
 
     private var isRinging = false
     private var ringStartedMs = 0L
@@ -40,50 +40,53 @@ class ProximitySilencer(
     }
 
     @Synchronized
-    override fun onSensorChanged(event: SensorEvent) {
-        val maxRange = kotlin.math.round(sensor.maximumRange * 10f) / 10f
-        val isNear = event.values[0] < maxRange
-        val now = System.currentTimeMillis()
-
-        if (isNear) {
-            coveredRinging = isRinging && (now - ringStartedMs >= SILENCE_DELAY_MS)
-            return
-        }
-
-        if (isRinging) {
-            Log.d(TAG, "event: ${event.values[0]}, covered $coveredRinging")
-            if (coveredRinging) {
-                Log.d(TAG, "Silencing ringer")
-                telecomManager.silenceRinger()
-            } else {
-                Log.d(
-                    TAG,
-                    "Ignoring silence gesture: $now is too close to " +
-                        "$ringStartedMs, delay=$SILENCE_DELAY_MS",
-                )
-            }
-            coveredRinging = false
-        }
-    }
-
-    @Synchronized
     override fun onCallStateChanged(state: Int, incomingNumber: String?) {
         when {
             state == TelephonyManager.CALL_STATE_RINGING && !isRinging -> {
                 Log.d(TAG, "Ringing started")
-                sensorHelper.registerListener(sensor, this)
+                sensorHelper.registerListener(proximitySensor, proximityListener)
                 isRinging = true
                 ringStartedMs = System.currentTimeMillis()
             }
             state != TelephonyManager.CALL_STATE_RINGING && isRinging -> {
                 Log.d(TAG, "Ringing stopped")
-                sensorHelper.unregisterListener(this)
+                sensorHelper.unregisterListener(proximityListener)
                 isRinging = false
             }
         }
     }
 
-    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+    private val proximityListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                val maxRange = kotlin.math.round(proximitySensor.maximumRange * 10f) / 10f
+                val isNear = event.values[0] < maxRange
+                val now = System.currentTimeMillis()
+
+                if (isNear) {
+                    coveredRinging = isRinging && (now - ringStartedMs >= SILENCE_DELAY_MS)
+                    return
+                }
+
+                if (isRinging) {
+                    Log.d(TAG, "event: ${event.values[0]}, covered $coveredRinging")
+                    if (coveredRinging) {
+                        Log.d(TAG, "Silencing ringer")
+                        telecomManager.silenceRinger()
+                    } else {
+                        Log.d(
+                            TAG,
+                            "Ignoring silence gesture: $now is too close to " +
+                                "$ringStartedMs, delay=$SILENCE_DELAY_MS",
+                        )
+                    }
+                    coveredRinging = false
+                }
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        }
 
     companion object {
         private const val TAG = "MotoActions-ProximitySilencer"
