@@ -24,8 +24,8 @@ class FlipToMute(
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
-    private val flatDown: Sensor = sensorHelper.getFlatDownSensor()
-    private val stow: Sensor = sensorHelper.getStowSensor()
+    private val flatDownSensor: Sensor = sensorHelper.getFlatDownSensor()
+    private val stowSensor: Sensor = sensorHelper.getStowSensor()
     private val notificationManager = context.getSystemService(NotificationManager::class.java)
 
     private var isEnabled = false
@@ -37,8 +37,8 @@ class FlipToMute(
         when {
             motoActionsSettings.isFlipToMuteEnabled() && !isEnabled -> {
                 Log.d(TAG, "Enabling")
-                sensorHelper.registerListener(flatDown, flatDownListener)
-                sensorHelper.registerListener(stow, stowListener)
+                sensorHelper.registerListener(flatDownSensor, flatDownListener)
+                sensorHelper.registerListener(stowSensor, stowListener)
                 context.registerReceiver(
                     receiver,
                     IntentFilter(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED),
@@ -94,14 +94,15 @@ class FlipToMute(
         }
     }
 
-    private val receiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            if (!isFlatDown && !isStowed) {
-                filter = notificationManager.currentInterruptionFilter
-                Log.d(TAG, "Interrupt filter: Backup")
+    private val receiver =
+        object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                if (!isFlatDown && !isStowed) {
+                    filter = notificationManager.currentInterruptionFilter
+                    Log.d(TAG, "Interrupt filter: Backup")
+                }
             }
         }
-    }
 
     companion object {
         private const val TAG = "MotoActions-FlipToMute"
