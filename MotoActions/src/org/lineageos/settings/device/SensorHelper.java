@@ -15,6 +15,7 @@ import android.util.Log;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.HashMap;
 import java.util.List;
 
 public class SensorHelper {
@@ -29,6 +30,7 @@ public class SensorHelper {
 
     private final Context mContext;
     private final SensorManager mSensorManager;
+    private HashMap<Integer, Sensor> mSensorMap = new HashMap<Integer, Sensor>();
 
     public SensorHelper(Context context) {
         mContext = context;
@@ -53,24 +55,31 @@ public class SensorHelper {
         }
     }
 
+    private Sensor getSensor(int type) {
+        if (!mSensorMap.containsKey(type)) {
+            mSensorMap.put(type, mSensorManager.getDefaultSensor(type, true));
+        }
+        return mSensorMap.get(type);
+    }
+
     public Sensor getChopChopSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CHOP_CHOP, true);
+        return getSensor(SENSOR_TYPE_MMI_CHOP_CHOP);
     }
 
     public Sensor getFlatUpSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_UP, true);
+        return getSensor(SENSOR_TYPE_MMI_FLAT_UP);
     }
 
     public Sensor getFlatDownSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_DOWN, true);
+        return getSensor(SENSOR_TYPE_MMI_FLAT_DOWN);
     }
 
     public Sensor getProximitySensor() {
-        return mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, true);
+        return getSensor(Sensor.TYPE_PROXIMITY);
     }
 
     public Sensor getStowSensor() {
-        return mSensorManager.getDefaultSensor(SENSOR_TYPE_MMI_STOW, true);
+        return getSensor(SENSOR_TYPE_MMI_STOW);
     }
 
     public void registerListener(Sensor sensor, SensorEventListener listener) {
