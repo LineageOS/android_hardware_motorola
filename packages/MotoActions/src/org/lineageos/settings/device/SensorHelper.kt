@@ -13,9 +13,9 @@ import android.hardware.SensorManager
 import android.util.Log
 
 class SensorHelper(private val context: Context) {
-
     private val sensorManager =
         context.getSystemService(SensorManager::class.java).also { dumpSensorsList() }
+    private val sensorMap = mutableMapOf<Int, Sensor?>()
 
     private fun dumpSensorsList() {
         runCatching {
@@ -35,17 +35,18 @@ class SensorHelper(private val context: Context) {
             .getOrElse { throw RuntimeException(it) }
     }
 
-    fun getChopChopSensor(): Sensor =
-        sensorManager.getDefaultSensor(SENSOR_TYPE_MMI_CHOP_CHOP, true)!!
+    private fun getSensor(type: Int): Sensor? =
+        sensorMap.getOrPut(type) { sensorManager.getDefaultSensor(type, true) }
 
-    fun getFlatUpSensor(): Sensor = sensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_UP, true)!!
+    fun getChopChopSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_CHOP_CHOP)!!
 
-    fun getFlatDownSensor(): Sensor =
-        sensorManager.getDefaultSensor(SENSOR_TYPE_MMI_FLAT_DOWN, true)!!
+    fun getFlatUpSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
 
-    fun getProximitySensor(): Sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, true)!!
+    fun getFlatDownSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_FLAT_DOWN)!!
 
-    fun getStowSensor(): Sensor = sensorManager.getDefaultSensor(SENSOR_TYPE_MMI_STOW, true)!!
+    fun getProximitySensor(): Sensor = getSensor(Sensor.TYPE_PROXIMITY)!!
+
+    fun getStowSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_STOW)!!
 
     fun registerListener(sensor: Sensor, listener: SensorEventListener) {
         if (
