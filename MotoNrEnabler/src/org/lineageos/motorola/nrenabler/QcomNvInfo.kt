@@ -15,6 +15,7 @@ object QcomNvInfo {
 
     interface NvDataType {
         fun serialize(buf: ByteBuffer)
+
         fun size(): Int
     }
 
@@ -34,14 +35,13 @@ object QcomNvInfo {
         var data: ByteArray? = null
 
         constructor()
+
         constructor(byte: Byte) {
             data = byteArrayOf(byte)
         }
 
         override fun serialize(buf: ByteBuffer) {
-            data?.let {
-                buf.put(it)
-            }
+            data?.let { buf.put(it) }
         }
 
         override fun size(): Int {
@@ -50,7 +50,9 @@ object QcomNvInfo {
     }
 
     fun getRdeByteOrder(): ByteOrder {
-        return QcomOemConstants.getByteOrderByRequestId(QcomOemConstants.OEM_RIL_REQUEST_CDMA_GET_RDE_ITEM)
+        return QcomOemConstants.getByteOrderByRequestId(
+            QcomOemConstants.OEM_RIL_REQUEST_CDMA_GET_RDE_ITEM
+        )
     }
 
     fun getRdeNvName(elementId: Int): String {
