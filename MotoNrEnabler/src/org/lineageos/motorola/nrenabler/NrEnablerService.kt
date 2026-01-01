@@ -23,31 +23,33 @@ class NrEnablerService : Service() {
     private val handler by lazy { Handler(mainLooper) }
     private val workingInProgress = AtomicBoolean(false)
 
-    private val repeatWorkOnNRModeAndDSSIfFail = object : Runnable {
-        override fun run() {
-            if (workingInProgress.getAndSet(true))
-                return
-            if (!workOnNRModeAndDSS()) {
-                Log.v(TAG, "workOnNRModeAndDSS failed, retry after 5s")
-                handler.removeCallbacks(this)
-                handler.postDelayed(this, 5000)
+    private val repeatWorkOnNRModeAndDSSIfFail =
+        object : Runnable {
+            override fun run() {
+                if (workingInProgress.getAndSet(true)) return
+                if (!workOnNRModeAndDSS()) {
+                    Log.v(TAG, "workOnNRModeAndDSS failed, retry after 5s")
+                    handler.removeCallbacks(this)
+                    handler.postDelayed(this, 5000)
+                }
+                workingInProgress.set(false)
             }
-            workingInProgress.set(false)
         }
-    }
 
-    private val broadcastReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            if (!workingInProgress.get()) {
-                handler.post(repeatWorkOnNRModeAndDSSIfFail)
+    private val broadcastReceiver =
+        object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                if (!workingInProgress.get()) {
+                    handler.post(repeatWorkOnNRModeAndDSSIfFail)
+                }
             }
         }
-    }
 
     override fun onCreate() {
         motoExtService = QcomMotoExtTelephonyService(this)
         registerReceiver(
-            broadcastReceiver, IntentFilter(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED)
+            broadcastReceiver,
+            IntentFilter(CarrierConfigManager.ACTION_CARRIER_CONFIG_CHANGED),
         )
     }
 

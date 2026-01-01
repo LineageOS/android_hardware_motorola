@@ -20,27 +20,29 @@ class QcrilMsgTunnelConnector(private val context: Context) {
     private val handler = Handler(context.mainLooper)
 
     private var qcrilMsgService: IQcrilMsgTunnel? = null
-    private val qcrilMsgTunnelConnection: ServiceConnection = object : ServiceConnection {
-        override fun onServiceConnected(name: ComponentName, service: IBinder) {
-            Log.d(TAG, "QcrilMsgTunnel Service connected")
-            qcrilMsgService = IQcrilMsgTunnel.Stub.asInterface(service)
-            if (qcrilMsgService == null) {
-                Log.e(TAG, "QcrilMsgTunnelService Connect Failed (onServiceConnected)")
-                return
+    private val qcrilMsgTunnelConnection: ServiceConnection =
+        object : ServiceConnection {
+            override fun onServiceConnected(name: ComponentName, service: IBinder) {
+                Log.d(TAG, "QcrilMsgTunnel Service connected")
+                qcrilMsgService = IQcrilMsgTunnel.Stub.asInterface(service)
+                if (qcrilMsgService == null) {
+                    Log.e(TAG, "QcrilMsgTunnelService Connect Failed (onServiceConnected)")
+                    return
+                }
+                service.linkToDeath(qcrilMsgServiceDeathRecipient, 0)
             }
-            service.linkToDeath(qcrilMsgServiceDeathRecipient, 0)
-        }
 
-        override fun onServiceDisconnected(name: ComponentName) {
-            Log.e(TAG, "The connection to the service got disconnected unexpectedly!")
-            qcrilMsgService = null
+            override fun onServiceDisconnected(name: ComponentName) {
+                Log.e(TAG, "The connection to the service got disconnected unexpectedly!")
+                qcrilMsgService = null
+            }
         }
-    }
-    private val qcrilMsgServiceDeathRecipient = IBinder.DeathRecipient {
-        Log.e(TAG, "QcrilMsgService Died")
-        context.unbindService(qcrilMsgTunnelConnection)
-        handler.postDelayed({ bindToQcrilMsgTunnelService() }, 4000)
-    }
+    private val qcrilMsgServiceDeathRecipient =
+        IBinder.DeathRecipient {
+            Log.e(TAG, "QcrilMsgService Died")
+            context.unbindService(qcrilMsgTunnelConnection)
+            handler.postDelayed({ bindToQcrilMsgTunnelService() }, 4000)
+        }
 
     init {
         bindToQcrilMsgTunnelService()
@@ -56,33 +58,38 @@ class QcrilMsgTunnelConnector(private val context: Context) {
     fun invokeOemRilRequestRawForPhone(phoneId: Int, oemReq: ByteArray?, oemResp: ByteArray?): Int {
         return qcrilMsgService?.let {
             Log.d(
-                TAG, "invokeOemRilRequestRawForSubscriber: phoneId = $phoneId oemReq = ${
+                TAG,
+                "invokeOemRilRequestRawForSubscriber: phoneId = $phoneId oemReq = ${
                     IccUtils.bytesToHexString(
                         oemReq
                     )
-                }"
+                }",
             )
             val rspData = oemResp ?: ByteArray(1)
             try {
                 val ret = it.sendOemRilRequestRaw(oemReq, rspData, phoneId)
                 Log.d(
-                    TAG, "invokeOemRilRequestRawForSubscriber: phoneId = $phoneId oemResp = ${
+                    TAG,
+                    "invokeOemRilRequestRawForSubscriber: phoneId = $phoneId oemResp = ${
                         IccUtils.bytesToHexString(rspData)
-                    }"
+                    }",
                 )
                 ret
             } catch (e: RemoteException) {
                 Log.e(TAG, "sendOemRilRequestRaw: Runtime Exception")
                 -1
             }
-        } ?: run {
-            Log.e(TAG, "QcrilMsgTunnel Service not connected")
-            -1
         }
+            ?: run {
+                Log.e(TAG, "QcrilMsgTunnel Service not connected")
+                -1
+            }
     }
 
     private fun getRdeNvValueByElementId(
-        phoneId: Int, rdeElementId: Int, recordNum: Int
+        phoneId: Int,
+        rdeElementId: Int,
+        recordNum: Int,
     ): QcomNvInfo.RdeNvValue? {
         if (rdeElementId < 0) {
             return null
@@ -92,10 +99,7 @@ class QcrilMsgTunnelConnector(private val context: Context) {
         rdeNv.recordNum = recordNum
         val reqRdeData: ByteArray = QcomNvUtils.getReadingRdeNvReqData(rdeNv)
         val respRdeData: ByteArray = QcomNvUtils.allocateReadingRdeNvRespBuffer()
-        return if (invokeOemRilRequestRawForPhone(
-                phoneId, reqRdeData, respRdeData
-            ) < 0
-        ) {
+        return if (invokeOemRilRequestRawForPhone(phoneId, reqRdeData, respRdeData) < 0) {
             null
         } else QcomNvUtils.decodeReadingRdeNvResult(respRdeData)
     }
@@ -110,13 +114,18 @@ class QcrilMsgTunnelConnector(private val context: Context) {
     }
 
     private fun setRdeNvValue(
-        phoneId: Int, rdeElementId: Int, nvData: QcomNvInfo.NvDataType
+        phoneId: Int,
+        rdeElementId: Int,
+        nvData: QcomNvInfo.NvDataType,
     ): Boolean {
         return setRdeNvValue(phoneId, rdeElementId, 0, nvData)
     }
 
     private fun setRdeNvValue(
-        phoneId: Int, rdeElementId: Int, rdeRecordNum: Int, nvData: QcomNvInfo.NvDataType
+        phoneId: Int,
+        rdeElementId: Int,
+        rdeRecordNum: Int,
+        nvData: QcomNvInfo.NvDataType,
     ): Boolean {
         val nv = QcomNvInfo.RdeNvValue()
         nv.elementId = rdeElementId
@@ -132,23 +141,29 @@ class QcrilMsgTunnelConnector(private val context: Context) {
     }
 
     private fun getWritingRdeNvRespResult(
-        phoneId: Int, reqData: ByteArray, respData: ByteArray
+        phoneId: Int,
+        reqData: ByteArray,
+        respData: ByteArray,
     ): Boolean {
         return getWritingNvRespResult(
-            phoneId, QcomOemConstants.OEM_RIL_REQUEST_CDMA_SET_RDE_ITEM, reqData, respData
+            phoneId,
+            QcomOemConstants.OEM_RIL_REQUEST_CDMA_SET_RDE_ITEM,
+            reqData,
+            respData,
         )
     }
 
     private fun getWritingNvRespResult(
-        phoneId: Int, reqId: Int, reqData: ByteArray, respData: ByteArray
+        phoneId: Int,
+        reqId: Int,
+        reqData: ByteArray,
+        respData: ByteArray,
     ): Boolean {
         if (invokeOemRilRequestRawForPhone(phoneId, reqData, respData) < 0) {
             return false
         }
         val respHeader = QcomNvUtils.readOemHookRespHeader(reqId, respData) ?: return false
-        Log.d(
-            TAG, "get Writing NV result for ${QcomOemConstants.getRequestName(respHeader.reqId)}"
-        )
+        Log.d(TAG, "get Writing NV result for ${QcomOemConstants.getRequestName(respHeader.reqId)}")
         return respHeader.error == QcomNvUtils.OemHookRespError.OEM_RIL_CDMA_SUCCESS
     }
 
