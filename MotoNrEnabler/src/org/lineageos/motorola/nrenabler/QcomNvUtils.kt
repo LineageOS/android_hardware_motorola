@@ -9,7 +9,6 @@ import android.util.Log
 import java.nio.BufferUnderflowException
 import java.nio.ByteBuffer
 
-
 object QcomNvUtils {
     private const val TAG = "MotoNrEnabler: QcomNvUtils"
 
@@ -17,12 +16,9 @@ object QcomNvUtils {
     private const val READING_RDE_RESP_BUF_SIZE = 6144
     private const val WRITING_RESP_BUF_SIZE = 2048
 
-    data class OemHookDataHeader(
-        val reqId: Int,
-        val dataLength: Int,
-        val error: OemHookRespError,
-    ) {
+    data class OemHookDataHeader(val reqId: Int, val dataLength: Int, val error: OemHookRespError) {
         val spcLockCode = ByteArray(6)
+
         override fun toString(): String {
             return "reqId = $reqId  dataLength = $dataLength   error = $error  spcLockCode = ${
                 byteArrToStringLog(
@@ -46,11 +42,12 @@ object QcomNvUtils {
 
     private fun readOemHookRespHeader(buf: ByteBuffer): OemHookDataHeader? {
         return try {
-            val header = OemHookDataHeader(
-                buf.getInt(),
-                buf.getInt(),
-                OemHookRespError.fromInt(buf.getInt()),
-            )
+            val header =
+                OemHookDataHeader(
+                    buf.getInt(),
+                    buf.getInt(),
+                    OemHookRespError.fromInt(buf.getInt()),
+                )
             for (i in 0 until header.spcLockCode.size) {
                 header.spcLockCode[i] = buf.get()
             }
@@ -64,23 +61,33 @@ object QcomNvUtils {
 
     fun getReadingRdeNvReqData(rdeNv: QcomNvInfo.RdeNvValue): ByteArray {
         return allocateRdeOemReqData(
-            QcomOemConstants.OEM_RIL_REQUEST_CDMA_GET_RDE_ITEM, rdeNv, DEFAULT_SPC_CODE
+            QcomOemConstants.OEM_RIL_REQUEST_CDMA_GET_RDE_ITEM,
+            rdeNv,
+            DEFAULT_SPC_CODE,
         )
     }
 
     fun getWritingRdeNvReqData(rdeNv: QcomNvInfo.RdeNvValue): ByteArray {
         return allocateRdeOemReqData(
-            QcomOemConstants.OEM_RIL_REQUEST_CDMA_SET_RDE_ITEM, rdeNv, DEFAULT_SPC_CODE
+            QcomOemConstants.OEM_RIL_REQUEST_CDMA_SET_RDE_ITEM,
+            rdeNv,
+            DEFAULT_SPC_CODE,
         )
     }
 
     private fun allocateRdeOemReqData(
-        reqId: Int, rdeNv: QcomNvInfo.RdeNvValue, spcCode: String
+        reqId: Int,
+        rdeNv: QcomNvInfo.RdeNvValue,
+        spcCode: String,
     ): ByteArray {
         val buf = ByteBuffer.allocate(rdeNv.size + OemHookDataHeader.SIZE)
         buf.order(QcomNvInfo.getRdeByteOrder())
         writeOemHookReqHeader(
-            buf, reqId, rdeNv.size, OemHookRespError.OEM_RIL_CDMA_SUCCESS, spcCode
+            buf,
+            reqId,
+            rdeNv.size,
+            OemHookRespError.OEM_RIL_CDMA_SUCCESS,
+            spcCode,
         )
         buf.putInt(rdeNv.elementId)
         buf.putInt(rdeNv.recordNum)
@@ -101,7 +108,7 @@ object QcomNvUtils {
                 byteArrToStringLog(
                     data
                 )
-            }"
+            }",
         )
         return data
     }
@@ -167,13 +174,21 @@ object QcomNvUtils {
     }
 
     private fun writeOemHookReqHeader(
-        buf: ByteBuffer, reqId: Int, len: Int, err: OemHookRespError, spcLockCode: String
+        buf: ByteBuffer,
+        reqId: Int,
+        len: Int,
+        err: OemHookRespError,
+        spcLockCode: String,
     ) {
         writeOemHookReqHeader(buf, reqId, len, err, spcLockCode.toByteArray())
     }
 
     private fun writeOemHookReqHeader(
-        buf: ByteBuffer, reqId: Int, len: Int, err: OemHookRespError, spcLockCode: ByteArray
+        buf: ByteBuffer,
+        reqId: Int,
+        len: Int,
+        err: OemHookRespError,
+        spcLockCode: ByteArray,
     ) {
         buf.putInt(reqId)
         buf.putInt(len)
@@ -187,7 +202,7 @@ object QcomNvUtils {
                 byteArrToStringLog(
                     spcLockCode
                 )
-            }"
+            }",
         )
     }
 

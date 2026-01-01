@@ -19,7 +19,6 @@ import androidx.preference.DialogPreference
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.android.settingslib.widget.preference.app.R as settingslib_R
 import org.lineageos.settings.resources.R as devicesettings_R
 
@@ -35,24 +34,23 @@ class AppPickerPreference(context: Context, attrs: AttributeSet) :
         loadAppEntries()
     }
 
-    data class AppInfo(
-        val label: String,
-        val packageName: String,
-        val icon: Drawable?
-    )
+    data class AppInfo(val label: String, val packageName: String, val icon: Drawable?)
 
     private fun loadAppEntries() {
         val pm = context.packageManager
-        val intent = Intent(Intent.ACTION_MAIN).apply {
-            addCategory(Intent.CATEGORY_LAUNCHER)
-        }
+        val intent = Intent(Intent.ACTION_MAIN).apply { addCategory(Intent.CATEGORY_LAUNCHER) }
 
-        val apps = pm.queryIntentActivities(intent, 0)
-            .map {
-                AppInfo(it.loadLabel(pm).toString(), it.activityInfo.packageName, it.loadIcon(pm))
-            }
-            .sortedBy { it.label }
-            .toMutableList()
+        val apps =
+            pm.queryIntentActivities(intent, 0)
+                .map {
+                    AppInfo(
+                        it.loadLabel(pm).toString(),
+                        it.activityInfo.packageName,
+                        it.loadIcon(pm),
+                    )
+                }
+                .sortedBy { it.label }
+                .toMutableList()
 
         apps.add(0, AppInfo(context.getString(devicesettings_R.string.none), "", null))
         appEntries = apps
@@ -71,30 +69,29 @@ class AppPickerPreference(context: Context, attrs: AttributeSet) :
     }
 
     override fun onClick() {
-        val recyclerView = LayoutInflater.from(context)
-            .inflate(R.layout.app_picker_dialog, null) as RecyclerView
+        val recyclerView =
+            LayoutInflater.from(context).inflate(R.layout.app_picker_dialog, null) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = AppListAdapter(appEntries) { appInfo ->
-            persistString(appInfo.packageName)
-            selectedPackageName = appInfo.packageName
-            updateSummaryAndIcon()
-            dialog?.dismiss()
-        }
+        recyclerView.adapter =
+            AppListAdapter(appEntries) { appInfo ->
+                persistString(appInfo.packageName)
+                selectedPackageName = appInfo.packageName
+                updateSummaryAndIcon()
+                dialog?.dismiss()
+            }
 
-        dialog = AlertDialog.Builder(context)
-            .setTitle(title)
-            .setView(recyclerView)
-            .create()
+        dialog = AlertDialog.Builder(context).setTitle(title).setView(recyclerView).create()
         dialog?.show()
     }
 
     private class AppListAdapter(
         private val apps: List<AppInfo>,
-        private val onItemClick: (AppInfo) -> Unit
+        private val onItemClick: (AppInfo) -> Unit,
     ) : RecyclerView.Adapter<AppListAdapter.AppViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.app_list_item, parent, false)
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.app_list_item, parent, false)
             return AppViewHolder(view)
         }
 

@@ -7,7 +7,6 @@ package org.lineageos.motorola.nrenabler
 
 import android.content.Context
 import android.util.Log
-import com.android.internal.telephony.PhoneFactory
 import java.nio.ByteBuffer
 
 class QcomMotoExtTelephonyService(private val context: Context) {
@@ -19,14 +18,19 @@ class QcomMotoExtTelephonyService(private val context: Context) {
         if (mode == nrModeInModem) {
             Log.d(
                 TAG,
-                "setNrModeDisabled equals nrModeInModem:$nrModeInModem, ignore set for phoneID:$phoneId"
+                "setNrModeDisabled equals nrModeInModem:$nrModeInModem, ignore set for phoneID:$phoneId",
             )
             return true
         }
         val data = ByteArray(9)
         val buf = ByteBuffer.wrap(data)
-        buf.order(QcomOemConstants.getByteOrderByRequestId(QcomOemConstants.OEM_RIL_REQUEST_SET_NR_DISABLE_MODE))
-        buf.putInt(QcomOemConstants.OEM_RIL_REQUEST_SET_NR_DISABLE_MODE).putInt(1)
+        buf.order(
+            QcomOemConstants.getByteOrderByRequestId(
+                QcomOemConstants.OEM_RIL_REQUEST_SET_NR_DISABLE_MODE
+            )
+        )
+        buf.putInt(QcomOemConstants.OEM_RIL_REQUEST_SET_NR_DISABLE_MODE)
+            .putInt(1)
             .put(mode.toInt().toByte())
         return qcrilMsgTunnelConnector.invokeOemRilRequestRawForPhone(phoneId, data, null) >= 0
     }
@@ -35,7 +39,11 @@ class QcomMotoExtTelephonyService(private val context: Context) {
         val data = ByteArray(8)
         val respData = ByteArray(1)
         val buf = ByteBuffer.wrap(data)
-        buf.order(QcomOemConstants.getByteOrderByRequestId(QcomOemConstants.OEM_RIL_REQUEST_GET_NR_DISABLE_MODE))
+        buf.order(
+            QcomOemConstants.getByteOrderByRequestId(
+                QcomOemConstants.OEM_RIL_REQUEST_GET_NR_DISABLE_MODE
+            )
+        )
         buf.putInt(QcomOemConstants.OEM_RIL_REQUEST_GET_NR_DISABLE_MODE)
         if (qcrilMsgTunnelConnector.invokeOemRilRequestRawForPhone(phoneId, data, respData) >= 0) {
             return NrMode.fromInt(respData[0].toInt())
