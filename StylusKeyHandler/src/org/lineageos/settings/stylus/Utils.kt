@@ -22,11 +22,7 @@ class Utils(private val context: Context) {
     private val packageManager = context.packageManager
 
     fun turnScreenOn() {
-        powerManager.wakeUp(
-            SystemClock.uptimeMillis(),
-            PowerManager.WAKE_REASON_GESTURE,
-            TAG
-        )
+        powerManager.wakeUp(SystemClock.uptimeMillis(), PowerManager.WAKE_REASON_GESTURE, TAG)
     }
 
     fun turnScreenOff() {
@@ -34,10 +30,7 @@ class Utils(private val context: Context) {
     }
 
     fun vibrateIfNeeded(effect: VibrationEffect) {
-        vibrator.vibrate(
-            effect,
-            HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES
-        )
+        vibrator.vibrate(effect, HARDWARE_FEEDBACK_VIBRATION_ATTRIBUTES)
     }
 
     fun launchApp(packageName: String) {
@@ -53,8 +46,16 @@ class Utils(private val context: Context) {
     }
 
     fun isSetupComplete(): Boolean {
-        return Settings.Global.getInt(context.contentResolver, Settings.Global.DEVICE_PROVISIONED, 0) != 0 &&
-                Settings.Secure.getInt(context.contentResolver, Settings.Secure.USER_SETUP_COMPLETE, 0) != 0
+        return Settings.Global.getInt(
+            context.contentResolver,
+            Settings.Global.DEVICE_PROVISIONED,
+            0,
+        ) != 0 &&
+            Settings.Secure.getInt(
+                context.contentResolver,
+                Settings.Secure.USER_SETUP_COMPLETE,
+                0,
+            ) != 0
     }
 
     companion object {

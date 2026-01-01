@@ -13,19 +13,20 @@ class EventHandler(private val packageContext: Context) {
     private val utils = Utils(packageContext)
 
     private val sharedPreferences
-        get() = packageContext.getSharedPreferences(
-            packageContext.packageName + "_preferences",
-            Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS
-        )
+        get() =
+            packageContext.getSharedPreferences(
+                packageContext.packageName + "_preferences",
+                Context.MODE_PRIVATE or Context.MODE_MULTI_PROCESS,
+            )
 
     fun handleRemoved() {
         if (utils.isSetupComplete() && !sharedPreferences.getBoolean(KEY_FIRST_REMOVAL, false)) {
-            Intent(packageContext, StylusSettingsActivity::class.java).apply {
-                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            }.also { intent ->
-                packageContext.startActivity(intent)
-                sharedPreferences.edit().putBoolean(KEY_FIRST_REMOVAL, true).apply()
-            }
+            Intent(packageContext, StylusSettingsActivity::class.java)
+                .apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
+                .also { intent ->
+                    packageContext.startActivity(intent)
+                    sharedPreferences.edit().putBoolean(KEY_FIRST_REMOVAL, true).apply()
+                }
         }
         if (sharedPreferences.getBoolean(KEY_VIBRATE_WHEN_REMOVED, true)) {
             utils.vibrateIfNeeded(Utils.VIBRATE_HEAVY_CLICK)

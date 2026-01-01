@@ -9,8 +9,8 @@ import android.os.Bundle
 import androidx.preference.Preference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
-class StylusSettingsFragment : SettingsBasePreferenceFragment(),
-        Preference.OnPreferenceChangeListener {
+class StylusSettingsFragment :
+    SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.stylus_panel, rootKey)

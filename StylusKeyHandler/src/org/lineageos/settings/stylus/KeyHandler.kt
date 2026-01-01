@@ -12,9 +12,8 @@ import com.android.internal.os.DeviceKeyHandler
 
 class KeyHandler(context: Context) : DeviceKeyHandler {
 
-    private val packageContext = context.createPackageContext(
-        KeyHandler::class.java.getPackage()!!.name, 0
-    )
+    private val packageContext =
+        context.createPackageContext(KeyHandler::class.java.getPackage()!!.name, 0)
 
     private val eventHandler = EventHandler(packageContext)
 
