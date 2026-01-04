@@ -15,7 +15,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.util.Log;
 
-import org.lineageos.settings.device.actions.ChopChopSensor;
+import org.lineageos.settings.device.actions.ChopForTorch;
 import org.lineageos.settings.device.actions.FlipToMute;
 import org.lineageos.settings.device.actions.LiftToSilence;
 import org.lineageos.settings.device.actions.ProximitySilencer;
@@ -44,7 +44,7 @@ public class MotoActionsService extends Service implements UpdatedStateNotifier 
         mDozePulse = new DozePulse(actionsSettings, this, sensorHelper);
 
         // Other actions that are always enabled
-        mUpdatedStateNotifiers.add(new ChopChopSensor(actionsSettings, this, sensorHelper));
+        mUpdatedStateNotifiers.add(new ChopForTorch(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new ProximitySilencer(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new FlipToMute(actionsSettings, this, sensorHelper));
         mUpdatedStateNotifiers.add(new LiftToSilence(actionsSettings, this, sensorHelper));

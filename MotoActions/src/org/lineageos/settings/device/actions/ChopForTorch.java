@@ -20,8 +20,8 @@ import android.util.Log;
 import org.lineageos.settings.device.MotoActionsSettings;
 import org.lineageos.settings.device.SensorHelper;
 
-public class ChopChopSensor implements UpdatedStateNotifier {
-    private static final String TAG = "MotoActions-ChopChopSensor";
+public class ChopForTorch implements UpdatedStateNotifier {
+    private static final String TAG = "MotoActions-ChopForTorch";
 
     private final CameraManager mCameraManager;
     private final Vibrator mVibrator;
@@ -54,7 +54,7 @@ public class ChopChopSensor implements UpdatedStateNotifier {
         }
     };
 
-    public ChopChopSensor(MotoActionsSettings motoActionsSettings, Context context,
+    public ChopForTorch(MotoActionsSettings motoActionsSettings, Context context,
                              SensorHelper sensorHelper) {
         mMotoActionsSettings = motoActionsSettings;
         mSensorHelper = sensorHelper;
