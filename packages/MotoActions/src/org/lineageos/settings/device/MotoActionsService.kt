@@ -18,7 +18,7 @@ import android.os.PowerManager
 import android.os.PowerManager.WakeLock
 import android.util.Log
 import androidx.preference.PreferenceManager
-import org.lineageos.settings.device.actions.ChopChopSensor
+import org.lineageos.settings.device.actions.ChopForTorch
 import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
 import org.lineageos.settings.device.actions.ProximitySilencer
@@ -58,7 +58,7 @@ class MotoActionsService : Service() {
         screenStateNotifiers.add(StowSensor(this, sharedPrefs, sensorHelper))
         screenStateNotifiers.add(FlatUpSensor(this, sharedPrefs, sensorHelper))
 
-        updatedStateNotifiers.add(ChopChopSensor(this, sharedPrefs, sensorHelper))
+        updatedStateNotifiers.add(ChopForTorch(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(ProximitySilencer(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(FlipToMute(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(LiftToSilence(this, sharedPrefs, sensorHelper))
