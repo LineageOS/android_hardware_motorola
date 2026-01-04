@@ -14,25 +14,19 @@ import android.content.IntentFilter
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.IBinder
-import android.os.PowerManager
-import android.os.PowerManager.WakeLock
 import android.util.Log
 import androidx.preference.PreferenceManager
 import org.lineageos.settings.device.actions.ChopForTorch
+import org.lineageos.settings.device.actions.DozePulse
 import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
 import org.lineageos.settings.device.actions.ProximitySilencer
 import org.lineageos.settings.device.actions.UpdatedStateNotifier
-import org.lineageos.settings.device.doze.FlatUpSensor
-import org.lineageos.settings.device.doze.ScreenStateNotifier
-import org.lineageos.settings.device.doze.StowSensor
 
 class MotoActionsService : Service() {
 
-    private lateinit var powerManager: PowerManager
-    private lateinit var wakeLock: WakeLock
+    private lateinit var dozePulse: DozePulse
 
-    private val screenStateNotifiers = mutableListOf<ScreenStateNotifier>()
     private val updatedStateNotifiers = mutableListOf<UpdatedStateNotifier>()
 
     override fun onCreate() {
@@ -55,16 +49,13 @@ class MotoActionsService : Service() {
             }
         val sensorHelper = SensorHelper(this)
 
-        screenStateNotifiers.add(StowSensor(this, sharedPrefs, sensorHelper))
-        screenStateNotifiers.add(FlatUpSensor(this, sharedPrefs, sensorHelper))
+        dozePulse = DozePulse(this, sharedPrefs, sensorHelper)
 
+        updatedStateNotifiers.add(dozePulse)
         updatedStateNotifiers.add(ChopForTorch(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(ProximitySilencer(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(FlipToMute(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(LiftToSilence(this, sharedPrefs, sensorHelper))
-
-        powerManager = getSystemService(PowerManager::class.java)
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "$TAG:WakeLock")
 
         val filter =
             IntentFilter(Intent.ACTION_SCREEN_ON).apply { addAction(Intent.ACTION_SCREEN_OFF) }
@@ -79,19 +70,7 @@ class MotoActionsService : Service() {
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    private fun onScreenStateChanged(screenOn: Boolean) {
-        if (!wakeLock.isHeld) {
-            if (screenOn) {
-                wakeLock.acquire()
-            } else {
-                wakeLock.release()
-            }
-        }
-        screenStateNotifiers.forEach { it.onScreenStateChanged(screenOn) }
-    }
-
     private fun updateState() {
-        onScreenStateChanged(powerManager.isInteractive)
         updatedStateNotifiers.forEach { it.updateState() }
     }
 
@@ -99,8 +78,8 @@ class MotoActionsService : Service() {
         object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
                 when (intent.action) {
-                    Intent.ACTION_SCREEN_OFF -> onScreenStateChanged(false)
-                    Intent.ACTION_SCREEN_ON -> onScreenStateChanged(true)
+                    Intent.ACTION_SCREEN_OFF -> dozePulse.onScreenStateChanged(false)
+                    Intent.ACTION_SCREEN_ON -> dozePulse.onScreenStateChanged(true)
                 }
             }
         }
