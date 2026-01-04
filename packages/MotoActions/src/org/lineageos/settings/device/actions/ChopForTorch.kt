@@ -21,7 +21,7 @@ import org.lineageos.settings.device.MotoActionsSettings.GESTURE_CHOP_CHOP_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_CHOP_CHOP
 
-class ChopChopSensor(
+class ChopForTorch(
     context: Context,
     private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
@@ -116,6 +116,6 @@ class ChopChopSensor(
         }
 
     companion object {
-        private const val TAG = "MotoActions-ChopChopSensor"
+        private const val TAG = "MotoActions-ChopForTorch"
     }
 }
