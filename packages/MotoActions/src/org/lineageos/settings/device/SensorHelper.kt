@@ -13,8 +13,10 @@ import android.hardware.SensorManager
 import android.util.Log
 
 class SensorHelper(private val context: Context) {
+    private val DEBUG = Log.isLoggable(TAG, Log.DEBUG)
+
     private val sensorManager =
-        context.getSystemService(SensorManager::class.java).also { dumpSensorsList() }
+        context.getSystemService(SensorManager::class.java).also { if (DEBUG) dumpSensorsList() }
     private val sensorMap = mutableMapOf<Int, Sensor?>()
 
     private fun dumpSensorsList() {
