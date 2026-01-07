@@ -1,0 +1,111 @@
+/*
+ * SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package org.lineageos.settings.device.actions
+
+import android.app.NotificationManager
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.util.Log
+import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.SensorHelper
+
+class FlipToMute(
+    private val motoActionsSettings: MotoActionsSettings,
+    private val context: Context,
+    private val sensorHelper: SensorHelper,
+) : UpdatedStateNotifier {
+
+    private val flatDown: Sensor = sensorHelper.getFlatDownSensor()
+    private val stow: Sensor = sensorHelper.getStowSensor()
+    private val notificationManager = context.getSystemService(NotificationManager::class.java)
+
+    private var isEnabled = false
+    private var isFlatDown = false
+    private var isStowed = false
+    private var filter = notificationManager.currentInterruptionFilter
+
+    private val receiver = Receiver()
+
+    override fun updateState() {
+        when {
+            motoActionsSettings.isFlipToMuteEnabled() && !isEnabled -> {
+                Log.d(TAG, "Enabling")
+                sensorHelper.registerListener(flatDown, flatDownListener)
+                sensorHelper.registerListener(stow, stowListener)
+                context.registerReceiver(
+                    receiver,
+                    IntentFilter(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED),
+                )
+                isEnabled = true
+            }
+            !motoActionsSettings.isFlipToMuteEnabled() && isEnabled -> {
+                Log.d(TAG, "Disabling")
+                sensorHelper.unregisterListener(flatDownListener)
+                sensorHelper.unregisterListener(stowListener)
+                context.unregisterReceiver(receiver)
+                isEnabled = false
+            }
+        }
+    }
+
+    private val flatDownListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                isFlatDown = event.values[0] != 0f
+                sensorChange()
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        }
+
+    private val stowListener =
+        object : SensorEventListener {
+            @Synchronized
+            override fun onSensorChanged(event: SensorEvent) {
+                isStowed = event.values[0] != 0f
+                sensorChange()
+            }
+
+            override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+        }
+
+    private fun sensorChange() {
+        Log.d(TAG, "event: $isFlatDown mIsStowed=$isStowed")
+
+        when {
+            isFlatDown && isStowed -> {
+                notificationManager.setInterruptionFilter(
+                    NotificationManager.INTERRUPTION_FILTER_PRIORITY
+                )
+                Log.d(TAG, "Interrupt filter: Allow priority")
+            }
+            !isFlatDown -> {
+                notificationManager.setInterruptionFilter(filter)
+                Log.d(TAG, "Interrupt filter: Restore")
+            }
+        }
+    }
+
+    inner class Receiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (!isFlatDown && !isStowed) {
+                filter = notificationManager.currentInterruptionFilter
+                Log.d(TAG, "Interrupt filter: Backup")
+            }
+        }
+    }
+
+    companion object {
+        private const val TAG = "MotoActions-FlipToMute"
+    }
+}
