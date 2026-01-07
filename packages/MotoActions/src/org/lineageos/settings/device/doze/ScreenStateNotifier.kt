@@ -4,8 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.settings.device.actions;
+package org.lineageos.settings.device.doze
 
-public interface UpdatedStateNotifier {
-    void updateState();
+interface ScreenStateNotifier {
+    fun screenTurnedOn()
+
+    fun screenTurnedOff()
 }

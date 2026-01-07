@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.settings.device;
+package org.lineageos.settings.device
 
-public interface SensorAction {
-    void action();
+interface SensorAction {
+    fun action()
 }
