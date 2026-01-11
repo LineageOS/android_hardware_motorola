@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da96332d_2cae7b6b",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-01-11T19:04:22Z",
+      "side": 1,
+      "message": "Indentation is not nice, just FYI.",
+      "revId": "6aecb8212cd538dff7505fb7235695c6a6da1252",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
