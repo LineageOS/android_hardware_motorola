@@ -16,6 +16,24 @@
       "message": "Indentation is not nice, just FYI.",
       "revId": "6aecb8212cd538dff7505fb7235695c6a6da1252",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a3abe3f_e75a25f7",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T01:48:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da96332d_2cae7b6b",
+      "revId": "6aecb8212cd538dff7505fb7235695c6a6da1252",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
