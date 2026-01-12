@@ -16,6 +16,24 @@
       "message": "This one too",
       "revId": "e7813a1dd8405cd9ae80b0695b00b84994af1d7e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcea6ab9_71d8b168",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T02:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ace8a40_198bdbb1",
+      "revId": "e7813a1dd8405cd9ae80b0695b00b84994af1d7e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
