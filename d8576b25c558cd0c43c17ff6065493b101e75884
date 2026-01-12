@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "deb46cca_3666a639",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T02:01:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c84e6691_a3826fa9",
+      "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bede2539_54662db1",
@@ -48,6 +66,24 @@
       "writtenOn": "2026-01-12T01:54:28Z",
       "side": 1,
       "message": "Also here.",
+      "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f62545e_c8b9b9a9",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T02:01:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bede2539_54662db1",
       "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -69,6 +105,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a594206_785d7e46",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T02:01:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da64de8d_26b3d005",
+      "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15baf410_53d66b06",
@@ -82,6 +136,24 @@
       "writtenOn": "2026-01-12T01:54:28Z",
       "side": 1,
       "message": "And finally here.",
+      "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16864099_11c38bdc",
+        "filename": "overlay/EuiccPolicyMoto/res/values/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-01-12T02:01:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15baf410_53d66b06",
       "revId": "d8576b25c558cd0c43c17ff6065493b101e75884",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
