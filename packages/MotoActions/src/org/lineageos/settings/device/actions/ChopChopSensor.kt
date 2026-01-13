@@ -18,6 +18,7 @@ import android.os.Vibrator
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
 import org.lineageos.settings.device.SensorHelper
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_CHOP_CHOP
 
 class ChopChopSensor(
     private val motoActionsSettings: MotoActionsSettings,
@@ -52,8 +53,8 @@ class ChopChopSensor(
             }
         }
     private val vibrator = context.getSystemService(Vibrator::class.java)
-    private val chopChopSensor: Sensor = sensorHelper.getChopChopSensor()
-    private val proximitySensor: Sensor = sensorHelper.getProximitySensor()
+    private val chopChopSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_CHOP_CHOP)!!
+    private val proximitySensor: Sensor = sensorHelper.getSensor(Sensor.TYPE_PROXIMITY)!!
 
     private var isEnabled = false
     private var proxIsCovered = false

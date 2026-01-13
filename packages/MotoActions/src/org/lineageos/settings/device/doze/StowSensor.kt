@@ -13,6 +13,7 @@ import android.hardware.SensorEventListener
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
 import org.lineageos.settings.device.SensorHelper
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class StowSensor(
     private val motoActionsSettings: MotoActionsSettings,
@@ -21,7 +22,7 @@ class StowSensor(
 ) : ScreenStateNotifier {
 
     private val dozePulseAction: DozePulseAction = DozePulseAction(context)
-    private val stowSensor: Sensor = sensorHelper.getStowSensor()
+    private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
     private var enabled = false
     private var lastStowed = false

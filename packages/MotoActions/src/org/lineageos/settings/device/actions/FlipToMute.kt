@@ -17,6 +17,8 @@ import android.hardware.SensorEventListener
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
 import org.lineageos.settings.device.SensorHelper
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_DOWN
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class FlipToMute(
     private val motoActionsSettings: MotoActionsSettings,
@@ -24,8 +26,8 @@ class FlipToMute(
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
-    private val flatDownSensor: Sensor = sensorHelper.getFlatDownSensor()
-    private val stowSensor: Sensor = sensorHelper.getStowSensor()
+    private val flatDownSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_FLAT_DOWN)!!
+    private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
     private val notificationManager = context.getSystemService(NotificationManager::class.java)
 
     private var isEnabled = false
