@@ -9,6 +9,7 @@ package org.lineageos.settings.device.doze
 import android.content.Context
 import android.content.Intent
 import android.os.UserHandle
+import org.lineageos.settings.device.MotoActionsSettings
 
 class DozePulseAction(private val context: Context) {
 
@@ -21,6 +22,13 @@ class DozePulseAction(private val context: Context) {
     }
 
     fun onStartPulse() {
+        if (
+            !MotoActionsSettings.isDozeEnabled(context) ||
+                MotoActionsSettings.isAlwaysOnEnabled(context)
+        ) {
+            return
+        }
+
         val now = System.currentTimeMillis()
         if (now - lastDoze > DELAY_BETWEEN_DOZES_IN_MS) {
             lastDoze = now

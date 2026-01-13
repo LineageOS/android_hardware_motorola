@@ -7,6 +7,7 @@
 package org.lineageos.settings.device.actions
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -14,12 +15,12 @@ import android.telecom.TelecomManager
 import android.telephony.TelephonyCallback
 import android.telephony.TelephonyManager
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_IR_SILENCER_KEY
 import org.lineageos.settings.device.SensorHelper
 
 class ProximitySilencer(
-    private val motoActionsSettings: MotoActionsSettings,
     private val context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
@@ -27,16 +28,24 @@ class ProximitySilencer(
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
     private val proximitySensor: Sensor = sensorHelper.getSensor(Sensor.TYPE_PROXIMITY)!!
 
+    private var isEnabled = false
     private var isRinging = false
     private var ringStartedMs = 0L
     private var coveredRinging = false
 
     override fun updateState() {
-        if (motoActionsSettings.isIrSilencerEnabled()) {
+        val enabled = sharedPreferences.getBoolean(GESTURE_IR_SILENCER_KEY, false)
+        if (enabled == isEnabled) {
+            return
+        }
+        if (enabled) {
+            Log.d(TAG, "Enabling")
             telephonyManager.registerTelephonyCallback(context.mainExecutor, callStateListener)
         } else {
+            Log.d(TAG, "Disabling")
             telephonyManager.unregisterTelephonyCallback(callStateListener)
         }
+        isEnabled = enabled
     }
 
     private val callStateListener =

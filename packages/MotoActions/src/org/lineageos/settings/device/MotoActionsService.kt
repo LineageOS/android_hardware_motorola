@@ -11,10 +11,13 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.SharedPreferences
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.os.IBinder
 import android.os.PowerManager
 import android.os.PowerManager.WakeLock
 import android.util.Log
+import androidx.preference.PreferenceManager
 import org.lineageos.settings.device.actions.ChopChopSensor
 import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
@@ -24,7 +27,7 @@ import org.lineageos.settings.device.doze.FlatUpSensor
 import org.lineageos.settings.device.doze.ScreenStateNotifier
 import org.lineageos.settings.device.doze.StowSensor
 
-class MotoActionsService : Service(), ScreenStateNotifier, UpdatedStateNotifier {
+class MotoActionsService : Service(), ScreenStateNotifier {
 
     private lateinit var powerManager: PowerManager
     private lateinit var wakeLock: WakeLock
@@ -35,16 +38,30 @@ class MotoActionsService : Service(), ScreenStateNotifier, UpdatedStateNotifier 
     override fun onCreate() {
         Log.d(TAG, "Starting")
 
-        val actionsSettings = MotoActionsSettings(this, this)
+        val sharedPrefs: SharedPreferences =
+            PreferenceManager.getDefaultSharedPreferences(this).apply {
+                val prefListener = OnSharedPreferenceChangeListener { _, key ->
+                    when (key) {
+                        MotoActionsSettings.GESTURE_CHOP_CHOP_KEY,
+                        MotoActionsSettings.GESTURE_IR_WAKEUP_KEY,
+                        MotoActionsSettings.GESTURE_PICK_UP_KEY,
+                        MotoActionsSettings.GESTURE_POCKET_KEY,
+                        MotoActionsSettings.GESTURE_IR_SILENCER_KEY,
+                        MotoActionsSettings.GESTURE_FLIP_TO_MUTE_KEY,
+                        MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY -> updateState()
+                    }
+                }
+                registerOnSharedPreferenceChangeListener(prefListener)
+            }
         val sensorHelper = SensorHelper(this)
 
-        screenStateNotifiers.add(StowSensor(actionsSettings, this, sensorHelper))
-        screenStateNotifiers.add(FlatUpSensor(actionsSettings, this, sensorHelper))
+        screenStateNotifiers.add(StowSensor(this, sharedPrefs, sensorHelper))
+        screenStateNotifiers.add(FlatUpSensor(this, sharedPrefs, sensorHelper))
 
-        updatedStateNotifiers.add(ChopChopSensor(actionsSettings, this, sensorHelper))
-        updatedStateNotifiers.add(ProximitySilencer(actionsSettings, this, sensorHelper))
-        updatedStateNotifiers.add(FlipToMute(actionsSettings, this, sensorHelper))
-        updatedStateNotifiers.add(LiftToSilence(actionsSettings, this, sensorHelper))
+        updatedStateNotifiers.add(ChopChopSensor(this, sharedPrefs, sensorHelper))
+        updatedStateNotifiers.add(ProximitySilencer(this, sharedPrefs, sensorHelper))
+        updatedStateNotifiers.add(FlipToMute(this, sharedPrefs, sensorHelper))
+        updatedStateNotifiers.add(LiftToSilence(this, sharedPrefs, sensorHelper))
 
         powerManager = getSystemService(PowerManager::class.java)
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "$TAG:WakeLock")
@@ -76,7 +93,7 @@ class MotoActionsService : Service(), ScreenStateNotifier, UpdatedStateNotifier 
         screenStateNotifiers.forEach { it.screenTurnedOff() }
     }
 
-    override fun updateState() {
+    private fun updateState() {
         if (powerManager.isInteractive) {
             screenTurnedOn()
         } else {

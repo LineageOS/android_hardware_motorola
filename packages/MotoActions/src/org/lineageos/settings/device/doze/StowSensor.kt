@@ -7,24 +7,25 @@
 package org.lineageos.settings.device.doze
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_IR_WAKEUP_KEY
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_POCKET_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class StowSensor(
-    private val motoActionsSettings: MotoActionsSettings,
     context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : ScreenStateNotifier {
 
     private val dozePulseAction: DozePulseAction = DozePulseAction(context)
     private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
-    private var enabled = false
     private var lastStowed = false
     private var lastStowedTime = 0L
 
@@ -39,8 +40,8 @@ class StowSensor(
 
     override fun screenTurnedOff() {
         if (
-            (motoActionsSettings.isPocketGestureEnabled() ||
-                motoActionsSettings.isIrWakeupEnabled()) && !enabled
+            (sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true) ||
+                sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true)) && !enabled
         ) {
             Log.d(TAG, "Enabling")
             sensorHelper.registerListener(stowSensor, stowListener)
@@ -66,8 +67,8 @@ class StowSensor(
             private fun shouldPulse(timestamp: Long): Boolean {
                 val delta = timestamp - lastStowedTime
 
-                val irWakeupEnabled = motoActionsSettings.isIrWakeupEnabled()
-                val pocketGestureEnabled = motoActionsSettings.isPocketGestureEnabled()
+                val irWakeupEnabled = sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true)
+                val pocketGestureEnabled = sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true)
 
                 return when {
                     irWakeupEnabled && pocketGestureEnabled -> true
