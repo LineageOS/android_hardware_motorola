@@ -7,6 +7,7 @@
 package org.lineageos.settings.device.actions
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -16,13 +17,13 @@ import android.hardware.camera2.CameraManager.TorchCallback
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_CHOP_CHOP_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_CHOP_CHOP
 
 class ChopChopSensor(
-    private val motoActionsSettings: MotoActionsSettings,
     context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
@@ -63,20 +64,20 @@ class ChopChopSensor(
 
     @Synchronized
     override fun updateState() {
-        when {
-            motoActionsSettings.isChopChopGestureEnabled() && !isEnabled -> {
-                Log.d(TAG, "Enabling")
-                sensorHelper.registerListener(chopChopSensor, chopChopListener)
-                sensorHelper.registerListener(proximitySensor, proximityListener)
-                isEnabled = true
-            }
-            !motoActionsSettings.isChopChopGestureEnabled() && isEnabled -> {
-                Log.d(TAG, "Disabling")
-                sensorHelper.unregisterListener(chopChopListener)
-                sensorHelper.unregisterListener(proximityListener)
-                isEnabled = false
-            }
+        val enabled = sharedPreferences.getBoolean(GESTURE_CHOP_CHOP_KEY, true)
+        if (enabled == isEnabled) {
+            return
         }
+        if (enabled) {
+            Log.d(TAG, "Enabling")
+            sensorHelper.registerListener(chopChopSensor, chopChopListener)
+            sensorHelper.registerListener(proximitySensor, proximityListener)
+        } else {
+            Log.d(TAG, "Disabling")
+            sensorHelper.unregisterListener(chopChopListener)
+            sensorHelper.unregisterListener(proximityListener)
+        }
+        isEnabled = enabled
     }
 
     private val chopChopListener =

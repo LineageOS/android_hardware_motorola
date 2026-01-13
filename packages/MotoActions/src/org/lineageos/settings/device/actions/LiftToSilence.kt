@@ -7,6 +7,7 @@
 package org.lineageos.settings.device.actions
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -14,14 +15,14 @@ import android.telecom.TelecomManager
 import android.telephony.TelephonyCallback
 import android.telephony.TelephonyManager
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_UP
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class LiftToSilence(
-    private val motoActionsSettings: MotoActionsSettings,
     private val context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
@@ -30,16 +31,24 @@ class LiftToSilence(
     private val flatUpSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
     private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
+    private var isEnabled = false
     private var isRinging = false
     private var isStowed = false
     private var lastFlatUp = false
 
     override fun updateState() {
-        if (motoActionsSettings.isLiftToSilenceEnabled()) {
+        val enabled = sharedPreferences.getBoolean(GESTURE_LIFT_TO_SILENCE_KEY, false)
+        if (enabled == isEnabled) {
+            return
+        }
+        if (enabled) {
+            Log.d(TAG, "Enabling")
             telephonyManager.registerTelephonyCallback(context.mainExecutor, callStateListener)
         } else {
+            Log.d(TAG, "Disabling")
             telephonyManager.unregisterTelephonyCallback(callStateListener)
         }
+        isEnabled = enabled
     }
 
     private val callStateListener =

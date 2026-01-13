@@ -7,18 +7,19 @@
 package org.lineageos.settings.device.doze
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_PICK_UP_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_UP
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class FlatUpSensor(
-    private val motoActionsSettings: MotoActionsSettings,
     context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : ScreenStateNotifier {
 
@@ -26,7 +27,6 @@ class FlatUpSensor(
     private val flatUpSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
     private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
-    private var enabled = false
     private var isStowed = false
     private var lastFlatUp = false
 
@@ -41,7 +41,7 @@ class FlatUpSensor(
     }
 
     override fun screenTurnedOff() {
-        if (motoActionsSettings.isPickUpEnabled() && !enabled) {
+        if (sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true) && !enabled) {
             Log.d(TAG, "Enabling")
             sensorHelper.registerListener(flatUpSensor, flatUpListener)
             sensorHelper.registerListener(stowSensor, stowListener)

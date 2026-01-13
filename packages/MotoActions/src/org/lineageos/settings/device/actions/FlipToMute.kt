@@ -11,18 +11,19 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.util.Log
-import org.lineageos.settings.device.MotoActionsSettings
+import org.lineageos.settings.device.MotoActionsSettings.GESTURE_FLIP_TO_MUTE_KEY
 import org.lineageos.settings.device.SensorHelper
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_DOWN
 import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class FlipToMute(
-    private val motoActionsSettings: MotoActionsSettings,
     private val context: Context,
+    private val sharedPreferences: SharedPreferences,
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
@@ -36,25 +37,25 @@ class FlipToMute(
     private var filter = notificationManager.currentInterruptionFilter
 
     override fun updateState() {
-        when {
-            motoActionsSettings.isFlipToMuteEnabled() && !isEnabled -> {
-                Log.d(TAG, "Enabling")
-                sensorHelper.registerListener(flatDownSensor, flatDownListener)
-                sensorHelper.registerListener(stowSensor, stowListener)
-                context.registerReceiver(
-                    receiver,
-                    IntentFilter(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED),
-                )
-                isEnabled = true
-            }
-            !motoActionsSettings.isFlipToMuteEnabled() && isEnabled -> {
-                Log.d(TAG, "Disabling")
-                sensorHelper.unregisterListener(flatDownListener)
-                sensorHelper.unregisterListener(stowListener)
-                context.unregisterReceiver(receiver)
-                isEnabled = false
-            }
+        val enabled = sharedPreferences.getBoolean(GESTURE_FLIP_TO_MUTE_KEY, false)
+        if (enabled == isEnabled) {
+            return
         }
+        if (enabled) {
+            Log.d(TAG, "Enabling")
+            sensorHelper.registerListener(flatDownSensor, flatDownListener)
+            sensorHelper.registerListener(stowSensor, stowListener)
+            context.registerReceiver(
+                receiver,
+                IntentFilter(NotificationManager.ACTION_INTERRUPTION_FILTER_CHANGED),
+            )
+        } else {
+            Log.d(TAG, "Disabling")
+            sensorHelper.unregisterListener(flatDownListener)
+            sensorHelper.unregisterListener(stowListener)
+            context.unregisterReceiver(receiver)
+        }
+        isEnabled = enabled
     }
 
     private val flatDownListener =
