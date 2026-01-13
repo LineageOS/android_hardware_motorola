@@ -37,18 +37,8 @@ class SensorHelper(private val context: Context) {
             .getOrElse { throw RuntimeException(it) }
     }
 
-    private fun getSensor(type: Int): Sensor? =
+    fun getSensor(type: Int): Sensor? =
         sensorMap.getOrPut(type) { sensorManager.getDefaultSensor(type, true) }
-
-    fun getChopChopSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_CHOP_CHOP)!!
-
-    fun getFlatUpSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
-
-    fun getFlatDownSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_FLAT_DOWN)!!
-
-    fun getProximitySensor(): Sensor = getSensor(Sensor.TYPE_PROXIMITY)!!
-
-    fun getStowSensor(): Sensor = getSensor(SENSOR_TYPE_MMI_STOW)!!
 
     fun registerListener(sensor: Sensor, listener: SensorEventListener) {
         if (
@@ -70,10 +60,10 @@ class SensorHelper(private val context: Context) {
     companion object {
         private const val TAG = "MotoActions"
 
-        private const val SENSOR_TYPE_MMI_CHOP_CHOP = 65546
-        private const val SENSOR_TYPE_MMI_FLAT_UP = 65537
-        private const val SENSOR_TYPE_MMI_FLAT_DOWN = 65538
-        private const val SENSOR_TYPE_MMI_STOW = 65539
+        const val SENSOR_TYPE_MMI_CHOP_CHOP = 65546
+        const val SENSOR_TYPE_MMI_FLAT_UP = 65537
+        const val SENSOR_TYPE_MMI_FLAT_DOWN = 65538
+        const val SENSOR_TYPE_MMI_STOW = 65539
 
         private const val BATCH_LATENCY_IN_MS = 100
     }

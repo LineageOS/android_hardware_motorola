@@ -13,6 +13,8 @@ import android.hardware.SensorEventListener
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
 import org.lineageos.settings.device.SensorHelper
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_UP
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class FlatUpSensor(
     private val motoActionsSettings: MotoActionsSettings,
@@ -21,8 +23,8 @@ class FlatUpSensor(
 ) : ScreenStateNotifier {
 
     private val dozePulseAction: DozePulseAction = DozePulseAction(context)
-    private val flatUpSensor: Sensor = sensorHelper.getFlatUpSensor()
-    private val stowSensor: Sensor = sensorHelper.getStowSensor()
+    private val flatUpSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
+    private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
     private var enabled = false
     private var isStowed = false

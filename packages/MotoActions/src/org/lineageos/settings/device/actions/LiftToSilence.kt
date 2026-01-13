@@ -16,6 +16,8 @@ import android.telephony.TelephonyManager
 import android.util.Log
 import org.lineageos.settings.device.MotoActionsSettings
 import org.lineageos.settings.device.SensorHelper
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_FLAT_UP
+import org.lineageos.settings.device.SensorHelper.Companion.SENSOR_TYPE_MMI_STOW
 
 class LiftToSilence(
     private val motoActionsSettings: MotoActionsSettings,
@@ -25,8 +27,8 @@ class LiftToSilence(
 
     private val telecomManager = context.getSystemService(TelecomManager::class.java)
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
-    private val flatUpSensor: Sensor = sensorHelper.getFlatUpSensor()
-    private val stowSensor: Sensor = sensorHelper.getStowSensor()
+    private val flatUpSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_FLAT_UP)!!
+    private val stowSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_STOW)!!
 
     private var isRinging = false
     private var isStowed = false

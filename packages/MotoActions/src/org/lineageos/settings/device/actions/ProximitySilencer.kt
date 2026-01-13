@@ -25,7 +25,7 @@ class ProximitySilencer(
 
     private val telecomManager = context.getSystemService(TelecomManager::class.java)
     private val telephonyManager = context.getSystemService(TelephonyManager::class.java)
-    private val proximitySensor: Sensor = sensorHelper.getProximitySensor()
+    private val proximitySensor: Sensor = sensorHelper.getSensor(Sensor.TYPE_PROXIMITY)!!
 
     private var isRinging = false
     private var ringStartedMs = 0L
