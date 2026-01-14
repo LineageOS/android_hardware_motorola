@@ -58,7 +58,7 @@ class SensorHelper(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "MotoActions"
+        private const val TAG = "SensorHelper"
 
         const val SENSOR_TYPE_MMI_CHOP_CHOP = 65546
         const val SENSOR_TYPE_MMI_FLAT_UP = 65537

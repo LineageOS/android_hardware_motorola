@@ -108,6 +108,6 @@ class FlipToMute(
         }
 
     companion object {
-        private const val TAG = "MotoActions-FlipToMute"
+        private const val TAG = "FlipToMute"
     }
 }

@@ -135,7 +135,7 @@ class DozePulse(
     }
 
     companion object {
-        private const val TAG = "MotoActions-DozePulse"
+        private const val TAG = "DozePulse"
         private const val DELAY_BETWEEN_DOZES_IN_MS = 1500
         private const val HANDWAVE_MAX_DELTA_NS = 1000L * 1000 * 1000
         private const val POCKET_MIN_DELTA_NS = 5000L * 1000 * 1000

@@ -85,6 +85,6 @@ class MotoActionsService : Service() {
         }
 
     companion object {
-        private const val TAG = "MotoActions"
+        private const val TAG = "MotoActionsService"
     }
 }
