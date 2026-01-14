@@ -23,6 +23,6 @@ class BootCompletedReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        private const val TAG = "MotoActions"
+        private const val TAG = "BootCompletedReceiver"
     }
 }

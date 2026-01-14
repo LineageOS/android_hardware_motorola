@@ -115,6 +115,6 @@ class ChopForTorch(
         }
 
     companion object {
-        private const val TAG = "MotoActions-ChopForTorch"
+        private const val TAG = "ChopForTorch"
     }
 }

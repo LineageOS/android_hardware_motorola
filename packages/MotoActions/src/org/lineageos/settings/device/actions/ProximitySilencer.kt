@@ -101,7 +101,7 @@ class ProximitySilencer(
         }
 
     companion object {
-        private const val TAG = "MotoActions-ProximitySilencer"
+        private const val TAG = "ProximitySilencer"
         private const val SILENCE_DELAY_MS = 500
     }
 }
