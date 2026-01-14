@@ -7,7 +7,5 @@
 package org.lineageos.settings.device.doze
 
 interface ScreenStateNotifier {
-    fun screenTurnedOn()
-
-    fun screenTurnedOff()
+    fun onScreenStateChanged(screenOn: Boolean)
 }
