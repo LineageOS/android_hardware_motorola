@@ -100,6 +100,6 @@ class LiftToSilence(
         }
 
     companion object {
-        private const val TAG = "MotoActions-LiftToSilence"
+        private const val TAG = "LiftToSilence"
     }
 }
