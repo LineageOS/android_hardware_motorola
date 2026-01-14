@@ -30,24 +30,23 @@ class FlatUpSensor(
     private var isStowed = false
     private var lastFlatUp = false
 
-    override fun screenTurnedOn() {
-        if (enabled) {
-            Log.d(TAG, "Disabling")
-            sensorHelper.unregisterListener(flatUpListener)
-            sensorHelper.unregisterListener(stowListener)
-            enabled = false
+    override fun onScreenStateChanged(screenOn: Boolean) {
+        if (screenOn) {
+            if (enabled) {
+                Log.d(TAG, "Disabling")
+                sensorHelper.unregisterListener(flatUpListener)
+                sensorHelper.unregisterListener(stowListener)
+                enabled = false
+            }
+        } else {
+            if (sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true) && !enabled) {
+                Log.d(TAG, "Enabling")
+                sensorHelper.registerListener(flatUpSensor, flatUpListener)
+                sensorHelper.registerListener(stowSensor, stowListener)
+                enabled = true
+            }
         }
-        dozePulseAction.onStateChanged(true)
-    }
-
-    override fun screenTurnedOff() {
-        if (sharedPreferences.getBoolean(GESTURE_PICK_UP_KEY, true) && !enabled) {
-            Log.d(TAG, "Enabling")
-            sensorHelper.registerListener(flatUpSensor, flatUpListener)
-            sensorHelper.registerListener(stowSensor, stowListener)
-            enabled = true
-        }
-        dozePulseAction.onStateChanged(false)
+        dozePulseAction.onStateChanged(screenOn)
     }
 
     private val flatUpListener =
