@@ -29,23 +29,22 @@ class StowSensor(
     private var lastStowed = false
     private var lastStowedTime = 0L
 
-    override fun screenTurnedOn() {
-        if (enabled) {
-            Log.d(TAG, "Disabling")
-            sensorHelper.unregisterListener(stowListener)
-            enabled = false
-        }
-        dozePulseAction.onStateChanged(true)
-    }
-
-    override fun screenTurnedOff() {
-        if (
-            (sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true) ||
-                sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true)) && !enabled
-        ) {
-            Log.d(TAG, "Enabling")
-            sensorHelper.registerListener(stowSensor, stowListener)
-            enabled = true
+    override fun onScreenStateChanged(screenOn: Boolean) {
+        if (screenOn) {
+            if (enabled) {
+                Log.d(TAG, "Disabling")
+                sensorHelper.unregisterListener(stowListener)
+                enabled = false
+            }
+        } else {
+            if (
+                (sharedPreferences.getBoolean(GESTURE_POCKET_KEY, true) ||
+                    sharedPreferences.getBoolean(GESTURE_IR_WAKEUP_KEY, true)) && !enabled
+            ) {
+                Log.d(TAG, "Enabling")
+                sensorHelper.registerListener(stowSensor, stowListener)
+                enabled = true
+            }
         }
         dozePulseAction.onStateChanged(false)
     }

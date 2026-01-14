@@ -27,7 +27,7 @@ import org.lineageos.settings.device.doze.FlatUpSensor
 import org.lineageos.settings.device.doze.ScreenStateNotifier
 import org.lineageos.settings.device.doze.StowSensor
 
-class MotoActionsService : Service(), ScreenStateNotifier {
+class MotoActionsService : Service() {
 
     private lateinit var powerManager: PowerManager
     private lateinit var wakeLock: WakeLock
@@ -79,26 +79,19 @@ class MotoActionsService : Service(), ScreenStateNotifier {
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    override fun screenTurnedOn() {
+    private fun onScreenStateChanged(screenOn: Boolean) {
         if (!wakeLock.isHeld) {
-            wakeLock.acquire()
+            if (screenOn) {
+                wakeLock.acquire()
+            } else {
+                wakeLock.release()
+            }
         }
-        screenStateNotifiers.forEach { it.screenTurnedOn() }
-    }
-
-    override fun screenTurnedOff() {
-        if (wakeLock.isHeld) {
-            wakeLock.release()
-        }
-        screenStateNotifiers.forEach { it.screenTurnedOff() }
+        screenStateNotifiers.forEach { it.onScreenStateChanged(screenOn) }
     }
 
     private fun updateState() {
-        if (powerManager.isInteractive) {
-            screenTurnedOn()
-        } else {
-            screenTurnedOff()
-        }
+        onScreenStateChanged(powerManager.isInteractive)
         updatedStateNotifiers.forEach { it.updateState() }
     }
 
@@ -106,8 +99,8 @@ class MotoActionsService : Service(), ScreenStateNotifier {
         object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
                 when (intent.action) {
-                    Intent.ACTION_SCREEN_OFF -> screenTurnedOff()
-                    Intent.ACTION_SCREEN_ON -> screenTurnedOn()
+                    Intent.ACTION_SCREEN_OFF -> onScreenStateChanged(false)
+                    Intent.ACTION_SCREEN_ON -> onScreenStateChanged(true)
                 }
             }
         }
