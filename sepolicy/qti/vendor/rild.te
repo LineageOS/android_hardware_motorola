@@ -19,3 +19,7 @@ allow rild vendor_cutback_data_file:sock_file create_file_perms;
 allow rild mnt_vendor_file:dir r_dir_perms;
 allow rild vendor_persist_mdm_file:dir rw_dir_perms;
 allow rild vendor_persist_mdm_file:file rw_file_perms;
+
+allow rild vendor_thermal-engine:unix_stream_socket connectto;
+allow rild vendor_thermal_socket:dir w_dir_perms;
+allow rild vendor_thermal_socket:sock_file create_file_perms;
