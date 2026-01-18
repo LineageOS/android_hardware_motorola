@@ -33,6 +33,24 @@
       "message": "Please don\u0027t merge this alone. We need to agree that it\u0027s all or nothing.",
       "revId": "3c2613776ac75f89ad000e4582dd0d2ab20a46d2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a2b3cd0_3847941d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-01-18T21:43:24Z",
+      "side": 1,
+      "message": "wasn\u0027t planning to - samsung/sony need to okay it.\n\nBut I think this is an okay idea.",
+      "parentUuid": "6fdfbe01_41dbd218",
+      "revId": "3c2613776ac75f89ad000e4582dd0d2ab20a46d2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
