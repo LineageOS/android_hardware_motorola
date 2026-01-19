@@ -45,6 +45,7 @@ genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/power_supply/dc  
 genfscon sysfs /devices/platform/soc/soc:mmi_chrg_manager/power_supply/mmi_chrg_manager                                                                u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/force_charger_suspend                                u:object_r:vendor_sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,pmic_glink/soc:qcom,pmic_glink:qcom,battery_charger/force_charging_disable                               u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /module/qpnp_adaptive_charge/parameters/charging_enabled                                                                                u:object_r:vendor_sysfs_battery_supply:s0
 
 # IIO
 genfscon sysfs /bus/iio                                                                                                                  u:object_r:vendor_sysfs_sensors:s0
