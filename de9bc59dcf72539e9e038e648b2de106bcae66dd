@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65359217_aa96c129",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-01-27T12:25:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b323bc69_8a8fe36a",
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ca42dc0_5c73e232",
