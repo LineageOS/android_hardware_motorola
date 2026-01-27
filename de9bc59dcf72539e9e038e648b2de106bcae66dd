@@ -177,6 +177,30 @@
       },
       "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa3a7d63_b990247b",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-01-27T22:55:19Z",
+      "side": 1,
+      "message": "mm, I really thought moto sm7325 were using aidl. I was mistaken. nevermind me!",
+      "parentUuid": "87d49330_c3a25996",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
