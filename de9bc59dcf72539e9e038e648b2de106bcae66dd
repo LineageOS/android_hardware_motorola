@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ca42dc0_5c73e232",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-01-27T02:19:09Z",
+      "side": 1,
+      "message": "I think this one was device specific bc it\u0027s different...\n\n\nFor ex berlin is:\n\n```\n    \u003chal format\u003d\"hidl\" optional\u003d\"true\"\u003e\n        \u003cname\u003ecom.motorola.hardware.biometric.fingerprint\u003c/name\u003e\n        \u003ctransport\u003ehwbinder\u003c/transport\u003e\n        \u003cversion\u003e1.0\u003c/version\u003e\n        \u003cinterface\u003e\n            \u003cname\u003eIMotoFingerPrint\u003c/name\u003e\n            \u003cinstance\u003edefault\u003c/instance\u003e\n        \u003c/interface\u003e\n        \u003cinterface\u003e\n            \u003cname\u003eIMotoFingerPrintSensorTest\u003c/name\u003e\n            \u003cinstance\u003edefault\u003c/instance\u003e\n        \u003c/interface\u003e\n    \u003c/hal\u003e\n    ```\n    \n    I guess at minimum we need to add the latter one?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
