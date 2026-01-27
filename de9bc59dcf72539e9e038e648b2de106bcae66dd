@@ -153,6 +153,30 @@
       },
       "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87d49330_c3a25996",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-01-27T18:42:59Z",
+      "side": 1,
+      "message": "@johnsonnolen@gmail.com to aidl hal or hidl one?",
+      "parentUuid": "ba6875b8_76407378",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
