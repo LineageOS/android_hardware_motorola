@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b323bc69_8a8fe36a",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-01-27T09:27:17Z",
+      "side": 1,
+      "message": "Move above hidl counterpart.",
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ca42dc0_5c73e232",
         "filename": "vintf/device_framework_matrix.xml",
         "patchSetId": 3
@@ -62,6 +79,30 @@
       "side": 1,
       "message": "This isn\u0027t actually device-specific, also this is FCM, as bgcngm said. Leap and all parrot66 devices have it.",
       "parentUuid": "e51604af_fe0024cc",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 10
+      },
+      "revId": "de9bc59dcf72539e9e038e648b2de106bcae66dd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aec03c2_1f9cd56b",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-01-27T09:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "239313b9_fc17e492",
       "range": {
         "startLine": 35,
         "startChar": 0,
