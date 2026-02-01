@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d24702a4_6e97bf7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-02-01T10:07:51Z",
+      "side": 1,
+      "message": "\u003e really ought to get this in before 23.2 ships so no mid cycle breakage.\nHow it even would break, if this is FCM? And no devices with those AIDL hals afaik shipped in Lineage.",
+      "parentUuid": "52d415d4_a771a9a5",
+      "revId": "1290492a3b2523d6ceea542263422e3b4d01239f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "adcae9bc_87411117",
