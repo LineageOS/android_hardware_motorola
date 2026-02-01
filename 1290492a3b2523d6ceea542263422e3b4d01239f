@@ -71,6 +71,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9be624_6475d0c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-02-01T10:09:00Z",
+      "side": 1,
+      "message": "https://github.com/LineageOS/android_device_motorola_sm8550-common/blob/lineage-23.0/device_framework_matrix.xml",
+      "parentUuid": "66297680_a33a1be1",
+      "revId": "1290492a3b2523d6ceea542263422e3b4d01239f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "adcae9bc_87411117",
