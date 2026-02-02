@@ -16,6 +16,24 @@
       "message": "Hold these for now, I\u0027ll check against motorola ones later this month (or if anyone is bored enough to do it :D).",
       "revId": "b5deaa09b596a496a6c6ec569fc8c6f6cb35b5fa",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adf7d381_17523584",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-02T19:15:48Z",
+      "side": 1,
+      "message": "They appeared the same when I was looking at them for avatrn, but ended up using the com.motorola.fingerprint interface for fod instead.",
+      "parentUuid": "fa3e738f_7f896c12",
+      "revId": "b5deaa09b596a496a6c6ec569fc8c6f6cb35b5fa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
