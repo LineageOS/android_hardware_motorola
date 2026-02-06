@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "846bcc40_9d0a114b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-06T21:15:50Z",
+      "side": 1,
+      "message": "Might be better to merge this before the sensors chain. :)",
+      "revId": "f2531b7b3419c6c8b7e9efccf1c7fbf6b08c5306",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
