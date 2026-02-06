@@ -52,6 +52,24 @@
       "parentUuid": "c206e378_65360476",
       "revId": "e6384564bab694b680fc80bd2676c7eb0360fa3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c30c6668_7cc1aea8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-02-06T22:51:35Z",
+      "side": 1,
+      "message": "Maybe my local changes were not same as on Gerrit - so it was overrided.",
+      "parentUuid": "17aaee17_1ead2607",
+      "revId": "e6384564bab694b680fc80bd2676c7eb0360fa3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
