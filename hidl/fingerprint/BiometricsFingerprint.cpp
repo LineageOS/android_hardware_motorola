@@ -13,6 +13,9 @@
 #include <inttypes.h>
 #include <unistd.h>
 
+#include <chrono>
+#include <thread>
+
 namespace android {
 namespace hardware {
 namespace biometrics {
@@ -94,6 +97,9 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t /*sensorId*/) {
 }
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
+    if (SCREEN_WAKE_DELAY > 0) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(SCREEN_WAKE_DELAY));
+    }
     if (mUdfpsHandler) {
         mUdfpsHandler->onFingerDown(x, y, minor, major);
     }
