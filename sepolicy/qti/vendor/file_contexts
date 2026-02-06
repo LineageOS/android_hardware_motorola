@@ -129,6 +129,7 @@
 /vendor/bin/init\.oem\.fingerprint\.overlay\.sh    u:object_r:vendor_init_fingerprint_exec:s0
 /vendor/bin/init\.oem\.fingerprint\.sh             u:object_r:vendor_init_fingerprint_exec:s0
 /vendor/bin/init\.oem\.hw\.sh                      u:object_r:vendor_init_hw_exec:s0
+/vendor/bin/sensors\.moto_ext\.sh                  u:object_r:vendor_init_touch_exec:s0
 
 # Vibrator
 /dev/qcom_haptic    u:object_r:aac_richtap_dev_device:s0
