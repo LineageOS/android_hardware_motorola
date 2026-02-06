@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59bde7f4_a54eeaba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2026-02-06T18:58:20Z",
+      "side": 1,
+      "message": "added support for berlna\u0027s Novatek Touchscreen path\nhttps://github.com/LineageOS/android_device_motorola_berlna/blob/lineage-23.0/sensors/Sensor.h#L112",
+      "revId": "35d18beb3ac98b4fe584c0cae9d2cf6fe1425892",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
