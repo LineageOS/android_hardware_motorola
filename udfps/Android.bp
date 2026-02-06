@@ -20,6 +20,10 @@ cc_defaults {
         "motofingerprint_headers",
     ],
     vendor: true,
+    cflags: select(soong_config_variable("moto_udfps", "screen_wake_delay"), {
+        any @ flag_val: ["-DSCREEN_WAKE_DELAY=" + flag_val],
+        default: ["-DSCREEN_WAKE_DELAY=0"], // Disabled
+    }),
 }
 
 cc_library {
