@@ -16,6 +16,24 @@
       "message": "@NikitaSavc@yandex.ru why did you revert PS5 changes in PS7?",
       "revId": "e6384564bab694b680fc80bd2676c7eb0360fa3d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c206e378_65360476",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-06T21:42:24Z",
+      "side": 1,
+      "message": "Ps6 really, since I updated the commit message to add myself as co author",
+      "parentUuid": "517a11b0_83c849e5",
+      "revId": "e6384564bab694b680fc80bd2676c7eb0360fa3d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
