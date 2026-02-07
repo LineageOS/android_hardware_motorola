@@ -46,6 +46,30 @@
       },
       "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72afff61_ed9a1f88",
+        "filename": "sensors/sensors.moto_ext.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2026-02-07T14:04:48Z",
+      "side": 1,
+      "message": "exec instead of exec_background should do the work.\nbut using ueventd is likely the best since you\u0027re already changing stuff in the devices, one more change won\u0027t hurt",
+      "parentUuid": "14ab682b_4677c562",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
