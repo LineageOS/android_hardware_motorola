@@ -23,11 +23,12 @@ namespace V2_3 {
 namespace implementation {
 
 BiometricsFingerprint::BiometricsFingerprint() {
-    mService = IBiometricsFingerprint_2_1::getService();
+    mService = V2_1::IBiometricsFingerprint::getService();
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
-        const sp<IBiometricsFingerprintClientCallback>& clientCallback) {
+        const sp<V2_1::IBiometricsFingerprintClientCallback>& clientCallback) {
+    mClientCallback = std::move(clientCallback);
     return mService->setNotify(clientCallback);
 }
 
@@ -80,6 +81,45 @@ Return<void> BiometricsFingerprint::onFingerDown(uint32_t /*x*/, uint32_t /*y*/,
 
 Return<void> BiometricsFingerprint::onFingerUp() {
     return Void();
+}
+
+Return<void> BiometricsFingerprint::onEnrollResult(uint64_t deviceId, uint32_t fingerId,
+                                                   uint32_t groupId, uint32_t remaining) {
+    return mClientCallback->onEnrollResult(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onAcquired(uint64_t deviceId,
+                                               V2_1::FingerprintAcquiredInfo acquiredInfo,
+                                               int32_t vendorCode) {
+    return mClientCallback->onAcquired(deviceId, acquiredInfo, vendorCode);
+}
+
+Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t fingerId,
+                                                    uint32_t groupId,
+                                                    const hidl_vec<uint8_t>& token) {
+    return mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
+}
+
+Return<void> BiometricsFingerprint::onError(uint64_t deviceId, FingerprintError error,
+                                            int32_t vendorCode) {
+    return mClientCallback->onError(deviceId, error, vendorCode);
+}
+
+Return<void> BiometricsFingerprint::onRemoved(uint64_t deviceId, uint32_t fingerId,
+                                              uint32_t groupId, uint32_t remaining) {
+    return mClientCallback->onRemoved(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onEnumerate(uint64_t deviceId, uint32_t fingerId,
+                                                uint32_t groupId, uint32_t remaining) {
+    return mClientCallback->onEnumerate(deviceId, fingerId, groupId, remaining);
+}
+
+Return<void> BiometricsFingerprint::onAcquired_2_2(uint64_t deviceId,
+                                                   FingerprintAcquiredInfo acquiredInfo,
+                                                   int32_t vendorCode) {
+    return reinterpret_cast<V2_2::IBiometricsFingerprintClientCallback*>(mClientCallback.get())
+            ->onAcquired_2_2(deviceId, acquiredInfo, vendorCode);
 }
 
 }  // namespace implementation
