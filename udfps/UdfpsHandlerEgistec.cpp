@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "UdfpsHandler.moto"
+#define LOG_TAG "UdfpsHandler.moto_egistec"
 
-#include <com/motorola/hardware/biometric/fingerprint/1.0/IMotoFingerPrint.h>
+#include <vendor/egistec/hardware/fingerprint/4.0/IBiometricsFingerprintRbs.h>
 
 #include <chrono>
 #include <thread>
@@ -15,14 +15,12 @@
 
 using ::android::sp;
 using ::android::hardware::hidl_vec;
-using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventResult;
-using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotFodEventType;
-using ::com::motorola::hardware::biometric::fingerprint::V1_0::IMotoFingerPrint;
+using ::vendor::egistec::hardware::fingerprint::V4_0::IBiometricsFingerprintRbs;
 
-class MotoUdfpsHandler : public UdfpsHandler {
+class EgistecUdfpsHandler : public UdfpsHandler {
   public:
     void init(fingerprint_device_t* /*device*/) {
-        mMotoFingerprint = IMotoFingerPrint::getService();
+        mRbsFingerprint = IBiometricsFingerprintRbs::getService();
         mHbmFodEnabled = false;
     }
 
@@ -55,8 +53,7 @@ class MotoUdfpsHandler : public UdfpsHandler {
             return;
         }
 
-        mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_UP, {},
-                                       [](IMotFodEventResult, const hidl_vec<signed char>&) {});
+        extraApiWrapper(102);
         setHbmState(OFF);
 
         mHbmFodEnabled = false;
@@ -70,20 +67,31 @@ class MotoUdfpsHandler : public UdfpsHandler {
         }
 
         setHbmState(ON);
-        mMotoFingerprint->sendFodEvent(IMotFodEventType::FINGER_DOWN, {},
-                                       [](IMotFodEventResult, const hidl_vec<signed char>&) {});
+        extraApiWrapper(101);
 
         mHbmFodEnabled = true;
+    }
+
+    void extraApiWrapper(int cidValue) {
+        int cid[1] = {cidValue};
+        // Create a std::vector<uint8_t> to store the data from 'cid'
+        std::vector<uint8_t> cid_data(reinterpret_cast<uint8_t*>(cid),
+                                      reinterpret_cast<uint8_t*>(cid) + sizeof(cid));
+        // Create the hidl_vec<uint8_t> from the std::vector<uint8_t>
+        ::android::hardware::hidl_vec<uint8_t> hidl_cid = cid_data;
+        // Call extra_api with the correct input buffer and an empty lambda callback
+        mRbsFingerprint->extra_api(7, hidl_cid,
+                                   [](const ::android::hardware::hidl_vec<uint8_t>&) {});
     }
 
     bool mHbmFodEnabled;
     std::mutex mSetHbmFodMutex;
 
-    sp<IMotoFingerPrint> mMotoFingerprint;
+    sp<IBiometricsFingerprintRbs> mRbsFingerprint;
 };
 
 static UdfpsHandler* create() {
-    return new MotoUdfpsHandler();
+    return new EgistecUdfpsHandler();
 }
 
 static void destroy(UdfpsHandler* handler) {
