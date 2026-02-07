@@ -70,6 +70,30 @@
       },
       "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe3c62a8_8bdffb1d",
+        "filename": "sensors/sensors.moto_ext.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-02-07T14:53:08Z",
+      "side": 1,
+      "message": "It might be fine to just skip this commit and leave the /sys/class/touchscreen paths as-is here. Then if devices need custom spi paths they can do that in their trees (eg. moto sm6375 already does that where needed)",
+      "parentUuid": "72afff61_ed9a1f88",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
