@@ -4,10 +4,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-cc_library {
-    name: "libudfpshandler_moto",
-    vendor: true,
-    srcs: ["UdfpsHandlerMoto.cpp"],
+cc_defaults {
+    name: "libudfpshandler_moto_defaults",
     shared_libs: [
         "com.motorola.hardware.biometric.fingerprint@1.0",
         "libbase",
@@ -20,5 +18,24 @@ cc_library {
     header_libs: [
         "generated_kernel_headers",
         "motofingerprint_headers",
+    ],
+    vendor: true,
+}
+
+cc_library {
+    name: "libudfpshandler_moto",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerMoto.cpp"],
+    shared_libs: [
+        "com.motorola.hardware.biometric.fingerprint@1.0",
+    ],
+}
+
+cc_library {
+    name: "libudfpshandler_moto_egistec",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerEgistec.cpp"],
+    shared_libs: [
+        "vendor.egistec.hardware.fingerprint@4.0",
     ],
 }
