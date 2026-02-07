@@ -39,3 +39,12 @@ cc_library {
         "vendor.egistec.hardware.fingerprint@4.0",
     ],
 }
+
+cc_library {
+    name: "libudfpshandler_moto_goodix",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerGoodix.cpp"],
+    shared_libs: [
+        "vendor.goodix.hardware.biometrics.fingerprint@2.1",
+    ],
+}
