@@ -94,6 +94,30 @@
       },
       "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e515835b_5822d8a3",
+        "filename": "sensors/sensors.moto_ext.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-08T22:26:15Z",
+      "side": 1,
+      "message": "So we should drop 466323 as well, and just let devices handle that when integrating?",
+      "parentUuid": "fe3c62a8_8bdffb1d",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
