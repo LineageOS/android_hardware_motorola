@@ -118,6 +118,30 @@
       },
       "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd8fb08e_5aa61222",
+        "filename": "sensors/sensors.moto_ext.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2026-02-09T21:00:03Z",
+      "side": 1,
+      "message": "I agree with using ueventd instead of chowns. This script seems to fail to run with the sepolicy label it currently has anyways as vendor_init",
+      "parentUuid": "e515835b_5822d8a3",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "bdc2713564d9b293d7cc5a32b44a69b196d80658",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
