@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e084ace1_314cc211",
+        "filename": "sepolicy/qti/vendor/genfs_contexts",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-02-11T16:45:58Z",
+      "side": 1,
+      "message": "These are not sorted",
+      "revId": "1a114c327e8ecddb1404a53483a222bb805e99d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
