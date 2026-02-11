@@ -16,6 +16,24 @@
       "message": "Can\u0027t you use r_dir_file and place the rule here?",
       "revId": "5aeabbbf90efdc74b0e3c381fe38ed4c2700ca05",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4f0e06d_69948c8f",
+        "filename": "sepolicy/qti/vendor/hal_fingerprint_default.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-11T16:48:58Z",
+      "side": 1,
+      "message": "Yeah I\u0027ll take care of that a little bit later today",
+      "parentUuid": "0863cd92_15cdbe02",
+      "revId": "5aeabbbf90efdc74b0e3c381fe38ed4c2700ca05",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
