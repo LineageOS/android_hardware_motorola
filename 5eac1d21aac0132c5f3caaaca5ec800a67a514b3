@@ -16,6 +16,24 @@
       "message": "berlin needs: `/sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/touchscreen/primary/double_tap_enabled` and pressed.",
       "revId": "5eac1d21aac0132c5f3caaaca5ec800a67a514b3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7876a437_bedf2360",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-12T06:31:46Z",
+      "side": 1,
+      "message": "\u003e berlin needs: `/sys/devices/platform/soc/a94000.i2c/i2c-2/2-0049/touchscreen/primary/double_tap_enabled` and pressed.\n\nLogic added for i2c ts support",
+      "parentUuid": "88c3aee4_90e54a9b",
+      "revId": "5eac1d21aac0132c5f3caaaca5ec800a67a514b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
