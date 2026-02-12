@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ca35ea9_6394f380",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-12T07:44:39Z",
+      "side": 1,
+      "message": "I have a revised ps locally to separate the i2c and spi path logic a bit more. Will push later today when I get around to flashing the build",
+      "revId": "72a19aec5938fb70eafaa43a49aaf43b9dccaa8a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
