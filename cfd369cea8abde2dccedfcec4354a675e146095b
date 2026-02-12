@@ -16,6 +16,23 @@
       "message": "Please rebase chain. https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/473206 has been merged.",
       "revId": "cfd369cea8abde2dccedfcec4354a675e146095b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "301d5fbf_2ba2c6fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-02-12T22:44:17Z",
+      "side": 1,
+      "message": "Ahh, Nick already did that. :)",
+      "revId": "cfd369cea8abde2dccedfcec4354a675e146095b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
