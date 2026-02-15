@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1f76461_30d45fc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2026-02-15T04:07:53Z",
+      "side": 1,
+      "message": "```suggestion\nwhich causes some optical UDFPSs to fail to trigger HBM due to the screen not waking\n```\n\nIt seems mostly Goodix is affected, but Mike said his bangkk is Egistec, so I\u0027m not sure what\u0027s the difference though between that and my dubai since it also has Egistec and screen off UDFPS works perfectly without any sleep",
+      "range": {
+        "startLine": 10,
+        "startChar": 13,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "0f319ce41a80814f50257802e8d18f2011e0aa1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
