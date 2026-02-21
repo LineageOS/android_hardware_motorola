@@ -11,11 +11,16 @@
 
 #include "UdfpsHandler.h"
 
+#if __has_include(<display/drm/sde_drm.h>)
 #include <display/drm/sde_drm.h>
+#elif __has_include(<drm/sde_drm.h>)
+#include <drm/sde_drm.h>
+#endif
 
 enum HBM_STATE { OFF = 0, ON = 2 };
 
 inline void setHbmState(int state) {
+#ifdef DRM_IOCTL_SET_PANEL_FEATURE
     struct panel_param_info param_info;
     int32_t node = open("/dev/dri/card0", O_RDWR);
     int32_t ret = 0;
@@ -36,4 +41,8 @@ inline void setHbmState(int state) {
     }
 
     close(node);
+#else
+    LOG(INFO) << "DRM_IOCTL_SET_PANEL_FEATURE is not defined, ignoring setHbmState(" << state
+              << ") invocation.";
+#endif
 }
