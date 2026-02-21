@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ded6e6b_9e447d7b",
+        "filename": "udfps/UdfpsHandlerGoodix.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2026-02-21T19:45:31Z",
+      "side": 1,
+      "message": "`sendCommand`? `IGoodixFingerprintDaemon` doesn\u0027t have a `sendFodEvent` function defined.",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49bf1f7c_2beb04e1",
+        "filename": "udfps/UdfpsHandlerGoodix.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2026-02-21T19:45:31Z",
+      "side": 1,
+      "message": "`sendCommand`? `IGoodixFingerprintDaemon` doesn\u0027t have a `sendFodEvent` function defined.",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
