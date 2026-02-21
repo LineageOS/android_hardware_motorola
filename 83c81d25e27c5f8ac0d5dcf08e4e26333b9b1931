@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75959786_e3944251",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-21T19:57:51Z",
+      "side": 1,
+      "message": "I will fix it sometime today, unless you already have done so locally and want to update the chain",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ded6e6b_9e447d7b",
@@ -18,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51a96173_9b0d4a22",
+        "filename": "udfps/UdfpsHandlerGoodix.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-21T19:57:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "5ded6e6b_9e447d7b",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49bf1f7c_2beb04e1",
@@ -31,6 +66,24 @@
       "writtenOn": "2026-02-21T19:45:31Z",
       "side": 1,
       "message": "`sendCommand`? `IGoodixFingerprintDaemon` doesn\u0027t have a `sendFodEvent` function defined.",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9db22ebf_55cbd6c2",
+        "filename": "udfps/UdfpsHandlerGoodix.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-21T19:57:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "49bf1f7c_2beb04e1",
       "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
