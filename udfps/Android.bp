@@ -65,3 +65,12 @@ cc_library {
         "vendor.goodix.hardware.biometrics.fingerprint@2.1",
     ],
 }
+
+cc_library {
+    name: "libudfpshandler_moto_legacy",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerLegacy.cpp"],
+    shared_libs: [
+        "vendor.goodix.hardware.biometrics.fingerprint@2.1",
+    ],
+}
