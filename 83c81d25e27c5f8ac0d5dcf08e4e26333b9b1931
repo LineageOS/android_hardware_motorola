@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "003b5c38_adcb0690",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32253
+      },
+      "writtenOn": "2026-02-21T20:16:17Z",
+      "side": 1,
+      "message": "not really, althought i don\u0027t think i\u0027ll be able to use it ootb on racer :\"D.\n\n`DRM_IOCTL_SET_PANEL_FEATURE` is not defined on drm kernel header, which is called by `UdfpsHandlerMoto.h`. Can probably be guarded with a simple cflag.",
+      "parentUuid": "75959786_e3944251",
+      "revId": "83c81d25e27c5f8ac0d5dcf08e4e26333b9b1931",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ded6e6b_9e447d7b",
