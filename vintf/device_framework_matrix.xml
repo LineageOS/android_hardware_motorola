@@ -60,6 +60,14 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>motorola.hardware.audio.radar</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAudioRadar</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>motorola.hardware.camera.desktop</name>
         <version>1.0</version>
         <version>2.0</version>
@@ -145,6 +153,14 @@
         <version>1.0</version>
         <interface>
             <name>ITeeRegistry</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.zui.hardware.ifaa</name>
+        <version>1.0</version>
+        <interface>
+            <name>IIFAADevice</name>
             <instance>default</instance>
         </interface>
     </hal>
