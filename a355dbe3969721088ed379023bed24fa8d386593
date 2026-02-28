@@ -16,6 +16,24 @@
       "message": "Why HIDL and not AIDL?",
       "revId": "a355dbe3969721088ed379023bed24fa8d386593",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "914abfae_528cb7d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-02-28T14:54:50Z",
+      "side": 1,
+      "message": "I have yet to get an aidl FP working properly wrapping the stock hidl service",
+      "parentUuid": "2337038c_94d13be1",
+      "revId": "a355dbe3969721088ed379023bed24fa8d386593",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
