@@ -96,6 +96,8 @@ genfscon sysfs /devices/platform/soc/4a80000.spi/spi_master/spi0/spi0.1         
 genfscon sysfs /devices/platform/soc/4a88000.i2c/i2c-2/2-0038/touchscreen                                         u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/4a88000.spi/spi_master/spi0/spi0.0/touchscreen                               u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/880000.spi/spi_master/spi0/spi0.0/touchscreen                                u:object_r:vendor_sysfs_touchpanel:s0
+genfscon sysfs /devices/platform/soc/984000.i2c/i2c-1/1-004b/touchscreen                                          u:object_r:vendor_sysfs_touchpanel:s0
+genfscon sysfs /devices/platform/soc/984000.spi/spi_master/spi0/spi0.0/touchscreen                                u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/990000.i2c/i2c-0/0-005d/touchscreen                                          u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/990000.spi/spi_master/spi1/spi1.0/touchscreen                                u:object_r:vendor_sysfs_touchpanel:s0
 genfscon sysfs /devices/platform/soc/998000.spi/spi_master/spi0/spi0.0/touchscreen                                u:object_r:vendor_sysfs_touchpanel:s0
