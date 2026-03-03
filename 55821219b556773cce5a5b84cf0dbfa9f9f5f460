@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff827235_1727125f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11409
+      },
+      "writtenOn": "2026-03-03T19:56:35Z",
+      "side": 1,
+      "message": "Allows entering deep sleep again. Works with bangkk and hawao.\nInactivity display and Moto-gestures work as expected.",
+      "revId": "55821219b556773cce5a5b84cf0dbfa9f9f5f460",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
