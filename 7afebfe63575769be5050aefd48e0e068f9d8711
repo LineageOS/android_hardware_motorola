@@ -52,6 +52,24 @@
       "parentUuid": "2dad2a93_81c231cf",
       "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de1c9054_2c0b531a",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 28223
+      },
+      "writtenOn": "2026-03-17T22:55:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a612cd4_56746f98",
+      "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
