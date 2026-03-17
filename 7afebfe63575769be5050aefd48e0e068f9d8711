@@ -34,6 +34,24 @@
       "parentUuid": "71e8eb5d_24deba91",
       "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a612cd4_56746f98",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-03-17T21:08:03Z",
+      "side": 1,
+      "message": "Tbh I don\u0027t understand your formatting, how it should be formatted?",
+      "parentUuid": "2dad2a93_81c231cf",
+      "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
