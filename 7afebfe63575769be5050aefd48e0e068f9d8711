@@ -16,6 +16,24 @@
       "message": "You need to fix the indentation of the whole section",
       "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dad2a93_81c231cf",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-03-17T20:36:39Z",
+      "side": 1,
+      "message": "meh, I always hate the unecessary format changes, but yeah, that\u0027s how we historically do it.",
+      "parentUuid": "71e8eb5d_24deba91",
+      "revId": "7afebfe63575769be5050aefd48e0e068f9d8711",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
