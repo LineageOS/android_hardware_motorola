@@ -9,5 +9,5 @@
 
     <!-- The OEM specified sensor string type for the gesture to launch camera app, this value
          must match the value of config_cameraLaunchGestureSensorType in OEM's HAL -->
-    <string translatable="false" name="config_cameraLaunchGestureSensorStringType">com.motorola.sensor.camera_activate</string>
+    <string name="config_cameraLaunchGestureSensorStringType" translatable="false">com.motorola.sensor.camera_activate</string>
 </resources>
