@@ -51,6 +51,24 @@
       "message": "yeah lets --ignore-packages it euicc\n\nwe can keep the Android.bp fix tho",
       "revId": "5e707a2375df3df274dfec3a5196842d36e51e0f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdd79593_a94d99ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-04-24T19:39:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4968a36f_a2801338",
+      "revId": "5e707a2375df3df274dfec3a5196842d36e51e0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
