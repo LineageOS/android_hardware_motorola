@@ -11,11 +11,14 @@
 #include <poll.h>
 #include <unistd.h>
 
+#include <log/log.h>
 #include <condition_variable>
 #include <filesystem>
 #include <fstream>
 #include <memory>
 #include <mutex>
+#include <string>
+#include <string_view>
 #include <thread>
 #include <vector>
 
@@ -114,66 +117,78 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
     int mPollFd;
 };
 
-inline std::string getTouchscreenBasePath() {
-    static constexpr std::string_view socs[] = {"4a80000.spi", "998000.spi", "a8c000.spi",
-                                                "a94000.spi", "a94000.i2c"};
-    static constexpr std::string_view spis[] = {"spi0.0", "spi0.1"};
-    static constexpr std::string_view displays[] = {"NVT-ts", "primary", "secondary"};
+class TouchscreenSysfsSensor : public SysfsPollingOneShotSensor {
+  public:
+    TouchscreenSysfsSensor(int32_t sensorHandle, ISensorsEventCallback* callback,
+                      const std::string& pollFile, const std::string& enableFile,
+                      const std::string& name, const std::string& typeAsString, SensorType type)
+        : SysfsPollingOneShotSensor(sensorHandle, callback, getTouchscreenBasePath() + pollFile,
+                                    getTouchscreenBasePath() + enableFile, name, typeAsString,
+                                    type) {}
 
-    for (auto soc : socs) {
-        std::string path = "/sys/devices/platform/soc/" + std::string(soc);
-        if (soc.find(".i2c") != std::string_view::npos) {
-            path += "/i2c-2/2-0049";
-        } else {
-            bool found = false;
-            for (auto spi : spis) {
-                std::string spiPath = path + "/spi_master/spi0/" + std::string(spi);
-                if (std::filesystem::exists(spiPath)) {
-                    path = spiPath;
-                    found = true;
-                    break;
+  private:
+    static std::string getTouchscreenBasePath() {
+        static std::string basePath;
+        if (!basePath.empty()) return basePath;
+
+        const std::filesystem::path socBase("/sys/devices/platform/soc");
+        static constexpr std::string_view socs[] = {"4a80000.spi", "998000.spi", "a8c000.spi",
+                                                    "a94000.spi", "a94000.i2c"};
+        static constexpr std::string_view spis[] = {"spi0.0", "spi0.1"};
+        static constexpr std::string_view displays[] = {"NVT-ts", "primary", "secondary"};
+
+        for (const auto& soc : socs) {
+            std::filesystem::path path = socBase / soc;
+            if (soc.find(".i2c") != std::string_view::npos) {
+                path /= "i2c-2/2-0049";
+            } else {
+                bool found = false;
+                for (const auto& spi : spis) {
+                    std::filesystem::path spiPath = path / "spi_master/spi0" / spi;
+                    if (std::filesystem::exists(spiPath)) {
+                        path = spiPath;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) continue;
+            }
+
+            for (const auto& display : displays) {
+                std::filesystem::path displayPath = path / "touchscreen" / display;
+                if (std::filesystem::exists(displayPath)) {
+                    basePath = displayPath.string() + "/";
+                    ALOGI("Detected touchscreen base path: %s", basePath.c_str());
+                    return basePath;
                 }
             }
-            if (!found) continue;
         }
 
-        for (auto display : displays) {
-            std::string displayPath = path + "/touchscreen/" + std::string(display) + "/";
-            if (std::filesystem::exists(displayPath)) return displayPath;
-        }
+        basePath = "/sys/class/touchscreen/primary/";
+        ALOGW("No touchscreen base path detected, falling back to: %s", basePath.c_str());
+        return basePath;
     }
-
-    return "/sys/class/touchscreen/primary/";
-}
-
-const std::string kTsPath = getTouchscreenBasePath();
+};
 
 constexpr int32_t SENSOR_TYPE_BASE = static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 100;
 
 #ifdef ENABLE_DOUBLE_TAP
-const std::string kTsDoubleTapPressedPath = kTsPath + "double_tap_pressed";
-const std::string kTsDoubleTapEnabledPath = kTsPath + "double_tap_enabled";
-
-class DoubleTapSensor : public SysfsPollingOneShotSensor {
+class DoubleTapSensor : public TouchscreenSysfsSensor {
   public:
     DoubleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
-        : SysfsPollingOneShotSensor(sensorHandle, callback, kTsDoubleTapPressedPath,
-                                    kTsDoubleTapEnabledPath, "Double Tap Sensor",
-                                    "org.lineageos.sensor.double_tap",
-                                    static_cast<SensorType>(SENSOR_TYPE_BASE + 1)) {}
+        : TouchscreenSysfsSensor(sensorHandle, callback, "double_tap_pressed", "double_tap_enabled",
+                            "Double Tap Sensor", "org.lineageos.sensor.double_tap",
+                            static_cast<SensorType>(SENSOR_TYPE_BASE + 1)) {}
 };
 #endif
 
 #ifdef ENABLE_UDFPS
-const std::string kTsUdfpsPressedPath = kTsPath + "udfps_pressed";
-const std::string kTsUdfpsEnabledPath = kTsPath + "udfps_enabled";
-
-class UdfpsSensor : public SysfsPollingOneShotSensor {
+class UdfpsSensor : public TouchscreenSysfsSensor {
   public:
     UdfpsSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
-        : SysfsPollingOneShotSensor(
-                  sensorHandle, callback, kTsUdfpsPressedPath, kTsUdfpsEnabledPath, "UDFPS Sensor",
-                  "org.lineageos.sensor.udfps", static_cast<SensorType>(SENSOR_TYPE_BASE + 2)) {}
+        : TouchscreenSysfsSensor(sensorHandle, callback, "udfps_pressed", "udfps_enabled",
+                            "UDFPS Sensor", "org.lineageos.sensor.udfps",
+                            static_cast<SensorType>(SENSOR_TYPE_BASE + 2)) {}
 };
 #endif
 
