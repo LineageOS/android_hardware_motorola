@@ -10,3 +10,4 @@ vendor_internal_prop(vendor_secure_element_prop);
 
 # SPM
 vendor_internal_prop(vendor_spm_prop);
+vendor_internal_prop(vendor_fp_prop)
