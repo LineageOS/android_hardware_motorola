@@ -13,6 +13,10 @@
 
 #include <android-base/logging.h>
 #include <android-base/strings.h>
+#include <log/log.h>
+#include <unistd.h>
+#include <dlfcn.h>
+#include "anc_wrapper.h"
 
 namespace aidl::android::hardware::biometrics::fingerprint {
 
@@ -31,7 +35,7 @@ typedef struct fingerprint_hal {
 
 static const fingerprint_hal_t kModules[] = {
         {"fortsense"},  {"fpc"},         {"fpc_fod"}, {"goodix"}, {"goodix:gf_fingerprint"},
-        {"goodix_fod"}, {"goodix_fod6"}, {"silead"},  {"syna"},
+        {"goodix_fod"}, {"goodix_fod6"}, {"silead"},  {"syna"}, {"anc"},
 };
 
 }  // namespace
@@ -125,6 +129,47 @@ Fingerprint::~Fingerprint() {
 
 fingerprint_device_t* Fingerprint::openFingerprintHal(const char* class_name,
                                                       const char* module_id) {
+    if (strcmp(class_name, "anc") == 0) {
+        ALOGI("Opening anc.hal.so directly");
+        void* anc_handle = dlopen("anc.hal.so", RTLD_NOW);
+        if (anc_handle) {
+            int (*init)(void*, const char*) = reinterpret_cast<int (*)(void*, const char*)>(dlsym(anc_handle, "InitFingerprintDevice"));
+            void* (*get_dev)(void) = reinterpret_cast<void* (*)(void)>(dlsym(anc_handle, "GetFingerprintDevice"));
+            if (init && get_dev) {
+                void* jiiov_dev = get_dev();
+                if (jiiov_dev) {
+                    int ret = init(jiiov_dev, "ancapp64");
+                    if (ret != 0) {
+                        ALOGW("ancapp64 failed to init, trying anc0307");
+                        ret = init(jiiov_dev, "anc0307");
+                    }
+                    if (ret == 0) {
+                        fingerprint_device_t* dev = create_anc_wrapper(anc_handle, jiiov_dev);
+                        if (!dev) {
+                            ALOGE("Failed to create anc_wrapper");
+                            return nullptr;
+                        }
+                        if (dev->set_notify(dev, Fingerprint::notify) != 0) {
+                            ALOGE("Can't register fingerprint module callback for anc.hal.so");
+                            return nullptr;
+                        }
+                        ALOGI("Opened anc.hal.so successfully");
+                        return dev;
+                    } else {
+                        ALOGE("InitFingerprintDevice failed");
+                    }
+                } else {
+                    ALOGE("GetFingerprintDevice returned null");
+                }
+            } else {
+                ALOGE("Failed to find InitFingerprintDevice or GetFingerprintDevice in anc.hal.so");
+            }
+        } else {
+            ALOGE("Failed to dlopen anc.hal.so: %s", dlerror());
+        }
+        return nullptr;
+    }
+
     const hw_module_t* hw_mdl = nullptr;
 
     ALOGD("Opening fingerprint hal library...");
