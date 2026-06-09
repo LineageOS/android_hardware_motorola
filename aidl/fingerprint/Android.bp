@@ -41,6 +41,7 @@ cc_binary {
         "LockoutTracker.cpp",
         "Session.cpp",
         "service.cpp",
+        "jiiov/anc_wrapper.cpp",
     ],
     local_include_dirs: [
         "include",
