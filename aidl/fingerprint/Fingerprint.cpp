@@ -13,6 +13,12 @@
 
 #include <android-base/logging.h>
 #include <android-base/strings.h>
+#include <dlfcn.h>
+#include <log/log.h>
+#include <unistd.h>
+
+// Vendor-specific wrappers
+#include "jiiov/anc_wrapper.h"
 
 namespace aidl::android::hardware::biometrics::fingerprint {
 
@@ -30,8 +36,10 @@ typedef struct fingerprint_hal {
 } fingerprint_hal_t;
 
 static const fingerprint_hal_t kModules[] = {
-        {"fortsense"},  {"fpc"},         {"fpc_fod"}, {"goodix"}, {"goodix:gf_fingerprint"},
-        {"goodix_fod"}, {"goodix_fod6"}, {"silead"},  {"syna"},
+        {"anc"},        {"fortsense"},   {"fpc"},
+        {"fpc_fod"},    {"goodix"},      {"goodix:gf_fingerprint"},
+        {"goodix_fod"}, {"goodix_fod6"}, {"silead"},
+        {"syna"},
 };
 
 }  // namespace
@@ -125,6 +133,10 @@ Fingerprint::~Fingerprint() {
 
 fingerprint_device_t* Fingerprint::openFingerprintHal(const char* class_name,
                                                       const char* module_id) {
+    if (strcmp(class_name, "anc") == 0) {
+        return jiiov::OpenAncHal();
+    }
+
     const hw_module_t* hw_mdl = nullptr;
 
     ALOGD("Opening fingerprint hal library...");
