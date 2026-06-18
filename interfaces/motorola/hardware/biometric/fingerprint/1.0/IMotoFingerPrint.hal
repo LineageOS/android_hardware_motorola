@@ -6,7 +6,9 @@
 package com.motorola.hardware.biometric.fingerprint@1.0;
 
 interface IMotoFingerPrint {
-
-sendFodEvent(IMotFodEventType eventType, vec<int8_t> eventId) generates (IMotFodEventResult result, vec<int8_t> eventId);
-
+    sendFodEvent(IMotFodEventType eventType, vec<int8_t> eventId)
+        generates (IMotFodEventResult result, vec<int8_t> eventId);
+    getHardwareInfo() generates (FingerHardWareInfo info);
+    getCheckinVersion() generates (string version);
+    getUnlockPerformanceData() generates (vec<string> data);
 };
