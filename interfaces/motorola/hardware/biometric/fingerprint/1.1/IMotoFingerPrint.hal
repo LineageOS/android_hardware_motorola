@@ -1,0 +1,12 @@
+/*
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package com.motorola.hardware.biometric.fingerprint@1.1;
+
+import com.motorola.hardware.biometric.fingerprint@1.0::IMotoFingerPrint;
+
+interface IMotoFingerPrint extends @1.0::IMotoFingerPrint {
+    cancel() generates (int32_t status);
+};
