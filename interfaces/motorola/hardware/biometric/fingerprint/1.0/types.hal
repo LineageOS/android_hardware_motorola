@@ -29,3 +29,9 @@ enum IMotFodEventResult : int32_t {
   RESULT_OK = 0,
   RESULT_ERR = 1,
 };
+
+struct FingerHardWareInfo {
+  string version;
+  string vendor;
+  string model;
+};
