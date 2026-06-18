@@ -34,7 +34,7 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>com.motorola.hardware.biometric.fingerprint</name>
-        <version>1.0</version>
+        <version>1.0-1</version>
         <interface>
             <name>IMotoFingerPrint</name>
             <instance>default</instance>

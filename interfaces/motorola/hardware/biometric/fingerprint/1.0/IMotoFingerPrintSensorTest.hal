@@ -17,12 +17,10 @@
 package com.motorola.hardware.biometric.fingerprint@1.0;
 
 interface IMotoFingerPrintSensorTest {
-
-getSensorInfo();
-checkerboardTest();
-finishSensorTest(int32_t id);
-imagequalityTest();
-otpvalidationTest();
-selfTest();
-
+    getSensorInfo() generates (string info);
+    checkerboardTest() generates (int32_t result);
+    finishSensorTest(int32_t id) generates (int32_t result);
+    imagequalityTest() generates (int32_t result);
+    otpvalidationTest() generates (int32_t result);
+    selfTest() generates (int32_t result);
 };

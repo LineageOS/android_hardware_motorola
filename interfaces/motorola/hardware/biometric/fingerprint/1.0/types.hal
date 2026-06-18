@@ -17,15 +17,21 @@
 package com.motorola.hardware.biometric.fingerprint@1.0;
 
 enum IMotFodEventType : int32_t {
-  FINGER_DOWN = 0,
-  FINGER_UP = 1,
-  CANCEL = 2,
-  EXTEND_1 = 3,
-  EXTEND_2 = 4,
-  UNKNOWN = 5,
+    FINGER_DOWN = 0,
+    FINGER_UP = 1,
+    CANCEL = 2,
+    EXTEND_1 = 3,
+    EXTEND_2 = 4,
+    UNKNOWN = 5,
 };
 
 enum IMotFodEventResult : int32_t {
-  RESULT_OK = 0,
-  RESULT_ERR = 1,
+    RESULT_OK = 0,
+    RESULT_ERR = 1,
+};
+
+struct FingerHardWareInfo {
+    string version;
+    string vendor;
+    string model;
 };
