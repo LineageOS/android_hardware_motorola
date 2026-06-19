@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4acfd0a3_61432c7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-06-19T16:51:06Z",
+      "side": 1,
+      "message": "I\u0027m fine with merging this now, one less commit I have to pull every time i sync",
+      "revId": "32173feba24ce108b6ef00d359666f6af04ddb1a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
