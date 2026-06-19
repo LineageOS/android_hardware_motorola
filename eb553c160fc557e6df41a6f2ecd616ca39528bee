@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39f739be_6c784160",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-06-19T05:55:34Z",
+      "side": 1,
+      "message": "Needed for mona, hold until bring is closer to being ready unless current devices can use this",
+      "revId": "eb553c160fc557e6df41a6f2ecd616ca39528bee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
