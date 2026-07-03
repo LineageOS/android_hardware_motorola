@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
 
 #include <fcntl.h>
@@ -15,7 +16,14 @@
 
 enum HBM_STATE { OFF = 0, ON = 2 };
 
+#ifndef DRM_IOCTL_SET_PANEL_FEATURE
+const std::string kFodHbmPath = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_hbm";
+#endif
+
 inline void setHbmState(int state) {
+#ifndef DRM_IOCTL_SET_PANEL_FEATURE
+    android::base::WriteStringToFile(state == 2 ? "1" : "0", kFodHbmPath);
+#else
     struct panel_param_info param_info;
     int32_t node = open("/dev/dri/card0", O_RDWR);
     int32_t ret = 0;
@@ -36,4 +44,5 @@ inline void setHbmState(int state) {
     }
 
     close(node);
+#endif
 }
