@@ -33,6 +33,24 @@
       "message": "If we are already clearing house, maybe these ones should be in lineage sepolicy. Nothing looks moto specific. Or carry here for 23.2 and migrate to lineage in 24",
       "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "facde9bf_c8d52b2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-07-08T18:03:44Z",
+      "side": 1,
+      "message": "Talked about that previously, the issue is a few of these become important for mainline I guess, so OEM repos it is (the private ones and fsck)",
+      "parentUuid": "efcb7323_ef10f385",
+      "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
