@@ -16,6 +16,23 @@
       "message": "objections? Many trees just carry these anyway.",
       "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efcb7323_ef10f385",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-07-08T17:34:39Z",
+      "side": 1,
+      "message": "If we are already clearing house, maybe these ones should be in lineage sepolicy. Nothing looks moto specific. Or carry here for 23.2 and migrate to lineage in 24",
+      "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
