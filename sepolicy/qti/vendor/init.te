@@ -21,3 +21,5 @@ recovery_only(`
   allow init self:capability sys_module;
   allow init rootfs:system module_load;
 ')
+
+dontaudit init debugfs_tracing_debug:dir mounton;
