@@ -3,5 +3,3 @@ allow fsck {
     vendor_modem_block_device
     vendor_prodpersist_block_device
 }:blk_file rw_file_perms;
-
-dontaudit fsck self:capability kill;

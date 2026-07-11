@@ -1,2 +1,0 @@
-dontaudit secure_element system_data_file:dir create_dir_perms;
-dontaudit secure_element system_data_file:file create_file_perms;
