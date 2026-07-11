@@ -51,6 +51,23 @@
       "parentUuid": "efcb7323_ef10f385",
       "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e46d6b60_f947a7f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-07-11T09:03:12Z",
+      "side": 1,
+      "message": "I explicitly did not want dontaudit rules here, especially when they are not motorola or even qcom specific",
+      "revId": "5bb37e947691137095fd964ccfe7b3d87936a68c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
