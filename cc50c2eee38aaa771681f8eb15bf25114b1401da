@@ -52,6 +52,24 @@
       "parentUuid": "9b1446f5_d5072a03",
       "revId": "cc50c2eee38aaa771681f8eb15bf25114b1401da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "462b6ce0_72cf7427",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-07-11T18:06:00Z",
+      "side": 1,
+      "message": "sm8750 sepolicy_vndr (which parrot66 inherits) uses a different label than the other sepolicy platforms",
+      "parentUuid": "093d74de_b5328912",
+      "revId": "cc50c2eee38aaa771681f8eb15bf25114b1401da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
