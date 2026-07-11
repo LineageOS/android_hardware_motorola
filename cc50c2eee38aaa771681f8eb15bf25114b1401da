@@ -16,6 +16,24 @@
       "message": "This is part of qcom sepolicy. What SoC are you hitting this on?",
       "revId": "cc50c2eee38aaa771681f8eb15bf25114b1401da",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b1446f5_d5072a03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37345
+      },
+      "writtenOn": "2026-07-11T07:25:53Z",
+      "side": 1,
+      "message": "parrot66 (sm8450-6.6/sm8750 )",
+      "parentUuid": "4d608f41_e8ef38d2",
+      "revId": "cc50c2eee38aaa771681f8eb15bf25114b1401da",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
