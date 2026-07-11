@@ -101,6 +101,24 @@
       "message": "Is this even needed? It is handled in https://review.lineageos.org/c/LineageOS/android_device_qcom_sepolicy_vndr/+/422684/3/generic/vendor/common/dataservice_app.te long time ago",
       "revId": "0d1617eda8afb6d83d8ecb73a606a028db1988ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9fda473_44cc17cc",
+        "filename": "sepolicy/qti/vendor/vendor_dataservice_app.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-07-11T09:01:48Z",
+      "side": 1,
+      "message": "It also breaks sm8450-6.6/sm8750 build since vendor_hal_imsfactory_hwservice is no more",
+      "parentUuid": "06d0407d_74eac9f2",
+      "revId": "0d1617eda8afb6d83d8ecb73a606a028db1988ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
