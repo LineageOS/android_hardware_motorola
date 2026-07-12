@@ -33,6 +33,24 @@
       "message": "This needs cleanup the if blocks are a bit excessive, maybe move the logic out of openHal.",
       "revId": "6844d9e5575561d1cc2715685ce4ccda4aead99f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa887d63_d96a159e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-07-12T14:07:43Z",
+      "side": 1,
+      "message": "Yeah, it requires and I will do this for roadstr. My roadstr has jiiov sensor.",
+      "parentUuid": "d33df981_2610aca0",
+      "revId": "6844d9e5575561d1cc2715685ce4ccda4aead99f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
