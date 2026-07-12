@@ -16,6 +16,24 @@
       "message": "I mean one could ask the same about aac_drc_prop... If the Cam HAL is asking for it no reason to not allow...",
       "revId": "24d0354913d1ccd4343e573b530caf38b1e16592",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e71f8c3c_740cba27",
+        "filename": "sepolicy/qti/vendor/hal_camera_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-07-12T04:14:30Z",
+      "side": 0,
+      "message": "Well you also added that one https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/435845/7/sepolicy/qti/vendor/hal_camera_default.te",
+      "parentUuid": "0de0074f_a94e054f",
+      "revId": "24d0354913d1ccd4343e573b530caf38b1e16592",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
