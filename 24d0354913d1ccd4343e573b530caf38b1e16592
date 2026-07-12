@@ -34,6 +34,24 @@
       "parentUuid": "0de0074f_a94e054f",
       "revId": "24d0354913d1ccd4343e573b530caf38b1e16592",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91d2310c_42226f5f",
+        "filename": "sepolicy/qti/vendor/hal_camera_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-07-12T05:35:41Z",
+      "side": 0,
+      "message": "Ack.",
+      "parentUuid": "e71f8c3c_740cba27",
+      "revId": "24d0354913d1ccd4343e573b530caf38b1e16592",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
