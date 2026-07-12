@@ -16,6 +16,23 @@
       "message": "tbh I don\u0027t know is it actually good, it was picked from guy who got working jiiov on motorola edge 50 fusion (cuscoi)",
       "revId": "6844d9e5575561d1cc2715685ce4ccda4aead99f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d33df981_2610aca0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-07-12T14:01:14Z",
+      "side": 1,
+      "message": "This needs cleanup the if blocks are a bit excessive, maybe move the logic out of openHal.",
+      "revId": "6844d9e5575561d1cc2715685ce4ccda4aead99f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
