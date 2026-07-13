@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c98c3a5_a3351e82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-07-13T19:46:48Z",
+      "side": 1,
+      "message": "Looking at the wrapper some more, couldn\u0027t you just write a libhardware wrapper for jiiov specific. Then the aidl fingerprint wouldn\u0027t need to be touched.",
+      "revId": "d2fe765278ab6981321679465532f36cc8233696",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
