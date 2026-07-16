@@ -48,3 +48,12 @@ cc_library {
         "vendor.goodix.hardware.biometrics.fingerprint@2.1",
     ],
 }
+
+cc_library {
+    name: "libudfpshandler_moto_jiiov",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerJiiov.cpp"],
+    shared_libs: [
+        "libdl",
+    ],
+}
