@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccebd8ed_4756631b",
+        "filename": "udfps/Android.bp",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-07-18T16:44:04Z",
+      "side": 1,
+      "message": "Only Moto\u0027s handler needs it, so it must not be listed in defaults.",
+      "revId": "17023907d13589bc476b8599809590b2a698e7d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
