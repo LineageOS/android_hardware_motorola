@@ -64,6 +64,16 @@ cc_library {
 }
 
 cc_library {
+    name: "libudfpshandler_moto_aidl",
+    defaults: ["libudfpshandler_moto_defaults"],
+    srcs: ["UdfpsHandlerMotoAidl.cpp"],
+    shared_libs: [
+        "libbinder_ndk",
+        "com.motorola.hardware.biometric.fingerprint-V1-ndk",
+    ],
+}
+
+cc_library {
     name: "libudfpshandler_moto_egistec",
     defaults: ["libudfpshandler_moto_defaults"],
     srcs: ["UdfpsHandlerEgistec.cpp"],
