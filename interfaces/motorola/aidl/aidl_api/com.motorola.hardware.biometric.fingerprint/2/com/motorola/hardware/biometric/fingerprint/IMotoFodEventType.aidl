@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2026 The LineageOS Project
+ * Copyright (C) 2025 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -22,13 +22,12 @@
 // later when a module using the interface is updated, e.g., Mainline modules.
 
 package com.motorola.hardware.biometric.fingerprint;
-@VintfStability
-interface IMotoFingerPrint {
-  String getCheckinVersion();
-  com.motorola.hardware.biometric.fingerprint.FingerHardWareInfo getHardwareInfo();
-  String[] getUnlockPerformanceData();
-  com.motorola.hardware.biometric.fingerprint.IMotoEventResult sendFodEvent(in com.motorola.hardware.biometric.fingerprint.IMotoFodEventType eventType, in @nullable byte[] eventId);
-  int cancel();
-  com.motorola.hardware.biometric.fingerprint.IMotoEventResult sendCommand(in int cmdId, in byte[] data);
-  void setNotify(in com.motorola.hardware.biometric.fingerprint.IMotoFingerprintCallback callback);
+@Backing(type="int") @VintfStability
+enum IMotoFodEventType {
+  FINGER_DOWN = 0,
+  FINGER_UP = 1,
+  CANCEL = 2,
+  EXTEND_1 = 3,
+  EXTEND_2 = 4,
+  UNKNOWN = 5,
 }
