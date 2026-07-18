@@ -23,12 +23,7 @@
 
 package com.motorola.hardware.biometric.fingerprint;
 @VintfStability
-interface IMotoFingerPrint {
-  String getCheckinVersion();
-  com.motorola.hardware.biometric.fingerprint.FingerHardWareInfo getHardwareInfo();
-  String[] getUnlockPerformanceData();
-  com.motorola.hardware.biometric.fingerprint.IMotoEventResult sendFodEvent(in com.motorola.hardware.biometric.fingerprint.IMotoFodEventType eventType, in @nullable byte[] eventId);
-  int cancel();
-  com.motorola.hardware.biometric.fingerprint.IMotoEventResult sendCommand(in int cmdId, in byte[] data);
-  void setNotify(in com.motorola.hardware.biometric.fingerprint.IMotoFingerprintCallback callback);
+interface IMotoFingerprintCallback {
+  oneway void ipc_callback(int arg1, int arg2, int arg3, in byte[] data, int arg5);
+  oneway void onDaemonMessage(long arg1, int arg2, int arg3, in byte[] data);
 }
