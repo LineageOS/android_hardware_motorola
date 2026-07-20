@@ -94,6 +94,7 @@
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint(@2\.1)?-service([\-\.])fpc        u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint(@2\.1)?-service([\-\.])goodix     u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint(@2\.1)?-service([\-\.])jv         u:object_r:hal_fingerprint_default_exec:s0
+/vendor/bin/hw/android\.hardware\.biometrics\.fingerprint(@2\.1)?-service([\-\.])rbs        u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint(@2\.1)?-service([\-\.])silead     u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/egis_ident                                                                   u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/fpc_ident                                                                    u:object_r:hal_fingerprint_default_exec:s0
