@@ -1,2 +1,5 @@
+# Fingerprint
+com.motorola.hardware.biometric.fingerprint.IMotoFingerPrint/default    u:object_r:hal_fingerprint_service:s0
+
 # Sensors
 motorola.hardware.sensors.ISensorExt/default    u:object_r:hal_sensorext_service:s0
