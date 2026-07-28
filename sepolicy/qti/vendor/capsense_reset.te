@@ -10,3 +10,4 @@ allow capsense_reset input_device:dir r_dir_perms;
 allow capsense_reset input_device:chr_file r_file_perms;
 
 rw_dir_file(capsense_reset, vendor_sysfs_capsense)
+r_dir_file(capsense_reset, vendor_sysfs_usb_supply)
