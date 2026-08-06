@@ -39,6 +39,30 @@
       },
       "revId": "da1806083800cc8bc8a49e170d7159bc26a6d605",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fba4872_b2e5c786",
+        "filename": "interfaces/motorola/aidl/aidl_api/com.motorola.hardware.biometric.fingerprint/1/com/motorola/hardware/biometric/fingerprint/FingerHardWareInfo.aidl",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-08-06T13:21:49Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cec27c3b_f7415a1a",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 2
+      },
+      "revId": "da1806083800cc8bc8a49e170d7159bc26a6d605",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
