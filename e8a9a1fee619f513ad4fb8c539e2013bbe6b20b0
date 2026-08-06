@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b87e7b2_23a512c8",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-08-06T13:15:12Z",
+      "side": 1,
+      "message": "Fix spacing/indentation to match the category. Don\u0027t you also just need the 64bit ones?",
+      "revId": "e8a9a1fee619f513ad4fb8c539e2013bbe6b20b0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
