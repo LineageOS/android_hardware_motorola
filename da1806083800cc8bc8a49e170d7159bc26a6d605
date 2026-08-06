@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cb4bda_a3185357",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-08-06T13:12:56Z",
+      "side": 1,
+      "message": "This commit and the 2 followups need updated copyright headers and hash regeneration.",
+      "revId": "da1806083800cc8bc8a49e170d7159bc26a6d605",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cec27c3b_f7415a1a",
+        "filename": "interfaces/motorola/aidl/aidl_api/com.motorola.hardware.biometric.fingerprint/1/com/motorola/hardware/biometric/fingerprint/FingerHardWareInfo.aidl",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-08-06T13:12:56Z",
+      "side": 1,
+      "message": "Copyright style across the files should be like this, with no empty line between:\n\n```suggestion\n * SPDX-FileCopyrightText: The LineageOS Project\n```",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 2
+      },
+      "revId": "da1806083800cc8bc8a49e170d7159bc26a6d605",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
