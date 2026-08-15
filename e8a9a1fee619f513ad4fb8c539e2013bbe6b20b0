@@ -34,6 +34,24 @@
       "parentUuid": "7b87e7b2_23a512c8",
       "revId": "e8a9a1fee619f513ad4fb8c539e2013bbe6b20b0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3796c399_3cb3608f",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-08-15T15:43:06Z",
+      "side": 1,
+      "message": "Still an issue",
+      "parentUuid": "8b030af3_156e2790",
+      "revId": "e8a9a1fee619f513ad4fb8c539e2013bbe6b20b0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
