@@ -179,6 +179,7 @@ genfscon sysfs /devices/platform/soc/984000.i2c/i2c-1/1-004b/synaptics_tcm.0/wak
 genfscon sysfs /devices/platform/soc/984000.spi/spi_master/spi0/spi0.0/wakeup                                                                                                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-1/1-005a/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-005a/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/990000.i2c/i2c-0/0-005d/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb2/2-1/2-1:1.2/0003:046D:C52B.0012/0003:046D:4055.0013/power_supply/hidpp_battery_3/wakeup    u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb2/wakeup                                                                                     u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/xhci-hcd.1.auto/usb3/wakeup                                                                                     u:object_r:sysfs_wakeup:s0
