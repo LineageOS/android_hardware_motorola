@@ -33,6 +33,24 @@
       "message": "what you mean?",
       "revId": "cc4b428d4410b1c939887c11971707c77dee97b8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d892ecd_7b637b49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-21T01:03:29Z",
+      "side": 1,
+      "message": "pretty self explanatory.... you put your device at the end... sort it in the file alphabetically - it starts with \"m\"",
+      "parentUuid": "d82fe13b_fbc55ee3",
+      "revId": "cc4b428d4410b1c939887c11971707c77dee97b8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
