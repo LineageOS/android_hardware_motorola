@@ -5,3 +5,5 @@ allow kernel {
     vendor_hw_block_device
     vendor_utags_block_device
 }:blk_file rw_file_perms;
+
+r_dir_file(kernel, fsg_file)
