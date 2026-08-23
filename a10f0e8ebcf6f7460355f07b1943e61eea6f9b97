@@ -16,6 +16,23 @@
       "message": "this fixes a denial on rtwo",
       "revId": "a10f0e8ebcf6f7460355f07b1943e61eea6f9b97",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cff25f70_4fefe8bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-08-23T21:09:47Z",
+      "side": 1,
+      "message": "I _don\u0027t_ see this on pyrite, so I\u0027m going to assume not QCOM specific? If it is we can move it and the other (maybe dead) rule where it needs later.",
+      "revId": "a10f0e8ebcf6f7460355f07b1943e61eea6f9b97",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
