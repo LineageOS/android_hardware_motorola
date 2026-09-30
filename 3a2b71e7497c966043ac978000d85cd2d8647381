@@ -34,6 +34,24 @@
       "parentUuid": "7d9f8a26_e2bf713e",
       "revId": "3a2b71e7497c966043ac978000d85cd2d8647381",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4181dc57_092e3b40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-30T09:45:17Z",
+      "side": 1,
+      "message": "We might as well kill it for 24.0 and force the other users to pick this commit",
+      "parentUuid": "f4a3854f_26c8b963",
+      "revId": "3a2b71e7497c966043ac978000d85cd2d8647381",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
