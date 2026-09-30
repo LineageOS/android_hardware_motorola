@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d9f8a26_e2bf713e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-09-30T08:52:54Z",
+      "side": 1,
+      "message": "Don\u0027t you need to remove the strings? Or those are global?",
+      "revId": "3a2b71e7497c966043ac978000d85cd2d8647381",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
