@@ -38,3 +38,21 @@ cc_library_shared {
     }),
     vendor: true,
 }
+
+cc_library_shared {
+    name: "sensors.moto_als",
+    vendor: true,
+    srcs: ["AlsFilterSubHal.cpp"],
+    header_libs: ["android.hardware.sensors@2.X-multihal.header"],  // provides V2_0/SubHal.h; name may differ
+    shared_libs: [
+        "android.hardware.sensors@1.0",
+        "android.hardware.sensors@2.0",
+        "android.hardware.sensors@2.0-ScopedWakelock",
+        "libbase",
+        "libcutils",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+    ],
+    cflags: ["-Wall", "-Werror"],
+}
