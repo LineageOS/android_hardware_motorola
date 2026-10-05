@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7185704c_cc458edf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-10-05T08:18:06Z",
+      "side": 1,
+      "message": "These were merged in 23.2 but never ff to 24.0",
+      "revId": "705ce005d645b5b3dbfe11c58e821f0eacd80317",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
