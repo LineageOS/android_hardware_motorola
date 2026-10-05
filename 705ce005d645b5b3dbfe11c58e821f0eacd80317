@@ -16,6 +16,23 @@
       "message": "These were merged in 23.2 but never ff to 24.0",
       "revId": "705ce005d645b5b3dbfe11c58e821f0eacd80317",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4228edfa_b6d0f67d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-10-05T11:42:02Z",
+      "side": 1,
+      "message": "Too bad 23.2 and 24.0 are diverged for no reason a month ago",
+      "revId": "705ce005d645b5b3dbfe11c58e821f0eacd80317",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
