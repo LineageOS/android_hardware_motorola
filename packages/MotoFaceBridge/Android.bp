@@ -1,0 +1,23 @@
+android_app {
+    name: "MotoFaceBridge",
+    system_ext_specific: true,
+    privileged: true,
+    certificate: "platform",
+    platform_apis: true,
+    srcs: ["src/**/*.java"],
+    static_libs: [
+        "com.motorola.hardware.biometric.face.bridge-aidl-V1-java",
+        "moto-face-framework",
+    ],
+    optimize: { enabled: false },
+    dex_preopt: { enabled: false },
+    required: ["privapp-permissions-motofacebridge"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-motofacebridge",
+    system_ext_specific: true,
+    src: "privapp-permissions-motofacebridge.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
