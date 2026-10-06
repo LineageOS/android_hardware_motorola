@@ -1,0 +1,48 @@
+cc_binary {
+    name: "android.hardware.biometrics.face-service.motorola",
+    relative_install_path: "hw",
+    vendor: true,
+    init_rc: ["android.hardware.biometrics.face-service.motorola.rc"],
+    srcs: [
+        "main.cpp",
+        "Face.cpp",
+        "Session.cpp",
+        "BridgeHost.cpp",
+    ],
+    cflags: ["-Wall", "-Werror"],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "libnativewindow",  // FaceEnrollOptions.h needs android/native_window_aidl.h
+        // Versions: match what frameworks/base uses in your tree (Android 17: face V5, common V4).
+        "android.hardware.biometrics.face-V5-ndk",
+        "android.hardware.biometrics.common-V4-ndk",
+        "android.hardware.keymaster-V4-ndk",
+        "android.hardware.common-V2-ndk",
+        "com.motorola.hardware.biometric.face.bridge-aidl-V1-ndk",
+    ],
+}
+
+// Plain copy on purpose: vintf_fragment / vintf_fragments run the file through assemble_vintf, which
+// rewrote it and dropped the com.motorola.hardware.biometric.face.bridge entry. libvintf reads every file in
+// /vendor/etc/vintf/manifest at runtime, so a verbatim copy is enough.
+prebuilt_etc {
+    name: "android.hardware.biometrics.face-service.motorola.xml",
+    src: "android.hardware.biometrics.face-service.motorola.xml",
+    vendor: true,
+    sub_dir: "vintf/manifest",
+    filename_from_src: true,
+}
+
+phony {
+    name: "android.hardware.biometric.face.motorola",
+    required: [
+        "android.hardware.biometrics.face-service.motorola",
+        "MotoFaceBridge",
+        "moto-face-framework",
+        "moto-face-framework.xml",
+        "moto-core_services.xml",
+        "android.hardware.biometrics.face-service.motorola.xml",
+    ],
+}
