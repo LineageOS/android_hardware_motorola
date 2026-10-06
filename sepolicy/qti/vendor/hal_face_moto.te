@@ -1,0 +1,14 @@
+# Vendor-side daemon exposing android.hardware.biometrics.face.IFace and the bridge host.
+type hal_face_moto, domain;
+type hal_face_moto_exec, exec_type, vendor_file_type, file_type;
+
+hal_server_domain(hal_face_moto, hal_face)
+init_daemon_domain(hal_face_moto)
+
+# The bridge host is served under the same service label as the face HAL.
+# framework (system_server) <-> HAL
+binder_call(hal_face_moto, system_server)
+# bridge app <-> HAL (the app is a platform-signed system_app)
+binder_call(hal_face_moto, system_app)
+binder_call(system_app, hal_face_moto)
+allow system_app hal_face_service:service_manager find;

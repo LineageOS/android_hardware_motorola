@@ -51,6 +51,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>com.motorola.hardware.biometric.face.bridge</name>
+        <version>1</version>
+        <interface>
+            <name>IFaceBridgeHost</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>motorola.hardware.audio.adspd</name>
         <version>1.0</version>
