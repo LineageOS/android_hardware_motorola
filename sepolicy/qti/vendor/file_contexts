@@ -69,6 +69,9 @@
 # Devicetree
 /sys/firmware/devicetree/base/chosen(/.*)?    u:object_r:sysfs_dt_chosen:s0
 
+# Face
+/vendor/bin/hw/android\.hardware\.biometrics\.face-service\.motorola   u:object_r:hal_face_moto_exec:s0
+
 # Fingerprint
 /data/vendor/.fps(/.*)?                                                                     u:object_r:fingerprint_vendor_data_file:s0
 /data/vendor/egis(/.*)?                                                                     u:object_r:fingerprint_vendor_data_file:s0
