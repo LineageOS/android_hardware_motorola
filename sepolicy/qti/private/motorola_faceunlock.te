@@ -1,0 +1,11 @@
+# Own domain for the Motorola face unlock app (com.motorola.faceunlock, MotoFaceUnlockArcSoft).
+# The APK lives on /product, so it is a platform app: Treble requires it to be labelled from a
+# system/system_ext/product seapp_contexts (qti/private/seapp_contexts) with a coredomain type.
+# Private policy only: nothing in vendor policy may reference this type.
+type motorola_faceunlock, domain;
+typeattribute motorola_faceunlock coredomain;
+app_domain(motorola_faceunlock)
+
+# The bridge app (system_app) binds the app's FaceAuthService and receives its callbacks.
+binder_call(system_app, motorola_faceunlock)
+binder_call(motorola_faceunlock, system_app)
