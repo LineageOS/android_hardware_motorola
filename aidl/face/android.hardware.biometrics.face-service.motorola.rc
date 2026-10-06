@@ -1,0 +1,7 @@
+service vendor.face-moto /vendor/bin/hw/android.hardware.biometrics.face-service.motorola
+    interface aidl android.hardware.biometrics.face.IFace/default
+    interface aidl com.motorola.hardware.biometric.face.bridge.IFaceBridgeHost/default
+    class hal
+    user system
+    group system
+    # The HAL reports HW_UNAVAILABLE until the bridge app registers itself.
