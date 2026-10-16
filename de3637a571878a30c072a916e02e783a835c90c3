@@ -22,6 +22,47 @@
       },
       "revId": "de3637a571878a30c072a916e02e783a835c90c3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c046dff_76615c56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2026-10-16T20:21:35Z",
+      "side": 1,
+      "message": "I had a phony entry on aidl/face/Android.bp, but after thinking about it, I can just drop it and add the required portions to the service entry as you mentioned",
+      "parentUuid": "a1f8969b_95733001",
+      "range": {
+        "startLine": 25,
+        "startChar": 22,
+        "endLine": 25,
+        "endChar": 52
+      },
+      "revId": "de3637a571878a30c072a916e02e783a835c90c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f15f718_7ef6a0ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2026-10-16T20:21:35Z",
+      "side": 1,
+      "message": "Latest patchet tests good on rtwo and dubai.\n\nI also dropped the com.motorola.faceunlock.rc as it sets a prop only used on stock ROM for face unlock (Thanks Bruno for getting me to check into it).\n\nI also dropped the private sepolicy as tbh I labeled it wrong and it wasn\u0027t working, and the default privapp sepolicy works fine.\n\nThere\u0027s a denial to read /vendor/dsp, but afaik that\u0027s a neverallow for private/system_ext privapp sepolicy and it works fine without fixing that denial... so I think we\u0027re still good",
+      "revId": "de3637a571878a30c072a916e02e783a835c90c3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
