@@ -8,12 +8,19 @@ package org.lineageos.settings.device
 
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.preference.Preference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 class ActionsPreferenceFragment : SettingsBasePreferenceFragment() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.actions_panel, rootKey)
+
+        if (!MotoActionsSettings.isFoldable(requireActivity())) {
+            findPreference<Preference>(MotoActionsSettings.GESTURE_OPEN_TO_ANSWER_KEY)?.let {
+                it.parent?.removePreference(it)
+            }
+        }
     }
 
     @Deprecated("Deprecated in Java")

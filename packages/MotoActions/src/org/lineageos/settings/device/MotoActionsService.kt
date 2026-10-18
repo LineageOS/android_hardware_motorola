@@ -20,6 +20,7 @@ import org.lineageos.settings.device.actions.ChopForTorch
 import org.lineageos.settings.device.actions.DozePulse
 import org.lineageos.settings.device.actions.FlipToMute
 import org.lineageos.settings.device.actions.LiftToSilence
+import org.lineageos.settings.device.actions.OpenToAnswer
 import org.lineageos.settings.device.actions.ProximitySilencer
 import org.lineageos.settings.device.actions.UpdatedStateNotifier
 
@@ -42,7 +43,8 @@ class MotoActionsService : Service() {
                         MotoActionsSettings.GESTURE_POCKET_KEY,
                         MotoActionsSettings.GESTURE_IR_SILENCER_KEY,
                         MotoActionsSettings.GESTURE_FLIP_TO_MUTE_KEY,
-                        MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY -> updateState()
+                        MotoActionsSettings.GESTURE_LIFT_TO_SILENCE_KEY,
+                        MotoActionsSettings.GESTURE_OPEN_TO_ANSWER_KEY -> updateState()
                     }
                 }
                 registerOnSharedPreferenceChangeListener(prefListener)
@@ -56,6 +58,7 @@ class MotoActionsService : Service() {
         updatedStateNotifiers.add(ProximitySilencer(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(FlipToMute(this, sharedPrefs, sensorHelper))
         updatedStateNotifiers.add(LiftToSilence(this, sharedPrefs, sensorHelper))
+        updatedStateNotifiers.add(OpenToAnswer(this, sharedPrefs))
 
         val filter =
             IntentFilter(Intent.ACTION_SCREEN_ON).apply { addAction(Intent.ACTION_SCREEN_OFF) }

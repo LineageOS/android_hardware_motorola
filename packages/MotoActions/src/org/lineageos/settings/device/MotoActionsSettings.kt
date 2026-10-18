@@ -17,6 +17,7 @@ object MotoActionsSettings {
     const val GESTURE_IR_SILENCER_KEY = "gesture_ir_silencer"
     const val GESTURE_FLIP_TO_MUTE_KEY = "gesture_flip_to_mute"
     const val GESTURE_LIFT_TO_SILENCE_KEY = "gesture_lift_to_silence"
+    const val GESTURE_OPEN_TO_ANSWER_KEY = "gesture_open_to_answer"
     const val GESTURE_IR_WAKEUP_KEY = "gesture_hand_wave"
     const val GESTURE_PICK_UP_KEY = "gesture_pick_up"
     const val GESTURE_POCKET_KEY = "gesture_pocket"
@@ -52,4 +53,9 @@ object MotoActionsSettings {
 
     fun isDozeEnabled(context: Context): Boolean =
         Settings.Secure.getInt(context.contentResolver, Settings.Secure.DOZE_ENABLED, 1) != 0
+
+    fun isFoldable(context: Context): Boolean =
+        context.resources
+            .getIntArray(com.android.internal.R.array.config_foldedDeviceStates)
+            .isNotEmpty()
 }

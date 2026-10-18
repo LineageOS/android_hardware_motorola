@@ -39,6 +39,13 @@
             android:summary="@string/lift_to_silence_summary"
             android:icon="@drawable/ic_settings_pick" />
 
+        <SwitchPreferenceCompat
+            android:key="gesture_open_to_answer"
+            android:defaultValue="true"
+            android:title="@string/open_to_answer_title"
+            android:summary="@string/open_to_answer_summary"
+            android:icon="@drawable/ic_settings_open_to_answer" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
