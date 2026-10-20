@@ -2,6 +2,9 @@
 com.motorola.hardware.camera.postprocess.IPostProcService/default    u:object_r:hal_camera_service:s0
 motorola.hardware.camera.imgtuner.aidl.IImageTuning/default          u:object_r:hal_camera_service:s0
 
+# Face
+com.motorola.hardware.biometric.face.bridge.IFaceBridgeHost/default             u:object_r:hal_face_service:s0
+
 # Fingerprint
 com.motorola.hardware.biometric.fingerprint.IMotoFingerPrint/default    u:object_r:hal_fingerprint_service:s0
 
