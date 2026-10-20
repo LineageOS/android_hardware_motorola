@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<permissions>
+    <library name="moto-face-framework" file="/system_ext/framework/moto-face-framework.jar" />
+</permissions>
