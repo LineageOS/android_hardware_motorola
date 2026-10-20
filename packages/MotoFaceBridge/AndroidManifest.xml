@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lineageos.motorola.facebridge"
+    android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.MANAGE_BIOMETRIC" />
+    <!-- Declared by the Motorola APK; we hold it through the platform signature. -->
+    <uses-permission android:name="com.motorola.faceunlock.FACE_UNLOCK" />
+
+    <queries>
+        <package android:name="com.motorola.faceunlock" />
+    </queries>
+
+    <application
+        android:label="Moto face bridge"
+        android:persistent="true"
+        android:directBootAware="true">
+
+        <service
+            android:name=".FaceBridgeService"
+            android:exported="false"
+            android:directBootAware="true" />
+
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
