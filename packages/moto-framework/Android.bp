@@ -1,0 +1,36 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Motorola's patched framework.jar ships com.motorola.internal.app.IMotoFaceService*; Lineage's does
+// not, which makes MotoFaceUnlockArcSoft crash in FaceAuthService.onCreate (NoClassDefFoundError).
+// Provide the classes as a shared library that moto-core_services declares a dependency on.
+java_library {
+    name: "moto-face-framework",
+    system_ext_specific: true,
+    installable: true,
+    platform_apis: true,
+    srcs: [
+        "aidl/**/*.aidl",
+        "src/**/*.java",
+    ],
+    aidl: { local_include_dirs: ["aidl"] },
+    dex_preopt: { enabled: false },
+}
+
+prebuilt_etc {
+    name: "moto-face-framework.xml",
+    system_ext_specific: true,
+    src: "moto-face-framework.xml",
+    sub_dir: "permissions",
+}
+
+// Replaces the stock system/etc/permissions/moto-core_services.xml (do NOT also take that blob):
+// identical library, plus the dependency on moto-face-framework.
+prebuilt_etc {
+    name: "moto-core_services.xml",
+    system_ext_specific: true,
+    src: "moto-core_services.xml",
+    sub_dir: "permissions",
+}
