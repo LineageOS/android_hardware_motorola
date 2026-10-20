@@ -33,6 +33,23 @@
       "message": "Per file SPDX headers please.",
       "revId": "6902462535655b9a9c0e8942044b6e40496638f7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8519d3ad_313f071e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-10-20T17:03:54Z",
+      "side": 1,
+      "message": "And please split into 3 changes to make it more reviewable:\n- One to introduce the aidl interface\n- One moto-fw changes\n- One being the bridge service",
+      "revId": "6902462535655b9a9c0e8942044b6e40496638f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
