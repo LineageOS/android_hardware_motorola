@@ -1,0 +1,31 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+java_library {
+    name: "moto-face-framework",
+    system_ext_specific: true,
+    installable: true,
+    platform_apis: true,
+    srcs: [
+        "aidl/**/*.aidl",
+        "src/**/*.java",
+    ],
+    aidl: { local_include_dirs: ["aidl"] },
+    dex_preopt: { enabled: false },
+}
+
+prebuilt_etc {
+    name: "moto-face-framework.xml",
+    system_ext_specific: true,
+    src: "moto-face-framework.xml",
+    sub_dir: "permissions",
+}
+
+prebuilt_etc {
+    name: "moto-core_services.xml",
+    system_ext_specific: true,
+    src: "moto-core_services.xml",
+    sub_dir: "permissions",
+}
