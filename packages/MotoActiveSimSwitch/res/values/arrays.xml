@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <string-array name="sim_slot_labels">
+        <item>eSIM</item>
+        <item>SIM Card</item>
+    </string-array>
+
+    <integer-array name="sim_slot_numbers">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+</resources>

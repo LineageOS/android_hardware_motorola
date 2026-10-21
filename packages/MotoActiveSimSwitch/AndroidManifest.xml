@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.lineageos.motorola.activesimswitch"
+      android:sharedUserId="android.uid.phone">
+
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+
+    <uses-sdk
+        android:minSdkVersion="36"
+        android:targetSdkVersion="36" />
+
+    <application
+        android:label="@string/sim_switch_activity_label"
+        android:enableOnBackInvokedCallback="true"
+        android:exported="true"
+        >
+
+        <activity
+            android:name="org.lineageos.motorola.activesimswitch.SimSwitchActivity"
+            android:label="@string/sim_switch_activity_label"
+            android:theme="@style/Theme.Transparent"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.wireless" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_sim_card_download" />
+        </activity>
+
+    </application>
+</manifest>
