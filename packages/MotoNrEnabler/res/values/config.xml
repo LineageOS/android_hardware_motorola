@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- If true, legacy sim switch dialog is displayed. -->
+    <bool name="config_enableLegacySimSwitch" translatable="false">false</bool>
+
+</resources>
