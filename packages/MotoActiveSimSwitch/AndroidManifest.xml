@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.lineageos.motorola.activesimswitch"
+      android:sharedUserId="android.uid.phone">
+
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+
+    <uses-sdk
+        android:minSdkVersion="36"
+        android:targetSdkVersion="36" />
+
+    <application
+        android:label="@string/sim_switch_activity_label"
+        android:persistent="true"
+        android:enableOnBackInvokedCallback="true"
+        android:exported="true">
+
+        <activity
+            android:name="org.lineageos.motorola.activesimswitch.SimSwitchActivity"
+            android:label="@string/sim_switch_activity_label"
+            android:theme="@style/Theme.SubSettingsBase"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.wireless" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/sim_switch_activity_summary" />
+        </activity>
+
+    </application>
+</manifest>
