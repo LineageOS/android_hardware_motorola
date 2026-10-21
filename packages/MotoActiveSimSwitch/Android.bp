@@ -1,0 +1,25 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "MotoActiveSimSwitch",
+    manifest: "AndroidManifest.xml",
+
+    srcs: [
+        "src/**/*.aidl",
+        "src/**/*.java",
+    ],
+    resource_dirs: [
+        "res",
+    ],
+    libs: ["telephony-common"],
+
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    static_libs: [
+        "org.lineageos.settings.resources",
+    ],
+}
