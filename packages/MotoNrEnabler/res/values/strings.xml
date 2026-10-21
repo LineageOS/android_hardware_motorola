@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <string name="sim_switch_activity_label">Change active SIM</string>
+
+    <string name="loading_sim_slot_picker_message">Reading data from modem</string>
+
+    <string name="sim_switch_error_title">Unexpected error</string>
+    <string name="sim_switch_error_message">Unable to switch active SIM slot.</string>
+
+</resources>

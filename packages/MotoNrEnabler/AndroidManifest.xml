@@ -8,11 +8,36 @@
     android:sharedUserId="android.uid.phone">
 
     <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
 
     <application
         android:label="MotoNrEnabler"
         android:persistent="true"
-        android:directBootAware="true">
+        android:directBootAware="true"
+        android:theme="@style/Theme.SubSettingsBase.Expressive">
+
+        <activity
+            android:exported="false"
+            android:label="@string/sim_switch_activity_label"
+            android:name=".SimSwitchActivity">
+
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data android:name="com.android.settings.category"
+                       android:value="com.android.settings.category.ia.wireless" />
+            <meta-data android:name="com.android.settings.icon"
+                       android:resource="@drawable/ic_sim_card_download" />
+            <meta-data android:name="com.android.settings.icon_tintable"
+                       android:value="true" />
+            <meta-data android:name="com.android.settings.order"
+                       android:value="-10" />
+            <meta-data android:name="com.android.settings.profile"
+                       android:value="primary_profile_only" />
+        </activity>
+
         <service
             android:name=".NrEnablerService" />
 
