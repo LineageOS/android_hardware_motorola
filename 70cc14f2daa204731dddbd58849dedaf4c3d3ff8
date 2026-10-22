@@ -16,6 +16,24 @@
       "message": "Might just be able to rework https://github.com/LineageOS/android_hardware_xiaomi/commits/lineage-24.0/packages/EsimSwitcher",
       "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d739fd6_1ce2adf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-10-22T01:47:26Z",
+      "side": 1,
+      "message": "or merge the functionality into MotoNrEnabler, IQcrilMsgTunnel is already used",
+      "parentUuid": "026a73de_aebb90f3",
+      "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
