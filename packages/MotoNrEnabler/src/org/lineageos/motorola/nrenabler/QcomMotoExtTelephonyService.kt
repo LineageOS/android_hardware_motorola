@@ -51,6 +51,60 @@ class QcomMotoExtTelephonyService(private val context: Context) {
         return null
     }
 
+    fun getActiveSimSlot(phoneId: Int): Int {
+        val data = ByteArray(8)
+        val respData = ByteArray(2)
+        val buf = ByteBuffer.wrap(data)
+        buf.order(
+            QcomOemConstants.getByteOrderByRequestId(
+                QcomOemConstants.OEM_RIL_REQUEST_GET_ACTIVE_SIMSLOT
+            )
+        )
+        buf.putInt(QcomOemConstants.OEM_RIL_REQUEST_GET_ACTIVE_SIMSLOT)
+
+        val ret = qcrilMsgTunnelConnector.invokeOemRilRequestRawForPhone(phoneId, data, respData)
+        if (ret < 0) {
+            Log.e(TAG, "RIL request failed: $ret")
+            return -1
+        }
+
+        val err = respData[0].toInt() and 0xFF
+        if (err != 0) {
+            Log.e(TAG, "RIL error response: $err")
+            return -1
+        }
+
+        return respData[1].toInt() and 0xFF
+    }
+
+    fun setActiveSimSlot(phoneId: Int, slot: Int): Boolean {
+        val data = ByteArray(9)
+        val respData = ByteArray(1)
+        val buf = ByteBuffer.wrap(data)
+        buf.order(
+            QcomOemConstants.getByteOrderByRequestId(
+                QcomOemConstants.OEM_RIL_REQUEST_SWITCH_SIMSLOT
+            )
+        )
+        buf.putInt(QcomOemConstants.OEM_RIL_REQUEST_SWITCH_SIMSLOT)
+            .putInt(1)
+            .put(slot.toByte())
+
+        val ret = qcrilMsgTunnelConnector.invokeOemRilRequestRawForPhone(phoneId, data, respData)
+        if (ret < 0) {
+            Log.e(TAG, "RIL request failed: $ret")
+            return false
+        }
+
+        val err = respData[0].toInt() and 0xFF
+        if (err != 0) {
+            Log.e(TAG, "RIL error response: $err")
+            return false
+        }
+
+        return true
+    }
+
     private fun getDSSEnabled(phoneId: Int): Byte {
         val rdeNv =
             qcrilMsgTunnelConnector.getRdeNvValueByElementId(phoneId, QcomNvInfo.RDE_EFS_DSS_I)

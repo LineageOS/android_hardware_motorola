@@ -12,5 +12,4 @@
     <string name="sim_switch_error_title">Unexpected error</string>
     <string name="sim_switch_error_message">Unable to switch active SIM slot.</string>
 
-
 </resources>
