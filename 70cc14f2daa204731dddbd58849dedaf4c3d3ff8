@@ -34,6 +34,24 @@
       "parentUuid": "026a73de_aebb90f3",
       "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60726ceb_b22cac3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35006
+      },
+      "writtenOn": "2026-10-22T02:11:15Z",
+      "side": 1,
+      "message": "The xiaomi one works too differently. I can look in to merging with MotoNrEnabler but I\u0027m not sure it\u0027s ideal since most devices seem to not need this.",
+      "parentUuid": "7d739fd6_1ce2adf7",
+      "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
