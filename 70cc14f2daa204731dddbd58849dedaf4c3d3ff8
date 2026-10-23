@@ -69,6 +69,24 @@
       "message": "I dont see a reason why it cannot live in MotoNrEnabler, can be gated with an overlay if its that much of an issue",
       "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e3b38ba_73cc708f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35006
+      },
+      "writtenOn": "2026-10-23T02:20:13Z",
+      "side": 1,
+      "message": "It\u0027s only at most 2 devices which need this, I don\u0027t think Motorola going to make any more of them. Also feels confusing to put dual sim stuff in \"NrEnabler\".\n\nShould be easy to move everything over though. If a second person agrees I\u0027ll do it.",
+      "parentUuid": "538ef165_af940459",
+      "revId": "70cc14f2daa204731dddbd58849dedaf4c3d3ff8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
