@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d4d60c_6b6ce526",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-10-23T18:35:18Z",
+      "side": 1,
+      "message": "I still think foling it into MotoNrEnabler is a better idea, see https://review.lineageos.org/c/LineageOS/android_hardware_motorola/+/509901",
+      "revId": "07273ec70247fb6a83dc444eb05e6f6ee6e54631",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
