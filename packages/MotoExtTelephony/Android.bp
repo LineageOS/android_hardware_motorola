@@ -4,7 +4,7 @@
 //
 
 android_app {
-    name: "MotoNrEnabler",
+    name: "MotoExtTelephony",
 
     srcs: [
         "src/**/*.aidl",

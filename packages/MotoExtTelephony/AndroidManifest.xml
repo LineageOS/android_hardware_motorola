@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
 
     <application
-        android:label="MotoNrEnabler"
+        android:label="MotoExtTelephony"
         android:persistent="true"
         android:directBootAware="true"
         android:theme="@style/Theme.SubSettingsBase.Expressive">

@@ -91,6 +91,6 @@ class NrEnablerService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     companion object {
-        private const val TAG = "MotoNrEnabler"
+        private const val TAG = "MotoExtTelephony"
     }
 }

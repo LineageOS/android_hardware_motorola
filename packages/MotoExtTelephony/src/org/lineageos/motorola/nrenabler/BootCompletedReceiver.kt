@@ -34,6 +34,6 @@ class BootCompletedReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        private const val TAG = "MotoNrEnabler"
+        private const val TAG = "MotoExtTelephony"
     }
 }
