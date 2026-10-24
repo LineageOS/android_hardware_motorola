@@ -16,6 +16,24 @@
       "message": "```suggestion\nMotoNrEnabler: Add legacy sim switching\n```",
       "revId": "0e0911defca4d1cc2c231f48d526eb2e5504d1e4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "582f5e31_6ba06475",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 35006
+      },
+      "writtenOn": "2026-10-24T17:08:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4b699e_45a985e3",
+      "revId": "0e0911defca4d1cc2c231f48d526eb2e5504d1e4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
