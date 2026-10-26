@@ -128,6 +128,6 @@ class QcomMotoExtTelephonyService(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "MotoExtTelephony: QcomMotoExtTelephonyService"
+        private const val TAG = "MotoNrEnabler: QcomMotoExtTelephonyService"
     }
 }

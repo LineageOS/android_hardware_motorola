@@ -168,7 +168,7 @@ class QcrilMsgTunnelConnector(private val context: Context) {
     }
 
     companion object {
-        private const val TAG = "MotoExtTelephony: QcrilMsgTunnelConnector"
+        private const val TAG = "MotoNrEnabler: QcrilMsgTunnelConnector"
         private const val QCRIL_MSG_TUNNEL_PACKAGE_NAME = "com.qualcomm.qcrilmsgtunnel"
         private const val QCRIL_MSG_TUNNEL_SERVICE_NAME =
             "com.qualcomm.qcrilmsgtunnel.QcrilMsgTunnelService"
