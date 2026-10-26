@@ -10,7 +10,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
 object QcomNvInfo {
-    private const val TAG = "MotoNrEnabler: QcomNvInfo"
+    private const val TAG = "MotoExtTelephony: QcomNvInfo"
     const val RDE_EFS_DSS_I = 10030
 
     interface NvDataType {
