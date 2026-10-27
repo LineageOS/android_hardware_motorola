@@ -27,6 +27,11 @@ class ChopForTorch(
     private val sensorHelper: SensorHelper,
 ) : UpdatedStateNotifier {
 
+    private var isEnabled = false
+    private var proxIsCovered = false
+    private var torchEnabled = false
+    private var rearCameraId: String? = null
+
     private val cameraManager =
         context.getSystemService(CameraManager::class.java).apply {
             val callback =
@@ -43,24 +48,18 @@ class ChopForTorch(
                 }
             registerTorchCallback(callback, null)
             runCatching {
-                cameraIdList.forEach { cameraId ->
-                    val characteristics = getCameraCharacteristics(cameraId)
-                    val orientation = characteristics.get(CameraCharacteristics.LENS_FACING)
-                    if (orientation == CameraCharacteristics.LENS_FACING_BACK) {
-                        rearCameraId = cameraId
-                        return@forEach
+                rearCameraId =
+                    cameraIdList.firstOrNull { cameraId ->
+                        val characteristics = getCameraCharacteristics(cameraId)
+                        characteristics.get(CameraCharacteristics.LENS_FACING) ==
+                            CameraCharacteristics.LENS_FACING_BACK &&
+                            characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE) == true
                     }
-                }
             }
         }
     private val vibrator = context.getSystemService(Vibrator::class.java)
     private val chopChopSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_CHOP_CHOP)!!
     private val proximitySensor: Sensor = sensorHelper.getSensor(Sensor.TYPE_PROXIMITY)!!
-
-    private var isEnabled = false
-    private var proxIsCovered = false
-    private var torchEnabled = false
-    private var rearCameraId: String? = null
 
     @Synchronized
     override fun updateState() {
