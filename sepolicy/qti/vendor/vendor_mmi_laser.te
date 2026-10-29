@@ -12,7 +12,7 @@ rw_dir_file(vendor_mmi_laser, vendor_sysfs_laser)
 allow vendor_mmi_laser vendor_sysfs_laser:file setattr;
 
 r_dir_file(vendor_mmi_laser, vendor_sysfs_input)
-allow vendor_mmi_laser vendor_sysfs_input:file setattr;
+allow vendor_mmi_laser vendor_sysfs_input:file { setattr w_file_perms };
 
 allow vendor_mmi_laser mnt_vendor_file:dir search;
 r_dir_file(vendor_mmi_laser, vendor_persist_camera_file)
