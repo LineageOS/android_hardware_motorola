@@ -7,6 +7,7 @@ motorola.hardware.camera.desktop::ICameraDesktop    u:object_r:hal_cameradesktop
 
 # Fingerprint
 com.fingerprints.extension::IFingerprintNavigation                            u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest                            u:object_r:hal_fingerprint_hwservice:s0
 com.motorola.hardware.biometric.fingerprint::IMotoFingerPrint                 u:object_r:hal_fingerprint_hwservice:s0
 com.motorola.hardware.biometric.fingerprint::IMotoFingerPrintSensorTest       u:object_r:hal_fingerprint_hwservice:s0
 vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                u:object_r:hal_fingerprint_hwservice:s0

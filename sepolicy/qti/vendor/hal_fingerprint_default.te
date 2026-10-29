@@ -16,6 +16,7 @@ allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 r_dir_file(hal_fingerprint_default, firmware_file)
 r_dir_file(hal_fingerprint_default, sysfs_dt_chosen)
 r_dir_file(hal_fingerprint_default, vendor_sysfs_battery_supply)
+r_dir_file(hal_fingerprint_default, vendor_sysfs_devicetree_soc)
 rw_dir_file(hal_fingerprint_default, vendor_sysfs_fingerprint)
 
 allow hal_fingerprint_default fingerprint_vendor_data_file:dir create_dir_perms;
