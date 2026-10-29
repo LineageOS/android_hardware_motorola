@@ -14,6 +14,8 @@ import android.hardware.SensorEventListener
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
 import android.hardware.camera2.CameraManager.TorchCallback
+import android.os.Handler
+import android.os.Looper
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.util.Log
@@ -57,8 +59,10 @@ class ChopForTorch(
     private val chopChopSensor: Sensor = sensorHelper.getSensor(SENSOR_TYPE_MMI_CHOP_CHOP)!!
     private val proximitySensor: Sensor = sensorHelper.getSensor(Sensor.TYPE_PROXIMITY)!!
 
+    private val handler = Handler(Looper.getMainLooper())
+
     private var isEnabled = false
-    private var proxIsCovered = false
+    private var proxCheckPending = false
     private var torchEnabled = false
     private var rearCameraId: String? = null
 
@@ -71,13 +75,44 @@ class ChopForTorch(
         if (enabled) {
             Log.d(TAG, "Enabling")
             sensorHelper.registerListener(chopChopSensor, chopChopListener)
-            sensorHelper.registerListener(proximitySensor, proximityListener)
         } else {
             Log.d(TAG, "Disabling")
             sensorHelper.unregisterListener(chopChopListener)
-            sensorHelper.unregisterListener(proximityListener)
+            cancelProxCheck()
         }
         isEnabled = enabled
+    }
+
+    // Only power up the proximity sensor while a chop is being handled, under-display
+    // sensors visibly flicker through the panel while they are active
+    private fun cancelProxCheck() {
+        handler.removeCallbacks(proxTimeout)
+        sensorHelper.unregisterListener(proximityListener)
+        proxCheckPending = false
+    }
+
+    @Synchronized
+    private fun finishProxCheck(proxIsCovered: Boolean) {
+        if (!proxCheckPending) return
+        cancelProxCheck()
+
+        if (proxIsCovered) {
+            Log.d(TAG, "proximity sensor covered, ignoring chop-chop")
+            return
+        }
+        vibrator.vibrate(VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE))
+
+        rearCameraId?.let { id ->
+            runCatching {
+                cameraManager.setTorchMode(id, !torchEnabled)
+                torchEnabled = !torchEnabled
+            }
+        }
+    }
+
+    private val proxTimeout = Runnable {
+        Log.d(TAG, "no proximity reading, assuming uncovered")
+        finishProxCheck(false)
     }
 
     private val chopChopListener =
@@ -85,20 +120,10 @@ class ChopForTorch(
             @Synchronized
             override fun onSensorChanged(event: SensorEvent) {
                 Log.d(TAG, "chop chop triggered")
-                if (proxIsCovered) {
-                    Log.d(TAG, "proximity sensor covered, ignoring chop-chop")
-                    return
-                }
-                vibrator.vibrate(
-                    VibrationEffect.createOneShot(250, VibrationEffect.DEFAULT_AMPLITUDE)
-                )
-
-                rearCameraId?.let { id ->
-                    runCatching {
-                        cameraManager.setTorchMode(id, !torchEnabled)
-                        torchEnabled = !torchEnabled
-                    }
-                }
+                if (proxCheckPending) return
+                proxCheckPending = true
+                sensorHelper.registerListener(proximitySensor, proximityListener)
+                handler.postDelayed(proxTimeout, PROX_TIMEOUT_MS)
             }
 
             override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
@@ -106,10 +131,9 @@ class ChopForTorch(
 
     private val proximityListener =
         object : SensorEventListener {
-            @Synchronized
             override fun onSensorChanged(event: SensorEvent) {
                 val maxRange = kotlin.math.round(proximitySensor.maximumRange * 10f) / 10f
-                proxIsCovered = event.values[0] < maxRange
+                finishProxCheck(event.values[0] < maxRange)
             }
 
             override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
@@ -117,5 +141,6 @@ class ChopForTorch(
 
     companion object {
         private const val TAG = "ChopForTorch"
+        private const val PROX_TIMEOUT_MS = 500L
     }
 }
