@@ -1,2 +1,19 @@
 hal_client_domain(hal_audio_default, hal_health);
 allow hal_audio_default fwk_sensor_hwservice:hwservice_manager find;
+
+# ADSPD
+r_dir_file(hal_audio_default, sysfs_adspd)
+allow hal_audio_default sysfs_adspd:file rw_file_perms;
+
+set_prop(hal_audio_default, vendor_aov_prop)
+
+# Sound trigger HAL in audio.service talks to adspd, both run as hal_audio_default
+allow hal_audio_default self:binder { call transfer };
+allow hal_audio_default self:fd use;
+
+# Input switch capabilities (/sys/class/input/input*/capabilities/sw)
+r_dir_file(hal_audio_default, sysfs)
+r_dir_file(hal_audio_default, vendor_sysfs_input)
+
+allow hal_audio_default input_device:dir r_dir_perms;
+allow hal_audio_default input_device:chr_file { r_file_perms ioctl };

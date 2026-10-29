@@ -1,3 +1,6 @@
+# ADSPD
+vendor.hw.aov.    u:object_r:vendor_aov_prop:s0
+
 # Camera
 persist.vendor.media.recorder.flip    u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.res.fmq.size         u:object_r:vendor_camera_prop:s0

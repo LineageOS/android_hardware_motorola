@@ -1,4 +1,5 @@
 # Audio
+motorola.hardware.audio.adspd::IADSP          u:object_r:hal_audio_hwservice:s0
 motorola.hardware.audio.radar::IAudioRadar    u:object_r:hal_audio_hwservice:s0
 
 # Camera
