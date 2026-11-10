@@ -3,7 +3,11 @@ com.motorola.hardware.camera.postprocess.IPostProcService/default    u:object_r:
 motorola.hardware.camera.imgtuner.aidl.IImageTuning/default          u:object_r:hal_camera_service:s0
 
 # Fingerprint
-com.motorola.hardware.biometric.fingerprint.IMotoFingerPrint/default    u:object_r:hal_fingerprint_service:s0
+com.motorola.hardware.biometric.fingerprint.IMotoCaptiveSensorTest/default          u:object_r:hal_fingerprint_service:s0
+com.motorola.hardware.biometric.fingerprint.IMotoFingerPrint/default                u:object_r:hal_fingerprint_service:s0
+com.motorola.hardware.biometric.fingerprint.IMotoFodSensorTest/default              u:object_r:hal_fingerprint_service:s0
+com.motorola.hardware.biometric.fingerprint.IMotoFpsNavigate/default                u:object_r:hal_fingerprint_service:s0
+vendor.goodix.hardware.biometrics.fingerprint.IGoodixFingerprintDaemon/default      u:object_r:hal_fingerprint_service:s0
 
 # Sensors
 motorola.hardware.sensors.ISensorExt/default    u:object_r:hal_sensorext_service:s0
