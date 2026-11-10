@@ -27,8 +27,12 @@ ro.vendor.product.model                   u:object_r:vendor_mot_hw_prop:s0
 ro.vendor.product.name                    u:object_r:vendor_mot_hw_prop:s0
 
 # Motorola fingerprint
+persist.vendor.fingerprint.            u:object_r:vendor_mot_fingerprint_prop:s0
 persist.vendor.hardware.fingerprint    u:object_r:vendor_mot_fingerprint_prop:s0
+persist.vendor.sys.fp.                 u:object_r:vendor_mot_fingerprint_prop:s0
 vendor.fingerprint                     u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.goodix.                         u:object_r:vendor_mot_fingerprint_prop:s0
+vendor.gf.                             u:object_r:vendor_mot_fingerprint_prop:s0
 vendor.hw.fps.ident                    u:object_r:vendor_mot_fingerprint_prop:s0
 vendor.hw.fingerprint.status           u:object_r:vendor_mot_fingerprint_prop:s0
 
