@@ -1,1 +1,6 @@
+hal_client_domain(hal_vibrator_default, hal_audio)
+wakelock_use(hal_vibrator_default)
+
 allow hal_vibrator_default aac_richtap_dev_device:chr_file rw_file_perms;
+
+get_prop(hal_vibrator_default, vendor_audio_prop)
