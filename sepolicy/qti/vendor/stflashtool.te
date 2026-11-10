@@ -1,0 +1,13 @@
+type stflashtool, domain;
+type stflashtool_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(stflashtool)
+
+allow stflashtool nfc_device:chr_file rw_file_perms;
+
+get_prop(stflashtool, vendor_persist_nfc_prop)
+get_prop(stflashtool, vendor_radio_prop)
+set_prop(stflashtool, vendor_nfc_prop)
+
+dontaudit stflashtool default_prop:file read;
+dontaudit stflashtool nfc_prop:file read;

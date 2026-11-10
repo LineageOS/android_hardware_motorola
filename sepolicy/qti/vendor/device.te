@@ -6,6 +6,9 @@ type vendor_hw_block_device, dev_type;
 type vendor_prodpersist_block_device, dev_type;
 type vendor_utags_block_device, dev_type;
 
+# Secure Element
+type st54spi_device, dev_type;
+
 # Thermal
 type vendor_thermal_device, dev_type;
 
