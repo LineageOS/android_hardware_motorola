@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8e34366_76c666c2",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-10T20:40:30Z",
+      "side": 1,
+      "message": "Kill this",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72898e51_1039a6aa",
+        "filename": "sepolicy/qti/vendor/hal_vibrator_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-10T20:40:30Z",
+      "side": 1,
+      "message": "The rules added here do not seem to be motorola specific",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3224e2c9_14b4f30c",
+        "filename": "sepolicy/qti/vendor/service_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-10T20:40:30Z",
+      "side": 1,
+      "message": "Sort alphabetically and fix indentation to follow current style which is 4 spaces in the longest line",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b112bfa6_5ec0cf8a",
+        "filename": "sepolicy/qti/vendor/servicemanager.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-10T20:40:30Z",
+      "side": 1,
+      "message": "That doesn\u0027t seem motorola specific",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "053f13dd_ec902fb9",
+        "filename": "sepolicy/qti/vendor/stflashtool.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-11-10T20:40:30Z",
+      "side": 1,
+      "message": "Kill this file",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
