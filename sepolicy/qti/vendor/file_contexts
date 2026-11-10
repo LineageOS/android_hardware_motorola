@@ -59,6 +59,7 @@
 /vendor/bin/hw/motorola\.hardware\.camera\.desktop@2\.0-service                             u:object_r:hal_cameradesktop_default_exec:s0
 /vendor/bin/vl53l1_daemon                                                                   u:object_r:vendor_vl53l1_exec:s0
 /vendor/lib64/libanc_hdr.*\.so                                                              u:object_r:same_process_hal_file:s0
+/vendor/lib64/libarc\.ion\.so                                                               u:object_r:same_process_hal_file:s0
 /vendor/lib64/libarcsoft_.*\.so                                                             u:object_r:same_process_hal_file:s0
 /vendor/lib64/libipebpsstriping\.so                                                         u:object_r:same_process_hal_file:s0
 /vendor/lib64/libportrait_repair_ppl3_ocl\.so                                               u:object_r:same_process_hal_file:s0
@@ -107,6 +108,7 @@
 /vendor/bin/motobox    u:object_r:vendor_motobox_exec:s0
 
 # NFC (Secure Element)
+/dev/st54spi                                                         u:object_r:st54spi_device:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.2-service-gto    u:object_r:hal_secure_element_default_exec:s0
 /vendor/bin/hw/android\.hardware\.secure_element@1\.2-service\.st    u:object_r:hal_secure_element_default_exec:s0
 
