@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44e14681_a8be5bc9",
+        "filename": "sepolicy/qti/vendor/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-11-10T20:42:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8e34366_76c666c2",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72898e51_1039a6aa",
@@ -82,6 +100,24 @@
       "writtenOn": "2026-11-10T20:40:30Z",
       "side": 1,
       "message": "Kill this file",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34991d1d_fca5a210",
+        "filename": "sepolicy/qti/vendor/stflashtool.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-11-10T20:42:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "053f13dd_ec902fb9",
       "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
