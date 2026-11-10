@@ -1,0 +1,1 @@
+binder_call(servicemanager, hal_graphics_composer_default)
