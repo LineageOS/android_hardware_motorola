@@ -53,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4303eb8_3dd9625c",
+        "filename": "sepolicy/qti/vendor/hal_vibrator_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-11-11T09:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72898e51_1039a6aa",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3224e2c9_14b4f30c",
@@ -70,6 +88,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57f386b9_c6e86ab3",
+        "filename": "sepolicy/qti/vendor/service_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-11-11T09:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3224e2c9_14b4f30c",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b112bfa6_5ec0cf8a",
@@ -83,6 +119,24 @@
       "writtenOn": "2026-11-10T20:40:30Z",
       "side": 1,
       "message": "That doesn\u0027t seem motorola specific",
+      "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78a77390_82914d5b",
+        "filename": "sepolicy/qti/vendor/servicemanager.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 33800
+      },
+      "writtenOn": "2026-11-11T09:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b112bfa6_5ec0cf8a",
       "revId": "7e1931acd7946b7b45f2d1b5f74c76bc541e2140",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
