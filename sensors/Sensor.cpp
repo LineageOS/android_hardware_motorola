@@ -263,6 +263,7 @@ SysfsPollingOneShotSensor::~SysfsPollingOneShotSensor() {
 
 void SysfsPollingOneShotSensor::writeEnable(bool enable) {
     if (mEnableStream) {
+        mEnableStream.seekp(0);
         mEnableStream << (enable ? '1' : '0') << std::flush;
     }
 }
