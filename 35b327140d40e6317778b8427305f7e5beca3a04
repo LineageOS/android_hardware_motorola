@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2dffd32c_5a45b73b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34519
+      },
+      "writtenOn": "2026-11-19T04:36:34Z",
+      "side": 1,
+      "message": "Also while you are it fixing README as Nolen asked, ask your clanker to just shortenize the commit messages as well, its just too long and cluttered",
+      "revId": "35b327140d40e6317778b8427305f7e5beca3a04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "516040fb_4a377568",
         "filename": "aidl/face/README.md",
         "patchSetId": 2
