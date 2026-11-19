@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "516040fb_4a377568",
+        "filename": "aidl/face/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-19T04:04:44Z",
+      "side": 1,
+      "message": "honestly, I\u0027d nuke this whole file.",
+      "revId": "35b327140d40e6317778b8427305f7e5beca3a04",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
