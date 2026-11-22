@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6305b8cf_d2ee1acd",
+        "filename": "aidl/face/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-22T21:19:57Z",
+      "side": 1,
+      "message": "Pointless",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 71
+      },
+      "revId": "379f6ab4b347829e3124ecbf4153bea1da3072a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30fd6237_1ad28a6a",
+        "filename": "vintf/device_framework_matrix.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-22T21:19:57Z",
+      "side": 1,
+      "message": "biometric comes before camera",
+      "range": {
+        "startLine": 55,
+        "startChar": 36,
+        "endLine": 55,
+        "endChar": 45
+      },
+      "revId": "379f6ab4b347829e3124ecbf4153bea1da3072a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
