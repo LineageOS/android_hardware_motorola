@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "deb1f558_2ab65b4c",
+        "filename": "interfaces/motorola/aidl/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-22T21:14:58Z",
+      "side": 1,
+      "message": "face comes before fingerprint",
+      "range": {
+        "startLine": 44,
+        "startChar": 43,
+        "endLine": 44,
+        "endChar": 47
+      },
+      "revId": "bfd9cd8021c1b512f188183ab146cbafe17eeff1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
