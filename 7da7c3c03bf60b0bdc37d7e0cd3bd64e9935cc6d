@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "673f4fbb_72251646",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-23T17:45:10Z",
+      "side": 1,
+      "message": "ugh, HEAD fixes the failure CI has. Sec.",
+      "revId": "7da7c3c03bf60b0bdc37d7e0cd3bd64e9935cc6d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
