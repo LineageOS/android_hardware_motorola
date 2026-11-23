@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c63b7ec_93137072",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-23T18:49:29Z",
+      "side": 1,
+      "message": "Could you restore my edits on the commit messages on the entire chain?",
+      "revId": "8106298dfb83a2ba0dd599d43bb24a1abdecf90c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
