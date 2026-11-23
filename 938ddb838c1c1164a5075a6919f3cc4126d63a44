@@ -16,6 +16,23 @@
       "message": "CI fail was clang-format on header change, fixed.",
       "revId": "938ddb838c1c1164a5075a6919f3cc4126d63a44",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a44771cd_26cad884",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2026-11-23T18:48:02Z",
+      "side": 1,
+      "message": "Could you also restore my commit msg edits?",
+      "revId": "938ddb838c1c1164a5075a6919f3cc4126d63a44",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
