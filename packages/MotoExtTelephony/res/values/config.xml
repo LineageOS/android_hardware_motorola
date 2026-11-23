@@ -8,4 +8,8 @@
     <!-- If true, legacy sim switch dialog is displayed. -->
     <bool name="config_enableLegacySimSwitch" translatable="false">false</bool>
 
+
+    <!-- Disabled by default; device overlays may enable MBN override. -->
+    <bool name="config_mbnOverrideEnabled">false</bool>
+
 </resources>

@@ -16,6 +16,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Log.d(TAG, "Starting")
         context.startService(Intent(context, NrEnablerService::class.java))
+        context.startService(Intent(context, MbnOverrideService::class.java))
 
         val enabled = context.resources.getBoolean(R.bool.config_enableLegacySimSwitch)
         runCatching {
