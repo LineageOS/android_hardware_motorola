@@ -9,12 +9,15 @@
 
     <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
 
     <application
         android:label="MotoExtTelephony"
         android:persistent="true"
         android:directBootAware="true"
         android:theme="@style/Theme.SubSettingsBase.Expressive">
+
+        <uses-library android:name="com.qualcomm.qcrilhook" />
 
         <activity
             android:exported="false"
@@ -49,6 +52,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".MbnOverrideService"
+            android:directBootAware="true"
+            android:exported="false" />
+
     </application>
 
 </manifest>

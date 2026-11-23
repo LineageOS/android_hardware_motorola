@@ -3,22 +3,52 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+// Compile-time stubs for the few QcRilHook methods used by MbnOverride. The real
+// classes are provided at runtime by /system_ext/framework/qcrilhook.jar.
+java_library {
+    name: "qcrilhook-api-stubs",
+    srcs: [
+        "src/com/qualcomm/qcrilhook/*.kt",
+    ],
+    platform_apis: true,
+    installable: false,
+}
+
 android_app {
     name: "MotoExtTelephony",
 
     srcs: [
         "src/**/*.aidl",
         "src/**/*.kt",
+        "!src/com/qualcomm/qcrilhook/*.kt",
     ],
     resource_dirs: [
         "res",
     ],
-    libs: ["telephony-common"],
+    libs: [
+        "telephony-common",
+        "qcrilhook-api-stubs",
+    ],
 
     certificate: "platform",
     platform_apis: true,
+    privileged: true,
     system_ext_specific: true,
+    enforce_uses_libs: false,
+
     static_libs: [
         "org.lineageos.settings.resources",
     ],
+
+    required: [
+        "privapp-permissions-mbnoverride",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-mbnoverride",
+    src: "permissions/privapp-permissions-mbnoverride.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+    filename_from_src: true,
 }

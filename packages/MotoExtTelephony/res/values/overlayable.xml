@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <overlayable name="MbnOverrideCustomization">
+        <policy type="signature">
+            <item type="bool" name="config_mbnOverrideEnabled"/>
+            <item type="xml" name="mbn_overrides"/>
+        </policy>
+    </overlayable>
+</resources>
