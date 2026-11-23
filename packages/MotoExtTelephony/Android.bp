@@ -17,8 +17,23 @@ android_app {
 
     certificate: "platform",
     platform_apis: true,
+    privileged: true,
     system_ext_specific: true,
+    enforce_uses_libs: false,
+
     static_libs: [
         "org.lineageos.settings.resources",
     ],
+
+    required: [
+        "privapp-permissions-mbnoverride",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-mbnoverride",
+    src: "permissions/privapp-permissions-mbnoverride.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+    filename_from_src: true,
 }
