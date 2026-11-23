@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+
+<permissions>
+    <privapp-permissions package="org.lineageos.motorola.mbnoverride">
+        <permission name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+</permissions>

@@ -1,0 +1,31 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+
+java_library {
+    name: "qcrilhook-api-stubs",
+    srcs: ["stubs/**/*.java"],
+    platform_apis: true,
+    installable: false,
+}
+
+android_app {
+    name: "MbnOverride",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    platform_apis: true,
+    privileged: true,
+    system_ext_specific: true,
+    certificate: "platform",
+    enforce_uses_libs: false,
+    libs: ["qcrilhook-api-stubs"],
+    required: ["privapp-permissions-mbnoverride"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-mbnoverride",
+    src: "permissions/privapp-permissions-mbnoverride.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+    filename_from_src: true,
+}
