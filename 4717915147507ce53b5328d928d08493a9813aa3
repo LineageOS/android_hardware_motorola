@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c33b27a4_c64ccb1e",
+        "filename": "packages/moto-framework/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-23T17:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77842ffe_c709fce6",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 92
+      },
+      "revId": "4717915147507ce53b5328d928d08493a9813aa3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5d386013_ccf9d7f7",
@@ -47,6 +71,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16783ba8_bf50f174",
+        "filename": "packages/moto-framework/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-23T17:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d386013_ccf9d7f7",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 65
+      },
+      "revId": "4717915147507ce53b5328d928d08493a9813aa3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff70990a_dfc71cf3",
@@ -60,6 +108,30 @@
       "writtenOn": "2026-11-22T21:16:27Z",
       "side": 1,
       "message": "I\u0027d remove this",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 3
+      },
+      "revId": "4717915147507ce53b5328d928d08493a9813aa3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99300216_2a004af2",
+        "filename": "packages/moto-framework/aidl/com/motorola/internal/app/IMotoFaceService.aidl",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-23T17:37:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff70990a_dfc71cf3",
       "range": {
         "startLine": 10,
         "startChar": 0,
