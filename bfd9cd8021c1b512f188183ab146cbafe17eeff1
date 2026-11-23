@@ -22,6 +22,30 @@
       },
       "revId": "bfd9cd8021c1b512f188183ab146cbafe17eeff1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "026bb2aa_27e006d5",
+        "filename": "interfaces/motorola/aidl/Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-11-23T17:36:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "deb1f558_2ab65b4c",
+      "range": {
+        "startLine": 44,
+        "startChar": 43,
+        "endLine": 44,
+        "endChar": 47
+      },
+      "revId": "bfd9cd8021c1b512f188183ab146cbafe17eeff1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
