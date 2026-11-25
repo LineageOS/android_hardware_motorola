@@ -16,6 +16,24 @@
       "message": "A few things:\n- Move stub files to src/com/qualcomm/qcrilhook\n- MbnOverrideBootReceiver can be removed and the service can be started from src/org/lineageos/motorola/nrenabler/BootCompletedReceiver.kt \n- MbnOverrideService should be moved to src/org/lineageos/motorola/nrenabler",
       "revId": "2f719e50b1bca75cc00e82f073ba42f275341981",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74d2a229_9600b2cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22176
+      },
+      "writtenOn": "2026-11-25T16:32:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4ecaf87_c1ca6d0e",
+      "revId": "2f719e50b1bca75cc00e82f073ba42f275341981",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
