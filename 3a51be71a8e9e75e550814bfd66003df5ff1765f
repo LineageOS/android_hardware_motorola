@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ec61f77_f8e0b916",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22176
+      },
+      "writtenOn": "2026-11-25T21:28:38Z",
+      "side": 1,
+      "message": "These are compile-time stubs only and must not be packaged into the APK, since the actual QcRilHook classes are provided at runtime by system_ext/framework/qcrilhook.jar\n\nPreviously, I kept them in a separate directory to prevent them from being included in the APK build. But since you asked me to move them under src/com/qualcomm/qcrilhook, I updated \"Android.bp\" accordingly to keep them as a separate \"java_library\" dependency and exclude them from the app\u0027s source files.",
+      "revId": "3a51be71a8e9e75e550814bfd66003df5ff1765f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
