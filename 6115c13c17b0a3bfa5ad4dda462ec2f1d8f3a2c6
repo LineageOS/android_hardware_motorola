@@ -16,6 +16,24 @@
       "message": "I would like to see this folded into our telephony package",
       "revId": "6115c13c17b0a3bfa5ad4dda462ec2f1d8f3a2c6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73ee2ce0_9fb6292b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22176
+      },
+      "writtenOn": "2026-11-25T06:48:47Z",
+      "side": 1,
+      "message": "Would you prefer MbnOverride to be fully integrated into MotoExtTelephony, or are you suggesting reusing its existing telephony infrastructure while keeping MbnOverride as a separate component?",
+      "parentUuid": "9541d864_52283924",
+      "revId": "6115c13c17b0a3bfa5ad4dda462ec2f1d8f3a2c6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
