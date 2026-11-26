@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e49464b4_8e6d70e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-11-26T21:39:32Z",
+      "side": 1,
+      "message": "```suggestion\nsepolicy: qti: Label charger nodes for roadstr\n```",
+      "revId": "9aa4dfe8111ce1ccbdbf4023becb63bb617920f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad76b3a5_2c041224",
+        "filename": "sepolicy/qti/vendor/hal_camera_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19979
+      },
+      "writtenOn": "2026-11-26T21:39:32Z",
+      "side": 1,
+      "message": "This should be a separate change",
+      "revId": "9aa4dfe8111ce1ccbdbf4023becb63bb617920f5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
